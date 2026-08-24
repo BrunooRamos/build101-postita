@@ -11,7 +11,7 @@ export function Hero() {
               entidad (hackathon + Uruguay) para buscadores y answer engines. */}
           <h1 className="hero-h1">
             <span className="hero-kicker rise">
-              la hackathon más grande de uruguay.
+              la hackathon de ia más grande de uruguay.
             </span>
             <span className="hero-h1-main rise d1">
               <em className="h1-accent">zero to product</em> en 36 horas.
