@@ -18,9 +18,9 @@ export const LOGO_URL = `${SITE_URL}/icon`;
 /* El título tiene que traer los dos términos que se buscan — "hackathon
  * uruguay" y "hackathon montevideo" — más el año. Antes solo decía montevideo. */
 export const SEO_TITLE =
-  "build 101 — la hackathon más grande de uruguay | montevideo 2026";
+  "build 101 — la hackathon de ia más grande de uruguay | montevideo 2026";
 export const SEO_DESCRIPTION =
-  "build 101 es la hackathon más grande de uruguay: 36 horas en montevideo, un fin de semana, un producto, una demo. inscribí a tu equipo de 3 — gratis y con cupos limitados.";
+  "build 101 es la hackathon de ia más grande de uruguay: 36 horas en montevideo, un fin de semana, un producto, una demo. inscribí a tu equipo de 3 — gratis y con cupos limitados.";
 
 /** Descripción larga para datos estructurados (Event) y answer engines. */
 export const EVENT_DESCRIPTION =

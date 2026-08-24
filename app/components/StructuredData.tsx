@@ -70,7 +70,7 @@ const structuredData = {
       "@type": "WebPage",
       "@id": webpageId,
       url: CANONICAL_URL,
-      name: "build 101 — la hackathon más grande de uruguay, 36 horas en montevideo",
+      name: "build 101 — la hackathon de ia más grande de uruguay, 36 horas en montevideo",
       isPartOf: { "@id": websiteId },
       about: { "@id": eventId },
       primaryImageOfPage: OG_IMAGE_URL,
