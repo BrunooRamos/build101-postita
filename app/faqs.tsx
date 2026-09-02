@@ -1,5 +1,12 @@
 import type { ReactNode } from "react";
-import { LUMA_URL, VENUE, VENUE_ADDRESS, VENUE_MAPS, CONTACT_EMAIL } from "./event";
+import {
+  APPLY_OPEN,
+  LUMA_URL,
+  VENUE,
+  VENUE_ADDRESS,
+  VENUE_MAPS,
+  CONTACT_EMAIL,
+} from "./event";
 
 /**
  * FAQs — fuente única de verdad.
@@ -34,27 +41,43 @@ export const FAQS: FaqItem[] = [
   {
     q: "¿cuánto cuesta?",
     aText:
-      "participar es gratis. los cupos son limitados y la inscripción está sujeta a selección por parte del equipo organizador.",
+      "participar es gratis. los cupos son limitados y la postulación está sujeta a selección por parte del equipo organizador.",
   },
-  {
-    q: "¿cómo me inscribo y cómo es la selección?",
-    aText:
-      "la inscripción es a través de luma (luma.com/2kxg61n8). postulás a tu equipo y te confirmamos si quedaron seleccionados, junto con los próximos pasos.",
-    a: (
-      <>
-        la inscripción es a través de{" "}
-        <a href={LUMA_URL} target="_blank" rel="noopener noreferrer" className="bracket">
-          luma
-        </a>
-        . postulás a tu equipo y te confirmamos si quedaron seleccionados, junto con
-        los próximos pasos.
-      </>
-    ),
-  },
+  APPLY_OPEN
+    ? {
+        q: "¿cómo me inscribo y cómo es la selección?",
+        aText:
+          "la inscripción es a través de luma (luma.com/2kxg61n8). postulás a tu equipo y te confirmamos si quedaron seleccionados, junto con los próximos pasos.",
+        a: (
+          <>
+            la inscripción es a través de{" "}
+            <a href={LUMA_URL} target="_blank" rel="noopener noreferrer" className="bracket">
+              luma
+            </a>
+            . postulás a tu equipo y te confirmamos si quedaron seleccionados, junto con
+            los próximos pasos.
+          </>
+        ),
+      }
+    : {
+        q: "¿cuándo abren las inscripciones?",
+        aText: `las inscripciones todavía no están abiertas: pronto anunciamos la fecha de apertura y el link para postular. va a ser por equipos de 3 personas y con selección del equipo organizador. si querés que te avisemos, escribinos a ${CONTACT_EMAIL}.`,
+        a: (
+          <>
+            las inscripciones todavía no están abiertas: pronto anunciamos la fecha de
+            apertura y el link para postular. va a ser por equipos de 3 personas y con
+            selección del equipo organizador. si querés que te avisemos, escribinos a{" "}
+            <a href={`mailto:${CONTACT_EMAIL}`} className="bracket">
+              {CONTACT_EMAIL}
+            </a>
+            .
+          </>
+        ),
+      },
   {
     q: "¿necesito tener un equipo para aplicar?",
     aText:
-      "sí: la inscripción es por equipos de 3 personas. si todavía no tenés equipo, escribinos y te ayudamos a formar uno.",
+      "sí: se postula por equipos de 3 personas. si todavía no tenés equipo, escribinos y te ayudamos a formar uno.",
   },
   {
     q: "¿necesito saber programar?",

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { WindowChrome } from "./WindowChrome";
 import { SPIN, reducedMotion, useInView } from "./useInView";
-import { CONTACT_EMAIL, EVENT_DATES } from "../event";
+import { APPLY_OPEN, CONTACT_EMAIL, EVENT_DATES } from "../event";
 
 type Line =
   | { k: "cmd"; text: string }
@@ -143,7 +143,7 @@ function runCommand(raw: string): {
       ),
     };
   if (lower === "whoami")
-    return { out: O(<div className="out">un builder que todavía no se inscribió — tipeá <span className="accent">inscribite</span></div>) };
+    return { out: O(<div className="out">un builder esperando que abran las inscripciones — tipeá <span className="accent">inscribite</span></div>) };
   if (lower === "cafe" || lower === "coffee" || lower === "café")
     return { out: O(<div className="out">sirviendo café… (ilimitado durante el evento)</div>) };
   if (lower === "date")
@@ -165,7 +165,9 @@ function runCommand(raw: string): {
     lower === "git push --inscribite" ||
     lower === "deploy"
   )
-    return { out: O(<div className="ok">abriendo inscripción en luma…</div>), action: "inscribite" };
+    return APPLY_OPEN
+      ? { out: O(<div className="ok">abriendo inscripción en luma…</div>), action: "inscribite" }
+      : { out: O(<div className="out">las inscripciones todavía no abrieron — <span className="accent">pronto se anuncian</span>. volvé a tipear <span className="accent">inscribite</span> cuando abran.</div>) };
   return {
     out: O(
       <div className="out">

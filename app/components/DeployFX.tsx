@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { SPIN, reducedMotion } from "./useInView";
 import { fireConfetti } from "./confetti";
-import { LUMA_URL } from "../event";
+import { APPLY_OPEN, APPLY_SOON_LABEL, LUMA_URL } from "../event";
 
 const STEPS = [
   { run: "building…", ok: "compiled ✓", ms: 650 },
@@ -29,6 +29,8 @@ export function DeployFX() {
 
   useEffect(() => {
     const onDeploy = () => {
+      // guardia: con las inscripciones cerradas no hay a dónde redirigir.
+      if (!APPLY_OPEN) return;
       if (busy.current) return;
       busy.current = true;
 
@@ -109,7 +111,9 @@ export function DeployFX() {
   );
 }
 
-/** Anchor that triggers the deploy pipeline instead of a plain jump. */
+/** Anchor that triggers the deploy pipeline instead of a plain jump.
+ *  Con `APPLY_OPEN` en false no linkea a ningún lado: se convierte en un
+ *  cartel de "inscripciones pronto" (mismo lugar en nav, hero, footer y CTA). */
 export function InscribiteBtn({
   children,
   className = "btn",
@@ -117,6 +121,14 @@ export function InscribiteBtn({
   children: React.ReactNode;
   className?: string;
 }) {
+  if (!APPLY_OPEN) {
+    return (
+      <span className={`${className} apply-soon`.trim()} aria-disabled="true">
+        {APPLY_SOON_LABEL}
+      </span>
+    );
+  }
+
   return (
     <a
       href={LUMA_URL}

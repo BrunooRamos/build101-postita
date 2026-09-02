@@ -14,6 +14,7 @@ import { FakeCrash } from "./components/FakeCrash";
 import { StructuredData } from "./components/StructuredData";
 import { SedeCarousel } from "./components/SedeCarousel";
 import {
+  APPLY_OPEN,
   VENUE,
   VENUE_ADDRESS,
   VENUE_MAPS,
@@ -151,7 +152,9 @@ export default function Home() {
             </div>
             <h2>buscamos builders.</h2>
             <p className="lead">
-              inscribí a tu equipo de 3 — gratis y con cupos limitados.
+              {APPLY_OPEN
+                ? "inscribí a tu equipo de 3 — gratis y con cupos limitados."
+                : "equipos de 3, gratis y con cupos limitados."}
             </p>
             <div className="apply-meta">
               <div>

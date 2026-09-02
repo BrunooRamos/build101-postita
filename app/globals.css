@@ -2240,6 +2240,47 @@ body.has-cursor .repl-input {
   color: var(--blue);
 }
 
+/* ---- inscripciones cerradas (APPLY_OPEN = false) ----
+   el CTA deja de ser botón y pasa a ser cartel: borde punteado, sin hover,
+   sin puntero. mismo lugar y mismo peso visual, pero no promete un link. */
+.apply-soon {
+  font-family: var(--font-mono-stack);
+  font-size: 13px;
+  color: var(--muted);
+  cursor: default;
+}
+.btn.apply-soon {
+  background: transparent;
+  border: 1px dashed var(--line-2);
+  color: var(--muted);
+}
+.btn.apply-soon:hover {
+  background: transparent;
+  border-color: var(--line-2);
+  transform: none;
+}
+.btn.apply-soon::before {
+  content: "// ";
+  color: var(--faint);
+}
+.foot-col .apply-soon {
+  display: block;
+  padding: 4px 0;
+}
+/* frase principal del bloque de inscripción */
+.apply-soon-line {
+  font-family: var(--font-mono-stack);
+  font-size: 15px;
+  color: var(--fg);
+}
+.apply-soon-line .slash {
+  color: var(--faint);
+}
+/* countdown en estado "por anunciarse": mismo chrome, sin reloj */
+.cd-tba .cd-clock {
+  color: #e5e5e5;
+}
+
 /* ============================================================
    sponsor logo band (editorial, arriba)
    ============================================================ */
@@ -2787,6 +2828,9 @@ a.sponsor-main:hover {
 #live .apply-cta .note a {
   color: #ffffff;
   text-decoration: underline;
+}
+#live .apply-soon-line {
+  color: #ffffff;
 }
 
 /* closing band — full-bleed black statement, no border, no shadow */

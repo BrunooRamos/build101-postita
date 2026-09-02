@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { OG_IMAGE_ALT } from "./event";
+import { APPLY_OPEN, OG_IMAGE_ALT } from "./event";
 
 // Social card (WhatsApp / X / LinkedIn / Slack). Se genera en build.
 // Póster de marca: monocromo, todo en minúsculas.
@@ -85,8 +85,17 @@ export default async function Image() {
             build 101
           </div>
           <div style={{ display: "flex", fontSize: 30, fontWeight: 500 }}>
-            <span style={{ color: WHITE }}>aplicar&nbsp;</span>
-            <span style={{ color: BLUE }}>→</span>
+            {APPLY_OPEN ? (
+              <>
+                <span style={{ color: WHITE }}>aplicar&nbsp;</span>
+                <span style={{ color: BLUE }}>→</span>
+              </>
+            ) : (
+              <>
+                <span style={{ color: BLUE }}>//&nbsp;</span>
+                <span style={{ color: WHITE }}>inscripciones pronto</span>
+              </>
+            )}
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { APPLY_DEADLINE_ISO } from "../event";
+import { APPLY_DEADLINE_ISO, APPLY_OPEN } from "../event";
 
 const EVENT = new Date(APPLY_DEADLINE_ISO).getTime();
 
@@ -23,10 +23,23 @@ export function Countdown() {
   const [t, setT] = useState<T | null>(null);
 
   useEffect(() => {
+    if (!APPLY_OPEN) return;
     setT(diff());
     const id = setInterval(() => setT(diff()), 1000);
     return () => clearInterval(id);
   }, []);
+
+  // Sin inscripciones abiertas no hay cierre que contar: se muestra el mismo
+  // chrome de terminal, pero con el estado "por anunciarse".
+  if (!APPLY_OPEN) {
+    return (
+      <div className="countdown cd-tba">
+        <span className="cd-prompt">$ inscripciones --status</span>
+        <span className="cd-clock">› por anunciarse</span>
+        <span className="cd-blink" />
+      </div>
+    );
+  }
 
   return (
     <div className="countdown" role="timer" aria-label="cuenta regresiva al cierre de inscripciones">

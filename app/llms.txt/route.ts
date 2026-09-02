@@ -1,5 +1,6 @@
 import {
   APPLY_DEADLINE,
+  APPLY_OPEN,
   CANONICAL_URL,
   EVENT_DATES_LONG,
   EVENT_DESCRIPTION,
@@ -29,8 +30,12 @@ export function GET() {
 - dónde: ${VENUE}, ${VENUE_ADDRESS}, uruguay.
 - precio: gratis, con cupos limitados y selección del equipo organizador.
 - equipos: ${TEAM_SIZE} personas; la inscripción es por equipo (si no tenés, te ayudamos a formar uno).
-- cierre de inscripción: ${APPLY_DEADLINE} (hora de uruguay).
-- inscripción: ${LUMA_URL}
+${
+    APPLY_OPEN
+      ? `- cierre de inscripción: ${APPLY_DEADLINE} (hora de uruguay).
+- inscripción: ${LUMA_URL}`
+      : `- inscripción: todavía no está abierta. la apertura y el link para postular se anuncian próximamente en ${CANONICAL_URL}`
+  }
 - sitio oficial: ${CANONICAL_URL}
 - contacto: ${TEAM_EMAILS.join(" · ")}
 
