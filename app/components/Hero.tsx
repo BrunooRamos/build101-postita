@@ -1,6 +1,6 @@
 import { InscribiteBtn } from "./DeployFX";
 import { Terminal } from "./Terminal";
-import { EVENT_DATES, EVENT_START_DATE } from "../event";
+import { APPLY_OPEN, EVENT_DATES, EVENT_START_DATE } from "../event";
 
 export function Hero() {
   return (
@@ -19,8 +19,10 @@ export function Hero() {
           </h1>
           <p className="lead hero-lead rise d2">
             armás un equipo de 3, construís un producto real y lo mostrás
-            funcionando el domingo. inscribí a tu equipo: gratis y con cupos
-            limitados.
+            funcionando el domingo.{" "}
+            {APPLY_OPEN
+              ? "inscribí a tu equipo: gratis y con cupos limitados."
+              : "gratis y con cupos limitados — pronto se anuncian las inscripciones."}
           </p>
           <div className="hero-cta rise d3">
             <InscribiteBtn className="btn">aplicar →</InscribiteBtn>

@@ -1,5 +1,6 @@
 import {
   APPLY_DEADLINE_ISO,
+  APPLY_OPEN,
   APPLY_OPEN_ISO,
   CANONICAL_URL,
   CONTACT_EMAIL,
@@ -24,6 +25,27 @@ import {
 } from "../event";
 import { FAQS } from "../faqs";
 
+// Oferta del evento. Con las inscripciones cerradas no publicamos el link de
+// postulación ni la ventana de fechas: la entrada sigue siendo gratis, pero
+// todavía no se puede reservar (PreOrder = solo disponible a futuro).
+const offer = APPLY_OPEN
+  ? {
+      "@type": "Offer",
+      url: LUMA_URL,
+      price: "0",
+      priceCurrency: "UYU",
+      availability: "https://schema.org/LimitedAvailability",
+      validFrom: APPLY_OPEN_ISO,
+      validThrough: APPLY_DEADLINE_ISO,
+    }
+  : {
+      "@type": "Offer",
+      url: CANONICAL_URL,
+      price: "0",
+      priceCurrency: "UYU",
+      availability: "https://schema.org/PreOrder",
+    };
+
 const organizationId = `${SITE_URL}/#organization`;
 const websiteId = `${SITE_URL}/#website`;
 const webpageId = `${SITE_URL}/#webpage`;
@@ -45,7 +67,7 @@ const structuredData = {
         width: 512,
         height: 512,
       },
-      sameAs: SOCIAL_PROFILES,
+      ...(SOCIAL_PROFILES.length > 0 ? { sameAs: SOCIAL_PROFILES } : {}),
       areaServed: {
         "@type": "Country",
         name: "Uruguay",
@@ -118,15 +140,7 @@ const structuredData = {
           url: "https://um.edu.uy",
         },
       ],
-      offers: {
-        "@type": "Offer",
-        url: LUMA_URL,
-        price: "0",
-        priceCurrency: "UYU",
-        availability: "https://schema.org/LimitedAvailability",
-        validFrom: APPLY_OPEN_ISO,
-        validThrough: APPLY_DEADLINE_ISO,
-      },
+      offers: offer,
       audience: {
         "@type": "Audience",
         audienceType: `jóvenes builders de uruguay en equipos de ${TEAM_SIZE} personas`,
