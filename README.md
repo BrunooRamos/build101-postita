@@ -24,6 +24,7 @@ Para probar el envío de inscripciones en local, copiá `.env.example` a `.env.l
 | qué | dónde |
 |---|---|
 | Fechas, horarios, sede, fecha límite, organizadores, LinkedIn, mails | `app/event.ts` (fuente única de verdad) |
+| Redes de build 101 (footer, schema `sameAs`, `/llms.txt`) | `SOCIALS` en `app/event.ts` |
 | Abrir / cerrar inscripciones | `APPLY_OPEN` en `app/event.ts` |
 | Preguntas frecuentes (se usan también en el schema y `/llms.txt`) | `app/faqs.tsx` |
 | Sponsors por categoría y tamaño de cada logo | `app/components/Sponsors.tsx` + logos en `public/sponsors/` |

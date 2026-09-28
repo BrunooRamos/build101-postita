@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { SPIN, reducedMotion } from "./useInView";
+import { SPIN } from "./useInView";
 
 type Phase = "error" | "fixing" | "fixed" | null;
 
@@ -39,28 +39,8 @@ export function FakeCrash() {
     };
   }, []);
 
-  // Dispara el crash al scrollear hacia el contenido — solo una vez (persistido).
-  useEffect(() => {
-    if (reducedMotion()) return;
-    try {
-      if (localStorage.getItem("uru-crashed")) return;
-    } catch {}
-    let fired = false;
-    const onScroll = () => {
-      if (fired) return;
-      if (window.scrollY < window.innerHeight * 1.2) return;
-      // no pisar el pipeline de deploy si está abierto: esperá al próximo scroll
-      if (document.querySelector(".deploy-overlay")) return;
-      fired = true;
-      window.removeEventListener("scroll", onScroll);
-      try {
-        localStorage.setItem("uru-crashed", "1");
-      } catch {}
-      window.dispatchEvent(new CustomEvent("uru:crash"));
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  // Solo se dispara a pedido (comando `crash` en la terminal): un error que
+  // aparece solo al scrollear parece un bug real para sponsors y jurado.
 
   if (!phase) return null;
   const spin = SPIN[frame % SPIN.length];

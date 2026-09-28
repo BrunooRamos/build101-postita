@@ -42,9 +42,13 @@ export const APPLY_SOON_LABEL = "inscripciones pronto";
 export const APPLY_PATH = "/inscripcion";
 export const APPLY_URL = `${SITE_URL}${APPLY_PATH}`;
 
-/** Perfiles oficiales (schema.org sameAs — consolidan la entidad build 101).
- *  TODO(build101): agregar Instagram / X / LinkedIn cuando existan. */
-export const SOCIAL_PROFILES: string[] = [];
+/** Redes oficiales: se muestran en el footer y alimentan schema.org sameAs
+ *  (consolidan la entidad build 101). */
+export const SOCIALS = [
+  { key: "instagram", label: "Instagram", handle: "@build101.dev", url: "https://www.instagram.com/build101.dev/" },
+  { key: "linkedin", label: "LinkedIn", handle: "build 101", url: "https://www.linkedin.com/company/build101/" },
+] as const;
+export const SOCIAL_PROFILES: string[] = SOCIALS.map((s) => s.url);
 
 /** Sede. La edición la hace la Facultad de Ingeniería (FIUM) en su edificio del
  *  LATU. NOTA: estos valores alimentan schema.org Place/PostalAddress. */
@@ -84,8 +88,8 @@ export const SCHEDULE = [
 ];
 
 /** Inscripciones: cierre. */
-export const APPLY_DEADLINE_ISO = "2026-10-12T23:59:00-03:00";
-export const APPLY_DEADLINE = "12 de octubre";
+export const APPLY_DEADLINE_ISO = "2026-10-09T23:59:00-03:00";
+export const APPLY_DEADLINE = "9 de octubre";
 
 /** Formato. */
 export const TEAM_SIZE = "3";

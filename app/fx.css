@@ -10,7 +10,7 @@
 .win {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--paper);
+  background: var(--surface);
   box-shadow: none;
   overflow: hidden;
 }
@@ -139,10 +139,14 @@
 
 /* la sede: cinta horizontal (marquee) de fotos reales de FIUM — varias fotos
    visibles a la vez, desplazándose solas en loop. En reposo van en duotono azul (grises + multiply del accent) para que la
-   marca build 101 mande; cada foto pasa a color al hover/focus. */
+   marca build 101 mande; cada foto pasa a color al hover/focus. El duotono
+   va al 55% para que se lea la estructura del edificio, y una máscara funde
+   la cinta con el fondo en los dos extremos. */
 .sedem {
   overflow: hidden;
   margin: 34px 0 44px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 .sedem-track {
   display: flex;
@@ -183,8 +187,8 @@
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  filter: grayscale(1) contrast(1.05);
-  transition: filter 0.35s ease;
+  filter: grayscale(1) contrast(1.18) brightness(1.06);
+  transition: filter 0.5s var(--ease-out);
 }
 .sede-img::after {
   content: "";
@@ -192,8 +196,8 @@
   inset: 0;
   background: var(--blue);
   mix-blend-mode: multiply;
-  opacity: 0.82;
-  transition: opacity 0.35s ease;
+  opacity: 0.55;
+  transition: opacity 0.5s var(--ease-out);
   pointer-events: none;
 }
 .sedem-shot:hover .sede-img img,
@@ -228,6 +232,74 @@
   transform-origin: 0 50%;
   transform: scaleX(0);
   transition: transform 0.08s linear;
+}
+/* con scroll-driven animations la barra es CSS puro, atada al scroll del
+   documento; ScrollProgress.tsx solo corre como respaldo donde no hay. */
+@keyframes scroll-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@supports (animation-timeline: scroll()) {
+  .scroll-bar {
+    transition: none;
+    animation: scroll-grow linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+/* ---- nav: sección activa (scroll-spy sin JS) ----
+   Cada sección publica un view-timeline con nombre; timeline-scope lo sube
+   hasta body para que el link del nav lo pueda usar. El inset deja una franja
+   al 30% de la pantalla: el link se prende mientras su sección la cruza. */
+@keyframes nav-on {
+  from,
+  to {
+    color: var(--fg);
+    background-size: 100% 1px;
+  }
+}
+@supports (timeline-scope: --x) {
+  body {
+    timeline-scope: --s-evento, --s-cronograma, --s-sponsors, --s-contacto;
+  }
+  #evento {
+    view-timeline-name: --s-evento;
+  }
+  #cronograma {
+    view-timeline-name: --s-cronograma;
+  }
+  #sponsors {
+    view-timeline-name: --s-sponsors;
+  }
+  #contacto {
+    view-timeline-name: --s-contacto;
+  }
+  #evento,
+  #cronograma,
+  #sponsors,
+  #contacto {
+    view-timeline-inset: 30% 69%;
+  }
+  .nav-links a[href$="#evento"] {
+    animation: nav-on linear none;
+    animation-timeline: --s-evento;
+  }
+  .nav-links a[href$="#cronograma"] {
+    animation: nav-on linear none;
+    animation-timeline: --s-cronograma;
+  }
+  .nav-links a[href$="#sponsors"] {
+    animation: nav-on linear none;
+    animation-timeline: --s-sponsors;
+  }
+  .nav-links a[href$="#contacto"] {
+    animation: nav-on linear none;
+    animation-timeline: --s-contacto;
+  }
 }
 
 /* ---- CSS entrance (no JS dependency, above-the-fold safe) ---- */
@@ -267,28 +339,135 @@
 /* ---- scroll reveal (pure CSS, NO JS dependency) ----
    Fail-open: content is visible by default. Browsers that support
    scroll-driven animations get the fade-up as it enters the viewport.
-   If JS is dead or the feature is unsupported, everything still shows. */
+   If JS is dead or the feature is unsupported, everything still shows.
+   Nunca arranca por debajo del 40% de opacidad: el texto se lee en
+   cualquier captura, y termina en el primer 40% de la entrada. */
 .reveal {
   opacity: 1;
 }
 @keyframes reveal-in {
   from {
-    opacity: 0;
-    transform: translateY(28px);
+    opacity: 0.4;
+    translate: 0 12px;
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    translate: 0 0;
+  }
+}
+/* los filetes de pasos, días y equipo se dibujan de izquierda a derecha,
+   como un andamio que sube */
+@keyframes rule-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
   }
 }
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
     .reveal {
-      opacity: 0;
       animation: reveal-in linear both;
       animation-timeline: view();
-      animation-range: entry 0% entry 60%;
+      animation-range: entry 0% entry 40%;
     }
+    .reveal.step,
+    .reveal.day,
+    .reveal.founder {
+      position: relative;
+      border-top-color: transparent;
+    }
+    .reveal.step::before,
+    .reveal.day::before,
+    .reveal.founder::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--line-2);
+      transform-origin: 0 50%;
+      animation: rule-draw linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 30%;
+    }
+  }
+}
+
+/* ---- faq: abre con altura animada en vez de saltar ----
+   ::details-content + interpolate-size (en :root) animan hasta `auto`.
+   Donde no hay soporte abre al instante, como antes. */
+@media (prefers-reduced-motion: no-preference) {
+  .faq-item::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition:
+      block-size 0.32s var(--ease-rise),
+      content-visibility 0.32s allow-discrete;
+  }
+  .faq-item[open]::details-content {
+    block-size: auto;
+  }
+  .faq-item .faq-a {
+    opacity: 0;
+    translate: 0 -4px;
+    transition:
+      opacity 0.24s var(--ease-out) 0.06s,
+      translate 0.28s var(--ease-rise) 0.06s;
+  }
+  .faq-item[open] .faq-a {
+    opacity: 1;
+    translate: 0 0;
+  }
+  .faq-item summary .faq-q {
+    transition: color 0.18s var(--ease-out);
+  }
+}
+
+/* ---- navegación: la tarjeta de inscripción se transforma en el título ----
+   SignupPaths y SignupFlow comparten <ViewTransition name="path-…"
+   share="path-morph">. El texto no se estira: cada snapshot queda a su tamaño,
+   anclado a la izquierda, y se cruzan mientras el grupo viaja. */
+::view-transition-group(.path-morph) {
+  animation-duration: 0.46s;
+  animation-timing-function: var(--ease-rise);
+}
+::view-transition-old(.path-morph),
+::view-transition-new(.path-morph) {
+  height: 100%;
+  width: auto;
+  object-fit: none;
+  object-position: left center;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.22s;
+}
+
+/* ---- TBA: brillo lento que barre los slots en secuencia (skeleton) ---- */
+@keyframes tba-sheen {
+  0% {
+    background-position: 100% 0;
+  }
+  60%,
+  100% {
+    background-position: 0% 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tba-slots .tba-slot {
+    background-image: linear-gradient(
+      100deg,
+      transparent 30%,
+      rgb(255 255 255 / 0.06) 50%,
+      transparent 70%
+    );
+    background-size: 300% 100%;
+    background-position: 100% 0;
+    animation: tba-sheen 2.8s var(--ease-out) infinite;
+    animation-delay: calc(var(--i, 0) * 140ms);
   }
 }
 
@@ -662,5 +841,15 @@ body.has-cursor .repl-input {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+  /* atadas al scroll, no al tiempo: no son movimiento, siguen igual */
+  .scroll-bar,
+  .nav-links a {
+    animation-duration: auto !important;
   }
 }

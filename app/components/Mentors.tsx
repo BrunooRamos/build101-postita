@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Reveal } from "./Reveal";
 import { MENTORS_EMAIL } from "../event";
 
@@ -8,7 +9,7 @@ function TbaSlots({ count, label }: { count: number; label: string }) {
       <p className="label">{label}</p>
       <ul className="tba-slots" aria-label="por anunciar">
         {Array.from({ length: count }, (_, i) => (
-          <li key={i} className="tba-slot" aria-hidden>
+          <li key={i} className="tba-slot" style={{ "--i": i } as CSSProperties} aria-hidden>
             TBA
           </li>
         ))}
@@ -38,7 +39,10 @@ export function Mentors() {
           <h3 className="h3">¿querés mentorear?</h3>
           <p>Bruno coordina a quienes quieren acompañar a los equipos.</p>
           <a href={`mailto:${MENTORS_EMAIL}`} className="btn btn-ghost btn-block">
-            escribile a Bruno ↗
+            escribile a Bruno{" "}
+            <span className="arr" aria-hidden>
+              ↗
+            </span>
           </a>
         </Reveal>
       </div>

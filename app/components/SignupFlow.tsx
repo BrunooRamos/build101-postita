@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { ViewTransition, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import {
   LIMITS,
   emptyApplication,
@@ -198,9 +198,13 @@ function Shell({
           <li aria-current={onFirst ? "step" : undefined}>{first}</li>
           <li aria-current={!onFirst ? "step" : undefined}>{second}</li>
         </ol>
-        <h1 className="flow-title" tabIndex={-1} id="flow-title">
-          {title}
-        </h1>
+        {/* mismo name que el título de la tarjeta en SignupPaths: al navegar,
+            la tarjeta elegida se transforma en este título */}
+        <ViewTransition name={`path-${mode}`} share="path-morph">
+          <h1 className="flow-title" tabIndex={-1} id="flow-title">
+            {title}
+          </h1>
+        </ViewTransition>
         <p className="flow-intro">{intro}</p>
       </div>
       <div className="flow-main">{children}</div>
@@ -232,6 +236,14 @@ export function SignupFlow({ mode }: { mode: Mode }) {
 
   useEffect(() => {
     startedAt.current = Date.now();
+  }, []);
+
+  // Al llegar desde la landing la página viene scrolleada muy abajo, y Next
+  // recién sube después de que React mide la transición: el título quedaría
+  // fuera de pantalla y React no lo empareja con la tarjeta. Subir en la fase
+  // de layout lo deja visible a tiempo para el morph.
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
   // Al cambiar de paso: arriba de todo y foco en el título (lectores de pantalla).
@@ -286,7 +298,7 @@ export function SignupFlow({ mode }: { mode: Mode }) {
         focusFirstError(data.fields);
         return;
       }
-      setServerError(data?.error ?? "No pudimos enviar tu interés.");
+      setServerError(data?.error ?? "No pudimos enviar tu inscripción.");
       setStep("error");
     } catch {
       setServerError("No pudimos conectarnos. Revisá tu conexión.");
@@ -341,7 +353,7 @@ export function SignupFlow({ mode }: { mode: Mode }) {
         mode={mode}
         step="review"
         title="todo listo para enviar."
-        intro="Revisá tus datos antes de enviar. Enviar registra tu interés: todavía no confirma un lugar."
+        intro="Revisá tus datos antes de enviar. Enviar tu inscripción todavía no confirma un lugar."
         aside={
           <Aside q="¿Algo está mal?">
             <button type="button" className="link-strong" onClick={() => setStep("form")}>
@@ -352,7 +364,7 @@ export function SignupFlow({ mode }: { mode: Mode }) {
       >
         <div className="state state-error" role="alert">
           <p className="label">error de envío · datos conservados</p>
-          <p className="state-title">no pudimos enviar tu interés.</p>
+          <p className="state-title">no pudimos enviar tu inscripción.</p>
           <p>
             {serverError} Tus datos siguen acá. Intentá de nuevo o escribile a Ramiro para continuar.
           </p>
@@ -376,7 +388,7 @@ export function SignupFlow({ mode }: { mode: Mode }) {
         mode={mode}
         step={step}
         title="todo listo para enviar."
-        intro="Revisá tus datos antes de enviar. Enviar registra tu interés: todavía no confirma un lugar."
+        intro="Revisá tus datos antes de enviar. Enviar tu inscripción todavía no confirma un lugar."
         aside={
           <Aside q="¿Algo está mal?">
             <button type="button" className="link-strong" onClick={() => setStep("form")}>
@@ -406,7 +418,7 @@ export function SignupFlow({ mode }: { mode: Mode }) {
           </div>
           <div className="form-actions">
             <button type="button" className="btn btn-primary btn-block" onClick={submit} disabled={sending}>
-              {sending ? "enviando…" : "enviar mi interés →"}
+              {sending ? "enviando…" : "enviar inscripción →"}
             </button>
             <p className="fine">Usamos estos datos solo para gestionar tu postulación a esta edición de build 101.</p>
           </div>
@@ -417,6 +429,19 @@ export function SignupFlow({ mode }: { mode: Mode }) {
 
   // ----- formulario -----
   const errorCount = Object.keys(errors).length;
+  const commentsField = (
+    <Field
+      id="comments"
+      label="comentarios extra"
+      optional
+      value={app.comments}
+      onChange={(v) => setApp((a) => ({ ...a, comments: v }))}
+      placeholder="Algo más que quieras que sepamos."
+      multiline
+      rows={3}
+      maxLength={LIMITS.comments}
+    />
+  );
   return (
     <Shell
       mode={mode}
@@ -440,17 +465,6 @@ export function SignupFlow({ mode }: { mode: Mode }) {
 
         {mode === "team" && <p className="label">vos · contacto del equipo</p>}
         <MemberFields index={0} member={app.members[0]} errors={errors} onChange={setMember(0)} isContact />
-        <Field
-          id="comments"
-          label="comentarios extra"
-          optional
-          value={app.comments}
-          onChange={(v) => setApp((a) => ({ ...a, comments: v }))}
-          placeholder="Algo más que quieras que sepamos."
-          multiline
-          rows={3}
-          maxLength={LIMITS.comments}
-        />
 
         {mode === "team" && (
           <div className="form-section">
@@ -478,6 +492,9 @@ export function SignupFlow({ mode }: { mode: Mode }) {
             ))}
           </div>
         )}
+
+        {/* comentarios de toda la postulación: al final, después del equipo */}
+        {mode === "team" ? <div className="form-section">{commentsField}</div> : commentsField}
 
         {/* honeypot: invisible para personas, tentador para bots */}
         <div className="hp" aria-hidden="true">

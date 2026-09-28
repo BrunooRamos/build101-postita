@@ -2,11 +2,14 @@
 
 import { useEffect, useRef } from "react";
 
-/** Thin top progress bar that tracks scroll depth. */
+/** Thin top progress bar that tracks scroll depth.
+ *  Donde hay scroll-driven animations la barra es CSS puro (fx.css
+ *  .scroll-bar); este listener queda solo como respaldo para el resto. */
 export function ScrollProgress() {
   const bar = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (CSS.supports?.("animation-timeline: scroll()")) return;
     const onScroll = () => {
       const h = document.documentElement;
       const max = h.scrollHeight - h.clientHeight;

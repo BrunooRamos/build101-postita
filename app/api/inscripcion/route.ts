@@ -13,19 +13,28 @@ type Result = { ok: true } | { ok: false; error: string; fields?: Record<string,
 
 const json = (body: Result, status = 200) => Response.json(body, { status });
 
-// Límite simple por IP: 5 envíos cada 10 minutos. Vive en memoria de cada
-// instancia, así que es un freno para abusos, no una garantía.
+// Límites cada 10 minutos. Viven en memoria de cada instancia, así que son un
+// freno para abusos, no una garantía.
+// - Por IP, generoso: en el WiFi de una facultad todos salen por la misma IP.
+// - Por IP + mail de contacto, estricto: frena reenvíos de la misma persona.
 const WINDOW_MS = 10 * 60 * 1000;
-const MAX_PER_WINDOW = 5;
+const MAX_PER_IP = 40;
+const MAX_PER_CONTACT = 5;
 const hits = new Map<string, number[]>();
 
-function rateLimited(ip: string) {
+function rateLimited(key: string, max: number) {
   const now = Date.now();
-  const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
+  const recent = (hits.get(key) ?? []).filter((t) => now - t < WINDOW_MS);
   recent.push(now);
-  hits.set(ip, recent);
-  return recent.length > MAX_PER_WINDOW;
+  hits.set(key, recent);
+  return recent.length > max;
 }
+
+const tooMany = () =>
+  json(
+    { ok: false, error: "Recibimos muchos envíos seguidos. Esperá unos minutos y probá de nuevo." },
+    429,
+  );
 
 /** Fila plana para la sheet: una fila por postulación, hasta 3 integrantes. */
 function toRow(app: Application, id: string) {
@@ -68,15 +77,11 @@ export async function POST(request: Request) {
   }
 
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-  if (rateLimited(ip)) {
-    return json(
-      { ok: false, error: "Recibimos muchos envíos seguidos. Esperá unos minutos y probá de nuevo." },
-      429,
-    );
-  }
+  if (rateLimited(`ip:${ip}`, MAX_PER_IP)) return tooMany();
 
   const app = normalize(body);
   if (!app) return json({ ok: false, error: "El formulario llegó incompleto." }, 400);
+  if (rateLimited(`contact:${ip}:${app.members[0].email}`, MAX_PER_CONTACT)) return tooMany();
 
   const fields = validate(app);
   if (Object.keys(fields).length > 0) {

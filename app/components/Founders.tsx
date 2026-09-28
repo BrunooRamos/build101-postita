@@ -27,19 +27,22 @@ function Org({ name, detail, logo }: { name: string; detail: string; logo: strin
 
 export function Founders() {
   return (
-    <section id="equipo" className="section section-paper">
+    <section id="equipo" className="section">
       <div className="wrap">
-        <Reveal className="founders-head">
-          <h2 className="h2">
-            no solo organizamos.
-            <br />
-            también construimos.
-          </h2>
-          <p className="founders-aside">
-            Somos Ramiro, Bruno y Mateo.
-            <br />
-            Construimos productos de IA todos los días.
-          </p>
+        <Reveal>
+          <p className="eyebrow">// el equipo</p>
+          <div className="founders-head">
+            <h2 className="h2">
+              no solo organizamos.
+              <br />
+              también construimos.
+            </h2>
+            <p className="founders-aside">
+              Somos Ramiro, Bruno y Mateo.
+              <br />
+              Construimos productos de IA todos los días.
+            </p>
+          </div>
         </Reveal>
 
         <ul className="founders">

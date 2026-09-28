@@ -7,6 +7,7 @@ import {
   SITE_NAME,
   SITE_URL,
 } from "./event";
+import { PointerSpot } from "./components/PointerSpot";
 import "./globals.css";
 
 // Dos familias: Geist Sans para leer (títulos, texto, formularios) y Geist Mono
@@ -80,7 +81,7 @@ export const metadata: Metadata = {
 
 // El sitio es oscuro siempre: un solo themeColor, sin variante por sistema.
 export const viewport: Viewport = {
-  themeColor: "#0a0a0a",
+  themeColor: "#0a0a0c",
   colorScheme: "dark",
 };
 
@@ -91,7 +92,10 @@ export default function RootLayout({
     // Un solo tema: el color sale de los tokens del CSS, así que no hay script
     // de pre-paint, ni data-theme, ni riesgo de flash de tema equivocado.
     <html lang="es-UY" className={`${sans.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <PointerSpot />
+      </body>
     </html>
   );
 }

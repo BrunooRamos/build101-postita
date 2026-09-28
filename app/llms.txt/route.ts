@@ -5,6 +5,8 @@ import {
   EVENT_DATES_LONG,
   EVENT_DESCRIPTION,
   APPLY_URL,
+  SCHEDULE,
+  SOCIALS,
   TEAM_EMAILS,
   TEAM_SIZE,
   VENUE,
@@ -30,7 +32,7 @@ export function GET() {
 - dónde: ${VENUE}, ${VENUE_ADDRESS}, uruguay.
 - precio: gratis, con cupos limitados y selección del equipo organizador.
 - equipos: ${TEAM_SIZE} personas; podés inscribir a tu equipo o inscribirte solo y te ayudamos a formar uno.
-- horario: sábado 17 de 09:00 a 21:00 y domingo 18 de 09:00 a ~15:00; no se duerme en la sede.
+- horario: ${SCHEDULE.map((d) => `${d.day} de ${d.hours}`).join(" y ")}; no se duerme en la sede.
 ${
     APPLY_OPEN
       ? `- cierre de inscripción: ${APPLY_DEADLINE} (hora de uruguay).
@@ -39,6 +41,7 @@ ${
   }
 - sitio oficial: ${CANONICAL_URL}
 - contacto: ${TEAM_EMAILS.join(" · ")}
+- redes: ${SOCIALS.map((s) => `${s.label.toLowerCase()} ${s.url}`).join(" · ")}
 
 ## preguntas frecuentes
 

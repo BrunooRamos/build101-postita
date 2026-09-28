@@ -58,8 +58,8 @@ export default function Home() {
                 )}
               </p>
               <p className="fine">
-                Inscribirte no garantiza un lugar. La participación requiere selección y
-                confirmación explícita de la organización.
+                Inscribirte no garantiza un lugar. La participación queda sujeta a
+                selección y confirmación del equipo.
               </p>
             </Reveal>
             <Reveal className="signup-paths">

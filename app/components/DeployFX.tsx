@@ -129,6 +129,20 @@ export function InscribiteBtn({
     );
   }
 
+  // una ↗ final va en su propio span: se mueve sola al hover y no se lee
+  // en voz alta ("flecha noreste").
+  const label =
+    typeof children === "string" && children.endsWith(" ↗") ? (
+      <>
+        {children.slice(0, -2)}{" "}
+        <span className="arr" aria-hidden>
+          ↗
+        </span>
+      </>
+    ) : (
+      children
+    );
+
   return (
     <a
       href={APPLY_PATH}
@@ -138,7 +152,7 @@ export function InscribiteBtn({
         window.dispatchEvent(new CustomEvent("uru:deploy"));
       }}
     >
-      {children}
+      {label}
     </a>
   );
 }

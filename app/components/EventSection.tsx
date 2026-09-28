@@ -4,7 +4,7 @@ const STEPS = [
   {
     n: "01",
     t: "armá tu equipo",
-    d: "Equipos de 3. Si todavía te faltan compañeros, podés registrar tu interés igual.",
+    d: "Equipos de 3. Si todavía te faltan compañeros, podés inscribirte igual.",
   },
   {
     n: "02",

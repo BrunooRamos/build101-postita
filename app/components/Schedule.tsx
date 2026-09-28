@@ -36,7 +36,10 @@ export function Schedule() {
             <p className="venue-address">{VENUE_ADDRESS}</p>
           </div>
           <a href={VENUE_MAPS} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
-            ver cómo llegar ↗
+            ver cómo llegar{" "}
+            <span className="arr" aria-hidden>
+              ↗
+            </span>
           </a>
         </Reveal>
       </div>
