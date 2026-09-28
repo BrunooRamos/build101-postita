@@ -441,32 +441,55 @@ ol {
   line-height: 22px;
   color: var(--muted);
 }
+/* coorganizan: UM · build 101 · MÜTÜÖ, centrados en la página, con el mismo
+   tamaño y peso (blanco puro, cada logo en una caja de igual ancho y alto) y la
+   etiqueta centrada arriba. */
 .coorg {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 28px;
+  gap: 20px;
   margin-top: 64px;
 }
-.coorg-item {
+.coorg-logos {
   display: flex;
   align-items: center;
-  gap: 28px;
+  justify-content: center;
+  gap: 32px;
+}
+.coorg-logos > li:not(.coorg-sep) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 168px;
+  height: 52px;
+}
+.coorg-logos a {
+  display: flex;
 }
 .coorg-sep {
   width: 1px;
-  height: 40px;
+  height: 32px;
   background: var(--line-2);
 }
-.coorg img {
-  height: auto;
-}
 .coorg-um {
-  width: 128px;
-  filter: invert(1);
+  width: auto;
+  height: 52px;
 }
-/* el logo de MÜTÜÖ ya es blanco: va sin invertir */
+/* MÜTÜÖ se lleva a blanco puro para que pese igual que los otros dos */
 .coorg-mutuo {
-  width: 112px;
+  width: 152px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+.coorg-b101 {
+  font-family: var(--font-mono-stack);
+  font-size: 33px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--fg);
+  white-space: nowrap;
 }
 
 /* ---------- el evento ---------- */
@@ -1427,11 +1450,30 @@ ol {
     line-height: 34px;
   }
   .coorg {
-    gap: 20px;
+    gap: 16px;
     margin-top: 40px;
   }
-  .coorg-item {
-    gap: 20px;
+  .coorg-logos {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .coorg-logos > li:not(.coorg-sep) {
+    width: calc((100% - 2px) / 3 - 12px);
+    height: 36px;
+  }
+  .coorg-sep {
+    height: 24px;
+  }
+  .coorg-um {
+    height: 36px;
+  }
+  .coorg-mutuo {
+    width: 100%;
+    max-width: 96px;
+  }
+  .coorg-b101 {
+    font-size: clamp(16px, 5vw, 21px);
   }
 
   .h2 {
@@ -1616,23 +1658,6 @@ ol {
   .state-title {
     font-size: 22px;
     line-height: 30px;
-  }
-}
-
-/* coorganiza | media partner no entra en una línea (~530px): se apilan y los
-   logos quedan alineados en una segunda columna. */
-@media (max-width: 600px) {
-  .coorg {
-    display: grid;
-    grid-template-columns: max-content auto;
-    justify-content: start;
-    gap: 16px 20px;
-  }
-  .coorg-item {
-    display: contents;
-  }
-  .coorg-sep {
-    display: none;
   }
 }
 
