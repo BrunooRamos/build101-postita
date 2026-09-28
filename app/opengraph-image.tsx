@@ -47,22 +47,23 @@ export default async function Image() {
             color: BLUE,
           }}
         >
-          batch 001 — montevideo
+          la hackathon de ia más grande de uruguay
         </div>
 
         {/* headline */}
         <div
           style={{
             display: "flex",
-            fontSize: 96,
+            flexDirection: "column",
+            fontSize: 76,
             fontWeight: 600,
             color: WHITE,
-            letterSpacing: -3.8,
-            lineHeight: 1.05,
-            maxWidth: 980,
+            letterSpacing: -3,
+            lineHeight: 1.1,
           }}
         >
-          36 horas. un producto. una demo.
+          <span>construí lo que viene.</span>
+          <span>en un fin de semana.</span>
         </div>
 
         {/* footer */}
@@ -87,7 +88,7 @@ export default async function Image() {
           <div style={{ display: "flex", fontSize: 30, fontWeight: 500 }}>
             {APPLY_OPEN ? (
               <>
-                <span style={{ color: WHITE }}>aplicar&nbsp;</span>
+                <span style={{ color: WHITE }}>17 y 18 oct · inscribite&nbsp;</span>
                 <span style={{ color: BLUE }}>→</span>
               </>
             ) : (

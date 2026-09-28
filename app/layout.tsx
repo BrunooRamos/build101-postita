@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import {
   CANONICAL_URL,
   SEO_DESCRIPTION,
@@ -9,9 +9,14 @@ import {
 } from "./event";
 import "./globals.css";
 
-// build 101 uses a single typeface — geist mono, exclusively (no secondary font).
-// variable font: omit `weight` to self-host the full axis (we only ever render 400/500/600).
-// keep the CSS var named --font-mono so globals.css bindings stay intact.
+// Dos familias: Geist Sans para leer (títulos, texto, formularios) y Geist Mono
+// para la voz "terminal" (wordmark, titular del hero, terminal, números).
+// Variable fonts: sin `weight` se sirve el eje completo.
+const sans = Geist({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
 const mono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
@@ -35,8 +40,9 @@ export const metadata: Metadata = {
     "hackathon uruguay",
     "hackathon montevideo",
     "hackathon 2026",
-    "36 horas",
-    "mvp en un fin de semana",
+    "hackathon de ia",
+    "hackathon inteligencia artificial uruguay",
+    "producto de ia en un fin de semana",
     "builders uruguay",
     "product building montevideo",
   ],
@@ -84,8 +90,8 @@ export default function RootLayout({
   return (
     // Un solo tema: el color sale de los tokens del CSS, así que no hay script
     // de pre-paint, ni data-theme, ni riesgo de flash de tema equivocado.
-    <html lang="es-UY">
-      <body className={mono.variable}>{children}</body>
+    <html lang="es-UY" className={`${sans.variable} ${mono.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

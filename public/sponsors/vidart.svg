@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="515" height="150" viewBox="0 0 515 150" role="img" aria-label="Instituto Vidart">
+      <style>
+      .display { font-family: "Space Grotesk", "Arial", sans-serif; font-weight: 700; }
+      .body { font-family: "Inter", "Arial", sans-serif; }
+    </style>
+      <g transform="translate(0 10) scale(0.9)">
+      <rect width="144" height="144" fill="#121416"/>
+      <path fill="#F6F6F3" d="M14 24h18v96H14z"/>
+      <path fill="#F6F6F3" d="M38 24h20l26 69 26-69h20l-37 96H75z"/>
+      <path fill="#F05D52" d="M98 108h6c8 0 13-6 13-14v-4h13v6c0 14-10 24-26 24H93z"/>
+    </g>
+      <text x="165" y="39" class="display" font-size="20" letter-spacing="7" fill="#121416">INSTITUTO</text>
+      <g data-wordmark="vidart-open-d-dual" data-d-openings="entry-right-48-66-exit-bottom-202-216" transform="translate(165 48) scale(0.5811965811965812)">
+      <path fill="#121416" fill-rule="evenodd" d="M0 0H22L50 78L78 0H100L61 100H39Z"/>
+      <path fill="#121416" fill-rule="evenodd" d="M118 0H138V100H118Z"/>
+      <path fill="#121416" fill-rule="evenodd" d="M158 0H178V100H158ZM178 0H207C233 0 249 14 249 38V48H228V40C228 26 221 20 207 20H178ZM178 80H202V100H178ZM228 66H249V68C249 87 234 100 216 100V80C223 80 228 75 228 66Z"/>
+      <path fill="#121416" fill-rule="evenodd" d="M307 0H327L367 100H345L336 77H298L289 100H267ZM305 58H329L317 24Z"/>
+      <path fill="#121416" fill-rule="evenodd" d="M385 0H434C462 0 476 12 476 29C476 44 468 53 453 57L479 100H453L429 61H407V100H385ZM407 18V43H433C446 43 453 38 453 30C453 22 446 18 433 18Z"/>
+      <path fill="#121416" fill-rule="evenodd" d="M495 0H585V20H551V100H529V20H495Z"/>
+    </g>
+
+    </svg>

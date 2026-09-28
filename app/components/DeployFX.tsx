@@ -3,19 +3,19 @@
 import { useEffect, useRef, useState } from "react";
 import { SPIN, reducedMotion } from "./useInView";
 import { fireConfetti } from "./confetti";
-import { APPLY_OPEN, APPLY_SOON_LABEL, LUMA_URL } from "../event";
+import { APPLY_OPEN, APPLY_PATH, APPLY_SOON_LABEL } from "../event";
 
 const STEPS = [
   { run: "building…", ok: "compiled ✓", ms: 650 },
   { run: "running tests…", ok: "5 passed ✓", ms: 650 },
-  { run: "abriendo inscripción…", ok: "redirect → luma ✓", ms: 800 },
+  { run: "abriendo inscripción…", ok: "redirect → /inscripcion ✓", ms: 800 },
 ];
 
 function openApply() {
-  window.open(LUMA_URL, "_blank", "noopener,noreferrer");
+  window.location.assign(APPLY_PATH);
 }
 
-/** Listens for `uru:deploy` and plays a fake CI pipeline before opening Luma. */
+/** Listens for `uru:deploy` and plays a fake CI pipeline before opening the form. */
 export function DeployFX() {
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState(0); // index running; STEPS.length = live
@@ -103,7 +103,7 @@ export function DeployFX() {
           })}
           <div className={`deploy-live ${live ? "on" : ""}`}>
             <span className="live-dot" />{" "}
-            {live ? "abriendo inscripción en luma…" : "esperando deploy…"}
+            {live ? "abriendo inscripción…" : "esperando deploy…"}
           </div>
         </div>
       </div>
@@ -131,9 +131,7 @@ export function InscribiteBtn({
 
   return (
     <a
-      href={LUMA_URL}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={APPLY_PATH}
       className={className}
       onClick={(e) => {
         e.preventDefault();
