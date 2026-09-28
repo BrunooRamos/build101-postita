@@ -12,6 +12,8 @@ type Sponsor = {
   invert?: boolean;
   /** Web del sponsor: la tarjeta entera linkea ahí (en otra pestaña). */
   url?: string;
+  /** Destacado dentro de su categoría: tarjeta y logo un poco más grandes. */
+  featured?: boolean;
 };
 
 type Tier = { key: string; label: string; size: "gold" | "silver" | "partner" | "small"; items: Sponsor[] };
@@ -72,6 +74,7 @@ const TIERS: Tier[] = [
     label: "nos dan energía",
     size: "small",
     items: [
+      { name: "Salus", logo: "/sponsors/salus.svg", w: 150, h: 36, url: "https://www.salus.com.uy", featured: true },
       { name: "Rigor", logo: "/sponsors/rigor.png", w: 150, h: 36, url: "https://www.rigorpizza.com" },
       { name: "Chajá", logo: "/sponsors/chaja.png", w: 150, h: 36, url: "https://www.instagram.com/chajabistro/" },
       { name: "Grupo Sebamar", logo: "/sponsors/sebamar.png", w: 150, h: 36, url: "https://sebamar.com.uy" },
@@ -86,7 +89,7 @@ function Logo({ s }: { s: Sponsor }) {
   // eslint-disable-next-line @next/next/no-img-element
   const img = <img src={s.logo} alt={s.name} loading="lazy" className={s.invert ? "invert" : undefined} />;
   return (
-    <li className="sponsor" style={style}>
+    <li className={s.featured ? "sponsor featured" : "sponsor"} style={style}>
       {s.url ? (
         <a href={s.url} target="_blank" rel="noopener noreferrer sponsored">
           {img}

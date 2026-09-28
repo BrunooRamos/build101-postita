@@ -4,33 +4,88 @@ import Link from "next/link";
 import { ViewTransition, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import {
   LIMITS,
+  ROLES,
   emptyApplication,
+  formatPhone,
+  normalizeLink,
   validate,
   type Application,
   type FieldErrors,
   type Member,
   type Mode,
 } from "@/lib/inscripcion";
-import { APPLY_PATH, PARTICIPANTS_EMAIL } from "../event";
+import { APPLY_DEADLINE, APPLY_PATH, EVENT_DATES_LONG, PARTICIPANTS_EMAIL, isApplyOpen } from "../event";
 
-type Step = "form" | "review" | "sent" | "error";
+type Step = "form" | "review" | "sent" | "error" | "closed";
 
-const COPY: Record<Mode, { cmd: string; title: string; intro: string; other: { q: string; label: string; href: string } }> = {
+const COPY: Record<
+  Mode,
+  {
+    cmd: string;
+    title: string;
+    intro: string;
+    motivation: { label: string; placeholder: string };
+    consent: string;
+    other: { q: string; label: string; href: string };
+  }
+> = {
   solo: {
     cmd: "$ build101 --join --solo",
     title: "busco equipo.",
-    intro:
-      "Contanos quién sos y cómo usás IA hoy. Si quedás seleccionado, te ayudamos a armar un equipo de 3.",
+    intro: "Contanos quién sos y qué hacés. Si quedás seleccionado, te ayudamos a armar un equipo de 3.",
+    motivation: {
+      label: "¿por qué querés estar en build 101?",
+      placeholder: "Un párrafo corto: qué te trae y qué te gustaría construir.",
+    },
+    consent: `Puedo estar el ${EVENT_DATES_LONG}, presencial, y estoy de acuerdo en compartir estos datos con build 101.`,
     other: { q: "¿Ya tenés equipo?", label: "inscribir a mi equipo →", href: `${APPLY_PATH}/equipo` },
   },
   team: {
     cmd: "$ build101 --join --team",
     title: "ya tenemos equipo.",
-    intro:
-      "Vos quedás como contacto del equipo. Completá los datos de los 3 integrantes: los evaluamos como equipo.",
+    intro: "Vos quedás como contacto del equipo. Completá los datos de los 3 integrantes: los evaluamos como equipo.",
+    motivation: {
+      label: "¿por qué quieren estar los 3 en build 101?",
+      placeholder: "Un párrafo corto: qué los trae y qué aporta cada uno.",
+    },
+    consent: `Los 3 podemos estar el ${EVENT_DATES_LONG}, presencial, y estamos de acuerdo en compartir estos datos con build 101.`,
     other: { q: "¿Todavía te falta alguien?", label: "inscribirme solo →", href: `${APPLY_PATH}/solo` },
   },
 };
+
+// Borrador en el navegador: si recargás o salís a pedirle un dato a alguien,
+// lo cargado sigue ahí. Se borra al enviar.
+const draftKey = (mode: Mode) => `build101:inscripcion:v2:${mode}`;
+type Draft = { app: Application; startedAt: number };
+
+function readDraft(mode: Mode): Draft | null {
+  try {
+    const raw = localStorage.getItem(draftKey(mode));
+    if (!raw) return null;
+    const d = JSON.parse(raw) as Draft;
+    const fresh = emptyApplication(mode);
+    if (!d?.app || d.app.mode !== mode || d.app.members?.length !== fresh.members.length) return null;
+    // se mezcla con uno vacío: tolera borradores con campos de menos
+    return {
+      startedAt: d.startedAt,
+      app: { ...fresh, ...d.app, members: fresh.members.map((m, i) => ({ ...m, ...d.app.members[i] })) },
+    };
+  } catch {
+    return null;
+  }
+}
+
+function writeDraft(mode: Mode, draft: Draft | null) {
+  try {
+    if (draft) localStorage.setItem(draftKey(mode), JSON.stringify(draft));
+    else localStorage.removeItem(draftKey(mode));
+  } catch {
+    // sin almacenamiento (modo privado, bloqueado): el formulario anda igual
+  }
+}
+
+const hasContent = (app: Application) =>
+  Boolean(app.teamName || app.motivation || app.role || app.members.some((m) => Object.values(m).some(Boolean)));
 
 // ---------- campos ----------
 
@@ -40,17 +95,18 @@ type FieldProps = {
   value: string;
   error?: string;
   onChange: (v: string) => void;
+  onBlur?: () => void;
   placeholder?: string;
   type?: string;
   autoComplete?: string;
-  inputMode?: "text" | "tel" | "email";
+  inputMode?: "text" | "tel" | "email" | "url";
   multiline?: boolean;
   rows?: number;
   maxLength: number;
   optional?: boolean;
 };
 
-function Field({ id, label, value, error, onChange, multiline, rows = 4, optional, ...rest }: FieldProps) {
+function Field({ id, label, value, error, onChange, onBlur, multiline, rows = 4, optional, ...rest }: FieldProps) {
   const errId = `${id}-error`;
   const common = {
     id,
@@ -60,6 +116,7 @@ function Field({ id, label, value, error, onChange, multiline, rows = 4, optiona
     maxLength: rest.maxLength,
     autoComplete: rest.autoComplete,
     required: !optional,
+    onBlur,
     "aria-invalid": error ? true : undefined,
     "aria-describedby": error ? errId : undefined,
   };
@@ -103,30 +160,19 @@ function MemberFields({
 }) {
   const id = (f: keyof Member) => `members.${index}.${f}`;
   const set = (f: keyof Member) => (v: string) => onChange({ ...member, [f]: v });
+  const auto = (token: string) => (isContact ? token : "off");
   return (
     <>
-      <div className="field-row">
-        <Field
-          id={id("firstName")}
-          label="nombre"
-          value={member.firstName}
-          error={errors[id("firstName")]}
-          onChange={set("firstName")}
-          placeholder={isContact ? "Tu nombre" : "Nombre"}
-          autoComplete={isContact ? "given-name" : "off"}
-          maxLength={LIMITS.name}
-        />
-        <Field
-          id={id("lastName")}
-          label="apellido"
-          value={member.lastName}
-          error={errors[id("lastName")]}
-          onChange={set("lastName")}
-          placeholder={isContact ? "Tu apellido" : "Apellido"}
-          autoComplete={isContact ? "family-name" : "off"}
-          maxLength={LIMITS.name}
-        />
-      </div>
+      <Field
+        id={id("fullName")}
+        label="nombre y apellido"
+        value={member.fullName}
+        error={errors[id("fullName")]}
+        onChange={set("fullName")}
+        placeholder={isContact ? "Tu nombre y apellido" : "Nombre y apellido"}
+        autoComplete={auto("name")}
+        maxLength={LIMITS.fullName}
+      />
       <div className="field-row stack-sm">
         <Field
           id={id("phone")}
@@ -134,10 +180,11 @@ function MemberFields({
           value={member.phone}
           error={errors[id("phone")]}
           onChange={set("phone")}
-          placeholder="+598 9X XXX XXX"
+          onBlur={() => member.phone && onChange({ ...member, phone: formatPhone(member.phone) })}
+          placeholder="099 123 456"
           type="tel"
           inputMode="tel"
-          autoComplete={isContact ? "tel" : "off"}
+          autoComplete={auto("tel")}
           maxLength={LIMITS.phone}
         />
         <Field
@@ -149,22 +196,112 @@ function MemberFields({
           placeholder={isContact ? "vos@ejemplo.com" : "mail@ejemplo.com"}
           type="email"
           inputMode="email"
-          autoComplete={isContact ? "email" : "off"}
+          autoComplete={auto("email")}
           maxLength={LIMITS.email}
         />
       </div>
+      <div className="field-row stack-sm">
+        <Field
+          id={id("university")}
+          label="universidad"
+          optional
+          value={member.university}
+          onChange={set("university")}
+          placeholder="Ej: UM, UdelaR, ORT"
+          autoComplete="off"
+          maxLength={LIMITS.org}
+        />
+        <Field
+          id={id("company")}
+          label="empresa"
+          optional
+          value={member.company}
+          onChange={set("company")}
+          placeholder={isContact ? "Dónde trabajás" : "Dónde trabaja"}
+          autoComplete={auto("organization")}
+          maxLength={LIMITS.org}
+        />
+      </div>
       <Field
-        id={id("aiTools")}
-        label={isContact ? "¿qué herramientas de IA usás hoy? ¿cómo?" : "¿qué herramientas de IA usa hoy? ¿cómo?"}
-        value={member.aiTools}
-        error={errors[id("aiTools")]}
-        onChange={set("aiTools")}
-        placeholder={isContact ? "Contanos qué usás y para qué." : "Qué usa y para qué."}
-        multiline
-        rows={isContact ? 4 : 3}
-        maxLength={LIMITS.aiTools}
+        id={id("link")}
+        label="LinkedIn o web"
+        optional
+        value={member.link}
+        error={errors[id("link")]}
+        onChange={set("link")}
+        onBlur={() => member.link && onChange({ ...member, link: normalizeLink(member.link) })}
+        placeholder="linkedin.com/in/…"
+        type="url"
+        inputMode="url"
+        autoComplete={auto("url")}
+        maxLength={LIMITS.link}
       />
     </>
+  );
+}
+
+function RoleField({ value, error, onChange }: { value: string; error?: string; onChange: (v: string) => void }) {
+  return (
+    <fieldset
+      className={`field choices ${error ? "has-error" : ""}`}
+      aria-describedby={error ? "role-error" : undefined}
+    >
+      <legend>¿qué hacés?</legend>
+      <div className="choices-list">
+        {ROLES.map((r, i) => (
+          <label className="choice" key={r.value}>
+            <input
+              type="radio"
+              name="role"
+              id={i === 0 ? "role" : undefined}
+              value={r.value}
+              checked={value === r.value}
+              onChange={() => onChange(r.value)}
+            />
+            <span>{r.label}</span>
+          </label>
+        ))}
+      </div>
+      {error && (
+        <p className="field-error" id="role-error">
+          {error}
+        </p>
+      )}
+    </fieldset>
+  );
+}
+
+function ConsentField({
+  text,
+  checked,
+  error,
+  onChange,
+}: {
+  text: string;
+  checked: boolean;
+  error?: string;
+  onChange: (v: boolean) => void;
+}) {
+  return (
+    <div className={`field ${error ? "has-error" : ""}`}>
+      <label className="check">
+        <input
+          type="checkbox"
+          id="consent"
+          name="consent"
+          checked={checked}
+          onChange={(e) => onChange(e.target.checked)}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={error ? "consent-error" : undefined}
+        />
+        <span>{text}</span>
+      </label>
+      {error && (
+        <p className="field-error" id="consent-error">
+          {error}
+        </p>
+      )}
+    </div>
   );
 }
 
@@ -194,10 +331,12 @@ function Shell({
         <p className="mono-line">
           {step === "sent" ? "$ build101 --join ✓" : COPY[mode].cmd}
         </p>
-        <ol className="flow-steps" aria-label="pasos">
-          <li aria-current={onFirst ? "step" : undefined}>{first}</li>
-          <li aria-current={!onFirst ? "step" : undefined}>{second}</li>
-        </ol>
+        {step !== "closed" && (
+          <ol className="flow-steps" aria-label="pasos">
+            <li aria-current={onFirst ? "step" : undefined}>{first}</li>
+            <li aria-current={!onFirst ? "step" : undefined}>{second}</li>
+          </ol>
+        )}
         {/* mismo name que el título de la tarjeta en SignupPaths: al navegar,
             la tarjeta elegida se transforma en este título */}
         <ViewTransition name={`path-${mode}`} share="path-morph">
@@ -222,6 +361,14 @@ function Aside({ q, children }: { q: string; children: ReactNode }) {
   );
 }
 
+const TalkToRamiro = ({ q }: { q: string }) => (
+  <Aside q={q}>
+    <a href={`mailto:${PARTICIPANTS_EMAIL}`} className="link-strong">
+      hablá con Ramiro ↗
+    </a>
+  </Aside>
+);
+
 // ---------- flujo ----------
 
 export function SignupFlow({ mode }: { mode: Mode }) {
@@ -231,12 +378,36 @@ export function SignupFlow({ mode }: { mode: Mode }) {
   const [sending, setSending] = useState(false);
   const [serverError, setServerError] = useState("");
   const [honeypot, setHoneypot] = useState("");
+  const [restored, setRestored] = useState(false);
   const startedAt = useRef(0);
+  const loaded = useRef(false);
   const firstRender = useRef(true);
 
+  // Al abrir: si ya cerró la inscripción se avisa de entrada; si no, se
+  // recupera el borrador. Es sincronizar con el reloj y con localStorage
+  // después de hidratar (el HTML estático no los conoce).
   useEffect(() => {
+    loaded.current = true;
     startedAt.current = Date.now();
-  }, []);
+    if (!isApplyOpen()) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- ver arriba
+      setStep("closed");
+      return;
+    }
+    const draft = readDraft(mode);
+    if (draft && hasContent(draft.app)) {
+      // el tiempo de llenado cuenta desde el borrador (anti-spam de 3 s)
+      startedAt.current = draft.startedAt || startedAt.current;
+      setApp(draft.app);
+      setRestored(true);
+    }
+  }, [mode]);
+
+  // Guardado del borrador mientras se completa.
+  useEffect(() => {
+    if (!loaded.current || step === "sent" || step === "closed") return;
+    writeDraft(mode, hasContent(app) ? { app, startedAt: startedAt.current } : null);
+  }, [app, mode, step]);
 
   // Al llegar desde la landing la página viene scrolleada muy abajo, y Next
   // recién sube después de que React mide la transición: el título quedaría
@@ -258,6 +429,14 @@ export function SignupFlow({ mode }: { mode: Mode }) {
 
   const setMember = (i: number) => (m: Member) =>
     setApp((a) => ({ ...a, members: a.members.map((x, j) => (j === i ? m : x)) }));
+
+  const discardDraft = () => {
+    writeDraft(mode, null);
+    setApp(emptyApplication(mode));
+    setErrors({});
+    setRestored(false);
+    startedAt.current = Date.now();
+  };
 
   const focusFirstError = (errs: FieldErrors) => {
     const first = Object.keys(errs)[0];
@@ -289,7 +468,12 @@ export function SignupFlow({ mode }: { mode: Mode }) {
         | { ok: boolean; error?: string; fields?: FieldErrors }
         | null;
       if (res.ok && data?.ok) {
+        writeDraft(mode, null);
         setStep("sent");
+        return;
+      }
+      if (res.status === 403) {
+        setStep("closed");
         return;
       }
       if (data?.fields && Object.keys(data.fields).length > 0) {
@@ -310,6 +494,30 @@ export function SignupFlow({ mode }: { mode: Mode }) {
 
   const copy = COPY[mode];
   const contact = app.members[0];
+  const firstName = contact.fullName.split(" ")[0];
+
+  // ----- inscripciones cerradas -----
+  if (step === "closed") {
+    return (
+      <Shell
+        mode={mode}
+        step={step}
+        title="las inscripciones cerraron."
+        intro={`Cerraron el ${APPLY_DEADLINE} a las 23:59. Gracias por el interés en build 101.`}
+        aside={<TalkToRamiro q="¿Tenés alguna duda?" />}
+      >
+        <div className="state state-error" role="status">
+          <p className="label">inscripciones cerradas</p>
+          <p>Si ya te inscribiste, te escribimos por mail cuando termine la selección.</p>
+          <div className="state-actions">
+            <Link href="/" className="btn btn-ghost">
+              volver al sitio
+            </Link>
+          </div>
+        </div>
+      </Shell>
+    );
+  }
 
   // ----- enviado -----
   if (step === "sent") {
@@ -319,18 +527,12 @@ export function SignupFlow({ mode }: { mode: Mode }) {
         step={step}
         title="inscripción enviada."
         intro="Tu postulación quedó registrada. No tenés que hacer nada más: te escribimos por mail cuando termine la selección."
-        aside={
-          <Aside q="¿Querés consultar algo?">
-            <a href={`mailto:${PARTICIPANTS_EMAIL}`} className="link-strong">
-              hablá con Ramiro ↗
-            </a>
-          </Aside>
-        }
+        aside={<TalkToRamiro q="¿Querés consultar algo?" />}
       >
         <div className="state state-ok" role="status">
           <p className="label">✓ postulación recibida</p>
           <p className="state-title">
-            listo, {contact.firstName}. {mode === "team" ? "la postulación de tu equipo" : "tu postulación"} quedó registrada.
+            listo, {firstName}. {mode === "team" ? "la postulación de tu equipo" : "tu postulación"} quedó registrada.
           </p>
           <p>
             No vas a recibir un mail de confirmación ahora. Te escribimos a <b>{contact.email}</b> cuando termine la
@@ -352,8 +554,8 @@ export function SignupFlow({ mode }: { mode: Mode }) {
       <Shell
         mode={mode}
         step="review"
-        title="todo listo para enviar."
-        intro="Revisá tus datos antes de enviar. Enviar tu inscripción todavía no confirma un lugar."
+        title="no pudimos enviar tu inscripción."
+        intro="Tus datos siguen acá: podés reintentar o escribirle a Ramiro."
         aside={
           <Aside q="¿Algo está mal?">
             <button type="button" className="link-strong" onClick={() => setStep("form")}>
@@ -364,10 +566,7 @@ export function SignupFlow({ mode }: { mode: Mode }) {
       >
         <div className="state state-error" role="alert">
           <p className="label">error de envío · datos conservados</p>
-          <p className="state-title">no pudimos enviar tu inscripción.</p>
-          <p>
-            {serverError} Tus datos siguen acá. Intentá de nuevo o escribile a Ramiro para continuar.
-          </p>
+          <p>{serverError}</p>
           <div className="state-actions">
             <button type="button" className="btn btn-primary" onClick={submit} disabled={sending}>
               {sending ? "enviando…" : "reintentar"}
@@ -383,6 +582,7 @@ export function SignupFlow({ mode }: { mode: Mode }) {
 
   // ----- revisar -----
   if (step === "review") {
+    const roleLabel = ROLES.find((r) => r.value === app.role)?.label;
     return (
       <Shell
         mode={mode}
@@ -399,22 +599,36 @@ export function SignupFlow({ mode }: { mode: Mode }) {
       >
         <div className="card summary">
           <p className="label">{mode === "team" ? `equipo${app.teamName ? ` · ${app.teamName}` : ""}` : "busco equipo"}</p>
-          {app.members.map((m, i) => (
-            <div className="summary-member" key={i}>
-              {mode === "team" && <p className="label">{i === 0 ? "contacto" : `integrante ${i + 1}`}</p>}
-              <p className="summary-name">
-                {m.firstName} {m.lastName}
-              </p>
-              <p className="summary-contact">
-                {m.email} · {m.phone}
-              </p>
-              <p className="label">ia que usa hoy</p>
-              <p className="summary-text">{m.aiTools}</p>
+          {app.members.map((m, i) => {
+            const org = [m.university, m.company].filter(Boolean).join(" · ");
+            const link = normalizeLink(m.link);
+            return (
+              <div className="summary-member" key={i}>
+                {mode === "team" && <p className="label">{i === 0 ? "contacto" : `integrante ${i + 1}`}</p>}
+                <p className="summary-name">{m.fullName}</p>
+                <p className="summary-contact">
+                  {m.email} · {formatPhone(m.phone)}
+                </p>
+                {org && <p className="summary-text">{org}</p>}
+                {link && (
+                  <p className="summary-text summary-link">
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                      {link.replace(/^https?:\/\/(www\.)?/, "")} ↗
+                    </a>
+                  </p>
+                )}
+              </div>
+            );
+          })}
+          {roleLabel && (
+            <div className="summary-member">
+              <p className="label">qué hacés</p>
+              <p className="summary-text">{roleLabel}</p>
             </div>
-          ))}
+          )}
           <div className="summary-member">
-            <p className="label">comentarios</p>
-            <p className={`summary-text ${app.comments ? "" : "muted"}`}>{app.comments || "Sin comentarios."}</p>
+            <p className="label">{mode === "team" ? "por qué quieren estar" : "por qué querés estar"}</p>
+            <p className="summary-text">{app.motivation}</p>
           </div>
           <div className="form-actions">
             <button type="button" className="btn btn-primary btn-block" onClick={submit} disabled={sending}>
@@ -429,19 +643,6 @@ export function SignupFlow({ mode }: { mode: Mode }) {
 
   // ----- formulario -----
   const errorCount = Object.keys(errors).length;
-  const commentsField = (
-    <Field
-      id="comments"
-      label="comentarios extra"
-      optional
-      value={app.comments}
-      onChange={(v) => setApp((a) => ({ ...a, comments: v }))}
-      placeholder="Algo más que quieras que sepamos."
-      multiline
-      rows={3}
-      maxLength={LIMITS.comments}
-    />
-  );
   return (
     <Shell
       mode={mode}
@@ -457,6 +658,14 @@ export function SignupFlow({ mode }: { mode: Mode }) {
       }
     >
       <form className="card form" onSubmit={toReview} noValidate>
+        {restored && (
+          <p className="draft-note" role="status">
+            Recuperamos lo que habías cargado.
+            <button type="button" onClick={discardDraft}>
+              empezar de cero
+            </button>
+          </p>
+        )}
         {errorCount > 0 && (
           <p className="form-alert" role="alert">
             Revisá {errorCount === 1 ? "el campo marcado" : `los ${errorCount} campos marcados`}.
@@ -493,8 +702,32 @@ export function SignupFlow({ mode }: { mode: Mode }) {
           </div>
         )}
 
-        {/* comentarios de toda la postulación: al final, después del equipo */}
-        {mode === "team" ? <div className="form-section">{commentsField}</div> : commentsField}
+        <div className="form-section">
+          {mode === "solo" && (
+            <RoleField
+              value={app.role}
+              error={errors.role}
+              onChange={(v) => setApp((a) => ({ ...a, role: v as Application["role"] }))}
+            />
+          )}
+          <Field
+            id="motivation"
+            label={copy.motivation.label}
+            value={app.motivation}
+            error={errors.motivation}
+            onChange={(v) => setApp((a) => ({ ...a, motivation: v }))}
+            placeholder={copy.motivation.placeholder}
+            multiline
+            rows={4}
+            maxLength={LIMITS.motivation}
+          />
+          <ConsentField
+            text={copy.consent}
+            checked={app.consent}
+            error={errors.consent}
+            onChange={(v) => setApp((a) => ({ ...a, consent: v }))}
+          />
+        </div>
 
         {/* honeypot: invisible para personas, tentador para bots */}
         <div className="hp" aria-hidden="true">
