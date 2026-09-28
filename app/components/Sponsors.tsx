@@ -16,6 +16,7 @@ type Sponsor = {
 type Tier = { key: string; label: string; size: "gold" | "silver" | "partner" | "small"; items: Sponsor[] };
 
 // Orden y agrupación definidos por el equipo. Partners = aportes en canje.
+// MÜTÜÖ no va acá: es coorganizador y aparece en el hero junto a UM.
 const TIERS: Tier[] = [
   {
     key: "gold",
@@ -51,7 +52,6 @@ const TIERS: Tier[] = [
       { name: "PCBWay", logo: "/sponsors/pcbway.png", w: 128, h: 34 },
       { name: "Flai", logo: "/sponsors/flai.svg", w: 80, h: 34 },
       { name: "Picante", logo: "/sponsors/picante.png", w: 116, h: 42 },
-      { name: "MÜTÜÖ", logo: "/sponsors/mutuo.png", w: 112, h: 34, invert: true },
     ],
   },
   {

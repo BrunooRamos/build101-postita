@@ -135,6 +135,10 @@ const structuredData = {
           name: "Universidad de Montevideo · Facultad de Ingeniería (FIUM)",
           url: "https://um.edu.uy",
         },
+        {
+          "@type": "Organization",
+          name: "MÜTÜÖ",
+        },
       ],
       offers: offer,
       audience: {

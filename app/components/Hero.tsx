@@ -66,16 +66,31 @@ export function Hero() {
         </div>
 
         <div className="coorg">
-          <span className="label">coorganiza</span>
-          <a
-            href="https://um.edu.uy"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Universidad de Montevideo"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/sponsors/um.svg" alt="Universidad de Montevideo" width={128} height={56} />
-          </a>
+          <p className="label">coorganizan</p>
+          <ul className="coorg-logos">
+            <li>
+              <a
+                href="https://um.edu.uy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Universidad de Montevideo"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className="coorg-um" src="/sponsors/um-white.png" alt="Universidad de Montevideo" width={131} height={52} />
+              </a>
+            </li>
+            <li aria-hidden className="coorg-sep" />
+            <li>
+              <span className="coorg-b101" aria-label="build 101">
+                build 101
+              </span>
+            </li>
+            <li aria-hidden className="coorg-sep" />
+            <li>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="coorg-mutuo" src="/sponsors/mutuo.png" alt="MÜTÜÖ" width={150} height={41} />
+            </li>
+          </ul>
         </div>
       </div>
     </header>
