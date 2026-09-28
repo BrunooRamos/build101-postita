@@ -12,6 +12,10 @@
 // Pegá acá el mismo valor que GOOGLE_SHEETS_WEBHOOK_SECRET en Vercel.
 const SHARED_SECRET = "REEMPLAZAR_POR_EL_SECRETO";
 
+// ID de la planilla "build 101 · Postulaciones" (está en su URL). Con el ID el
+// script funciona igual si se creó desde la planilla o como proyecto suelto.
+const SHEET_ID = "1ztlBpXAVwKPrmlL8icWhM-wABs9na3-W1mEfkVeS9Zs";
+
 function doPost(e) {
   let payload;
   try {
@@ -28,7 +32,7 @@ function doPost(e) {
   const lock = LockService.getScriptLock();
   lock.waitLock(10000);
   try {
-    const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+    const sheet = SpreadsheetApp.openById(SHEET_ID).getSheets()[0];
     const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
     // Prefijamos con ' los valores que Sheets interpretaría como fórmula o
     // número (celulares con +, textos que empiezan con =).
