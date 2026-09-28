@@ -4,7 +4,7 @@ import {
   CANONICAL_URL,
   EVENT_DATES_LONG,
   EVENT_DESCRIPTION,
-  LUMA_URL,
+  APPLY_URL,
   TEAM_EMAILS,
   TEAM_SIZE,
   VENUE,
@@ -24,16 +24,17 @@ export function GET() {
 
 ## datos clave
 
-- qué: hackathon presencial de 36 horas en uruguay: se construye un producto real y funcionando durante el evento.
+- qué: la hackathon de ia más grande de uruguay, presencial: se construye un producto de ia durante el fin de semana y se pitchea en vivo frente a un jurado.
 - alcance: abierta a equipos de todo uruguay; la sede es en montevideo.
 - cuándo: ${EVENT_DATES_LONG}.
 - dónde: ${VENUE}, ${VENUE_ADDRESS}, uruguay.
 - precio: gratis, con cupos limitados y selección del equipo organizador.
-- equipos: ${TEAM_SIZE} personas; la inscripción es por equipo (si no tenés, te ayudamos a formar uno).
+- equipos: ${TEAM_SIZE} personas; podés inscribir a tu equipo o inscribirte solo y te ayudamos a formar uno.
+- horario: sábado 17 de 09:00 a 21:00 y domingo 18 de 09:00 a ~15:00; no se duerme en la sede.
 ${
     APPLY_OPEN
       ? `- cierre de inscripción: ${APPLY_DEADLINE} (hora de uruguay).
-- inscripción: ${LUMA_URL}`
+- inscripción: ${APPLY_URL}`
       : `- inscripción: todavía no está abierta. la apertura y el link para postular se anuncian próximamente en ${CANONICAL_URL}`
   }
 - sitio oficial: ${CANONICAL_URL}

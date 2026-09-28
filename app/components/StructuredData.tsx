@@ -1,16 +1,14 @@
 import {
   APPLY_DEADLINE_ISO,
   APPLY_OPEN,
-  APPLY_OPEN_ISO,
+  APPLY_URL,
   CANONICAL_URL,
   CONTACT_EMAIL,
   CONTENT_UPDATED_ISO,
-  DURATION_HOURS,
   EVENT_DESCRIPTION,
   EVENT_END_ISO,
   EVENT_KICKOFF_ISO,
   LOGO_URL,
-  LUMA_URL,
   OG_IMAGE_URL,
   SEO_DESCRIPTION,
   SITE_NAME,
@@ -31,11 +29,10 @@ import { FAQS } from "../faqs";
 const offer = APPLY_OPEN
   ? {
       "@type": "Offer",
-      url: LUMA_URL,
+      url: APPLY_URL,
       price: "0",
       priceCurrency: "UYU",
       availability: "https://schema.org/LimitedAvailability",
-      validFrom: APPLY_OPEN_ISO,
       validThrough: APPLY_DEADLINE_ISO,
     }
   : {
@@ -92,7 +89,7 @@ const structuredData = {
       "@type": "WebPage",
       "@id": webpageId,
       url: CANONICAL_URL,
-      name: "build 101 — la hackathon de ia más grande de uruguay, 36 horas en montevideo",
+      name: "build 101 — la hackathon de ia más grande de uruguay, en montevideo",
       isPartOf: { "@id": websiteId },
       about: { "@id": eventId },
       primaryImageOfPage: OG_IMAGE_URL,
@@ -109,12 +106,11 @@ const structuredData = {
       image: [OG_IMAGE_URL, LOGO_URL],
       startDate: EVENT_KICKOFF_ISO,
       endDate: EVENT_END_ISO,
-      duration: `PT${DURATION_HOURS}H`,
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
       eventStatus: "https://schema.org/EventScheduled",
       inLanguage: "es-UY",
       keywords:
-        "hackathon uruguay, hackathon montevideo, build 101, 36 horas, builders uruguay, programación, diseño, producto",
+        "hackathon uruguay, hackathon montevideo, hackathon de ia, build 101, inteligencia artificial, builders uruguay",
       location: {
         "@type": "Place",
         name: VENUE,
@@ -136,14 +132,14 @@ const structuredData = {
         { "@id": organizationId },
         {
           "@type": "EducationalOrganization",
-          name: "Universidad de Montevideo",
+          name: "Universidad de Montevideo · Facultad de Ingeniería (FIUM)",
           url: "https://um.edu.uy",
         },
       ],
       offers: offer,
       audience: {
         "@type": "Audience",
-        audienceType: `jóvenes builders de uruguay en equipos de ${TEAM_SIZE} personas`,
+        audienceType: `builders de uruguay en equipos de ${TEAM_SIZE} personas`,
       },
       isAccessibleForFree: true,
     },

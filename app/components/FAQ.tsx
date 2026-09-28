@@ -3,31 +3,24 @@ import { FAQS } from "../faqs";
 
 export function FAQ() {
   return (
-    <section id="faq" className="section-rule">
+    <section id="faq" className="section section-paper">
       <div className="wrap">
         <Reveal>
-          <div className="stage-head" style={{ textAlign: "center", margin: "0 auto 36px" }}>
-            <div className="eyebrow" style={{ justifyContent: "center" }}>
-              <span className="slash">//</span> faq — preguntas frecuentes
-            </div>
-            <h2 style={{ margin: "0 auto" }}>preguntas frecuentes.</h2>
-          </div>
+          <p className="eyebrow">// preguntas frecuentes</p>
+          <h2 className="h2">antes de sumarte.</h2>
         </Reveal>
 
-        <Reveal>
-          <div className="faq">
-            {FAQS.map((item) => (
-              <details className="faq-item" key={item.q}>
-                <summary>
-                  <h3 className="faq-q">{item.q}</h3>
-                  <span className="faq-mark" aria-hidden>
-                    +
-                  </span>
-                </summary>
-                <div className="faq-a">{item.a ?? item.aText}</div>
-              </details>
-            ))}
-          </div>
+        <Reveal className="faq">
+          {FAQS.map((item, i) => (
+            <details className="faq-item" key={item.q} open={i === 1}>
+              <summary>
+                <span className="faq-n">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="faq-q">{item.q}</h3>
+                <span className="faq-mark" aria-hidden />
+              </summary>
+              <div className="faq-a">{item.a ?? item.aText}</div>
+            </details>
+          ))}
         </Reveal>
       </div>
     </section>

@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# build 101 — sitio
 
-## Getting Started
+Landing e inscripción de [build 101](https://build101.dev), la hackathon de IA más grande de Uruguay (17 y 18 de octubre de 2026, Universidad de Montevideo · FIUM, LATU).
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router) + React 19 + TypeScript, deploy en Vercel.
+- CSS propio con tokens (`app/globals.css`) y la capa de terminal / easter eggs (`app/fx.css`). Sin Tailwind.
+- Tipografía: Geist Sans para leer, Geist Mono para la voz "terminal" (wordmark, titular del hero, terminal, números).
+
+## Correr en local
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # build de producción
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Para probar el envío de inscripciones en local, copiá `.env.example` a `.env.local` y completá las variables (ver abajo).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Dónde se edita cada cosa
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| qué | dónde |
+|---|---|
+| Fechas, horarios, sede, fecha límite, organizadores, LinkedIn, mails | `app/event.ts` (fuente única de verdad) |
+| Abrir / cerrar inscripciones | `APPLY_OPEN` en `app/event.ts` |
+| Preguntas frecuentes (se usan también en el schema y `/llms.txt`) | `app/faqs.tsx` |
+| Sponsors por categoría y tamaño de cada logo | `app/components/Sponsors.tsx` + logos en `public/sponsors/` |
+| Mentores y jurado (hoy TBA) | `app/components/Mentors.tsx` |
+| Fotos de la sede | `app/components/SedeCarousel.tsx` + `public/fium-*.webp` |
 
-## Learn More
+## Inscripción
 
-To learn more about Next.js, take a look at the following resources:
+- `/inscripcion` → elegir camino; `/inscripcion/equipo` (3 integrantes) y `/inscripcion/solo` (busca equipo).
+- Flujo: datos → revisar → enviado (o error, conservando los datos).
+- `POST /api/inscripcion` valida en el servidor (`lib/inscripcion.ts`) y escribe una fila en la Google Sheet **build 101 · Postulaciones** vía un web app de Apps Script.
+- Configuración paso a paso: [`docs/inscripciones-google-sheets.md`](docs/inscripciones-google-sheets.md).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Variables de entorno (Vercel → Settings → Environment Variables):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+GOOGLE_SHEETS_WEBHOOK_URL=      # URL /exec del web app de Apps Script
+GOOGLE_SHEETS_WEBHOOK_SECRET=   # el mismo valor que SHARED_SECRET en el script
+```
 
-## Deploy on Vercel
+## Easter eggs
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+La terminal del hero es interactiva (`help`), el código Konami (o tipear `deploy`) dispara la lluvia matrix, `crash` en la terminal muestra un error falso que se arregla solo, y "quiero participar" corre un deploy falso antes de abrir el formulario.
