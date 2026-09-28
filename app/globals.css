@@ -1649,3 +1649,55 @@ ol {
     font-size: 30px;
   }
 }
+
+/* ============================================================
+   pasada mobile: el texto sigue alineado a la izquierda para leerse; los
+   objetos sueltos (logos, glifos, CTAs) se centran y los toques crecen.
+   ============================================================ */
+@media (max-width: 880px) {
+  /* el campo de glifos ocupa el ancho y centra "IA" en vez de quedar a un costado */
+  .event-glyph {
+    width: 100%;
+    height: 184px;
+  }
+}
+@media (max-width: 560px) {
+  /* CTA del hero al ancho completo, al alcance del pulgar; el link y la
+     aclaración quedan centrados debajo */
+  .hero-cta {
+    align-items: stretch;
+    gap: 16px;
+  }
+  .hero-cta .btn {
+    width: 100%;
+  }
+  .hero-cta .link-quiet {
+    align-self: center;
+    padding-block: 4px;
+  }
+  .hero-copy .fine {
+    text-align: center;
+  }
+  /* cierre de sponsors: pregunta centrada sobre el botón de ancho completo */
+  .sponsors-cta {
+    align-items: stretch;
+    text-align: center;
+  }
+  /* links chicos del footer: más alto para tocar */
+  .footer-contacts a,
+  .footer-socials a {
+    display: inline-block;
+    padding-block: 6px;
+  }
+  .footer-contacts a {
+    margin-top: 2px;
+  }
+  .share a,
+  .share button {
+    display: inline-block;
+    padding-block: 8px;
+  }
+  .footer-bottom {
+    gap: 4px;
+  }
+}
