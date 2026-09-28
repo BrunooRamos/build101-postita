@@ -57,7 +57,7 @@ export function SignupPaths() {
           </li>
         ))}
       </ul>
-      <p className="fine">Un formulario corto: tus datos y cómo usás IA hoy.</p>
+      <p className="fine">Un formulario corto: los datos de cada uno y por qué quieren venir.</p>
     </div>
   );
 }

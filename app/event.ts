@@ -91,6 +91,15 @@ export const SCHEDULE = [
 export const APPLY_DEADLINE_ISO = "2026-10-09T23:59:00-03:00";
 export const APPLY_DEADLINE = "9 de octubre";
 
+/** ¿Se puede enviar una inscripción ahora? `APPLY_OPEN` y además antes del
+ *  cierre (se acepta hasta el final del minuto 23:59). La API lo chequea en
+ *  cada envío y el formulario al abrirse, así el cierre es automático aunque
+ *  nadie cambie `APPLY_OPEN`. Las páginas estáticas (textos de la landing)
+ *  siguen dependiendo de `APPLY_OPEN`: pasalo a `false` después del cierre. */
+export function isApplyOpen(now = Date.now()) {
+  return APPLY_OPEN && now < Date.parse(APPLY_DEADLINE_ISO) + 60_000;
+}
+
 /** Formato. */
 export const TEAM_SIZE = "3";
 

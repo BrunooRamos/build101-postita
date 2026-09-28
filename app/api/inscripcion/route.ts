@@ -1,4 +1,4 @@
-import { APPLY_OPEN } from "@/app/event";
+import { APPLY_DEADLINE, APPLY_OPEN, isApplyOpen } from "@/app/event";
 import { normalize, validate, type AntiSpam, type Application } from "@/lib/inscripcion";
 
 // POST /api/inscripcion — recibe la postulación, la valida y la agrega como
@@ -36,7 +36,8 @@ const tooMany = () =>
     429,
   );
 
-/** Fila plana para la sheet: una fila por postulación, hasta 3 integrantes. */
+/** Fila plana para la sheet: una fila por postulación, hasta 3 integrantes.
+ *  Las claves son los encabezados de la fila 1 (ver docs/inscripciones-google-sheets.md). */
 function toRow(app: Application, id: string) {
   const row: Record<string, string> = {
     fecha: new Date().toLocaleString("sv-SE", { timeZone: "America/Montevideo" }),
@@ -44,22 +45,28 @@ function toRow(app: Application, id: string) {
     tipo: app.mode === "team" ? "equipo" : "busca equipo",
     estado: "pendiente",
     nombre_equipo: app.teamName,
-    comentarios: app.comments,
+    rol: app.role,
+    motivacion: app.motivation,
+    acepta: app.consent ? "sí" : "",
   };
   app.members.forEach((m, i) => {
     const p = `p${i + 1}_`;
-    row[`${p}nombre`] = m.firstName;
-    row[`${p}apellido`] = m.lastName;
+    row[`${p}nombre`] = m.fullName;
     row[`${p}celular`] = m.phone;
     row[`${p}mail`] = m.email;
-    row[`${p}ia`] = m.aiTools;
+    row[`${p}universidad`] = m.university;
+    row[`${p}empresa`] = m.company;
+    row[`${p}link`] = m.link;
   });
   return row;
 }
 
 export async function POST(request: Request) {
-  if (!APPLY_OPEN) {
-    return json({ ok: false, error: "Las inscripciones todavía no están abiertas." }, 403);
+  if (!isApplyOpen()) {
+    const error = APPLY_OPEN
+      ? `Las inscripciones cerraron el ${APPLY_DEADLINE}.`
+      : "Las inscripciones todavía no están abiertas.";
+    return json({ ok: false, error }, 403);
   }
 
   let body: unknown;
