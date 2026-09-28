@@ -754,7 +754,7 @@ ol {
 }
 .size-gold .sponsor {
   --tile-w: 240px;
-  --tile-h: 140px;
+  --tile-h: 116px;
 }
 .size-silver {
   --scale: 1.12;
@@ -1536,7 +1536,7 @@ ol {
     --tile-w: calc(50% - 6px);
   }
   .size-gold .sponsor {
-    --tile-h: 104px;
+    --tile-h: 88px;
   }
   .size-silver .sponsor {
     --tile-h: 80px;
