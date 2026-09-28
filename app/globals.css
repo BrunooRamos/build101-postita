@@ -476,23 +476,19 @@ ol {
   align-items: center;
   gap: 64px;
 }
-/* la foto es blanco y negro sobre fondo blanco. invert(0.96) lleva ese
-   blanco justo al negro de la página (#0a0a0a) y deja los robots como figuras
-   claras; la máscara difumina el ruido del JPEG en los bordes. */
-.event-robots {
-  width: 232px;
-  height: 184px;
+/* campo de glifos (GlyphField.tsx): "IA" armado con 0 y 1 sobre un fondo de
+   código, que se decodifica al entrar y reacciona al puntero */
+.glyph-field {
+  display: block;
+  font-family: var(--font-mono-stack);
+  cursor: crosshair;
+  touch-action: pan-y;
+}
+.event-glyph {
+  width: 300px;
+  max-width: 100%;
+  height: 200px;
   flex: none;
-  object-fit: contain;
-  filter: contrast(1.08) invert(0.96);
-  -webkit-mask-image:
-    linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent),
-    linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent),
-    linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-  mask-composite: intersect;
 }
 .steps {
   display: grid;

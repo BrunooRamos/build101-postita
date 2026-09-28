@@ -1,3 +1,4 @@
+import { GlyphField } from "./GlyphField";
 import { Reveal } from "./Reveal";
 
 const STEPS = [
@@ -36,15 +37,7 @@ export function EventSection() {
                 tecnología: de una idea a un producto de IA funcionando.
               </p>
             </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className="event-robots"
-              src="/img/robots.jpg"
-              alt="tres robots de juguete de lata, uno al lado del otro"
-              width={232}
-              height={184}
-              loading="lazy"
-            />
+            <GlyphField className="event-glyph" lines={["IA"]} label="IA, escrito con ceros y unos" />
           </div>
         </Reveal>
         <ol className="steps">
