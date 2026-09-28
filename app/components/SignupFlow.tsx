@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { ViewTransition, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import {
   LIMITS,
   emptyApplication,
@@ -198,9 +198,13 @@ function Shell({
           <li aria-current={onFirst ? "step" : undefined}>{first}</li>
           <li aria-current={!onFirst ? "step" : undefined}>{second}</li>
         </ol>
-        <h1 className="flow-title" tabIndex={-1} id="flow-title">
-          {title}
-        </h1>
+        {/* mismo name que el título de la tarjeta en SignupPaths: al navegar,
+            la tarjeta elegida se transforma en este título */}
+        <ViewTransition name={`path-${mode}`} share="path-morph">
+          <h1 className="flow-title" tabIndex={-1} id="flow-title">
+            {title}
+          </h1>
+        </ViewTransition>
         <p className="flow-intro">{intro}</p>
       </div>
       <div className="flow-main">{children}</div>
@@ -232,6 +236,14 @@ export function SignupFlow({ mode }: { mode: Mode }) {
 
   useEffect(() => {
     startedAt.current = Date.now();
+  }, []);
+
+  // Al llegar desde la landing la página viene scrolleada muy abajo, y Next
+  // recién sube después de que React mide la transición: el título quedaría
+  // fuera de pantalla y React no lo empareja con la tarjeta. Subir en la fase
+  // de layout lo deja visible a tiempo para el morph.
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
   // Al cambiar de paso: arriba de todo y foco en el título (lectores de pantalla).

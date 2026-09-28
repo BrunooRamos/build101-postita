@@ -7,27 +7,34 @@
 @import "./fx.css";
 
 :root {
-  /* superficies */
-  --bg: #0a0a0a;
-  --paper: #111111; /* secciones alternas (equipo, faq) */
-  --surface: #171717; /* tarjetas, secciones "panel" */
-  --surface-2: #1f1f1f;
-  --line: #262626;
-  --line-2: #404040;
+  /* superficies — dos fondos nada más: --bg para todo y --surface para
+     tarjetas y las secciones "panel" (cronograma, footer). Los neutros
+     tiran apenas a frío (hue ~260) para convivir con el azul. */
+  --bg: #0a0a0c;
+  --surface: #16171b;
+  --surface-2: #1d1e23;
+  --line: #25262c;
+  --line-2: #3f414a; /* bordes de tarjetas y filetes (decorativo) */
+  --line-ctl: #676a75; /* bordes de controles: ≥ 3:1 sobre --bg y --surface */
 
-  /* texto */
+  /* texto — todos los niveles pasan AA (4.5:1) sobre --bg y --surface */
   --fg: #ffffff;
-  --fg-body: #d4d4d4;
-  --muted: #a3a3a3;
-  --faint: #737373;
+  --fg-body: #d5d7dd;
+  --muted: #a3a6b0;
+  --faint: #878b96;
 
-  /* acento: un solo azul. --accent para texto/detalles sobre negro,
-     --action para superficies de botón (texto blanco encima). */
+  /* acento: un solo azul. --accent para rellenos y detalles, --accent-text
+     para texto azul chico, --action para superficies de botón (texto
+     blanco encima). En pantallas P3 el mismo azul sale más saturado. */
   --accent: #3b82f6;
-  --accent-strong: #60a5fa;
+  --accent-text: #6aa9ff;
+  --accent-strong: #9cc5ff;
   --action: #2563eb;
   --action-hover: #1d4ed8;
   --danger: #f87171;
+
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-rise: cubic-bezier(0.22, 1, 0.36, 1);
 
   --radius: 8px;
   --radius-lg: 12px;
@@ -53,6 +60,14 @@
   --surface-1: #141414;
 
   color-scheme: dark;
+  /* deja animar alturas hasta `auto` (el FAQ usa ::details-content) */
+  interpolate-size: allow-keywords;
+}
+@media (color-gamut: p3) {
+  :root {
+    --accent: color(display-p3 0.2 0.49 1);
+    --action: color(display-p3 0.15 0.39 0.93);
+  }
 }
 
 /* ---------- reset ---------- */
@@ -133,9 +148,6 @@ ol {
 .section-alt {
   background: var(--surface);
 }
-.section-paper {
-  background: var(--paper);
-}
 
 /* ---------- tipografía ---------- */
 .eyebrow,
@@ -204,7 +216,7 @@ ol {
   white-space: nowrap;
 }
 .bracket {
-  color: var(--accent);
+  color: var(--accent-text);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -228,16 +240,36 @@ ol {
   color: #fff;
   white-space: nowrap;
   transition:
-    background-color 0.15s ease,
-    border-color 0.15s ease;
+    background-color 0.18s var(--ease-out),
+    border-color 0.18s var(--ease-out),
+    box-shadow 0.18s var(--ease-out),
+    transform 0.12s var(--ease-out);
+}
+.btn:active:not(.apply-soon) {
+  transform: translateY(1px);
+}
+/* la flecha ↗/→ va en su propio span para moverse en su dirección */
+.arr {
+  display: inline-block;
+  transition: transform 0.18s var(--ease-out);
+}
+.btn:hover .arr,
+.link-strong:hover .arr,
+.link-quiet:hover .arr {
+  transform: translate(2px, -2px);
 }
 .btn-primary {
   background: var(--action);
   border-color: var(--action);
+  /* canto superior nítido: separa el botón del fondo sin sombra */
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.16);
 }
 .btn-primary:hover {
   background: var(--action-hover);
   border-color: var(--action-hover);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.16),
+    0 0 0 4px rgb(37 99 235 / 0.22);
 }
 .btn-primary:disabled {
   opacity: 0.6;
@@ -248,6 +280,7 @@ ol {
 }
 .btn-ghost:hover {
   border-color: var(--fg);
+  background: var(--surface);
 }
 .btn-sm {
   min-height: 44px;
@@ -286,8 +319,8 @@ ol {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(10, 10, 10, 0.86);
-  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: blur(12px) saturate(1.2);
   border-bottom: 1px solid var(--line);
 }
 .topnav-inner {
@@ -302,6 +335,12 @@ ol {
   gap: 32px;
   font-size: 15px;
   color: var(--fg-body);
+}
+.nav-links a {
+  padding-block: 6px;
+  /* subrayado del link activo (lo prende el scroll-spy de fx.css) */
+  background: linear-gradient(var(--accent), var(--accent)) left bottom / 0 1px no-repeat;
+  transition: color 0.18s var(--ease-out);
 }
 .nav-links a:hover {
   color: var(--fg);
@@ -437,13 +476,23 @@ ol {
   align-items: center;
   gap: 64px;
 }
+/* la foto es blanco y negro sobre fondo blanco. invert(0.96) lleva ese
+   blanco justo al negro de la página (#0a0a0a) y deja los robots como figuras
+   claras; la máscara difumina el ruido del JPEG en los bordes. */
 .event-robots {
   width: 232px;
   height: 184px;
   flex: none;
   object-fit: contain;
-  border-radius: var(--radius);
-  background: #fff;
+  filter: contrast(1.08) invert(0.96);
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent),
+    linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent),
+    linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-composite: intersect;
 }
 .steps {
   display: grid;
@@ -759,9 +808,9 @@ ol {
   justify-content: center;
   width: 96px;
   height: 96px;
-  border: 1px dashed var(--line-2);
+  border: 1px dashed var(--line-ctl);
   border-radius: var(--radius);
-  background: var(--paper);
+  background: var(--surface);
   font-family: var(--font-mono-stack);
   font-size: 14px;
   font-weight: 500;
@@ -817,7 +866,7 @@ ol {
   width: 16px;
   height: 2px;
   background: var(--fg);
-  transition: transform 0.2s ease;
+  transition: transform 0.28s var(--ease-rise);
 }
 .faq-mark::after {
   transform: rotate(90deg);
@@ -879,20 +928,48 @@ ol {
   gap: 16px;
 }
 .path {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 24px;
   padding: 32px;
+  overflow: hidden;
   border: 1px solid var(--line-2);
   border-radius: var(--radius-lg);
   background: var(--surface);
   transition:
-    border-color 0.15s ease,
-    background-color 0.15s ease;
+    border-color 0.2s var(--ease-out),
+    background-color 0.2s var(--ease-out),
+    transform 0.12s var(--ease-out);
+}
+/* spotlight: sigue al puntero (PointerSpot.tsx escribe --x/--y) */
+.path::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    280px circle at var(--x, 50%) var(--y, 50%),
+    rgb(59 130 246 / 0.13),
+    transparent 65%
+  );
+  transition: opacity 0.25s var(--ease-out);
+}
+.path > * {
+  position: relative;
 }
 .path:hover {
   border-color: var(--faint);
   background: var(--surface-2);
+}
+.path:active {
+  transform: translateY(1px);
+}
+@media (hover: hover) and (pointer: fine) {
+  .path:hover::before {
+    opacity: 1;
+  }
 }
 .path-n {
   width: 28px;
@@ -900,7 +977,7 @@ ol {
   font-family: var(--font-mono-stack);
   font-size: 14px;
   font-weight: 500;
-  color: var(--accent);
+  color: var(--accent-text);
 }
 .path-body {
   display: flex;
@@ -932,14 +1009,14 @@ ol {
   font-size: 20px;
   font-weight: 600;
   color: #fff;
-  transition: transform 0.15s ease;
+  transition: transform 0.22s var(--ease-rise);
 }
 .path-go.primary {
   background: var(--action);
   border-color: var(--action);
 }
 .path:hover .path-go {
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 .paths-soon {
   padding: 32px;
@@ -1150,13 +1227,15 @@ ol {
 .field textarea {
   width: 100%;
   padding: 15px 16px;
-  border: 1px solid var(--line-2);
+  border: 1px solid var(--line-ctl);
   border-radius: var(--radius);
   background: var(--bg);
   font-size: 16px;
   line-height: 24px;
   color: var(--fg);
-  transition: border-color 0.15s ease;
+  transition:
+    border-color 0.18s var(--ease-out),
+    box-shadow 0.18s var(--ease-out);
 }
 .field textarea {
   resize: vertical;
@@ -1173,7 +1252,7 @@ ol {
 .field textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 0.28);
 }
 .has-error input,
 .has-error textarea {

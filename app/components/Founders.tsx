@@ -27,7 +27,7 @@ function Org({ name, detail, logo }: { name: string; detail: string; logo: strin
 
 export function Founders() {
   return (
-    <section id="equipo" className="section section-paper">
+    <section id="equipo" className="section">
       <div className="wrap">
         <Reveal>
           <p className="eyebrow">// el equipo</p>

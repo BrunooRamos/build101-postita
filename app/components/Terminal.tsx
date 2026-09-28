@@ -71,8 +71,79 @@ function StaticLine({ line }: { line: Line }) {
 type Active = { i: number; typed: string; spinning: boolean; showA: boolean };
 type ReplEntry = { id: number; node: ReactNode };
 
+/** Respuesta de `ask <pregunta>`: spinner mientras piensa, después el texto
+ *  de /api/ask a medida que llega (streaming). */
+function AskAnswer({ question }: { question: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [answer, setAnswer] = useState("");
+  const [state, setState] = useState<"thinking" | "streaming" | "done" | "error">("thinking");
+  const [frame, setFrame] = useState(0);
+
+  useEffect(() => {
+    if (state !== "thinking") return;
+    const id = setInterval(() => setFrame((f) => f + 1), 80);
+    return () => clearInterval(id);
+  }, [state]);
+
+  useEffect(() => {
+    const abort = new AbortController();
+    (async () => {
+      try {
+        const res = await fetch("/api/ask", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ q: question }),
+          signal: abort.signal,
+        });
+        if (!res.body) throw new Error("sin body");
+        if (!res.ok) {
+          setAnswer(await res.text());
+          setState("error");
+          return;
+        }
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        setState("streaming");
+        for (;;) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          setAnswer((a) => a + decoder.decode(value, { stream: true }));
+        }
+        setState("done");
+      } catch {
+        if (abort.signal.aborted) return;
+        setAnswer("ask: sin conexión. probá help");
+        setState("error");
+      }
+    })();
+    return () => abort.abort();
+  }, [question]);
+
+  // la terminal tiene alto fijo: mantenela scrolleada al final mientras llega texto
+  useEffect(() => {
+    const body = ref.current?.closest(".term-body");
+    if (body) body.scrollTop = body.scrollHeight;
+  }, [answer, state]);
+
+  if (state === "thinking")
+    return (
+      <div className="out" ref={ref}>
+        <span className="spin-glyph">{SPIN[frame % SPIN.length]}</span> pensando…
+      </div>
+    );
+  return (
+    <div className={state === "error" ? "del-text" : "cmd"} ref={ref}>
+      {answer}
+      {state === "streaming" && <span className="cursor sm" />}
+    </div>
+  );
+}
+
 // ---- REPL command interpreter ----
-function runCommand(raw: string): {
+function runCommand(
+  raw: string,
+  askEnabled: boolean,
+): {
   out: ReactNode[];
   action?: "clear" | "inscribite" | "matrix" | "crash";
 } {
@@ -85,7 +156,13 @@ function runCommand(raw: string): {
     return {
       out: O(
         <div className="out">
-          comandos: <span className="accent">ls</span> ·{" "}
+          comandos:{" "}
+          {askEnabled && (
+            <>
+              <span className="accent">ask &lt;pregunta&gt;</span> ·{" "}
+            </>
+          )}
+          <span className="accent">ls</span> ·{" "}
           <span className="accent">cat &lt;archivo&gt;</span> ·{" "}
           <span className="accent">consigna</span> ·{" "}
           <span className="accent">sponsors</span> ·{" "}
@@ -94,6 +171,18 @@ function runCommand(raw: string): {
           <span className="accent">cafe</span> ·{" "}
           <span className="accent">clear</span>
         </div>,
+      ),
+    };
+  if (askEnabled && (lower === "ask" || lower.startsWith("ask ")))
+    return {
+      out: O(
+        cmd.slice(3).trim() ? (
+          <AskAnswer question={cmd.slice(3).trim()} />
+        ) : (
+          <div className="out">
+            uso: <span className="accent">ask ¿tiene costo?</span>
+          </div>
+        ),
       ),
     };
   if (lower === "ls" || lower === "ls -la")
@@ -188,6 +277,7 @@ export function Terminal({ footer }: { footer?: ReactNode }) {
   const [frame, setFrame] = useState(0);
   const [repl, setRepl] = useState<ReplEntry[]>([]);
   const [input, setInput] = useState("");
+  const [askEnabled, setAskEnabled] = useState(false);
   const started = useRef(false);
   const idRef = useRef(0);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -260,6 +350,19 @@ export function Terminal({ footer }: { footer?: ReactNode }) {
 
   const complete = done >= SCRIPT.length;
 
+  // `ask` solo aparece si /api/ask tiene credenciales configuradas
+  useEffect(() => {
+    if (!complete) return;
+    let alive = true;
+    fetch("/api/ask")
+      .then((r) => (r.ok ? r.json() : { enabled: false }))
+      .then((d: { enabled?: boolean }) => alive && setAskEnabled(Boolean(d.enabled)))
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, [complete]);
+
   // keep the REPL scrolled to the bottom
   useEffect(() => {
     if (bodyRef.current) bodyRef.current.scrollTop = bodyRef.current.scrollHeight;
@@ -278,7 +381,7 @@ export function Terminal({ footer }: { footer?: ReactNode }) {
         <span className="cmd">{raw || " "}</span>
       </div>,
     ]);
-    const { out, action } = runCommand(raw);
+    const { out, action } = runCommand(raw, askEnabled);
     if (action === "clear") {
       setRepl([]);
       return;
@@ -362,7 +465,15 @@ export function Terminal({ footer }: { footer?: ReactNode }) {
             <>
               {repl.length === 0 && (
                 <div className="comment" style={{ marginTop: 6 }}>
-                  // es interactiva: escribí <span className="accent">help</span> y dale enter ↵
+                  {askEnabled ? (
+                    <>
+                      // preguntale algo: <span className="accent">ask ¿tiene costo?</span> ↵
+                    </>
+                  ) : (
+                    <>
+                      // es interactiva: escribí <span className="accent">help</span> y dale enter ↵
+                    </>
+                  )}
                 </div>
               )}
               {repl.map((e) => (
