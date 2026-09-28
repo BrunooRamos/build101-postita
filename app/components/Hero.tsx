@@ -41,9 +41,9 @@ export function Hero() {
               </a>
             </div>
             <p className="fine rise d4">
-              Registrar tu interés no garantiza participación.
+              Inscribirte no garantiza un lugar.
               <br />
-              Tu lugar queda sujeto a selección y confirmación del equipo.
+              La participación queda sujeta a selección y confirmación del equipo.
             </p>
           </div>
 
@@ -66,16 +66,32 @@ export function Hero() {
         </div>
 
         <div className="coorg">
-          <span className="label">coorganiza</span>
-          <a
-            href="https://um.edu.uy"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Universidad de Montevideo"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/sponsors/um.svg" alt="Universidad de Montevideo" width={128} height={56} />
-          </a>
+          <div className="coorg-item">
+            <span className="label">coorganiza</span>
+            <a
+              href="https://um.edu.uy"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Universidad de Montevideo"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className="coorg-um"
+                src="/sponsors/um.svg"
+                alt="Universidad de Montevideo"
+                width={128}
+                height={56}
+              />
+            </a>
+          </div>
+          <span className="coorg-sep" aria-hidden />
+          <div className="coorg-item">
+            <span className="label">media partner</span>
+            <a href="https://canalmutuo.com" target="_blank" rel="noopener noreferrer" aria-label="MÜTÜÖ">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="coorg-mutuo" src="/sponsors/mutuo.png" alt="MÜTÜÖ" width={112} height={31} />
+            </a>
+          </div>
         </div>
       </div>
     </header>

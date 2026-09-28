@@ -17,7 +17,7 @@ type Line =
 const SCRIPT: Line[] = [
   { k: "cmd", text: "build101 --join" },
   { k: "blank" },
-  { k: "step", n: "01", text: "registrá tu interés" },
+  { k: "step", n: "01", text: "completá tu inscripción" },
   { k: "step", n: "02", text: "revisamos tu postulación" },
   { k: "step", n: "03", text: "te confirmamos por email" },
 ];

@@ -408,10 +408,26 @@ ol {
   gap: 28px;
   margin-top: 64px;
 }
+.coorg-item {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.coorg-sep {
+  width: 1px;
+  height: 40px;
+  background: var(--line-2);
+}
 .coorg img {
-  width: 128px;
   height: auto;
+}
+.coorg-um {
+  width: 128px;
   filter: invert(1);
+}
+/* el logo de MÜTÜÖ ya es blanco: va sin invertir */
+.coorg-mutuo {
+  width: 112px;
 }
 
 /* ---------- el evento ---------- */
@@ -632,24 +648,59 @@ ol {
   border-radius: var(--radius);
   background: #fff;
 }
+/* Con web: el link llena la tarjeta (se clickea toda la superficie) y el foco
+   se marca en la tarjeta, no alrededor del logo. */
 .sponsor a {
-  display: contents;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
+.sponsor a:focus-visible {
+  outline: none;
+}
+.sponsor:has(a:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.sponsor:has(a:hover) {
+  border-color: var(--accent);
+}
+/* --w/--h son la caja base de cada logo; cada categoría la escala con --scale
+   (gold más grande, silver apenas, partners un toque, energía igual). La caja
+   es fija y el logo la llena con contain: así también crecen los SVG con
+   width/height intrínsecos chicos. */
 .sponsor img {
-  width: auto;
-  height: auto;
-  max-width: var(--w);
-  max-height: var(--h);
+  width: calc(var(--w) * var(--scale, 1));
+  height: calc(var(--h) * var(--scale, 1));
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
 }
 .sponsor img.invert {
   filter: invert(1);
 }
+.size-gold {
+  --scale: 1.3;
+}
 .size-gold .sponsor {
-  --tile-h: 114px;
+  --tile-w: 240px;
+  --tile-h: 140px;
+}
+.size-silver {
+  --scale: 1.12;
 }
 .size-silver .sponsor {
-  --tile-h: 88px;
+  --tile-w: 212px;
+  --tile-h: 98px;
+}
+.size-partner {
+  --scale: 1.06;
+}
+.size-partner .sponsor {
+  --tile-w: 200px;
+  --tile-h: 86px;
 }
 .size-small .sponsor {
   --tile-w: 186px;
@@ -920,6 +971,17 @@ ol {
   margin-top: 16px;
   font-size: 18px;
   color: var(--muted);
+}
+.footer-socials {
+  display: flex;
+  gap: 20px;
+  margin-top: 16px;
+  list-style: none;
+  font-size: 15px;
+  color: var(--fg-body);
+}
+.footer-socials a:hover {
+  color: var(--fg);
 }
 .footer-contacts {
   display: flex;
@@ -1293,6 +1355,9 @@ ol {
     gap: 20px;
     margin-top: 40px;
   }
+  .coorg-item {
+    gap: 20px;
+  }
 
   .h2 {
     font-size: 32px;
@@ -1345,14 +1410,22 @@ ol {
     padding: 12px;
   }
   .sponsor img {
-    max-width: min(var(--w), 80%);
-    max-height: min(var(--h), 60%);
+    width: min(calc(var(--w) * var(--scale, 1)), 80%);
+    height: min(calc(var(--h) * var(--scale, 1)), 60%);
+  }
+  .size-gold .sponsor,
+  .size-silver .sponsor,
+  .size-partner .sponsor {
+    --tile-w: calc(50% - 6px);
   }
   .size-gold .sponsor {
-    --tile-h: 92px;
+    --tile-h: 104px;
   }
   .size-silver .sponsor {
-    --tile-h: 76px;
+    --tile-h: 80px;
+  }
+  .size-partner .sponsor {
+    --tile-h: 70px;
   }
   .size-small .sponsor {
     --tile-w: calc((100% - 24px) / 3);
@@ -1468,6 +1541,23 @@ ol {
   .state-title {
     font-size: 22px;
     line-height: 30px;
+  }
+}
+
+/* coorganiza | media partner no entra en una línea (~530px): se apilan y los
+   logos quedan alineados en una segunda columna. */
+@media (max-width: 600px) {
+  .coorg {
+    display: grid;
+    grid-template-columns: max-content auto;
+    justify-content: start;
+    gap: 16px 20px;
+  }
+  .coorg-item {
+    display: contents;
+  }
+  .coorg-sep {
+    display: none;
   }
 }
 

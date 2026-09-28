@@ -1,4 +1,6 @@
-# UruHack — SEO & AEO Optimization Plan
+# build 101 — SEO & AEO Optimization Plan
+
+> **Nota histórica:** este plan se escribió cuando el evento se llamaba **UruHack** (`uruhack.uy`, 29–30 ago 2026). Hoy es **build 101** en `build101.dev`, el 17 y 18 de octubre de 2026 en FIUM · LATU. Las menciones a UruHack, fechas y sede de abajo son de esa versión; la fuente de verdad actual es `app/event.ts`. De los pendientes de abajo, los perfiles sociales (`sameAs`) ya están cargados en `SOCIALS`; el pin exacto de la sede sigue pendiente.
 
 *Audit of the `redesign` branch (Next.js 16.2.9, fully static build), 2026-07-01.*
 
