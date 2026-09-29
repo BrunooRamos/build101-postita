@@ -1,5 +1,5 @@
 import {
-  APPLY_DEADLINE,
+  APPLY_DEADLINE_FULL,
   APPLY_OPEN,
   CANONICAL_URL,
   EVENT_DATES_LONG,
@@ -35,7 +35,7 @@ export function GET() {
 - horario: ${SCHEDULE.map((d) => `${d.day} de ${d.hours}`).join(" y ")}; no se duerme en la sede.
 ${
     APPLY_OPEN
-      ? `- cierre de inscripción: ${APPLY_DEADLINE} (hora de uruguay).
+      ? `- cierre de inscripción: ${APPLY_DEADLINE_FULL} (hora de uruguay).
 - inscripción: ${APPLY_URL}`
       : `- inscripción: todavía no está abierta. la apertura y el link para postular se anuncian próximamente en ${CANONICAL_URL}`
   }
