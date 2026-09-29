@@ -198,7 +198,7 @@ function runCommand(
     return {
       out: [
         <div className="md-h" key="h"># build 101</div>,
-        <div className="out" key="1">la hackathon de ia más grande de uruguay. un producto de ia real,</div>,
+        <div className="out" key="1">la hackathon de IA más grande de uruguay. un producto de IA real,</div>,
         <div className="out" key="2">construido en un fin de semana y pitcheado en vivo.</div>,
       ],
     };

@@ -32,7 +32,7 @@ export const FAQS: FaqItem[] = [
   {
     q: "¿qué es build 101?",
     aText:
-      "la hackathon de ia más grande de uruguay: un fin de semana presencial en montevideo para construir un producto de inteligencia artificial y pitchearlo en vivo frente a un jurado. 17 y 18 de octubre de 2026.",
+      "la hackathon de IA más grande de uruguay: un fin de semana presencial en montevideo para construir un producto de inteligencia artificial y pitchearlo en vivo frente a un jurado. 17 y 18 de octubre de 2026.",
   },
   {
     q: "¿inscribirme confirma mi lugar?",
@@ -75,7 +75,7 @@ export const FAQS: FaqItem[] = [
   {
     q: "¿qué puedo construir y cómo se evalúa?",
     aText:
-      "un producto de inteligencia artificial: no alcanza con usar ia para construir. la consigna se revela en el kickoff para que nadie llegue con ventaja, y se evalúa el producto funcionando y el pitch en vivo frente al jurado. lo que construyas es 100% de tu equipo.",
+      "un producto de inteligencia artificial: no alcanza con usar IA para construir. la consigna se revela en el kickoff para que nadie llegue con ventaja, y se evalúa el producto funcionando y el pitch en vivo frente al jurado. lo que construyas es 100% de tu equipo.",
   },
   {
     q: "¿dónde es?",

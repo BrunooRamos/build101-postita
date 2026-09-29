@@ -26,7 +26,7 @@ export function GET() {
 
 ## datos clave
 
-- qué: la hackathon de ia más grande de uruguay, presencial: se construye un producto de ia durante el fin de semana y se pitchea en vivo frente a un jurado.
+- qué: la hackathon de IA más grande de uruguay, presencial: se construye un producto de IA durante el fin de semana y se pitchea en vivo frente a un jurado.
 - alcance: abierta a equipos de todo uruguay; la sede es en montevideo.
 - cuándo: ${EVENT_DATES_LONG}.
 - dónde: ${VENUE}, ${VENUE_ADDRESS}, uruguay.

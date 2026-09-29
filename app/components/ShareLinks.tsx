@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { CANONICAL_URL } from "../event";
 
-const SHARE_TEXT = `build 101 — la hackathon de IA más grande de Uruguay. 17 y 18 de octubre. ${CANONICAL_URL}`;
+const SHARE_TEXT = `build 101: la hackathon de IA más grande de Uruguay. 17 y 18 de octubre. ${CANONICAL_URL}`;
 
 export function ShareLinks() {
   const [copied, setCopied] = useState(false);

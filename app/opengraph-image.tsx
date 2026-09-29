@@ -47,7 +47,7 @@ export default async function Image() {
             color: BLUE,
           }}
         >
-          la hackathon de ia más grande de uruguay
+          la hackathon de IA más grande de uruguay
         </div>
 
         {/* headline */}

@@ -89,7 +89,7 @@ const structuredData = {
       "@type": "WebPage",
       "@id": webpageId,
       url: CANONICAL_URL,
-      name: "build 101 — la hackathon de ia más grande de uruguay, en montevideo",
+      name: "build 101: la hackathon de IA más grande de uruguay, en montevideo",
       isPartOf: { "@id": websiteId },
       about: { "@id": eventId },
       primaryImageOfPage: OG_IMAGE_URL,
