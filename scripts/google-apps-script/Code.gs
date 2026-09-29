@@ -34,12 +34,15 @@ function doPost(e) {
   try {
     const sheet = SpreadsheetApp.openById(SHEET_ID).getSheets()[0];
     const lastCol = sheet.getLastColumn();
-    let headers = sheet.getRange(1, 1, 1, lastCol).getValues()[0];
+    // Hoja vacía (sin encabezados): se arman desde cero con los campos que
+    // llegan, en el orden en que los manda el sitio.
+    let headers = lastCol > 0 ? sheet.getRange(1, 1, 1, lastCol).getValues()[0] : [];
     // Si el sitio manda un dato que todavía no tiene columna (un campo nuevo
     // del formulario), se agrega el encabezado al final en vez de perderlo.
     const missing = Object.keys(row).filter(function (k) {
       return headers.indexOf(k) === -1;
     });
+    if (lastCol === 0) missing.push("notas_organizadores");
     if (missing.length) {
       sheet.getRange(1, lastCol + 1, 1, missing.length).setValues([missing]);
       headers = headers.concat(missing);
