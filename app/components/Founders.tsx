@@ -77,8 +77,9 @@ export function Founders() {
                   </div>
                 </div>
                 <ul className="orgs">
-                  <Org {...p.school} />
+                  {/* como en LinkedIn: primero dónde trabaja, después dónde estudia */}
                   <Org {...p.work} />
+                  <Org {...p.school} />
                 </ul>
               </Reveal>
             </li>
