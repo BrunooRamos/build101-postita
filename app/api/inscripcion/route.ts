@@ -1,5 +1,7 @@
+import { after } from "next/server";
 import { APPLY_DEADLINE, APPLY_DEADLINE_TIME, APPLY_OPEN, isApplyOpen } from "@/app/event";
 import { normalize, validate, type AntiSpam, type Application } from "@/lib/inscripcion";
+import { notifyTelegram } from "@/lib/telegram";
 
 // POST /api/inscripcion — recibe la postulación, la valida y la agrega como
 // fila en la Google Sheet "build 101 · Postulaciones" a través de un web app de
@@ -122,6 +124,9 @@ export async function POST(request: Request) {
     console.error("[inscripcion] error llamando a la sheet", err);
     return json({ ok: false, error: "No pudimos guardar tu postulación." }, 502);
   }
+
+  // Aviso al equipo por Telegram, después de responder: no demora al usuario.
+  after(() => notifyTelegram(app, id));
 
   return json({ ok: true });
 }
