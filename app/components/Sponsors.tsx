@@ -14,6 +14,9 @@ type Sponsor = {
   url?: string;
   /** Destacado dentro de su categoría: tarjeta y logo un poco más grandes. */
   featured?: boolean;
+  /** Logo alto (casi cuadrado): menos relleno vertical para que no quede chico
+   *  en una tarjeta baja y ancha. */
+  tight?: boolean;
 };
 
 type Tier = { key: string; label: string; size: "gold" | "silver" | "partner" | "small"; items: Sponsor[] };
@@ -63,7 +66,7 @@ const TIERS: Tier[] = [
     label: "instituciones que nos apoyan",
     size: "partner",
     items: [
-      { name: "Embajada de EE.UU. en Uruguay · Freedom 250", logo: "/sponsors/freedom250.png", w: 80, h: 50, url: "https://uy.usembassy.gov" },
+      { name: "Embajada de EE.UU. en Uruguay · Freedom 250", logo: "/sponsors/freedom250.png", w: 120, h: 72, url: "https://uy.usembassy.gov", tight: true },
       { name: "Urucap", logo: "/sponsors/urucap.png", w: 150, h: 40, url: "https://www.urucap.org" },
       { name: "ANII", logo: "/sponsors/anii.png", w: 104, h: 28, url: "https://www.anii.org.uy" },
       { name: "Club del Inversor", logo: "/sponsors/club-del-inversor.png", w: 150, h: 40, url: "https://www.clubdelinversor.uy" },
@@ -90,7 +93,7 @@ function Logo({ s }: { s: Sponsor }) {
   // eslint-disable-next-line @next/next/no-img-element
   const img = <img src={s.logo} alt={s.name} loading="lazy" className={s.invert ? "invert" : undefined} />;
   return (
-    <li className={s.featured ? "sponsor featured" : "sponsor"} style={style}>
+    <li className={["sponsor", s.featured && "featured", s.tight && "tight"].filter(Boolean).join(" ")} style={style}>
       {s.url ? (
         <a href={s.url} target="_blank" rel="noopener noreferrer sponsored">
           {img}

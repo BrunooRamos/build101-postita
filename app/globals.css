@@ -865,6 +865,10 @@ ol {
   padding: 6px;
 }
 /* destacado dentro de su categoría (hoy: Salus en "nos dan energía") */
+/* logos altos (casi cuadrados): casi sin relleno vertical */
+.sponsor.tight {
+  padding-block: 8px;
+}
 .size-small .sponsor.featured {
   --tile-w: 214px;
   --tile-h: 76px;
@@ -1752,6 +1756,9 @@ ol {
     --tile-w: calc((100% - 24px) / 3);
     --tile-h: 52px;
     padding: 8px;
+  }
+  .sponsor.tight img {
+    height: min(calc(var(--h) * var(--scale, 1)), 92%);
   }
   .size-small .sponsor.featured {
     --tile-w: calc((100% - 24px) / 3);
