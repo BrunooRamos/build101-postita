@@ -43,7 +43,7 @@ const TIERS: Tier[] = [
     label: "silver sponsors",
     size: "silver",
     items: [
-      { name: "INIT", logo: "/sponsors/init.png", w: 150, h: 50, url: "https://init.uy" },
+      { name: "INIT", logo: "/sponsors/init.svg", w: 150, h: 50, url: "https://init.uy" },
       { name: "IEEE", logo: "/sponsors/ieee.svg", w: 150, h: 50, url: "https://r9.ieee.org/uruguay/" },
       { name: "akua", logo: "/sponsors/akua.svg", w: 150, h: 50, url: "https://akua.la" },
       { name: "OrderEAT", logo: "/sponsors/ordereat.svg", w: 140, h: 27, url: "https://www.ordereat.com" },
