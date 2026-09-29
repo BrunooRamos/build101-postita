@@ -3,6 +3,7 @@ import { ScrollProgress } from "./components/ScrollProgress";
 import { Hero } from "./components/Hero";
 import { EventSection } from "./components/EventSection";
 import { Schedule } from "./components/Schedule";
+import { Perks } from "./components/Perks";
 import { Founders } from "./components/Founders";
 import { Sponsors } from "./components/Sponsors";
 import { Mentors, Jury } from "./components/Mentors";
@@ -30,6 +31,7 @@ export default function Home() {
         <Hero />
         <EventSection />
         <Schedule />
+        <Perks />
         <Founders />
         <Sponsors />
         <Mentors />
