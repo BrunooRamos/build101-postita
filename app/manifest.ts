@@ -3,7 +3,7 @@ import { SEO_DESCRIPTION, SITE_NAME } from "./event";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "build 101 — la hackathon de ia más grande de uruguay",
+    name: "build 101: la hackathon de IA más grande de uruguay",
     short_name: SITE_NAME,
     description: SEO_DESCRIPTION,
     start_url: "/",

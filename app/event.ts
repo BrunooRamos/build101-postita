@@ -9,7 +9,7 @@ export const SITE_URL = "https://build101.dev";
 export const CANONICAL_URL = `${SITE_URL}/`;
 export const OG_IMAGE_URL = `${SITE_URL}/opengraph-image`;
 export const OG_IMAGE_ALT =
-  "build 101 — la hackathon de ia más grande de uruguay. 17 y 18 de octubre de 2026, universidad de montevideo · fium, latu. gratis, cupos limitados.";
+  "build 101: la hackathon de IA más grande de uruguay. 17 y 18 de octubre de 2026, universidad de montevideo · fium, latu. gratis, cupos limitados.";
 // el logo de marca es el avatar "b_" que renderiza la ruta /icon en build.
 export const LOGO_URL = `${SITE_URL}/icon`;
 
@@ -17,9 +17,9 @@ export const LOGO_URL = `${SITE_URL}/icon`;
  *  El título trae los dos términos que se buscan — "hackathon uruguay" y
  *  "hackathon montevideo" — más el año. */
 export const SEO_TITLE =
-  "build 101 — la hackathon de ia más grande de uruguay | montevideo 2026";
+  "build 101: la hackathon de IA más grande de uruguay | montevideo 2026";
 export const SEO_DESCRIPTION =
-  "build 101 es la hackathon de ia más grande de uruguay: un fin de semana en montevideo para construir un producto de ia y pitchearlo en vivo. gratis, cupos limitados.";
+  "build 101 es la hackathon de IA más grande de uruguay: un fin de semana en montevideo para construir un producto de IA y pitchearlo en vivo. gratis, cupos limitados.";
 
 /** Descripción larga para datos estructurados (Event) y answer engines. */
 export const EVENT_DESCRIPTION =
