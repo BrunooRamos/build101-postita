@@ -799,9 +799,10 @@ ol {
   width: var(--tile-w);
   height: var(--tile-h);
   padding: 16px;
-  border: 1px solid var(--line-2);
+  border: 1px solid transparent;
   border-radius: var(--radius);
-  background: #fff;
+  /* gris suave: menos brillo que el blanco sobre el fondo oscuro */
+  background: #e6e6e6;
 }
 /* Con web: el link llena la tarjeta (se clickea toda la superficie) y el foco
    se marca en la tarjeta, no alrededor del logo. */
@@ -823,7 +824,8 @@ ol {
   border-color: var(--accent);
 }
 /* --w/--h son la caja base de cada logo; cada categoría la escala con --scale
-   (gold más grande, silver apenas, partners un toque, energía igual). La caja
+   según su importancia (gold el que más, después silver, partners e
+   instituciones un poco, energía igual). La caja
    es fija y el logo la llena con contain: así también crecen los SVG con
    width/height intrínsecos chicos. */
 .sponsor img {
@@ -837,30 +839,30 @@ ol {
   filter: invert(1);
 }
 .size-gold {
-  --scale: 1.3;
+  --scale: 1.75;
 }
 .size-gold .sponsor {
-  --tile-w: 240px;
-  --tile-h: 116px;
+  --tile-w: 290px;
+  --tile-h: 160px;
 }
 .size-silver {
-  --scale: 1.12;
+  --scale: 1.35;
 }
 .size-silver .sponsor {
-  --tile-w: 212px;
-  --tile-h: 98px;
+  --tile-w: 232px;
+  --tile-h: 104px;
 }
 .size-partner {
-  --scale: 1.06;
+  --scale: 1.17;
 }
 .size-partner .sponsor {
-  --tile-w: 200px;
-  --tile-h: 86px;
+  --tile-w: 216px;
+  --tile-h: 92px;
 }
 .size-small .sponsor {
   --tile-w: 186px;
   --tile-h: 64px;
-  padding: 12px;
+  padding: 6px;
 }
 /* destacado dentro de su categoría (hoy: Salus en "nos dan energía") */
 .size-small .sponsor.featured {
@@ -1729,8 +1731,8 @@ ol {
     padding: 12px;
   }
   .sponsor img {
-    width: min(calc(var(--w) * var(--scale, 1)), 80%);
-    height: min(calc(var(--h) * var(--scale, 1)), 60%);
+    width: min(calc(var(--w) * var(--scale, 1)), 92%);
+    height: min(calc(var(--h) * var(--scale, 1)), 72%);
   }
   .size-gold .sponsor,
   .size-silver .sponsor,

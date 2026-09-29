@@ -32,6 +32,7 @@ const TIERS: Tier[] = [
       { name: "odev.tech", logo: "/sponsors/odev.svg", w: 158, h: 78, url: "https://odev.tech" },
       { name: "Lynk Markets", logo: "/sponsors/lynk-markets.svg", w: 158, h: 78, url: "https://lynkmarkets.com" },
       { name: "Mozart", logo: "/sponsors/mozart.svg", w: 158, h: 78, url: "https://mozarth.com" },
+      { name: "Nowports", logo: "/sponsors/nowports.png", w: 158, h: 78, url: "https://www.nowports.com" },
     ],
   },
   {
@@ -75,10 +76,10 @@ const TIERS: Tier[] = [
     size: "small",
     items: [
       { name: "Salus", logo: "/sponsors/salus.svg", w: 150, h: 36, url: "https://www.salus.com.uy", featured: true },
-      { name: "Rigor", logo: "/sponsors/rigor.png", w: 150, h: 36, url: "https://www.rigorpizza.com" },
+      { name: "Rigor", logo: "/sponsors/rigor.png", w: 150, h: 30, url: "https://www.rigorpizza.com" },
       { name: "Chajá", logo: "/sponsors/chaja.png", w: 150, h: 36, url: "https://www.instagram.com/chajabistro/" },
       { name: "Grupo Sebamar", logo: "/sponsors/sebamar.png", w: 150, h: 36, url: "https://sebamar.com.uy" },
-      { name: "Los Trovadores", logo: "/sponsors/los-trovadores.png", w: 150, h: 36, url: "https://www.lostrovadores.com.uy" },
+      { name: "Los Trovadores", logo: "/sponsors/los-trovadores-dark.png", w: 150, h: 36, url: "https://www.lostrovadores.com.uy" },
       { name: "Viandas Hotel del Prado", logo: "/sponsors/viandas-hotel-del-prado.png", w: 150, h: 36, url: "https://viandashoteldelprado.uy" },
     ],
   },
