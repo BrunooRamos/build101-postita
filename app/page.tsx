@@ -13,7 +13,7 @@ import { KonamiMatrix } from "./components/KonamiMatrix";
 import { DeployFX } from "./components/DeployFX";
 import { FakeCrash } from "./components/FakeCrash";
 import { StructuredData } from "./components/StructuredData";
-import { APPLY_DEADLINE, APPLY_OPEN, PARTICIPANTS_EMAIL } from "./event";
+import { APPLY_DEADLINE_FULL, APPLY_OPEN, PARTICIPANTS_EMAIL } from "./event";
 
 export default function Home() {
   return (
@@ -49,7 +49,7 @@ export default function Home() {
               <p className="lede lede-strong">
                 {APPLY_OPEN ? (
                   <>
-                    Fecha límite: {APPLY_DEADLINE}.
+                    Fecha límite: {APPLY_DEADLINE_FULL}.
                     <br />
                     Elegí cómo venís: con equipo o buscando uno.
                   </>

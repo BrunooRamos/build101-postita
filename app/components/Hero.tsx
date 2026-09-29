@@ -1,7 +1,7 @@
 import { InscribiteBtn } from "./DeployFX";
 import { Terminal } from "./Terminal";
 import {
-  APPLY_DEADLINE,
+  APPLY_DEADLINE_FULL,
   APPLY_OPEN,
   EVENT_DATES,
   EVENT_START_DATE,
@@ -16,7 +16,7 @@ export function Hero() {
         <p className="hero-status rise">
           <span className="status-dot" aria-hidden />
           {APPLY_OPEN
-            ? `inscripciones abiertas · fecha límite: ${APPLY_DEADLINE}`
+            ? `inscripciones abiertas · fecha límite: ${APPLY_DEADLINE_FULL}`
             : "inscripciones pronto"}
         </p>
 

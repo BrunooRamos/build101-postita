@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import {
   APPLY_DEADLINE,
+  APPLY_DEADLINE_TIME,
   APPLY_OPEN,
   APPLY_PATH,
   MENTORS_EMAIL,
@@ -47,11 +48,11 @@ export const FAQS: FaqItem[] = [
   {
     q: "¿hasta cuándo me puedo inscribir?",
     aText: APPLY_OPEN
-      ? `hasta el ${APPLY_DEADLINE}. los cupos son limitados.`
+      ? `hasta el ${APPLY_DEADLINE} a las ${APPLY_DEADLINE_TIME} (hora de uruguay). los cupos son limitados.`
       : "las inscripciones todavía no están abiertas: pronto anunciamos la fecha de apertura.",
     a: APPLY_OPEN ? (
       <>
-        hasta el {APPLY_DEADLINE}. los cupos son limitados:{" "}
+        hasta el {APPLY_DEADLINE} a las {APPLY_DEADLINE_TIME} (hora de uruguay). los cupos son limitados:{" "}
         <a href={APPLY_PATH} className="bracket">
           inscribite acá
         </a>

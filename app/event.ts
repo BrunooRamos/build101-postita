@@ -90,6 +90,10 @@ export const SCHEDULE = [
 /** Inscripciones: cierre. */
 export const APPLY_DEADLINE_ISO = "2026-10-09T23:59:00-03:00";
 export const APPLY_DEADLINE = "9 de octubre";
+/** Hora de cierre (hora de Uruguay). Mostrarla siempre junto a la fecha. */
+export const APPLY_DEADLINE_TIME = "23:59 hs";
+/** Fecha y hora de cierre, para cualquier texto que hable del límite. */
+export const APPLY_DEADLINE_FULL = `${APPLY_DEADLINE}, ${APPLY_DEADLINE_TIME}`;
 
 /** ¿Se puede enviar una inscripción ahora? `APPLY_OPEN` y además antes del
  *  cierre (se acepta hasta el final del minuto 23:59). La API lo chequea en

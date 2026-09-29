@@ -14,7 +14,7 @@ import {
   type Member,
   type Mode,
 } from "@/lib/inscripcion";
-import { APPLY_DEADLINE, APPLY_PATH, EVENT_DATES_LONG, PARTICIPANTS_EMAIL, isApplyOpen } from "../event";
+import { APPLY_DEADLINE, APPLY_DEADLINE_TIME, APPLY_PATH, EVENT_DATES_LONG, PARTICIPANTS_EMAIL, isApplyOpen } from "../event";
 
 type Step = "form" | "review" | "sent" | "error" | "closed";
 
@@ -503,7 +503,7 @@ export function SignupFlow({ mode }: { mode: Mode }) {
         mode={mode}
         step={step}
         title="las inscripciones cerraron."
-        intro={`Cerraron el ${APPLY_DEADLINE} a las 23:59. Gracias por el interés en build 101.`}
+        intro={`Cerraron el ${APPLY_DEADLINE} a las ${APPLY_DEADLINE_TIME}. Gracias por el interés en build 101.`}
         aside={<TalkToRamiro q="¿Tenés alguna duda?" />}
       >
         <div className="state state-error" role="status">
