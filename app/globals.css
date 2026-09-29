@@ -414,6 +414,10 @@ ol {
   height: 200px;
   padding: 16px 28px 8px;
   background: transparent;
+  /* Altura fija: lo que tipean scrollea adentro en vez de pisar la fecha. */
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  cursor: text;
 }
 .term-step {
   display: flex;
