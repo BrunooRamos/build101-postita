@@ -1,16 +1,21 @@
 import type { CSSProperties } from "react";
 import { Reveal } from "./Reveal";
+import { PixelBlocks, PIXELS_SMALL } from "./PixelBlocks";
 import { MENTORS_EMAIL } from "../event";
 
-// TODO(build101): cuando se confirmen, reemplazar los TBA por foto, nombre y rol.
-function TbaSlots({ count, label }: { count: number; label: string }) {
+// TODO(build101): cuando se confirmen, reemplazar las filas "por anunciar"
+// por nombre y rol (mismo patrón que la lista del equipo).
+function TbaSlots({ count, label, noun }: { count: number; label: string; noun: string }) {
   return (
     <div className="tba">
       <p className="label">{label}</p>
-      <ul className="tba-slots" aria-label="por anunciar">
+      <ul className="tba-rows" aria-label="por anunciar">
         {Array.from({ length: count }, (_, i) => (
-          <li key={i} className="tba-slot" style={{ "--i": i } as CSSProperties} aria-hidden>
-            TBA
+          <li key={i} className="tba-row" style={{ "--i": i } as CSSProperties} aria-hidden>
+            <span>
+              {noun} {String(i + 1).padStart(2, "0")}
+            </span>
+            <span>por anunciar</span>
           </li>
         ))}
       </ul>
@@ -33,9 +38,10 @@ export function Mentors() {
             Mentores que acompañan a los equipos durante todo el fin de semana.
             Pronto vamos a presentar a quienes se suman.
           </p>
-          <TbaSlots count={5} label="mentores que te van a estar apoyando" />
+          <TbaSlots count={5} label="mentores que te van a estar apoyando" noun="mentor" />
         </Reveal>
         <Reveal className="people-aside">
+          <PixelBlocks id="px-mentors" cells={PIXELS_SMALL} cols={4} rows={4} className="aside-pixels" />
           <h3 className="h3">¿querés mentorear?</h3>
           <p>Bruno coordina a quienes quieren acompañar a los equipos.</p>
           <a href={`mailto:${MENTORS_EMAIL}`} className="btn btn-ghost btn-block">
@@ -65,7 +71,7 @@ export function Jury() {
             Fundadores, inversores y líderes de producto van a ver tu pitch y tu
             producto funcionando. Pronto anunciamos quiénes son.
           </p>
-          <TbaSlots count={3} label="el jurado que va a evaluar tu producto" />
+          <TbaSlots count={3} label="el jurado que va a evaluar tu producto" noun="jurado" />
         </Reveal>
       </div>
     </section>

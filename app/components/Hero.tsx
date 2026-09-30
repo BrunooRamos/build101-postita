@@ -1,5 +1,7 @@
 import { InscribiteBtn } from "./DeployFX";
 import { Terminal } from "./Terminal";
+import { Countdown } from "./Countdown";
+import { PixelBlocks, PIXELS_HERO } from "./PixelBlocks";
 import {
   APPLY_DEADLINE_FULL,
   APPLY_OPEN,
@@ -13,57 +15,67 @@ export function Hero() {
   return (
     <header className="hero" id="top">
       <div className="wrap">
-        <p className="hero-status rise">
-          <span className="status-dot" aria-hidden />
+        <p className="hero-badge rise">
+          <span className="badge">{APPLY_OPEN ? "abiertas" : "pronto"}</span>
           {APPLY_OPEN
-            ? `inscripciones abiertas · fecha límite: ${APPLY_DEADLINE_FULL}`
-            : "inscripciones pronto"}
+            ? `inscripciones hasta el ${APPLY_DEADLINE_FULL}`
+            : "las inscripciones abren pronto"}
         </p>
 
-        <div className="hero-grid">
+        <div className="hero-frame rise d1">
           <div className="hero-copy">
-            <h1 className="hero-title rise d1">
+            <h1 className="hero-title">
               construí <br className="br-m" />
               lo que viene.
               <br />
               en un fin <br className="br-m" />
               de semana.
             </h1>
-            <p className="hero-lede rise d2">
+            <p className="hero-lede">
               La hackathon de IA más grande de Uruguay.
               <br />
               Armá tu equipo. Construí un producto de IA. Pitchealo en vivo.
             </p>
-            <div className="hero-cta rise d3">
-              <InscribiteBtn className="btn btn-primary">quiero participar ↗</InscribiteBtn>
+            <div className="hero-cta">
+              <InscribiteBtn className="btn btn-primary">quiero participar →</InscribiteBtn>
               <a href={`mailto:${PARTICIPANTS_EMAIL}`} className="link-quiet">
                 o hablá con Ramiro ↗
               </a>
             </div>
-            <p className="fine rise d4">
+            <p className="fine">
               Inscribirte no garantiza un lugar.
               <br />
               La participación queda sujeta a selección y confirmación del equipo.
             </p>
           </div>
 
-          <div className="hero-card rise d2">
-            <Terminal
-              footer={
-                <div className="hero-card-meta">
-                  <time className="hero-card-date" dateTime={EVENT_START_DATE}>
-                    {EVENT_DATES}
-                  </time>
-                  <p>
-                    Universidad de Montevideo
-                    <br />
-                    {VENUE_SHORT} · presencial
-                  </p>
-                </div>
-              }
-            />
+          <div className="hero-side">
+            <PixelBlocks id="px-hero" cells={PIXELS_HERO} className="hero-pixels" />
+            <div className="hero-card">
+              <Terminal />
+            </div>
           </div>
         </div>
+
+        <dl className="hero-meta rise d2">
+          <div>
+            <dt>fechas</dt>
+            <dd>
+              <time dateTime={EVENT_START_DATE}>{EVENT_DATES}</time>
+            </dd>
+          </div>
+          <div>
+            <dt>sede</dt>
+            <dd>
+              Universidad de Montevideo
+              <br />
+              {VENUE_SHORT} · presencial
+            </dd>
+          </div>
+          <div>
+            <Countdown />
+          </div>
+        </dl>
 
         <div className="coorg">
           <p className="label">coorganizan</p>

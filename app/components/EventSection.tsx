@@ -37,10 +37,12 @@ export function EventSection() {
                 tecnología: de una idea a un producto de IA funcionando.
               </p>
             </div>
-            <GlyphField className="event-glyph" lines={["IA"]} label="IA, escrito con ceros y unos" />
+            <div className="event-glyph-cell">
+              <GlyphField className="event-glyph" lines={["IA"]} label="IA, escrito con ceros y unos" />
+            </div>
           </div>
         </Reveal>
-        <ol className="steps">
+        <ol className="steps cells">
           {STEPS.map((s) => (
             <li key={s.n}>
               <Reveal className="step">

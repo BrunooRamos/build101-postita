@@ -22,7 +22,7 @@ export function SiteNav() {
         </div>
         <div className="topnav-end">
           <NavSocials />
-          <InscribiteBtn className="btn btn-primary btn-sm">quiero participar ↗</InscribiteBtn>
+          <InscribiteBtn className="btn btn-primary btn-sm">quiero participar →</InscribiteBtn>
         </div>
       </div>
     </nav>

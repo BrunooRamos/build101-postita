@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GeistPixelCircle } from "geist/font/pixel";
 import {
   CANONICAL_URL,
   SEO_DESCRIPTION,
@@ -10,8 +11,9 @@ import {
 import { PointerSpot } from "./components/PointerSpot";
 import "./globals.css";
 
-// Dos familias: Geist Sans para leer (títulos, texto, formularios) y Geist Mono
-// para la voz "terminal" (wordmark, titular del hero, terminal, números).
+// Tres roles: Geist Pixel (Circle) para titulares, Geist Sans para leer
+// (texto, formularios) y Geist Mono para la voz "terminal" (wordmark, nav,
+// labels, terminal, números).
 // Variable fonts: sin `weight` se sirve el eje completo.
 const sans = Geist({
   subsets: ["latin"],
@@ -91,7 +93,7 @@ export default function RootLayout({
   return (
     // Un solo tema: el color sale de los tokens del CSS, así que no hay script
     // de pre-paint, ni data-theme, ni riesgo de flash de tema equivocado.
-    <html lang="es-UY" className={`${sans.variable} ${mono.variable}`}>
+    <html lang="es-UY" className={`${sans.variable} ${mono.variable} ${GeistPixelCircle.variable}`}>
       <body>
         {children}
         <PointerSpot />

@@ -119,7 +119,7 @@ export function Sponsors() {
 
         {TIERS.map((t) => (
           <Reveal key={t.key} className="tier">
-            <p className="eyebrow">// {t.label}</p>
+            <p className="tier-tab">{t.label}</p>
             <ul className={`sponsor-grid size-${t.size}`}>
               {t.items.map((s) => (
                 <Logo key={s.name} s={s} />
