@@ -47,6 +47,7 @@ const TIERS: Tier[] = [
       { name: "IEEE", logo: "/sponsors/ieee.svg", w: 150, h: 50, url: "https://r9.ieee.org/uruguay/" },
       { name: "akua", logo: "/sponsors/akua.svg", w: 150, h: 50, url: "https://akua.la" },
       { name: "OrderEAT", logo: "/sponsors/ordereat.svg", w: 140, h: 27, url: "https://www.ordereat.com" },
+      { name: "Horizon", logo: "/sponsors/horizon.svg", w: 140, h: 27, url: "https://usehorizon.ai" },
     ],
   },
   {
