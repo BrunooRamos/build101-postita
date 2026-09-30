@@ -47,6 +47,7 @@ export const APPLY_URL = `${SITE_URL}${APPLY_PATH}`;
 export const SOCIALS = [
   { key: "instagram", label: "Instagram", handle: "@build101.dev", url: "https://www.instagram.com/build101.dev/" },
   { key: "linkedin", label: "LinkedIn", handle: "build 101", url: "https://www.linkedin.com/company/build101/" },
+  { key: "x", label: "X", handle: "@build101dev", url: "https://x.com/build101dev" },
 ] as const;
 export const SOCIAL_PROFILES: string[] = SOCIALS.map((s) => s.url);
 

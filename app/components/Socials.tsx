@@ -16,6 +16,18 @@ export function SocialIcon({ k, size = 20 }: { k: SocialKey; size?: number }) {
       </svg>
     );
   }
+  if (k === "x") {
+    return (
+      <svg {...common}>
+        <rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" strokeWidth="1.8" />
+        <path
+          fill="currentColor"
+          transform="translate(6 6) scale(0.5)"
+          d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+        />
+      </svg>
+    );
+  }
   return (
     <svg {...common}>
       <rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" strokeWidth="1.8" />
