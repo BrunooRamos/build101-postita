@@ -2014,9 +2014,24 @@ ol {
   .hero-copy .fine {
     text-align: center;
   }
-  /* en el celular no entran logo + íconos + CTA: las redes quedan en el cierre y el footer */
+  /* topbar del celular: logo + redes + CTA entran si se compacta todo */
+  .topnav-inner {
+    gap: 10px;
+  }
+  .topnav-end {
+    gap: 6px;
+  }
   .nav-socials {
-    display: none;
+    gap: 0;
+  }
+  .nav-socials a {
+    width: 36px;
+    height: 36px;
+  }
+  .topnav .btn-sm {
+    min-height: 36px;
+    padding: 6px 11px;
+    font-size: 13px;
   }
   /* cierre de sponsors: pregunta centrada sobre el botón de ancho completo */
   .sponsors-cta {
@@ -2042,5 +2057,33 @@ ol {
   }
   .footer-bottom {
     gap: 4px;
+  }
+}
+
+/* celulares angostos (360–400 px): el topbar se compacta un poco más para que
+   logo, redes y CTA entren en una línea sin cortarse */
+@media (max-width: 400px) {
+  .topnav-inner {
+    gap: 8px;
+  }
+  .topnav-inner .logo {
+    font-size: 20px;
+  }
+  .topnav-end {
+    gap: 2px;
+  }
+  .nav-socials a {
+    width: 34px;
+    height: 34px;
+  }
+  .topnav .btn-sm {
+    padding: 6px 10px;
+    font-size: 12.5px;
+  }
+}
+/* por debajo de 360 px no entra todo: las redes quedan en el cierre y el footer */
+@media (max-width: 359px) {
+  .nav-socials {
+    display: none;
   }
 }
