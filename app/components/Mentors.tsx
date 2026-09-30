@@ -59,7 +59,7 @@ export function Mentors() {
 export function Jury() {
   return (
     <section id="jurado" className="section section-rule">
-      <div className="wrap people">
+      <div className="wrap people people-right">
         <Reveal className="people-main">
           <p className="eyebrow">// jurado</p>
           <h2 className="h2">

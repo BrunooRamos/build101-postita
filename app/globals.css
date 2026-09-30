@@ -32,8 +32,11 @@
   --accent: #3b82f6;
   --accent-text: #6aa9ff;
   --accent-strong: #9cc5ff;
-  --action: #ffffff; /* CTA blanco, texto negro encima */
-  --action-hover: #e4e4e7;
+  /* CTA: prueba en azul (texto blanco). Para volver al blanco:
+     --action: #ffffff; --action-hover: #e4e4e7; --action-fg: #000000. */
+  --action: #2563eb;
+  --action-hover: #1d4ed8;
+  --action-fg: #ffffff;
   --pixel: #1f5fff; /* bloques pixel y duotonos */
   --danger: #f87171;
 
@@ -73,6 +76,7 @@
   :root {
     --accent: color(display-p3 0.2 0.49 1);
     --pixel: color(display-p3 0.15 0.38 1);
+    --action: color(display-p3 0.15 0.39 0.93);
   }
 }
 
@@ -147,7 +151,7 @@ ol {
   padding: 0 var(--gutter);
 }
 .section {
-  padding: 112px 0;
+  padding: 78px 0;
   border-top: 1px solid var(--line);
 }
 .section-alt {
@@ -155,7 +159,7 @@ ol {
 }
 /* sección más baja y titular más chico (hoy: el equipo) */
 .section-compact {
-  padding: 80px 0;
+  padding: 56px 0;
 }
 .h2.h2-sm {
   font-size: clamp(30px, 3.2vw, 42px);
@@ -318,12 +322,12 @@ ol {
 .link-quiet:hover .arr {
   transform: translate(2px, -2px);
 }
-/* CTA: bloque blanco con las esquinas escalonadas (el botón de Ship). Es el
-   único elemento brillante de cada pantalla. */
+/* CTA: bloque con las esquinas escalonadas (el botón de Ship). Es el único
+   relleno sólido fuerte de cada pantalla. */
 .btn-primary {
   background: var(--action);
   border-color: var(--action);
-  color: #000;
+  color: var(--action-fg);
   clip-path: polygon(
     0 var(--notch),
     var(--notch) var(--notch),
@@ -346,7 +350,7 @@ ol {
 /* el clip-path recorta el outline: el foco va por dentro */
 .btn-primary:focus-visible {
   outline: none;
-  box-shadow: inset 0 0 0 3px var(--accent);
+  box-shadow: inset 0 0 0 3px var(--action-fg);
 }
 .btn-primary:disabled {
   opacity: 0.6;
@@ -461,7 +465,7 @@ ol {
 
 /* ---------- hero ---------- */
 .hero {
-  padding: 40px 0 80px;
+  padding: 28px 0 56px;
 }
 .hero-badge {
   display: flex;
@@ -475,11 +479,11 @@ ol {
 .hero-frame {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 468px;
-  margin-top: 24px;
+  margin-top: 20px;
   border: 1px solid var(--line);
 }
 .hero-copy {
-  padding: 64px 56px 56px;
+  padding: 52px 56px 44px;
   border-right: 1px solid var(--line);
 }
 .hero-title {
@@ -564,12 +568,12 @@ ol {
 /* fila de datos debajo del marco (fechas · sede · cuenta regresiva) */
 .hero-meta {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr) minmax(0, 1.05fr) minmax(0, 1.85fr);
   border: 1px solid var(--line);
   border-top: 0;
 }
 .hero-meta > div {
-  padding: 22px 28px;
+  padding: 18px 24px 20px;
   border-right: 1px solid var(--line);
 }
 .hero-meta > div:last-child {
@@ -595,56 +599,48 @@ ol {
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
 }
-/* coorganizan: UM · build 101 · MÜTÜÖ, centrados en la página, con el mismo
-   tamaño y peso (blanco puro, cada logo en una caja de igual ancho y alto) y la
-   etiqueta centrada arriba. */
-.coorg {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 36px 24px 40px;
-  border: 1px solid var(--line);
-  border-top: 0;
-}
+/* coorganizan: UM · build 101 · MÜTÜÖ en la fila de datos del hero, así se
+   ven sin scrollear. Mismo tamaño y peso para los tres (blanco puro, cada logo
+   en una caja de igual ancho y alto). */
 .coorg-logos {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 32px;
+  gap: 18px;
+  margin-top: 4px;
 }
 .coorg-logos > li:not(.coorg-sep) {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 168px;
-  height: 52px;
+  width: 104px;
+  height: 40px;
 }
 .coorg-logos a {
   display: flex;
 }
 .coorg-sep {
   width: 1px;
-  height: 32px;
+  height: 24px;
   background: var(--line-2);
 }
 .coorg-um {
   width: auto;
-  height: 52px;
+  height: 40px;
 }
 /* MÜTÜÖ se lleva a blanco puro para que pese igual que los otros dos */
 .coorg-mutuo {
-  width: 152px;
+  width: 104px;
   height: auto;
   filter: brightness(0) invert(1);
 }
 .coorg-b101 {
   font-family: var(--font-mono-stack);
-  font-size: 33px;
+  font-size: 23px;
   font-weight: 600;
   letter-spacing: -0.04em;
   line-height: 1;
   color: var(--fg);
+  text-transform: none;
   white-space: nowrap;
 }
 
@@ -1036,7 +1032,7 @@ ol {
   --tile-h: 160px;
 }
 .size-silver {
-  --cols: 5;
+  --cols: 6;
   --scale: 1.35;
 }
 .size-silver .sponsor {
@@ -1146,6 +1142,10 @@ ol {
 .people {
   display: flex;
   gap: 80px;
+}
+/* jurado: el bloque va a la derecha para equilibrar la página */
+.people-right {
+  justify-content: flex-end;
 }
 .people-main {
   flex: 1 1 auto;
@@ -1398,7 +1398,7 @@ ol {
 .path-go.primary {
   background: var(--action);
   border-color: var(--action);
-  color: #000;
+  color: var(--action-fg);
 }
 .path:hover .path-go {
   transform: translateX(4px);
@@ -1922,10 +1922,10 @@ ol {
     font-size: 16px;
   }
   .section {
-    padding: 64px 0;
+    padding: 46px 0;
   }
   .section-compact {
-    padding: 48px 0;
+    padding: 36px 0;
   }
   .h2.h2-sm {
     font-size: 30px;
@@ -1993,40 +1993,59 @@ ol {
   }
   .hero-meta > div {
     padding: 18px 20px;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .hero-meta > div:last-child {
-    border-bottom: 0;
+    border: 1px solid var(--line);
+    border-top: 0;
   }
   .hero-meta .countdown {
     font-size: 18px;
   }
-  .coorg {
-    gap: 16px;
-    padding: 28px 18px 32px;
+  /* orden en el celular: coorganizan arriba de todo (se ve apenas carga),
+     después el copy, los datos y la terminal. Marco y fila de datos se
+     "abren" (display: contents) para poder reordenar sus celdas. */
+  .hero .wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-frame,
+  .hero-meta {
+    display: contents;
+  }
+  .hero-meta .coorg {
+    order: 1;
+    margin-top: 16px;
+    padding: 14px 18px 16px;
+    border: 1px solid var(--line);
+  }
+  .hero-copy {
+    order: 2;
+    border: 1px solid var(--line);
+    border-top: 0;
+  }
+  .hero-meta > div:not(.coorg) {
+    order: 3;
+  }
+  .hero-side {
+    order: 4;
+    border: 1px solid var(--line);
+    border-top: 0;
   }
   .coorg-logos {
-    width: 100%;
     justify-content: space-between;
     gap: 0;
   }
   .coorg-logos > li:not(.coorg-sep) {
     width: calc((100% - 2px) / 3 - 12px);
-    height: 36px;
-  }
-  .coorg-sep {
-    height: 24px;
+    height: 34px;
   }
   .coorg-um {
-    height: 36px;
+    height: 34px;
   }
   .coorg-mutuo {
     width: 100%;
-    max-width: 96px;
+    max-width: 92px;
   }
   .coorg-b101 {
-    font-size: clamp(16px, 5vw, 21px);
+    font-size: clamp(16px, 5vw, 20px);
   }
 
   .h2 {
