@@ -22,12 +22,12 @@ export function Founders() {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="equipo" className="section">
+    <section id="equipo" className="section section-compact">
       <div className="wrap">
         <Reveal className="founders-head">
           <div>
             <p className="eyebrow">// el equipo</p>
-            <h2 className="h2">
+            <h2 className="h2 h2-sm">
               no solo organizamos.
               <br />
               también construimos.

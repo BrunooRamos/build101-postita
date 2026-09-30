@@ -33,8 +33,8 @@ export default function Home() {
         <EventSection />
         <Schedule />
         <Perks />
-        <Founders />
         <Sponsors />
+        <Founders />
         <Mentors />
         <Jury />
         <FAQ />

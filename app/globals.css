@@ -154,6 +154,13 @@ ol {
 .section-alt {
   background: var(--surface);
 }
+/* sección más baja y titular más chico (hoy: el equipo) */
+.section-compact {
+  padding: 80px 0;
+}
+.h2.h2-sm {
+  font-size: clamp(30px, 3.2vw, 42px);
+}
 /* celdas que comparten borde (el patrón de grilla de Ship): el contenedor
    pone el borde de arriba/izquierda y cada hijo el de la derecha/abajo. */
 .cells {
@@ -858,13 +865,13 @@ ol {
   gap: 32px;
 }
 .founders-aside {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--muted);
 }
 .speakers {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
-  margin-top: 48px;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  margin-top: 32px;
   border: 1px solid var(--line);
 }
 .speaker-list {
@@ -874,7 +881,7 @@ ol {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 30px 32px;
+  padding: 18px 24px;
   border-bottom: 1px solid var(--line);
   font-family: var(--font-mono-stack);
   text-transform: uppercase;
@@ -895,17 +902,17 @@ ol {
   min-width: 0;
 }
 .speaker-name {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.02em;
 }
 .speaker-role {
   margin-top: 2px;
-  font-size: 14.5px;
+  font-size: 13px;
 }
 .speaker-orgs {
-  margin-top: 12px;
-  font-size: 12.5px;
+  margin-top: 6px;
+  font-size: 12px;
   line-height: 1.6;
   letter-spacing: 0.02em;
 }
@@ -923,7 +930,7 @@ ol {
   border-color: var(--line-ctl);
 }
 .speaker-photo {
-  min-height: 420px;
+  min-height: 280px;
 }
 .speaker-photo img {
   position: absolute;
@@ -1882,6 +1889,12 @@ ol {
   .section {
     padding: 64px 0;
   }
+  .section-compact {
+    padding: 48px 0;
+  }
+  .h2.h2-sm {
+    font-size: 30px;
+  }
   .nav-links {
     display: none;
   }
@@ -2029,14 +2042,14 @@ ol {
   }
   .speaker {
     align-items: flex-start;
-    gap: 16px;
-    padding: 22px 20px;
+    gap: 14px;
+    padding: 16px;
     color: var(--fg);
   }
   .speaker-thumb {
     display: block;
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
     flex: none;
     object-fit: cover;
     object-position: center top;
