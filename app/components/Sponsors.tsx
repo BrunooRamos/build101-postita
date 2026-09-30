@@ -78,7 +78,7 @@ const TIERS: Tier[] = [
     label: "nos dan energía",
     size: "small",
     items: [
-      { name: "Salus", logo: "/sponsors/salus.svg", w: 150, h: 36, url: "https://www.salus.com.uy", featured: true },
+      { name: "Salus", logo: "/sponsors/salus.svg", w: 150, h: 36, url: "https://www.salus.com.uy" },
       { name: "Rigor", logo: "/sponsors/rigor.png", w: 150, h: 30, url: "https://www.rigorpizza.com" },
       { name: "Chajá", logo: "/sponsors/chaja.png", w: 150, h: 36, url: "https://www.instagram.com/chajabistro/" },
       { name: "Grupo Sebamar", logo: "/sponsors/sebamar.png", w: 150, h: 36, url: "https://sebamar.com.uy" },
