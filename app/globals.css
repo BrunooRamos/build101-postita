@@ -621,8 +621,7 @@ ol {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 104px;
-  height: 40px;
+  height: 44px;
 }
 .coorg-logos a {
   display: flex;
@@ -632,9 +631,11 @@ ol {
   height: 24px;
   background: var(--line-2);
 }
+/* lockup UM | FIUM (Facultad de Ingeniería): más ancho que los otros dos,
+   va a la misma altura */
 .coorg-um {
   width: auto;
-  height: 40px;
+  height: 44px;
 }
 /* MÜTÜÖ se lleva a blanco puro para que pese igual que los otros dos */
 .coorg-mutuo {
@@ -2069,7 +2070,7 @@ ol {
   .coorg {
     order: 1;
     margin-top: 16px;
-    padding: 14px 18px;
+    padding: 14px 14px;
   }
   .hero-copy {
     order: 2;
@@ -2089,19 +2090,18 @@ ol {
     justify-content: space-between;
     gap: 0;
   }
+  /* tamaños fluidos: los tres entran en una línea desde 360 px */
   .coorg-logos > li:not(.coorg-sep) {
-    width: calc((100% - 2px) / 3 - 12px);
-    height: 34px;
+    height: clamp(26px, 8vw, 34px);
   }
   .coorg-um {
-    height: 34px;
+    height: clamp(26px, 8vw, 34px);
   }
   .coorg-mutuo {
-    width: 100%;
-    max-width: 92px;
+    width: clamp(62px, 19vw, 84px);
   }
   .coorg-b101 {
-    font-size: clamp(16px, 5vw, 20px);
+    font-size: clamp(14px, 4.2vw, 18px);
   }
 
   .h2 {
