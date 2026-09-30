@@ -345,6 +345,31 @@ ol {
 .nav-links a:hover {
   color: var(--fg);
 }
+.topnav-end {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+/* íconos de redes al lado del CTA: caja de 40px para tocar, sin fondo hasta el hover */
+.nav-socials {
+  display: flex;
+  gap: 4px;
+}
+.nav-socials a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  color: var(--fg-body);
+  transition:
+    color 0.18s var(--ease-out),
+    background-color 0.18s var(--ease-out);
+}
+.nav-socials a:hover {
+  color: var(--fg);
+  background: var(--surface);
+}
 
 /* ---------- hero ---------- */
 .hero {
@@ -885,6 +910,69 @@ ol {
   color: var(--fg);
 }
 
+/* ---------- redes (cierre) ---------- */
+.follow {
+  display: grid;
+  grid-template-columns: minmax(0, 520px) minmax(0, 520px);
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px 80px;
+}
+.follow-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.follow-link {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px 18px 18px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  transition: border-color 0.18s var(--ease-out);
+}
+.follow-link:hover {
+  border-color: var(--accent);
+}
+.follow-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex: none;
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--fg);
+}
+.follow-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.follow-name {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--fg);
+}
+.follow-handle {
+  font-family: var(--font-mono-stack);
+  font-size: 14px;
+  color: var(--muted);
+}
+.follow-link .arr {
+  margin-left: auto;
+  font-size: 20px;
+  color: var(--muted);
+}
+.follow-link:hover .arr {
+  color: var(--fg);
+  transform: translate(2px, -2px);
+}
+
 /* ---------- mentores & jurado ---------- */
 .people {
   display: flex;
@@ -1174,6 +1262,11 @@ ol {
   list-style: none;
   font-size: 15px;
   color: var(--fg-body);
+}
+.footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 .footer-socials a:hover {
   color: var(--fg);
@@ -1599,6 +1692,9 @@ ol {
   .nav-links {
     display: none;
   }
+  .follow {
+    grid-template-columns: minmax(0, 1fr);
+  }
   .topnav-inner {
     min-height: 64px;
   }
@@ -1918,6 +2014,10 @@ ol {
   .hero-copy .fine {
     text-align: center;
   }
+  /* en el celular no entran logo + íconos + CTA: las redes quedan en el cierre y el footer */
+  .nav-socials {
+    display: none;
+  }
   /* cierre de sponsors: pregunta centrada sobre el botón de ancho completo */
   .sponsors-cta {
     align-items: stretch;
@@ -1931,6 +2031,9 @@ ol {
   }
   .footer-contacts a {
     margin-top: 2px;
+  }
+  .footer-socials a {
+    display: inline-flex;
   }
   .share a,
   .share button {

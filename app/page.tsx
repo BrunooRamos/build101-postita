@@ -10,6 +10,7 @@ import { Mentors, Jury } from "./components/Mentors";
 import { FAQ } from "./components/FAQ";
 import { SignupPaths } from "./components/SignupPaths";
 import { SiteFooter, SiteNav } from "./components/SiteChrome";
+import { FollowSection } from "./components/Socials";
 import { KonamiMatrix } from "./components/KonamiMatrix";
 import { DeployFX } from "./components/DeployFX";
 import { FakeCrash } from "./components/FakeCrash";
@@ -76,6 +77,8 @@ export default function Home() {
             </Reveal>
           </div>
         </section>
+
+        <FollowSection />
       </main>
 
       <SiteFooter />

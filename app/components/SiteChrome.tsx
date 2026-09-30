@@ -2,7 +2,8 @@ import Link from "next/link";
 import { Logo } from "./Logo";
 import { InscribiteBtn } from "./DeployFX";
 import { ShareLinks } from "./ShareLinks";
-import { SOCIALS, TEAM } from "../event";
+import { FooterSocials, NavSocials } from "./Socials";
+import { TEAM } from "../event";
 
 const AREA_LABEL = { participants: "participants", mentors: "mentors", sponsors: "sponsors" } as const;
 
@@ -19,7 +20,10 @@ export function SiteNav() {
           <Link href="/#sponsors">sponsors</Link>
           <Link href="/#contacto">contacto</Link>
         </div>
-        <InscribiteBtn className="btn btn-primary btn-sm">quiero participar ↗</InscribiteBtn>
+        <div className="topnav-end">
+          <NavSocials />
+          <InscribiteBtn className="btn btn-primary btn-sm">quiero participar ↗</InscribiteBtn>
+        </div>
       </div>
     </nav>
   );
@@ -49,15 +53,7 @@ export function SiteFooter() {
           <div>
             <Logo className="footer-logo" />
             <p className="footer-tagline">build. ship. repeat.</p>
-            <ul className="footer-socials" aria-label="redes">
-              {SOCIALS.map((s) => (
-                <li key={s.key}>
-                  <a href={s.url} target="_blank" rel="noopener noreferrer" aria-label={`build 101 en ${s.label}`}>
-                    {s.label} ↗
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <FooterSocials />
           </div>
           <ul className="footer-contacts">
             {TEAM.map((p) => (
