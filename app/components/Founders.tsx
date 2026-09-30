@@ -1,8 +1,5 @@
-"use client";
-
-import { useState } from "react";
 import { Reveal } from "./Reveal";
-import { PixelBlocks, PIXELS_TEAM } from "./PixelBlocks";
+import { PixelBlocks, PIXELS_SMALL } from "./PixelBlocks";
 import { TEAM } from "../event";
 
 function LinkedInIcon() {
@@ -16,11 +13,11 @@ function LinkedInIcon() {
   );
 }
 
-// Patrón "featured speakers" de Vercel Ship: lista con hairlines a la
-// izquierda y una foto grande a la derecha que sigue al hover/focus.
+// Los tres, siempre visibles: una celda por persona (grilla de hairlines),
+// foto en halftone y datos en mono. Al pasar el mouse (o con foco) la celda
+// sube y se enciende; las otras dos se atenúan. Todo en CSS (:hover,
+// :focus-within y :has), sin estado.
 export function Founders() {
-  const [active, setActive] = useState(0);
-
   return (
     <section id="equipo" className="section section-compact">
       <div className="wrap">
@@ -40,55 +37,41 @@ export function Founders() {
           </p>
         </Reveal>
 
-        <Reveal className="speakers">
-          <ul className="speaker-list">
+        <Reveal>
+          <ul className="team">
             {TEAM.map((p, i) => (
-              <li
-                key={p.key}
-                className="speaker"
-                data-active={i === active || undefined}
-                onMouseEnter={() => setActive(i)}
-                onFocus={() => setActive(i)}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="speaker-thumb" src={p.photo} alt="" width={72} height={72} loading="lazy" />
-                <div className="speaker-id">
-                  <p className="speaker-name">{p.name}</p>
-                  <p className="speaker-role">{p.role}</p>
-                  <p className="speaker-orgs">
+              <li key={p.key} className="member">
+                <div className="member-photo halftone">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={p.photo} alt={`foto de ${p.name}`} width={360} height={360} loading="lazy" />
+                  <PixelBlocks id={`px-team-${i}`} cells={PIXELS_SMALL} cols={4} rows={4} className="member-pixels" />
+                </div>
+                <div className="member-id">
+                  <div className="member-top">
+                    <div>
+                      <p className="member-name">{p.name}</p>
+                      <p className="member-role">{p.role}</p>
+                    </div>
+                    <a
+                      className="member-link"
+                      href={p.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${p.name} en LinkedIn`}
+                    >
+                      <LinkedInIcon />
+                    </a>
+                  </div>
+                  <p className="member-orgs">
                     {/* como en LinkedIn: primero dónde trabaja, después dónde estudia */}
                     {p.work.detail} · {p.work.name}
                     <br />
                     {p.school.detail} · {p.school.name}
                   </p>
                 </div>
-                <a
-                  className="speaker-link"
-                  href={p.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${p.name} en LinkedIn`}
-                >
-                  <LinkedInIcon />
-                </a>
               </li>
             ))}
           </ul>
-          <div className="speaker-photo halftone" aria-hidden>
-            {TEAM.map((p, i) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                key={p.key}
-                src={p.photo}
-                alt=""
-                width={360}
-                height={360}
-                loading="lazy"
-                data-active={i === active || undefined}
-              />
-            ))}
-            <PixelBlocks id="px-team" cells={PIXELS_TEAM} className="speaker-pixels" />
-          </div>
         </Reveal>
       </div>
     </section>

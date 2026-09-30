@@ -22,9 +22,9 @@ export function Hero() {
             : "las inscripciones abren pronto"}
         </p>
 
-        {/* coorganizan arriba de todo: se ve apenas carga, en cualquier pantalla */}
+        {/* coorganizan arriba de todo, logos centrados: se ve apenas carga, en cualquier pantalla */}
         <div className="coorg rise">
-          <p className="label">coorganizan</p>
+          <p className="sr-only">coorganizan</p>
           <ul className="coorg-logos">
             <li>
               <a
