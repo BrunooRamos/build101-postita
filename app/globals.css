@@ -2404,9 +2404,11 @@ ol {
   .topnav-end {
     gap: 2px;
   }
+  /* con tres redes (Instagram, LinkedIn, X) los íconos se achican para
+     que logo, redes y CTA entren en una línea a 360 px */
   .nav-socials a {
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
   }
   .topnav .btn-sm {
     padding: 6px 10px;
