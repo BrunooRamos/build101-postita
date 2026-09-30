@@ -18,7 +18,7 @@ export function Hero() {
         <p className="hero-badge rise">
           <span className="badge">{APPLY_OPEN ? "abiertas" : "pronto"}</span>
           {APPLY_OPEN
-            ? `inscripciones hasta el ${APPLY_DEADLINE_FULL}`
+            ? `inscripciones hasta el ${APPLY_DEADLINE_FULL.replace(/ /g, "\u00a0")}`
             : "las inscripciones abren pronto"}
         </p>
 
