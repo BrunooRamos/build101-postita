@@ -84,6 +84,7 @@ const TIERS: Tier[] = [
       { name: "Grupo Sebamar", logo: "/sponsors/sebamar.png", w: 150, h: 36, url: "https://sebamar.com.uy" },
       { name: "Los Trovadores", logo: "/sponsors/los-trovadores-dark.png", w: 150, h: 36, url: "https://www.lostrovadores.com.uy" },
       { name: "Viandas Hotel del Prado", logo: "/sponsors/viandas-hotel-del-prado.png", w: 150, h: 36, url: "https://viandashoteldelprado.uy" },
+      { name: "Life Cinemas", logo: "/sponsors/life-cinemas.png", w: 150, h: 40, url: "https://www.lifecinemas.com.uy" },
     ],
   },
 ];
