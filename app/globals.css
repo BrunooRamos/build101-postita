@@ -2156,9 +2156,13 @@ ol {
   .team {
     grid-template-columns: minmax(0, 1fr);
   }
+  /* la foto va centrada verticalmente al lado del texto, con el mismo
+     margen que el texto (antes quedaba pegada arriba a la izquierda) */
   .member {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
@@ -2166,11 +2170,13 @@ ol {
     border-bottom: 0;
   }
   .member-photo {
-    width: 72px;
+    width: 76px;
     flex: none;
     aspect-ratio: 1;
-    border-bottom: 0;
-    border-right: 1px solid var(--line);
+    border: 1px solid var(--line);
+  }
+  .member-photo img {
+    object-position: center;
   }
   .member-pixels {
     display: none;
@@ -2179,7 +2185,7 @@ ol {
     flex: 1;
     min-width: 0;
     gap: 8px;
-    padding: 14px 16px;
+    padding: 0;
   }
   .member:hover,
   .member:focus-within {
