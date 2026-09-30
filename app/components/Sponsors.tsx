@@ -28,7 +28,7 @@ const TIERS: Tier[] = [
     label: "gold sponsors",
     size: "gold",
     items: [
-      { name: "Pento", logo: "/sponsors/pento.png", w: 158, h: 78, invert: true, url: "https://pento.ai" },
+      { name: "Pento", logo: "/sponsors/pento-color.png", w: 158, h: 78, url: "https://pento.ai" },
       { name: "Santander", logo: "/sponsors/santander.svg", w: 158, h: 78, url: "https://www.santander.com.uy" },
       { name: "Instituto Vidart", logo: "/sponsors/vidart.svg", w: 158, h: 78, url: "https://vidart.uy" },
       { name: "AWS", logo: "/sponsors/aws.svg", w: 118, h: 58, url: "https://aws.amazon.com" },
