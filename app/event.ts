@@ -70,9 +70,9 @@ export const EVENT_DATES = "17 y 18 oct 2026";
 export const EVENT_DATES_LONG = "sábado 17 y domingo 18 de octubre de 2026";
 export const EVENT_START_DATE = "2026-10-17";
 
-/** Apertura del sábado y cierre aproximado del domingo. */
+/** Apertura del sábado y cierre del domingo (16:00, con margen). */
 export const EVENT_KICKOFF_ISO = "2026-10-17T09:00:00-03:00";
-export const EVENT_END_ISO = "2026-10-18T15:00:00-03:00";
+export const EVENT_END_ISO = "2026-10-18T16:00:00-03:00";
 
 /** Horario de la sede (no se pernocta: la sede cierra de noche). */
 export const SCHEDULE = [
@@ -83,7 +83,7 @@ export const SCHEDULE = [
   },
   {
     day: "domingo 18",
-    hours: "09:00 a ~15:00",
+    hours: "09:00 a 16:00",
     note: "Retomamos, pitcheamos los productos y cerramos.",
   },
 ];

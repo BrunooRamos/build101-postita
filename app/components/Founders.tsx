@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import { Reveal } from "./Reveal";
+import { PixelBlocks, PIXELS_TEAM } from "./PixelBlocks";
 import { TEAM } from "../event";
 
 function LinkedInIcon() {
@@ -12,79 +16,80 @@ function LinkedInIcon() {
   );
 }
 
-function Org({ name, detail, logo }: { name: string; detail: string; logo: string }) {
-  return (
-    <li className="org">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={logo} alt="" width={44} height={44} loading="lazy" />
-      <div>
-        <p className="org-name">{name}</p>
-        <p className="org-detail">{detail}</p>
-      </div>
-    </li>
-  );
-}
-
+// Patrón "featured speakers" de Vercel Ship: lista con hairlines a la
+// izquierda y una foto grande a la derecha que sigue al hover/focus.
 export function Founders() {
+  const [active, setActive] = useState(0);
+
   return (
-    <section id="equipo" className="section">
+    <section id="equipo" className="section section-compact">
       <div className="wrap">
-        <Reveal>
-          <p className="eyebrow">// el equipo</p>
-          <div className="founders-head">
-            <h2 className="h2">
+        <Reveal className="founders-head">
+          <div>
+            <p className="eyebrow">// el equipo</p>
+            <h2 className="h2 h2-sm">
               no solo organizamos.
               <br />
               también construimos.
             </h2>
-            <p className="founders-aside">
-              Somos Ramiro, Bruno y Mateo.
-              <br />
-              Construimos productos de IA todos los días.
-            </p>
           </div>
+          <p className="founders-aside">
+            Somos Ramiro, Bruno y Mateo.
+            <br />
+            Construimos productos de IA todos los días.
+          </p>
         </Reveal>
 
-        <ul className="founders">
-          {TEAM.map((p) => (
-            <li key={p.key}>
-              <Reveal className="founder">
-                <div className="founder-top">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    className="founder-photo"
-                    src={p.photo}
-                    alt={`foto de ${p.name}`}
-                    width={104}
-                    height={116}
-                    loading="lazy"
-                  />
-                  <div className="founder-id">
-                    <p className="label">{p.role}</p>
-                    <a
-                      className="founder-link"
-                      href={p.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${p.name} en LinkedIn`}
-                    >
-                      <LinkedInIcon />
-                      <span className="founder-name">{p.name}</span>
-                      <span className="founder-arrow" aria-hidden>
-                        ↗
-                      </span>
-                    </a>
-                  </div>
+        <Reveal className="speakers">
+          <ul className="speaker-list">
+            {TEAM.map((p, i) => (
+              <li
+                key={p.key}
+                className="speaker"
+                data-active={i === active || undefined}
+                onMouseEnter={() => setActive(i)}
+                onFocus={() => setActive(i)}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className="speaker-thumb" src={p.photo} alt="" width={72} height={72} loading="lazy" />
+                <div className="speaker-id">
+                  <p className="speaker-name">{p.name}</p>
+                  <p className="speaker-role">{p.role}</p>
+                  <p className="speaker-orgs">
+                    {/* como en LinkedIn: primero dónde trabaja, después dónde estudia */}
+                    {p.work.detail} · {p.work.name}
+                    <br />
+                    {p.school.detail} · {p.school.name}
+                  </p>
                 </div>
-                <ul className="orgs">
-                  {/* como en LinkedIn: primero dónde trabaja, después dónde estudia */}
-                  <Org {...p.work} />
-                  <Org {...p.school} />
-                </ul>
-              </Reveal>
-            </li>
-          ))}
-        </ul>
+                <a
+                  className="speaker-link"
+                  href={p.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${p.name} en LinkedIn`}
+                >
+                  <LinkedInIcon />
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="speaker-photo halftone" aria-hidden>
+            {TEAM.map((p, i) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={p.key}
+                src={p.photo}
+                alt=""
+                width={360}
+                height={360}
+                loading="lazy"
+                data-active={i === active || undefined}
+              />
+            ))}
+            <PixelBlocks id="px-team" cells={PIXELS_TEAM} className="speaker-pixels" />
+          </div>
+        </Reveal>
       </div>
     </section>
   );

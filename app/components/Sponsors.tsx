@@ -48,6 +48,7 @@ const TIERS: Tier[] = [
       { name: "akua", logo: "/sponsors/akua.svg", w: 150, h: 50, url: "https://akua.la" },
       { name: "OrderEAT", logo: "/sponsors/ordereat.svg", w: 140, h: 27, url: "https://www.ordereat.com" },
       { name: "Horizon", logo: "/sponsors/horizon.svg", w: 140, h: 27, url: "https://usehorizon.ai" },
+      { name: "Promtior", logo: "/sponsors/promtior.svg", w: 150, h: 27, url: "https://www.promtior.ai" },
     ],
   },
   {
@@ -119,7 +120,7 @@ export function Sponsors() {
 
         {TIERS.map((t) => (
           <Reveal key={t.key} className="tier">
-            <p className="eyebrow">// {t.label}</p>
+            <p className="tier-tab">{t.label}</p>
             <ul className={`sponsor-grid size-${t.size}`}>
               {t.items.map((s) => (
                 <Logo key={s.name} s={s} />
