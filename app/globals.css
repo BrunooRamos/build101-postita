@@ -2010,7 +2010,9 @@ ol {
   .hero-meta {
     display: contents;
   }
-  .hero-meta .coorg {
+  /* div.coorg (no .coorg) para ganarle a .hero-meta > div:last-child, que en
+     desktop saca el borde derecho de la última celda */
+  .hero-meta > div.coorg {
     order: 1;
     margin-top: 16px;
     padding: 14px 18px 16px;
