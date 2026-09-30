@@ -22,6 +22,37 @@ export function Hero() {
             : "las inscripciones abren pronto"}
         </p>
 
+        {/* coorganizan arriba de todo: se ve apenas carga, en cualquier pantalla */}
+        <div className="coorg rise">
+          <p className="label">coorganizan</p>
+          <ul className="coorg-logos">
+            <li>
+              <a
+                href="https://um.edu.uy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Universidad de Montevideo"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className="coorg-um" src="/sponsors/um-white.png" alt="Universidad de Montevideo" width={131} height={52} />
+              </a>
+            </li>
+            <li aria-hidden className="coorg-sep" />
+            <li>
+              <span className="coorg-b101" aria-label="build 101">
+                build 101
+              </span>
+            </li>
+            <li aria-hidden className="coorg-sep" />
+            <li>
+              <a href="https://canalmutuo.com" target="_blank" rel="noopener noreferrer" aria-label="MÜTÜÖ">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className="coorg-mutuo" src="/sponsors/mutuo.png" alt="MÜTÜÖ" width={152} height={42} />
+              </a>
+            </li>
+          </ul>
+        </div>
+
         <div className="hero-frame rise d1">
           <div className="hero-copy">
             <h1 className="hero-title">
@@ -74,37 +105,6 @@ export function Hero() {
           </div>
           <div>
             <Countdown />
-          </div>
-          <div className="coorg">
-            <dt>coorganizan</dt>
-            <dd>
-              <ul className="coorg-logos">
-                <li>
-                  <a
-                    href="https://um.edu.uy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Universidad de Montevideo"
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img className="coorg-um" src="/sponsors/um-white.png" alt="Universidad de Montevideo" width={131} height={52} />
-                  </a>
-                </li>
-                <li aria-hidden className="coorg-sep" />
-                <li>
-                  <span className="coorg-b101" aria-label="build 101">
-                    build 101
-                  </span>
-                </li>
-                <li aria-hidden className="coorg-sep" />
-                <li>
-                  <a href="https://canalmutuo.com" target="_blank" rel="noopener noreferrer" aria-label="MÜTÜÖ">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img className="coorg-mutuo" src="/sponsors/mutuo.png" alt="MÜTÜÖ" width={152} height={42} />
-                  </a>
-                </li>
-              </ul>
-            </dd>
           </div>
         </dl>
       </div>

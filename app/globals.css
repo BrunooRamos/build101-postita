@@ -465,7 +465,7 @@ ol {
 
 /* ---------- hero ---------- */
 .hero {
-  padding: 28px 0 56px;
+  padding: 22px 0 56px;
 }
 .hero-badge {
   display: flex;
@@ -479,11 +479,20 @@ ol {
 .hero-frame {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 468px;
+  border: 1px solid var(--line);
+  border-top: 0;
+}
+/* coorganizan: tira arriba del marco del hero (logos arriba, datos abajo) */
+.coorg {
+  display: flex;
+  align-items: center;
+  gap: 32px;
   margin-top: 20px;
+  padding: 12px 28px;
   border: 1px solid var(--line);
 }
 .hero-copy {
-  padding: 52px 56px 44px;
+  padding: 44px 56px 36px;
   border-right: 1px solid var(--line);
 }
 .hero-title {
@@ -495,7 +504,7 @@ ol {
   color: var(--fg);
 }
 .hero-lede {
-  margin-top: 32px;
+  margin-top: 26px;
   font-size: 20px;
   line-height: 28px;
   color: var(--fg-body);
@@ -505,7 +514,7 @@ ol {
   flex-wrap: wrap;
   align-items: center;
   gap: 16px 28px;
-  margin-top: 36px;
+  margin-top: 30px;
 }
 .hero-cta .btn-primary {
   --notch: 8px;
@@ -518,7 +527,7 @@ ol {
   display: none;
 }
 .hero-copy .fine {
-  margin-top: 28px;
+  margin-top: 22px;
 }
 .hero-side {
   position: relative;
@@ -568,7 +577,7 @@ ol {
 /* fila de datos debajo del marco (fechas · sede · cuenta regresiva) */
 .hero-meta {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr) minmax(0, 1.05fr) minmax(0, 1.85fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   border: 1px solid var(--line);
   border-top: 0;
 }
@@ -599,14 +608,12 @@ ol {
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
 }
-/* coorganizan: UM · build 101 · MÜTÜÖ en la fila de datos del hero, así se
-   ven sin scrollear. Mismo tamaño y peso para los tres (blanco puro, cada logo
-   en una caja de igual ancho y alto). */
+/* logos de coorganizan: UM · build 101 · MÜTÜÖ con el mismo tamaño y peso
+   (blanco puro, cada logo en una caja de igual ancho y alto). */
 .coorg-logos {
   display: flex;
   align-items: center;
   gap: 18px;
-  margin-top: 4px;
 }
 .coorg-logos > li:not(.coorg-sep) {
   display: flex;
@@ -1993,37 +2000,38 @@ ol {
   }
   .hero-meta > div {
     padding: 18px 20px;
-    border: 1px solid var(--line);
-    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-meta > div:last-child {
+    border-bottom: 0;
   }
   .hero-meta .countdown {
     font-size: 18px;
   }
-  /* orden en el celular: coorganizan arriba de todo (se ve apenas carga),
-     después el copy, los datos y la terminal. Marco y fila de datos se
-     "abren" (display: contents) para poder reordenar sus celdas. */
+  /* orden en el celular: coorganizan → copy → datos → terminal. El marco se
+     "abre" (display: contents) para que la terminal baje después de los datos. */
   .hero .wrap {
     display: flex;
     flex-direction: column;
   }
-  .hero-frame,
-  .hero-meta {
+  .hero-frame {
     display: contents;
   }
-  /* div.coorg (no .coorg) para ganarle a .hero-meta > div:last-child, que en
-     desktop saca el borde derecho de la última celda */
-  .hero-meta > div.coorg {
+  .coorg {
     order: 1;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
     margin-top: 16px;
     padding: 14px 18px 16px;
-    border: 1px solid var(--line);
   }
   .hero-copy {
     order: 2;
     border: 1px solid var(--line);
     border-top: 0;
   }
-  .hero-meta > div:not(.coorg) {
+  .hero-meta {
     order: 3;
   }
   .hero-side {
