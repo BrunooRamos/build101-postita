@@ -31,10 +31,10 @@ export function Hero() {
                 href="https://um.edu.uy"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Universidad de Montevideo"
+                aria-label="Universidad de Montevideo · Facultad de Ingeniería"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="coorg-um" src="/sponsors/um-white.png" alt="Universidad de Montevideo" width={131} height={52} />
+                <img className="coorg-um" src="/sponsors/um-fium-white.png" alt="Universidad de Montevideo · Facultad de Ingeniería (FIUM)" width={416} height={96} />
               </a>
             </li>
             <li aria-hidden className="coorg-sep" />
