@@ -1106,6 +1106,10 @@ ol {
 .size-small {
   --cols: 7;
 }
+/* tier con 6 logos (instituciones): 6 columnas para que no quede uno solo */
+.sponsor-grid.cols-6 {
+  --cols: 6;
+}
 .size-small .sponsor {
   --tile-h: 64px;
   padding: 6px;
@@ -2237,6 +2241,9 @@ ol {
   }
   .size-small {
     --cols: 3;
+  }
+  .sponsor-grid.cols-6 {
+    --cols: 2;
   }
   /* sin huérfanos: la última tarjeta estira hasta cerrar la fila */
   .sponsor-grid:not(.size-small) .sponsor:last-child:nth-child(odd),

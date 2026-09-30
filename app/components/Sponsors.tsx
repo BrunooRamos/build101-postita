@@ -19,7 +19,14 @@ type Sponsor = {
   tight?: boolean;
 };
 
-type Tier = { key: string; label: string; size: "gold" | "silver" | "partner" | "small"; items: Sponsor[] };
+type Tier = {
+  key: string;
+  label: string;
+  size: "gold" | "silver" | "partner" | "small";
+  /** Columnas en desktop cuando no coinciden con las del tamaño (para que la fila quede completa). */
+  cols?: 6;
+  items: Sponsor[];
+};
 
 // Orden y agrupación definidos por el equipo. Partners = aportes en canje.
 const TIERS: Tier[] = [
@@ -67,12 +74,14 @@ const TIERS: Tier[] = [
     key: "instituciones",
     label: "instituciones que nos apoyan",
     size: "partner",
+    cols: 6,
     items: [
       { name: "Embajada de EE.UU. en Uruguay · Freedom 250", logo: "/sponsors/freedom250.png", w: 120, h: 72, url: "https://uy.usembassy.gov", tight: true },
       { name: "Urucap", logo: "/sponsors/urucap.png", w: 150, h: 40, url: "https://www.urucap.org" },
       { name: "ANII", logo: "/sponsors/anii.png", w: 104, h: 28, url: "https://www.anii.org.uy" },
       { name: "Club del Inversor", logo: "/sponsors/club-del-inversor.png", w: 150, h: 40, url: "https://www.clubdelinversor.uy" },
       { name: "CUTI", logo: "/sponsors/cuti.svg", w: 150, h: 40, url: "https://cuti.org.uy" },
+      { name: "Initium · Universidad de Montevideo", logo: "/sponsors/initium.png", w: 141, h: 38, url: "https://www.um.edu.uy/initium" },
     ],
   },
   {
@@ -121,7 +130,7 @@ export function Sponsors() {
         {TIERS.map((t) => (
           <Reveal key={t.key} className="tier">
             <p className="tier-tab">{t.label}</p>
-            <ul className={`sponsor-grid size-${t.size}`}>
+            <ul className={`sponsor-grid size-${t.size}${t.cols ? ` cols-${t.cols}` : ""}`}>
               {t.items.map((s) => (
                 <Logo key={s.name} s={s} />
               ))}
