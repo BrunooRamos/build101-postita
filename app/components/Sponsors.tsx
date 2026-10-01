@@ -81,7 +81,7 @@ const TIERS: Tier[] = [
       { name: "ANII", logo: "/sponsors/anii.png", w: 104, h: 28, url: "https://www.anii.org.uy" },
       { name: "Club del Inversor", logo: "/sponsors/club-del-inversor.png", w: 150, h: 40, url: "https://www.clubdelinversor.uy" },
       { name: "CUTI", logo: "/sponsors/cuti.svg", w: 150, h: 40, url: "https://cuti.org.uy" },
-      { name: "Initium · Universidad de Montevideo", logo: "/sponsors/initium.png", w: 141, h: 38, url: "https://www.um.edu.uy/initium" },
+      { name: "Initium · Universidad de Montevideo", logo: "/sponsors/initium.png", w: 150, h: 39, url: "https://www.um.edu.uy/initium" },
     ],
   },
   {
