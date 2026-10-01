@@ -7,9 +7,9 @@
 export const SITE_NAME = "build 101";
 export const SITE_URL = "https://build101.dev";
 export const CANONICAL_URL = `${SITE_URL}/`;
-export const OG_IMAGE_URL = `${SITE_URL}/opengraph-image`;
-export const OG_IMAGE_ALT =
-  "build 101: la hackathon de IA más grande de uruguay. 17 y 18 de octubre de 2026, universidad de montevideo · fium, latu. gratis, cupos limitados.";
+/** Imagen del preview del link: archivo estático app/opengraph-image.jpg (con su
+ *  opengraph-image.alt.txt), mismo lenguaje que el flyer de redes. */
+export const OG_IMAGE_URL = `${SITE_URL}/opengraph-image.jpg`;
 // el logo de marca es el avatar "b_" que renderiza la ruta /icon en build.
 export const LOGO_URL = `${SITE_URL}/icon`;
 

@@ -63,8 +63,8 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  // Las imágenes OG/Twitter salen de app/opengraph-image.tsx (file convention);
-  // X/Twitter cae en og:image automáticamente.
+  // La imagen OG/Twitter es app/opengraph-image.jpg (file convention, con su
+  // .alt.txt); X/Twitter cae en og:image automáticamente.
   openGraph: {
     title: SEO_TITLE,
     description: SEO_DESCRIPTION,
