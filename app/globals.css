@@ -1079,8 +1079,9 @@ ol {
 .sponsor img.invert {
   filter: invert(1);
 }
+/* 9 logos: 3 columnas, filas completas */
 .size-gold {
-  --cols: 4;
+  --cols: 3;
   --scale: 1.75;
 }
 .size-gold .sponsor {
