@@ -45,7 +45,7 @@ export const APPLY_URL = `${SITE_URL}${APPLY_PATH}`;
 /** Redes oficiales: se muestran en el footer y alimentan schema.org sameAs
  *  (consolidan la entidad build 101). */
 export const SOCIALS = [
-  { key: "instagram", label: "Instagram", handle: "@build101.dev", url: "https://www.instagram.com/build101.dev/" },
+  { key: "instagram", label: "Instagram", handle: "@build101_", url: "https://www.instagram.com/build101_/" },
   { key: "linkedin", label: "LinkedIn", handle: "build 101", url: "https://www.linkedin.com/company/build101/" },
   { key: "x", label: "X", handle: "@build101dotdev", url: "https://x.com/build101dotdev" },
 ] as const;
