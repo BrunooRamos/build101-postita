@@ -1104,8 +1104,9 @@ ol {
   --tile-w: 216px;
   --tile-h: 92px;
 }
+/* 8 logos: 8 columnas, una sola fila */
 .size-small {
-  --cols: 7;
+  --cols: 8;
 }
 /* tier con 6 logos (instituciones): 6 columnas para que no quede uno solo */
 .sponsor-grid.cols-6 {
