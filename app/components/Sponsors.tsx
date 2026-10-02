@@ -92,6 +92,7 @@ const TIERS: Tier[] = [
     label: "nos dan energía",
     size: "small",
     items: [
+      { name: "McDonald's", logo: "/sponsors/mcdonalds.svg", w: 44, h: 44, url: "https://www.mcdonalds.com.uy", tight: true },
       { name: "Salus", logo: "/sponsors/salus.svg", w: 150, h: 36, url: "https://www.salus.com.uy" },
       { name: "Rigor", logo: "/sponsors/rigor.png", w: 150, h: 30, url: "https://www.rigorpizza.com" },
       { name: "Chajá", logo: "/sponsors/chaja.png", w: 150, h: 36, url: "https://www.instagram.com/chajabistro/" },
@@ -99,7 +100,6 @@ const TIERS: Tier[] = [
       { name: "Los Trovadores", logo: "/sponsors/los-trovadores-dark.png", w: 150, h: 36, url: "https://www.lostrovadores.com.uy" },
       { name: "Viandas Hotel del Prado", logo: "/sponsors/viandas-hotel-del-prado.png", w: 150, h: 36, url: "https://viandashoteldelprado.uy" },
       { name: "Life Cinemas", logo: "/sponsors/life-cinemas.png", w: 150, h: 40, url: "https://www.lifecinemas.com.uy" },
-      { name: "McDonald's", logo: "/sponsors/mcdonalds.svg", w: 44, h: 44, url: "https://www.mcdonalds.com.uy", tight: true },
     ],
   },
 ];
