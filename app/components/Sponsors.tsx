@@ -67,7 +67,7 @@ const TIERS: Tier[] = [
     items: [
       { name: "nBlock", logo: "/sponsors/nblock.png", w: 128, h: 34, url: "https://www.nblock.ai" },
       { name: "Lazo", logo: "/sponsors/lazo.png", w: 128, h: 34, url: "https://www.lazo.us" },
-      { name: "PCBWay", logo: "/sponsors/pcbway.png", w: 128, h: 34, url: "https://www.pcbway.com" },
+      { name: "Neocard", logo: "/sponsors/neocard.png", w: 158, h: 34, url: "https://www.neocard.com.uy" },
       { name: "Flai", logo: "/sponsors/flai.svg", w: 80, h: 34, url: "https://www.useflai.com" },
       { name: "Picante", logo: "/sponsors/picante.png", w: 116, h: 42 },
       { name: "Tenki", logo: "/sponsors/tenki.svg", w: 128, h: 34, url: "https://tenki.cloud" },
