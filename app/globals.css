@@ -1104,25 +1104,43 @@ ol {
   --tile-w: 216px;
   --tile-h: 92px;
 }
-/* 8 logos: 8 columnas, una sola fila */
+/* nos dan energía: 7 logos debajo de los destacados, una sola fila */
 .size-small {
-  --cols: 8;
+  --cols: 7;
 }
-/* tier con 6 logos (instituciones): 6 columnas para que no quede uno solo */
+/* tiers con columnas propias para que ninguna fila quede con un logo solo */
 .sponsor-grid.cols-6 {
   --cols: 6;
+}
+.sponsor-grid.cols-4 {
+  --cols: 4;
+}
+/* fila de destacados (hoy: Conaprole y Salus) arriba del resto del tier,
+   dentro del mismo marco */
+.sponsor-stack {
+  display: grid;
+  gap: 8px;
+  padding: 24px;
+  border: 1px solid var(--line);
+}
+.sponsor-stack > .sponsor-grid {
+  padding: 0;
+  border: 0;
+}
+.sponsor-featured {
+  --cols: 2;
+  --scale: 1.6;
+}
+.sponsor-featured .sponsor {
+  --tile-h: 132px;
 }
 .size-small .sponsor {
   --tile-h: 64px;
   padding: 6px;
 }
-/* destacado dentro de su categoría (hoy: Salus en "nos dan energía") */
 /* logos altos (casi cuadrados): casi sin relleno vertical */
 .sponsor.tight {
   padding-block: 8px;
-}
-.size-small .sponsor.featured {
-  --scale: 1.1;
 }
 .sponsors-cta {
   display: flex;
@@ -2244,7 +2262,8 @@ ol {
   .size-small {
     --cols: 3;
   }
-  .sponsor-grid.cols-6 {
+  .sponsor-grid.cols-6,
+  .sponsor-grid.cols-4 {
     --cols: 2;
   }
   /* sin huérfanos: la última tarjeta estira hasta cerrar la fila */
@@ -2285,8 +2304,15 @@ ol {
   .sponsor.tight img {
     height: min(calc(var(--h) * var(--scale, 1)), 92%);
   }
-  .size-small .sponsor.featured {
-    --tile-h: 52px;
+  .sponsor-stack {
+    padding: 12px;
+  }
+  .sponsor-featured {
+    --cols: 2;
+    --scale: 1.1;
+  }
+  .sponsor-featured .sponsor {
+    --tile-h: 88px;
   }
   .sponsors-cta {
     padding: 22px;

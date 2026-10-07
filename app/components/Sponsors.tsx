@@ -12,7 +12,8 @@ type Sponsor = {
   invert?: boolean;
   /** Web del sponsor: la tarjeta entera linkea ahí (en otra pestaña). */
   url?: string;
-  /** Destacado dentro de su categoría: tarjeta y logo un poco más grandes. */
+  /** Destacado dentro de su categoría: va en una fila propia arriba, con
+   *  tarjeta y logo más grandes. */
   featured?: boolean;
   /** Logo alto (casi cuadrado): menos relleno vertical para que no quede chico
    *  en una tarjeta baja y ancha. */
@@ -24,7 +25,7 @@ type Tier = {
   label: string;
   size: "gold" | "silver" | "partner" | "small";
   /** Columnas en desktop cuando no coinciden con las del tamaño (para que la fila quede completa). */
-  cols?: 6;
+  cols?: 4 | 6;
   items: Sponsor[];
 };
 
@@ -77,7 +78,7 @@ const TIERS: Tier[] = [
     key: "instituciones",
     label: "instituciones que nos apoyan",
     size: "partner",
-    cols: 6,
+    cols: 4,
     items: [
       { name: "Embajada de EE.UU. en Uruguay · Freedom 250", logo: "/sponsors/freedom250.png", w: 120, h: 72, url: "https://uy.usembassy.gov", tight: true },
       { name: "Urucap", logo: "/sponsors/urucap.png", w: 150, h: 40, url: "https://www.urucap.org" },
@@ -85,6 +86,8 @@ const TIERS: Tier[] = [
       { name: "Club del Inversor", logo: "/sponsors/club-del-inversor.png", w: 150, h: 40, url: "https://www.clubdelinversor.uy" },
       { name: "CUTI", logo: "/sponsors/cuti.svg", w: 150, h: 40, url: "https://cuti.org.uy" },
       { name: "Initium · Universidad de Montevideo", logo: "/sponsors/initium.png", w: 150, h: 39, url: "https://www.um.edu.uy/initium" },
+      { name: "Ingenio · incubadora del LATU", logo: "/sponsors/ingenio.svg", w: 132, h: 40, invert: true, url: "https://ingenio.org.uy" },
+      { name: "Instituto CPE", logo: "/sponsors/instituto-cpe.png", w: 130, h: 48, url: "https://institutocpe.edu.uy" },
     ],
   },
   {
@@ -92,8 +95,9 @@ const TIERS: Tier[] = [
     label: "nos dan energía",
     size: "small",
     items: [
+      { name: "Conaprole", logo: "/sponsors/conaprole.svg", w: 150, h: 76, featured: true, url: "https://www.conaprole.uy" },
+      { name: "Salus", logo: "/sponsors/salus.svg", w: 150, h: 36, featured: true, url: "https://www.salus.com.uy" },
       { name: "McDonald's", logo: "/sponsors/mcdonalds.svg", w: 44, h: 44, url: "https://www.mcdonalds.com.uy", tight: true },
-      { name: "Salus", logo: "/sponsors/salus.svg", w: 150, h: 36, url: "https://www.salus.com.uy" },
       { name: "Rigor", logo: "/sponsors/rigor.png", w: 150, h: 30, url: "https://www.rigorpizza.com" },
       { name: "Chajá", logo: "/sponsors/chaja.png", w: 150, h: 36, url: "https://www.instagram.com/chajabistro/" },
       { name: "Grupo Sebamar", logo: "/sponsors/sebamar.png", w: 150, h: 36, url: "https://sebamar.com.uy" },
@@ -131,16 +135,37 @@ export function Sponsors() {
           <p className="lede">Organizaciones que hacen posible este encuentro.</p>
         </Reveal>
 
-        {TIERS.map((t) => (
-          <Reveal key={t.key} className="tier">
-            <p className="tier-tab">{t.label}</p>
-            <ul className={`sponsor-grid size-${t.size}${t.cols ? ` cols-${t.cols}` : ""}`}>
-              {t.items.map((s) => (
-                <Logo key={s.name} s={s} />
-              ))}
-            </ul>
-          </Reveal>
-        ))}
+        {TIERS.map((t) => {
+          const grid = `sponsor-grid size-${t.size}${t.cols ? ` cols-${t.cols}` : ""}`;
+          const featured = t.items.filter((s) => s.featured);
+          const rest = t.items.filter((s) => !s.featured);
+          return (
+            <Reveal key={t.key} className="tier">
+              <p className="tier-tab">{t.label}</p>
+              {featured.length ? (
+                // destacados en una fila propia arriba, más grandes; el resto debajo
+                <div className="sponsor-stack">
+                  <ul className="sponsor-grid sponsor-featured">
+                    {featured.map((s) => (
+                      <Logo key={s.name} s={s} />
+                    ))}
+                  </ul>
+                  <ul className={grid}>
+                    {rest.map((s) => (
+                      <Logo key={s.name} s={s} />
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                <ul className={grid}>
+                  {t.items.map((s) => (
+                    <Logo key={s.name} s={s} />
+                  ))}
+                </ul>
+              )}
+            </Reveal>
+          );
+        })}
 
         <Reveal className="sponsors-cta">
           <p>¿querés que tu organización sea parte?</p>
