@@ -4,7 +4,7 @@ import { GET as llmsTxt } from "@/app/llms.txt/route";
 
 // /api/ask — el comando `ask` de la terminal del hero. Responde preguntas
 // sobre build 101 con Claude usando como única fuente /llms.txt (que sale de
-// event.ts + faqs.tsx), así que nunca dice algo distinto de lo que muestra la
+// event.ts + faqs.tsx + sponsors.ts), así que nunca dice algo distinto de lo que muestra la
 // página. La respuesta llega en streaming como texto plano.
 //
 //   ANTHROPIC_API_KEY  clave de la API de Anthropic (solo server-side)
