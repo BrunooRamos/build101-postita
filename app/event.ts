@@ -27,7 +27,7 @@ export const EVENT_DESCRIPTION =
 
 /** Última actualización de contenido del sitio (bumpeala con cada anuncio real:
  *  consigna, mentores, jurado, sponsors, cronograma). Alimenta sitemap y schema. */
-export const CONTENT_UPDATED_ISO = "2026-09-28T00:00:00-03:00";
+export const CONTENT_UPDATED_ISO = "2026-10-07T00:00:00-03:00";
 
 /** ¿Están abiertas las inscripciones?
  *  En `false` la landing no linkea al formulario: los CTAs, la terminal, el FAQ,

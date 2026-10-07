@@ -13,10 +13,11 @@ import {
   VENUE_ADDRESS,
 } from "../event";
 import { FAQS } from "../faqs";
+import { TIERS } from "../sponsors";
 
 // /llms.txt — resumen del sitio en markdown para answer engines y crawlers de
 // LLMs (convención emergente, https://llmstxt.org). Se genera en build desde
-// event.ts + faqs.tsx: nunca puede divergir del contenido visible.
+// event.ts + faqs.tsx + sponsors.ts: nunca puede divergir del contenido visible.
 export const dynamic = "force-static";
 
 export function GET() {
@@ -42,6 +43,19 @@ ${
 - sitio oficial: ${CANONICAL_URL}
 - contacto: ${TEAM_EMAILS.join(" · ")}
 - redes: ${SOCIALS.map((s) => `${s.label.toLowerCase()} ${s.url}`).join(" · ")}
+
+## organizan
+
+- build 101 (${CANONICAL_URL})
+- Universidad de Montevideo · Facultad de Ingeniería (FIUM) (https://um.edu.uy)
+- MÜTÜÖ (https://canalmutuo.com)
+
+## sponsors
+
+${TIERS.map(
+    (t) =>
+      `### ${t.label}\n\n${t.items.map((s) => `- ${s.name}${s.url ? ` (${s.url})` : ""}`).join("\n")}`,
+  ).join("\n\n")}
 
 ## preguntas frecuentes
 

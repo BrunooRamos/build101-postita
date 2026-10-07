@@ -22,6 +22,7 @@ import {
   VENUE_REGION,
 } from "../event";
 import { FAQS } from "../faqs";
+import { TIERS } from "../sponsors";
 
 // Oferta del evento. Con las inscripciones cerradas no publicamos el link de
 // postulación ni la ventana de fechas: la entrada sigue siendo gratis, pero
@@ -141,6 +142,16 @@ const structuredData = {
           url: "https://canalmutuo.com",
         },
       ],
+      // todos los sponsors, con su categoría tal como se muestra en la página
+      sponsor: TIERS.flatMap((t) =>
+        t.items.map((s) => ({
+          "@type": "Organization",
+          name: s.name,
+          ...(s.url ? { url: s.url } : {}),
+          logo: `${SITE_URL}${s.logo}`,
+          description: t.label,
+        })),
+      ),
       offers: offer,
       audience: {
         "@type": "Audience",

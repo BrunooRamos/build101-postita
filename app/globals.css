@@ -1021,6 +1021,8 @@ ol {
   line-height: 16px;
   text-transform: uppercase;
   color: var(--muted);
+  /* es un h3 (para lectores y crawlers): sin el peso de heading */
+  font-weight: 400;
 }
 /* grilla por tier: la cantidad de columnas (--cols) sale del tamaño del tier
    y la tarjeta llena su columna, así las filas quedan parejas */
