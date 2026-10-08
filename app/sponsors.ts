@@ -99,6 +99,7 @@ export const TIERS: Tier[] = [
       { name: "Conaprole", logo: "/sponsors/conaprole.svg", w: 150, h: 76, featured: true, url: "https://www.conaprole.uy" },
       { name: "Salus", logo: "/sponsors/salus.svg", w: 150, h: 36, featured: true, url: "https://www.salus.com.uy" },
       { name: "McDonald's", logo: "/sponsors/mcdonalds.svg", w: 44, h: 44, url: "https://www.mcdonalds.com.uy", tight: true },
+      { name: "Pepsi", logo: "/sponsors/pepsi.png", w: 48, h: 48, url: "https://www.pepsi.com", tight: true },
       { name: "Rigor", logo: "/sponsors/rigor.png", w: 150, h: 30, url: "https://www.rigorpizza.com" },
       { name: "Chajá", logo: "/sponsors/chaja.png", w: 150, h: 36, url: "https://www.instagram.com/chajabistro/" },
       { name: "Grupo Sebamar", logo: "/sponsors/sebamar.png", w: 150, h: 48, tight: true, url: "https://sebamar.com.uy" },

@@ -1106,9 +1106,9 @@ ol {
   --tile-w: 216px;
   --tile-h: 92px;
 }
-/* nos dan energía: 7 logos debajo de los destacados, una sola fila */
+/* nos dan energía: 8 logos debajo de los destacados, una sola fila */
 .size-small {
-  --cols: 7;
+  --cols: 8;
 }
 /* tiers con columnas propias para que ninguna fila quede con un logo solo */
 .sponsor-grid.cols-6 {
