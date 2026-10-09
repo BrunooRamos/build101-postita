@@ -1081,7 +1081,7 @@ ol {
 .sponsor img.invert {
   filter: invert(1);
 }
-/* 9 logos: 3 columnas, filas completas */
+/* Gold: 3 columnas en desktop. */
 .size-gold {
   --cols: 3;
   --scale: 1.75;

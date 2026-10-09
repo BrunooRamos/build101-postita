@@ -46,6 +46,7 @@ export const TIERS: Tier[] = [
       { name: "Lynk Markets", logo: "/sponsors/lynk-markets.svg", w: 158, h: 78, url: "https://lynkmarkets.com" },
       { name: "Mozart", logo: "/sponsors/mozart.svg", w: 158, h: 78, url: "https://mozarth.com" },
       { name: "Nowports", logo: "/sponsors/nowports.png", w: 158, h: 78, url: "https://www.nowports.com" },
+      { name: "Arnaldo Castro", logo: "/sponsors/arnaldo-castro.svg", w: 158, h: 78, url: "https://arnaldocastro.com.uy" },
     ],
   },
   {
