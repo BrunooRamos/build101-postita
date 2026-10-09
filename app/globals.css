@@ -1114,6 +1114,9 @@ ol {
 .sponsor-grid.cols-6 {
   --cols: 6;
 }
+.sponsor-grid.cols-7 {
+  --cols: 7;
+}
 .sponsor-grid.cols-4 {
   --cols: 4;
 }
@@ -2265,6 +2268,7 @@ ol {
     --cols: 3;
   }
   .sponsor-grid.cols-6,
+  .sponsor-grid.cols-7,
   .sponsor-grid.cols-4 {
     --cols: 2;
   }

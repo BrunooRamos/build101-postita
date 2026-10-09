@@ -26,7 +26,7 @@ export type Tier = {
   label: string;
   size: "gold" | "silver" | "partner" | "small";
   /** Columnas en desktop cuando no coinciden con las del tamaño (para que la fila quede completa). */
-  cols?: 4 | 6;
+  cols?: 4 | 6 | 7;
   items: Sponsor[];
 };
 
@@ -65,7 +65,7 @@ export const TIERS: Tier[] = [
     key: "partners",
     label: "partners",
     size: "partner",
-    cols: 6,
+    cols: 7,
     items: [
       { name: "nBlock", logo: "/sponsors/nblock.png", w: 128, h: 34, url: "https://www.nblock.ai" },
       { name: "Lazo", logo: "/sponsors/lazo.png", w: 128, h: 34, url: "https://www.lazo.us" },
@@ -73,6 +73,7 @@ export const TIERS: Tier[] = [
       { name: "Flai", logo: "/sponsors/flai.svg", w: 80, h: 34, url: "https://www.useflai.com" },
       { name: "Picante", logo: "/sponsors/picante.png", w: 116, h: 42 },
       { name: "Tenki", logo: "/sponsors/tenki.svg", w: 128, h: 34, url: "https://tenki.cloud" },
+      { name: "Xiaomi", logo: "/sponsors/xiaomi.png", w: 44, h: 44, url: "https://www.mi.com/latin-es/", tight: true },
     ],
   },
   {
