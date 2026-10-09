@@ -1049,6 +1049,9 @@ ol {
 }
 /* Con web: el link llena la tarjeta (se clickea toda la superficie) y el foco
    se marca en la tarjeta, no alrededor del logo. */
+.sponsor.full-width {
+  grid-column: 1 / -1;
+}
 .sponsor a {
   display: flex;
   align-items: center;

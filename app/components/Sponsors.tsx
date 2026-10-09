@@ -8,7 +8,7 @@ function Logo({ s }: { s: Sponsor }) {
   // eslint-disable-next-line @next/next/no-img-element
   const img = <img src={s.logo} alt={s.name} loading="lazy" className={s.invert ? "invert" : undefined} />;
   return (
-    <li className={["sponsor", s.featured && "featured", s.tight && "tight"].filter(Boolean).join(" ")} style={style}>
+    <li className={["sponsor", s.featured && "featured", s.tight && "tight", s.fullWidth && "full-width"].filter(Boolean).join(" ")} style={style}>
       {s.url ? (
         <a href={s.url} target="_blank" rel="noopener noreferrer sponsored">
           {img}

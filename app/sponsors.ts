@@ -19,6 +19,8 @@ export type Sponsor = {
   /** Logo alto (casi cuadrado): menos relleno vertical para que no quede chico
    *  en una tarjeta baja y ancha. */
   tight?: boolean;
+  /** Tarjeta que ocupa una fila completa dentro de su categoría. */
+  fullWidth?: boolean;
 };
 
 export type Tier = {
@@ -40,13 +42,13 @@ export const TIERS: Tier[] = [
       { name: "Toyota", logo: "/sponsors/toyota.svg", w: 158, h: 78, url: "https://www.toyota.com.uy" },
       { name: "Pento", logo: "/sponsors/pento-color.png", w: 158, h: 78, url: "https://pento.ai" },
       { name: "Santander", logo: "/sponsors/santander.svg", w: 158, h: 78, url: "https://www.santander.com.uy" },
-      { name: "Instituto Vidart", logo: "/sponsors/vidart.svg", w: 158, h: 78, url: "https://vidart.uy" },
+      { name: "Nowports", logo: "/sponsors/nowports.png", w: 158, h: 78, url: "https://www.nowports.com" },
       { name: "AWS", logo: "/sponsors/aws.svg", w: 118, h: 58, url: "https://aws.amazon.com" },
       { name: "odev.tech", logo: "/sponsors/odev.svg", w: 158, h: 78, url: "https://odev.tech" },
       { name: "Lynk Markets", logo: "/sponsors/lynk-markets.svg", w: 158, h: 78, url: "https://lynkmarkets.com" },
       { name: "Mozart", logo: "/sponsors/mozart.svg", w: 158, h: 78, url: "https://mozarth.com" },
-      { name: "Nowports", logo: "/sponsors/nowports.png", w: 158, h: 78, url: "https://www.nowports.com" },
       { name: "Arnaldo Castro", logo: "/sponsors/arnaldo-castro.svg", w: 158, h: 78, url: "https://arnaldocastro.com.uy" },
+      { name: "Instituto Vidart", logo: "/sponsors/vidart.svg", w: 158, h: 78, url: "https://vidart.uy", fullWidth: true },
     ],
   },
   {
