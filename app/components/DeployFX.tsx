@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { SPIN, reducedMotion } from "./useInView";
 import { fireConfetti } from "./confetti";
-import { APPLY_OPEN, APPLY_PATH, APPLY_SOON_LABEL } from "../event";
+import { APPLY_OPEN, APPLY_PATH, APPLY_CLOSED_LABEL } from "../event";
 
 const STEPS = [
   { run: "building…", ok: "compiled ✓", ms: 650 },
@@ -113,7 +113,7 @@ export function DeployFX() {
 
 /** Anchor that triggers the deploy pipeline instead of a plain jump.
  *  Con `APPLY_OPEN` en false no linkea a ningún lado: se convierte en un
- *  cartel de "inscripciones pronto" (mismo lugar en nav, hero, footer y CTA). */
+ *  cartel de "inscripciones cerradas" (mismo lugar en nav, hero, footer y CTA). */
 export function InscribiteBtn({
   children,
   className = "btn",
@@ -124,7 +124,7 @@ export function InscribiteBtn({
   if (!APPLY_OPEN) {
     return (
       <span className={`${className} apply-soon`.trim()} aria-disabled="true">
-        {APPLY_SOON_LABEL}
+        {APPLY_CLOSED_LABEL}
       </span>
     );
   }

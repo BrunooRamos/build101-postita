@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FlowNav } from "./components/SiteChrome";
 import { PixelBlocks, PIXELS_SMALL } from "./components/PixelBlocks";
-import { APPLY_PATH } from "./event";
+import { APPLY_OPEN, APPLY_PATH } from "./event";
 
 export const metadata: Metadata = {
   title: "página no encontrada · build 101",
@@ -26,7 +26,7 @@ export default function NotFound() {
               volver al inicio →
             </Link>
             <Link href={APPLY_PATH} className="link-quiet">
-              o inscribite
+              {APPLY_OPEN ? "o inscribite" : "ver estado de las inscripciones"}
             </Link>
           </div>
         </div>

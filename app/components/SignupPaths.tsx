@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ViewTransition } from "react";
-import { APPLY_OPEN, APPLY_PATH } from "../event";
+import { APPLY_CLOSED_LABEL, APPLY_OPEN, APPLY_PATH } from "../event";
 
 const PATHS = [
   {
@@ -27,7 +27,7 @@ export function SignupPaths() {
     return (
       <div className="paths">
         <p className="mono-line">$ build101 --join</p>
-        <p className="paths-soon">// pronto se anuncian las inscripciones.</p>
+        <p className="paths-soon">// {APPLY_CLOSED_LABEL}.</p>
       </div>
     );
   }

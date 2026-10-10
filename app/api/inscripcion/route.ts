@@ -1,5 +1,5 @@
 import { after } from "next/server";
-import { APPLY_DEADLINE, APPLY_DEADLINE_TIME, APPLY_OPEN, isApplyOpen } from "@/app/event";
+import { APPLY_CLOSED_MESSAGE, APPLY_DEADLINE, APPLY_DEADLINE_TIME, APPLY_OPEN, isApplyOpen } from "@/app/event";
 import { normalize, validate, type AntiSpam, type Application } from "@/lib/inscripcion";
 import { notifyTelegram } from "@/lib/telegram";
 
@@ -67,7 +67,7 @@ export async function POST(request: Request) {
   if (!isApplyOpen()) {
     const error = APPLY_OPEN
       ? `Las inscripciones cerraron el ${APPLY_DEADLINE} a las ${APPLY_DEADLINE_TIME}.`
-      : "Las inscripciones todavía no están abiertas.";
+      : APPLY_CLOSED_MESSAGE;
     return json({ ok: false, error }, 403);
   }
 

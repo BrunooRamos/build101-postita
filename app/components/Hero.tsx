@@ -5,6 +5,7 @@ import { PixelBlocks, PIXELS_HERO } from "./PixelBlocks";
 import {
   APPLY_DEADLINE_FULL,
   APPLY_OPEN,
+  APPLY_SELECTION_MESSAGE,
   EVENT_DATES,
   EVENT_START_DATE,
   PARTICIPANTS_EMAIL,
@@ -16,10 +17,10 @@ export function Hero() {
     <header className="hero" id="top">
       <div className="wrap">
         <p className="hero-badge rise">
-          <span className="badge">{APPLY_OPEN ? "abiertas" : "pronto"}</span>
+          <span className="badge">{APPLY_OPEN ? "abiertas" : "cerradas"}</span>
           {APPLY_OPEN
             ? `inscripciones hasta el ${APPLY_DEADLINE_FULL.replace(/ /g, "\u00a0")}`
-            : "las inscripciones abren pronto"}
+            : "gracias por el interés en build 101"}
         </p>
 
         {/* coorganizan arriba de todo, logos centrados: se ve apenas carga, en cualquier pantalla */}
@@ -74,9 +75,13 @@ export function Hero() {
               </a>
             </div>
             <p className="fine">
-              Inscribirte no garantiza un lugar.
-              <br />
-              La participación queda sujeta a selección y confirmación del equipo.
+              {APPLY_OPEN ? (
+                <>
+                  Inscribirte no garantiza un lugar.
+                  <br />
+                  La participación queda sujeta a selección y confirmación del equipo.
+                </>
+              ) : APPLY_SELECTION_MESSAGE}
             </p>
           </div>
 
