@@ -26,7 +26,7 @@ import { TIERS } from "../sponsors";
 
 // Oferta del evento. Con las inscripciones cerradas no publicamos el link de
 // postulación ni la ventana de fechas: la entrada sigue siendo gratis, pero
-// todavía no se puede reservar (PreOrder = solo disponible a futuro).
+// ya no se puede reservar.
 const offer = APPLY_OPEN
   ? {
       "@type": "Offer",
@@ -41,7 +41,7 @@ const offer = APPLY_OPEN
       url: CANONICAL_URL,
       price: "0",
       priceCurrency: "UYU",
-      availability: "https://schema.org/PreOrder",
+      availability: "https://schema.org/SoldOut",
     };
 
 const organizationId = `${SITE_URL}/#organization`;

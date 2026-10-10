@@ -394,7 +394,7 @@ ol {
 .link-strong:hover {
   color: var(--accent-strong);
 }
-/* estado "inscripciones pronto" del InscribiteBtn */
+/* estado "inscripciones cerradas" del InscribiteBtn */
 .apply-soon {
   background: var(--surface);
   border-color: var(--line-2);

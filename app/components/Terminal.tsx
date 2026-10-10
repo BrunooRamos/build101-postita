@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { WindowChrome } from "./WindowChrome";
 import { SPIN, reducedMotion, useInView } from "./useInView";
-import { APPLY_OPEN, SPONSORS_EMAIL } from "../event";
+import { APPLY_CLOSED_MESSAGE, APPLY_OPEN, APPLY_SELECTION_MESSAGE, SPONSORS_EMAIL } from "../event";
 
 type Line =
   | { k: "cmd"; text: string }
@@ -17,7 +17,7 @@ type Line =
 const SCRIPT: Line[] = [
   { k: "cmd", text: "build101 --join" },
   { k: "blank" },
-  { k: "step", n: "01", text: "completá tu inscripción" },
+  { k: "step", n: "01", text: APPLY_OPEN ? "completá tu inscripción" : "inscripciones cerradas" },
   { k: "step", n: "02", text: "revisamos tu postulación" },
   { k: "step", n: "03", text: "te confirmamos por email" },
 ];
@@ -236,7 +236,7 @@ function runCommand(
       ),
     };
   if (lower === "whoami")
-    return { out: O(<div className="out">un builder a punto de inscribirse — tipeá <span className="accent">inscribite</span></div>) };
+    return { out: O(<div className="out">{APPLY_OPEN ? <>un builder a punto de inscribirse — tipeá <span className="accent">inscribite</span></> : "un builder esperando el próximo build — inscripciones cerradas"}</div>) };
   if (lower === "cafe" || lower === "coffee" || lower === "café")
     return { out: O(<div className="out">sirviendo café… (ilimitado durante el evento)</div>) };
   if (lower === "date")
@@ -260,7 +260,7 @@ function runCommand(
   )
     return APPLY_OPEN
       ? { out: O(<div className="ok">abriendo inscripción…</div>), action: "inscribite" }
-      : { out: O(<div className="out">las inscripciones todavía no abrieron — <span className="accent">pronto se anuncian</span>. volvé a tipear <span className="accent">inscribite</span> cuando abran.</div>) };
+      : { out: O(<div className="out">{APPLY_CLOSED_MESSAGE} {APPLY_SELECTION_MESSAGE}</div>) };
   return {
     out: O(
       <div className="out">

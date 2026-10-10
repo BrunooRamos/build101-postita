@@ -15,7 +15,7 @@ import { KonamiMatrix } from "./components/KonamiMatrix";
 import { DeployFX } from "./components/DeployFX";
 import { FakeCrash } from "./components/FakeCrash";
 import { StructuredData } from "./components/StructuredData";
-import { APPLY_DEADLINE_FULL, APPLY_OPEN, PARTICIPANTS_EMAIL } from "./event";
+import { APPLY_CLOSED_MESSAGE, APPLY_DEADLINE_FULL, APPLY_OPEN, APPLY_SELECTION_MESSAGE, PARTICIPANTS_EMAIL } from "./event";
 
 export default function Home() {
   return (
@@ -43,11 +43,9 @@ export default function Home() {
         <section id="inscripcion" className="section">
           <div className="wrap signup">
             <Reveal className="signup-copy">
-              <p className="eyebrow">// {APPLY_OPEN ? "inscripciones abiertas" : "inscripciones"}</p>
+              <p className="eyebrow">// {APPLY_OPEN ? "inscripciones abiertas" : "inscripciones cerradas"}</p>
               <h2 className="h2 h2-lg">
-                tu próximo build
-                <br />
-                empieza acá.
+                {APPLY_OPEN ? <>tu próximo build<br />empieza acá.</> : "gracias por sumarte."}
               </h2>
               <p className="lede lede-strong">
                 {APPLY_OPEN ? (
@@ -57,20 +55,21 @@ export default function Home() {
                     Elegí cómo venís: con equipo o buscando uno.
                   </>
                 ) : (
-                  "Equipos de 3, gratis y con cupos limitados."
+                  APPLY_CLOSED_MESSAGE
                 )}
               </p>
               <p className="fine">
-                Inscribirte no garantiza un lugar. La participación queda sujeta a
-                selección y confirmación del equipo.
+                {APPLY_OPEN
+                  ? "Inscribirte no garantiza un lugar. La participación queda sujeta a selección y confirmación del equipo."
+                  : APPLY_SELECTION_MESSAGE}
               </p>
             </Reveal>
             <Reveal className="signup-paths">
               <SignupPaths />
             </Reveal>
             <Reveal className="signup-talk">
-              <p className="h4">¿preferís hablar primero?</p>
-              <p>Ramiro te ayuda con la inscripción.</p>
+              <p className="h4">¿tenés alguna duda?</p>
+              <p>Ramiro te ayuda con tus dudas sobre la participación.</p>
               <a href={`mailto:${PARTICIPANTS_EMAIL}`} className="link-strong">
                 hablá con Ramiro ↗
               </a>

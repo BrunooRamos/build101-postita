@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 import {
+  APPLY_CLOSED_MESSAGE,
+  APPLY_SELECTION_MESSAGE,
   APPLY_DEADLINE,
   APPLY_DEADLINE_TIME,
   APPLY_OPEN,
@@ -42,14 +44,15 @@ export const FAQS: FaqItem[] = [
   },
   {
     q: "¿puedo anotarme sin un equipo completo?",
-    aText:
-      "sí. los equipos son de 3 personas: si ya lo tienen, inscriben al equipo completo; si no, te inscribís solo y te ayudamos a encontrar con quién construir.",
+    aText: APPLY_OPEN
+      ? "sí. los equipos son de 3 personas: si ya lo tienen, inscriben al equipo completo; si no, te inscribís solo y te ayudamos a encontrar con quién construir."
+      : "las inscripciones están cerradas. si te inscribiste solo, te ayudamos a encontrar con quién construir.",
   },
   {
     q: "¿hasta cuándo me puedo inscribir?",
     aText: APPLY_OPEN
       ? `hasta el ${APPLY_DEADLINE} a las ${APPLY_DEADLINE_TIME} (hora de uruguay). los cupos son limitados.`
-      : "las inscripciones todavía no están abiertas: pronto anunciamos la fecha de apertura.",
+      : `${APPLY_CLOSED_MESSAGE} ${APPLY_SELECTION_MESSAGE}`,
     a: APPLY_OPEN ? (
       <>
         hasta el {APPLY_DEADLINE} a las {APPLY_DEADLINE_TIME} (hora de uruguay). los cupos son limitados:{" "}

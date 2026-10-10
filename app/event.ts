@@ -31,12 +31,14 @@ export const CONTENT_UPDATED_ISO = "2026-10-09T00:00:00-03:00";
 
 /** ¿Están abiertas las inscripciones?
  *  En `false` la landing no linkea al formulario: los CTAs, la terminal, el FAQ,
- *  el schema y /llms.txt anuncian que abren pronto, y /api/inscripcion rechaza
+ *  el schema y /llms.txt anuncian el cierre, y /api/inscripcion rechaza
  *  envíos. */
-export const APPLY_OPEN: boolean = true;
+export const APPLY_OPEN: boolean = false;
 
-// Copy del estado "todavía no abrieron" — un solo lugar para editar el anuncio.
-export const APPLY_SOON_LABEL = "inscripciones pronto";
+// Copy del cierre — un solo lugar para editar el anuncio.
+export const APPLY_CLOSED_LABEL = "inscripciones cerradas";
+export const APPLY_CLOSED_MESSAGE = "Las inscripciones están cerradas. Gracias por el interés en build 101.";
+export const APPLY_SELECTION_MESSAGE = "Si ya te inscribiste, te escribimos por mail cuando termine la selección.";
 
 /** Ruta del formulario propio (elegir camino: con equipo o buscando uno). */
 export const APPLY_PATH = "/inscripcion";

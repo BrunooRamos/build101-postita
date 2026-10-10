@@ -1,4 +1,6 @@
 import {
+  APPLY_CLOSED_MESSAGE,
+  APPLY_SELECTION_MESSAGE,
   APPLY_DEADLINE_FULL,
   APPLY_OPEN,
   CANONICAL_URL,
@@ -32,13 +34,13 @@ export function GET() {
 - cuándo: ${EVENT_DATES_LONG}.
 - dónde: ${VENUE}, ${VENUE_ADDRESS}, uruguay.
 - precio: gratis, con cupos limitados y selección del equipo organizador.
-- equipos: ${TEAM_SIZE} personas; podés inscribir a tu equipo o inscribirte solo y te ayudamos a formar uno.
+- equipos: ${TEAM_SIZE} personas; ${APPLY_OPEN ? "podés inscribir a tu equipo o inscribirte solo y te ayudamos a formar uno." : "si te inscribiste solo, te ayudamos a formar uno."}
 - horario: ${SCHEDULE.map((d) => `${d.day} de ${d.hours}`).join(" y ")}; no se duerme en la sede.
 ${
     APPLY_OPEN
       ? `- cierre de inscripción: ${APPLY_DEADLINE_FULL} (hora de uruguay).
 - inscripción: ${APPLY_URL}`
-      : `- inscripción: todavía no está abierta. la apertura y el link para postular se anuncian próximamente en ${CANONICAL_URL}`
+      : `- inscripción: ${APPLY_CLOSED_MESSAGE} ${APPLY_SELECTION_MESSAGE}`
   }
 - sitio oficial: ${CANONICAL_URL}
 - contacto: ${TEAM_EMAILS.join(" · ")}

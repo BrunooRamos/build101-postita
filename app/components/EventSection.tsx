@@ -1,11 +1,14 @@
 import { GlyphField } from "./GlyphField";
 import { Reveal } from "./Reveal";
+import { APPLY_OPEN } from "../event";
 
 const STEPS = [
   {
     n: "01",
     t: "armá tu equipo",
-    d: "Equipos de 3. Si todavía te faltan compañeros, podés inscribirte igual.",
+    d: APPLY_OPEN
+      ? "Equipos de 3. Si todavía te faltan compañeros, podés inscribirte igual."
+      : "Equipos de 3. Si te inscribiste solo, te ayudamos a encontrar compañeros.",
   },
   {
     n: "02",

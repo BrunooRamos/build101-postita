@@ -47,7 +47,7 @@ export function Countdown() {
   // se usa dentro de un <dl>: el par dt/dd lo pone este componente.
   return (
     <>
-      <dt>{now === null ? "cierran las inscripciones" : t.label}</dt>
+      <dt>{now === null ? (APPLY_OPEN ? "cierran las inscripciones" : "arranca build 101") : t.label}</dt>
       <dd className="countdown">{value}</dd>
     </>
   );
