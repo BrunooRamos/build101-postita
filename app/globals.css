@@ -2289,8 +2289,9 @@ ol {
   .sponsor-grid.cols-4 {
     --cols: 2;
   }
-  /* sin huérfanos: la última tarjeta estira hasta cerrar la fila */
-  .sponsor-grid:not(.size-small) .sponsor:last-child:nth-child(odd),
+  /* sin huérfanos: Gold estira su primera tarjeta (Toyota); el resto, la última */
+  .sponsor-grid.size-gold:not(.sponsor-shared-row) > .sponsor:first-child:nth-last-child(odd),
+  .sponsor-grid:not(.size-small):not(.size-gold) .sponsor:last-child:nth-child(odd),
   .size-small .sponsor:last-child:nth-child(3n + 1) {
     grid-column: 1 / -1;
   }
@@ -2298,7 +2299,8 @@ ol {
     grid-column: span 2;
   }
   /* la tarjeta estirada no agranda el logo: queda del tamaño de sus vecinas */
-  .sponsor-grid:not(.size-small) .sponsor:last-child:nth-child(odd) img {
+  .sponsor-grid.size-gold:not(.sponsor-shared-row) > .sponsor:first-child:nth-last-child(odd) img,
+  .sponsor-grid:not(.size-small):not(.size-gold) .sponsor:last-child:nth-child(odd) img {
     max-width: calc(50% - 16px);
   }
   .size-small .sponsor:last-child:nth-child(3n + 1) img {
