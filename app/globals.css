@@ -1063,9 +1063,6 @@ ol {
 }
 /* Con web: el link llena la tarjeta (se clickea toda la superficie) y el foco
    se marca en la tarjeta, no alrededor del logo. */
-.sponsor.full-width {
-  grid-column: 1 / -1;
-}
 .sponsor a {
   display: flex;
   align-items: center;
@@ -1136,6 +1133,9 @@ ol {
 }
 .sponsor-grid.cols-4 {
   --cols: 4;
+}
+.sponsor-grid.sponsor-shared-row {
+  --cols: 2;
 }
 /* fila de destacados (hoy: Conaprole y Salus) arriba del resto del tier,
    dentro del mismo marco */
@@ -2326,14 +2326,6 @@ ol {
   }
   .sponsor.tight img {
     height: min(calc(var(--h) * var(--scale, 1)), 92%);
-  }
-  /* Los logos con bajada en una tarjeta Gold completa necesitan más alto
-     en el celular para que el texto siga siendo legible. */
-  .size-gold .sponsor.full-width.tight {
-    --tile-h: 128px;
-  }
-  .sponsor-grid.size-gold .sponsor.full-width.tight img {
-    max-width: 100%;
   }
   .sponsor-stack {
     padding: 12px;

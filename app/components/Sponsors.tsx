@@ -8,7 +8,7 @@ function Logo({ s }: { s: Sponsor }) {
   // eslint-disable-next-line @next/next/no-img-element
   const img = <img src={s.logo} alt={s.name} loading="lazy" className={s.invert ? "invert" : undefined} />;
   return (
-    <li className={["sponsor", s.featured && "featured", s.tight && "tight", s.fullWidth && "full-width"].filter(Boolean).join(" ")} style={style}>
+    <li className={["sponsor", s.featured && "featured", s.tight && "tight"].filter(Boolean).join(" ")} style={style}>
       {s.url ? (
         <a href={s.url} target="_blank" rel="noopener noreferrer sponsored">
           {img}
@@ -33,23 +33,32 @@ export function Sponsors() {
         {TIERS.map((t) => {
           const grid = `sponsor-grid size-${t.size}${t.cols ? ` cols-${t.cols}` : ""}`;
           const featured = t.items.filter((s) => s.featured);
-          const rest = t.items.filter((s) => !s.featured);
+          const sharedRow = t.items.filter((s) => s.sharedRow);
+          const rest = t.items.filter((s) => !s.featured && !s.sharedRow);
           return (
             <Reveal key={t.key} className="tier">
               <h3 className="tier-tab">{t.label}</h3>
-              {featured.length ? (
-                // destacados en una fila propia arriba, más grandes; el resto debajo
+              {featured.length || sharedRow.length ? (
                 <div className="sponsor-stack">
-                  <ul className="sponsor-grid sponsor-featured">
-                    {featured.map((s) => (
-                      <Logo key={s.name} s={s} />
-                    ))}
-                  </ul>
+                  {featured.length > 0 && (
+                    <ul className="sponsor-grid sponsor-featured">
+                      {featured.map((s) => (
+                        <Logo key={s.name} s={s} />
+                      ))}
+                    </ul>
+                  )}
                   <ul className={grid}>
                     {rest.map((s) => (
                       <Logo key={s.name} s={s} />
                     ))}
                   </ul>
+                  {sharedRow.length > 0 && (
+                    <ul className={`${grid} sponsor-shared-row`}>
+                      {sharedRow.map((s) => (
+                        <Logo key={s.name} s={s} />
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ) : (
                 <ul className={grid}>
