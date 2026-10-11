@@ -49,6 +49,7 @@ export const TIERS: Tier[] = [
       { name: "Mozart", logo: "/sponsors/mozart.svg", w: 158, h: 78, url: "https://mozarth.com" },
       { name: "Arnaldo Castro", logo: "/sponsors/arnaldo-castro.svg", w: 158, h: 78, url: "https://arnaldocastro.com.uy" },
       { name: "Instituto Vidart", logo: "/sponsors/vidart.svg", w: 158, h: 78, url: "https://vidart.uy", fullWidth: true },
+      { name: "Estudio Silva Manta y Asociados", logo: "/sponsors/silva-manta.svg", w: 180, h: 90, tight: true, fullWidth: true },
     ],
   },
   {

@@ -2327,6 +2327,14 @@ ol {
   .sponsor.tight img {
     height: min(calc(var(--h) * var(--scale, 1)), 92%);
   }
+  /* Los logos con bajada en una tarjeta Gold completa necesitan más alto
+     en el celular para que el texto siga siendo legible. */
+  .size-gold .sponsor.full-width.tight {
+    --tile-h: 128px;
+  }
+  .sponsor-grid.size-gold .sponsor.full-width.tight img {
+    max-width: 100%;
+  }
   .sponsor-stack {
     padding: 12px;
   }
