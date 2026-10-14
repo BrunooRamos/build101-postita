@@ -688,7 +688,7 @@ export function SignupFlow({ mode }: { mode: Mode }) {
               maxLength={LIMITS.teamName}
             />
             {app.members.slice(1).map((m, j) => (
-              <fieldset className="member" key={j + 1}>
+              <fieldset className="form-member" key={j + 1}>
                 <legend className="label label-strong">integrante {j + 2}</legend>
                 <MemberFields
                   index={j + 1}

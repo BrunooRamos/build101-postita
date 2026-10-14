@@ -1730,14 +1730,14 @@ ol {
   padding-top: 28px;
   border-top: 1px solid var(--line-2);
 }
-.member {
+.form-member {
   display: flex;
   flex-direction: column;
   gap: 24px;
   padding-top: 16px;
   border: 0;
 }
-.member legend {
+.form-member legend {
   margin-bottom: 20px;
 }
 .field-row {
@@ -2442,7 +2442,7 @@ ol {
   }
   .form,
   .form-section,
-  .member {
+  .form-member {
     gap: 20px;
   }
   .state-title {
