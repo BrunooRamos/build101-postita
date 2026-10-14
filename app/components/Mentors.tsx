@@ -55,25 +55,3 @@ export function Mentors() {
     </section>
   );
 }
-
-export function Jury() {
-  return (
-    <section id="jurado" className="section section-rule">
-      <div className="wrap people people-right">
-        <Reveal className="people-main">
-          <p className="eyebrow">// jurado</p>
-          <h2 className="h2">
-            evaluado por referentes
-            <br />
-            de la industria.
-          </h2>
-          <p className="lede">
-            Fundadores, inversores y líderes de producto van a ver tu pitch y tu
-            producto funcionando. Pronto anunciamos quiénes son.
-          </p>
-          <TbaSlots count={3} label="el jurado que va a evaluar tu producto" noun="jurado" />
-        </Reveal>
-      </div>
-    </section>
-  );
-}

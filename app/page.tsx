@@ -6,7 +6,8 @@ import { Schedule } from "./components/Schedule";
 import { Perks } from "./components/Perks";
 import { Founders } from "./components/Founders";
 import { Sponsors } from "./components/Sponsors";
-import { Mentors, Jury } from "./components/Mentors";
+import { Mentors } from "./components/Mentors";
+import { Jury } from "./components/Jury";
 import { FAQ } from "./components/FAQ";
 import { SignupPaths } from "./components/SignupPaths";
 import { SiteFooter, SiteNav } from "./components/SiteChrome";
@@ -33,10 +34,10 @@ export default function Home() {
         <EventSection />
         <Schedule />
         <Perks />
+        <Jury />
         <Sponsors />
         <Founders />
         <Mentors />
-        <Jury />
         <FAQ />
 
         {/* ============ INSCRIPCIÓN ============ */}

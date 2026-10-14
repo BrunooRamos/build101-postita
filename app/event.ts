@@ -150,6 +150,109 @@ export const TEAM = [
 
 export const TEAM_EMAILS = TEAM.map((p) => p.email);
 
+/** Jurado. El orden es a propósito: la grilla va de a 4 (3 en tablet, 2 en
+ *  el celular), así que la primera fila es lo que más se ve. Arriba, los
+ *  nombres que más pesan para un builder: los founders de PedidosYa y
+ *  Nowports, el Centro Nacional de IA y el decano de la casa (FIUM coorganiza).
+ *  Después se alternan producto/tech, inversión e IA aplicada, sin dos de la
+ *  misma empresa juntos. `role` es el cargo principal y `note` lo que se suma
+ *  (ex cargos, angel investor). Fotos: recortes sin fondo de 360×360 en
+ *  public/jury/, encuadrados como los de public/team/. */
+type Juror = {
+  key: string;
+  name: string;
+  role: string;
+  note?: string;
+  linkedin?: string;
+};
+
+export const JURY: readonly (Juror & { photo: string })[] = (
+  [
+    {
+      key: "ruben",
+      name: "Ruben Sosenke",
+      role: "Co-founder PedidosYa (ex CTO)",
+      note: "Angel Investor",
+      linkedin: "https://www.linkedin.com/in/rsosenke/",
+    },
+    {
+      key: "maximiliano",
+      name: "Maximiliano Casal",
+      role: "Co-founder & CEO Nowports",
+      note: "Presidente Endeavor Uruguay · Angel Investor",
+      linkedin: "https://www.linkedin.com/in/maxicasal/",
+    },
+    {
+      key: "matias",
+      name: "Matías Di Martino",
+      role: "CSO Instituto Vidart",
+      note: "Centro Nacional de IA",
+      linkedin: "https://www.linkedin.com/in/j-matias-di-martino-7a6582170/",
+    },
+    {
+      key: "rafael",
+      name: "Rafael Sotelo",
+      role: "Decano FIUM",
+      note: "Universidad de Montevideo",
+      linkedin: "https://www.linkedin.com/in/rafael-sotelo/",
+    },
+    {
+      key: "juanjo",
+      name: "Juan José Behrend",
+      role: "Co-founder & CPTO Akua",
+      note: "Angel Investor",
+      linkedin: "https://www.linkedin.com/in/juanjosebehrend/",
+    },
+    {
+      key: "federico",
+      name: "Federico Gir",
+      role: "Co-founder Picante",
+      note: "Angel Investor",
+      linkedin: "https://www.linkedin.com/in/federicogir/",
+    },
+    {
+      key: "maria",
+      name: "María Michelena",
+      role: "Co-founder InGenia",
+      note: "Angel Investor",
+      linkedin: "https://www.linkedin.com/in/mariamichelena/",
+    },
+    {
+      key: "santiago",
+      name: "Santiago García da Rosa",
+      role: "CTO Lynk Markets",
+      note: "ex CTO Nowports",
+      linkedin: "https://www.linkedin.com/in/santiago-garc%C3%ADa-da-rosa-3441623a/",
+    },
+    {
+      key: "fernando",
+      name: "Fernando Suzacq",
+      role: "Co-founder & CEO Pento",
+      linkedin: "https://www.linkedin.com/in/fsuzacq/",
+    },
+    {
+      key: "florencia",
+      name: "Florencia Polcaro",
+      role: "Co-founder & COO BigCheese",
+      linkedin: "https://www.linkedin.com/in/florenciapolcaro/",
+    },
+    {
+      key: "ignacio",
+      name: "Ignacio Acuña",
+      role: "Co-founder & CTO Promtior",
+      note: "ex CTO Urudata",
+      linkedin: "https://www.linkedin.com/in/ignacioacuna7b88384b/",
+    },
+    {
+      key: "esteban",
+      name: "Esteban Salsano",
+      role: "CEO odev.tech",
+      note: "Angel Investor",
+      linkedin: "https://www.linkedin.com/in/esteban-salsano/",
+    },
+  ] satisfies Juror[]
+).map((j) => ({ ...j, photo: `/jury/${j.key}.webp` }));
+
 /** Contactos por intención. */
 export const PARTICIPANTS_EMAIL = TEAM[0].email;
 export const MENTORS_EMAIL = TEAM[1].email;

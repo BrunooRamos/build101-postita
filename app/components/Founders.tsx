@@ -2,7 +2,7 @@ import { Reveal } from "./Reveal";
 import { PixelBlocks, PIXELS_SMALL } from "./PixelBlocks";
 import { TEAM } from "../event";
 
-function LinkedInIcon() {
+export function LinkedInIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden focusable="false">
       <path
