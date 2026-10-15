@@ -43,7 +43,6 @@ export const TIERS: Tier[] = [
       { name: "Pento", logo: "/sponsors/pento-color.png", w: 158, h: 78, url: "https://pento.ai" },
       { name: "Santander", logo: "/sponsors/santander.svg", w: 158, h: 78, url: "https://www.santander.com.uy" },
       { name: "Nowports", logo: "/sponsors/nowports.png", w: 158, h: 78, url: "https://www.nowports.com" },
-      { name: "AWS", logo: "/sponsors/aws.svg", w: 118, h: 58, url: "https://aws.amazon.com" },
       { name: "odev.tech", logo: "/sponsors/odev.svg", w: 158, h: 78, url: "https://odev.tech" },
       { name: "Lynk Markets", logo: "/sponsors/lynk-markets.svg", w: 158, h: 78, url: "https://lynkmarkets.com" },
       { name: "Mozart", logo: "/sponsors/mozart.svg", w: 158, h: 78, url: "https://mozarth.com" },
@@ -69,8 +68,9 @@ export const TIERS: Tier[] = [
     key: "partners",
     label: "partners",
     size: "partner",
-    cols: 7,
+    cols: 4,
     items: [
+      { name: "Kiro", logo: "/sponsors/kiro.png", w: 140, h: 55, url: "https://kiro.dev", tight: true },
       { name: "nBlock", logo: "/sponsors/nblock.png", w: 128, h: 34, url: "https://www.nblock.ai" },
       { name: "Lazo", logo: "/sponsors/lazo.png", w: 128, h: 34, url: "https://www.lazo.us" },
       { name: "Neocard", logo: "/sponsors/neocard.png", w: 158, h: 34, url: "https://www.neocard.com.uy" },

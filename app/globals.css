@@ -1109,6 +1109,10 @@ ol {
 .sponsor img.invert {
   filter: invert(1);
 }
+/* El logo descargado tiene fondo blanco: se integra al gris de la tarjeta. */
+.sponsor img[src="/sponsors/kiro.png"] {
+  mix-blend-mode: multiply;
+}
 /* Gold: 3 columnas en desktop. */
 .size-gold {
   --cols: 3;
