@@ -33,12 +33,12 @@ export function Sponsors() {
         {TIERS.map((t) => {
           const grid = `sponsor-grid size-${t.size}${t.cols ? ` cols-${t.cols}` : ""}`;
           const featured = t.items.filter((s) => s.featured);
-          const sharedRow = t.items.filter((s) => s.sharedRow);
-          const rest = t.items.filter((s) => !s.featured && !s.sharedRow);
+          const fullRow = t.items.filter((s) => s.fullWidth);
+          const rest = t.items.filter((s) => !s.featured && !s.fullWidth);
           return (
             <Reveal key={t.key} className="tier">
               <h3 className="tier-tab">{t.label}</h3>
-              {featured.length || sharedRow.length ? (
+              {featured.length || fullRow.length ? (
                 <div className="sponsor-stack">
                   {featured.length > 0 && (
                     <ul className="sponsor-grid sponsor-featured">
@@ -52,9 +52,9 @@ export function Sponsors() {
                       <Logo key={s.name} s={s} />
                     ))}
                   </ul>
-                  {sharedRow.length > 0 && (
-                    <ul className={`${grid} sponsor-shared-row`}>
-                      {sharedRow.map((s) => (
+                  {fullRow.length > 0 && (
+                    <ul className={`${grid} sponsor-full-row`}>
+                      {fullRow.map((s) => (
                         <Logo key={s.name} s={s} />
                       ))}
                     </ul>

@@ -19,8 +19,8 @@ export type Sponsor = {
   /** Logo alto (casi cuadrado): menos relleno vertical para que no quede chico
    *  en una tarjeta baja y ancha. */
   tight?: boolean;
-  /** Comparte una fila de dos columnas al final de su categoría. */
-  sharedRow?: boolean;
+  /** Ocupa una fila completa al final de su categoría. */
+  fullWidth?: boolean;
 };
 
 export type Tier = {
@@ -47,8 +47,8 @@ export const TIERS: Tier[] = [
       { name: "Lynk Markets", logo: "/sponsors/lynk-markets.svg", w: 158, h: 78, url: "https://lynkmarkets.com" },
       { name: "Mozart", logo: "/sponsors/mozart.svg", w: 158, h: 78, url: "https://mozarth.com" },
       { name: "Arnaldo Castro", logo: "/sponsors/arnaldo-castro.svg", w: 158, h: 78, url: "https://arnaldocastro.com.uy" },
-      { name: "Instituto Vidart", logo: "/sponsors/vidart.svg", w: 158, h: 78, url: "https://vidart.uy", sharedRow: true },
-      { name: "Estudio Silva Manta y Asociados", logo: "/sponsors/silva-manta.svg", w: 180, h: 90, tight: true, sharedRow: true },
+      { name: "Estudio Silva Manta y Asociados", logo: "/sponsors/silva-manta.svg", w: 180, h: 90, tight: true },
+      { name: "Instituto Vidart", logo: "/sponsors/vidart.svg", w: 158, h: 78, url: "https://vidart.uy", fullWidth: true },
     ],
   },
   {

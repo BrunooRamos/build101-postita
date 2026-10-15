@@ -1152,8 +1152,8 @@ ol {
 .sponsor-grid.cols-4 {
   --cols: 4;
 }
-.sponsor-grid.sponsor-shared-row {
-  --cols: 2;
+.sponsor-grid.sponsor-full-row {
+  --cols: 1;
 }
 /* fila de destacados (hoy: Conaprole y Salus) arriba del resto del tier,
    dentro del mismo marco */
@@ -2342,7 +2342,7 @@ ol {
     --cols: 2;
   }
   /* sin huérfanos: Gold estira su primera tarjeta (Toyota); el resto, la última */
-  .sponsor-grid.size-gold:not(.sponsor-shared-row) > .sponsor:first-child:nth-last-child(odd),
+  .sponsor-grid.size-gold:not(.sponsor-full-row) > .sponsor:first-child:nth-last-child(odd),
   .sponsor-grid:not(.size-small):not(.size-gold) .sponsor:last-child:nth-child(odd),
   .size-small .sponsor:last-child:nth-child(3n + 1) {
     grid-column: 1 / -1;
@@ -2351,7 +2351,7 @@ ol {
     grid-column: span 2;
   }
   /* la tarjeta estirada no agranda el logo: queda del tamaño de sus vecinas */
-  .sponsor-grid.size-gold:not(.sponsor-shared-row) > .sponsor:first-child:nth-last-child(odd) img,
+  .sponsor-grid.size-gold:not(.sponsor-full-row) > .sponsor:first-child:nth-last-child(odd) img,
   .sponsor-grid:not(.size-small):not(.size-gold) .sponsor:last-child:nth-child(odd) img {
     max-width: calc(50% - 16px);
   }
