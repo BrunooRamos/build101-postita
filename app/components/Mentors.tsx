@@ -1,27 +1,6 @@
-import type { CSSProperties } from "react";
 import { Reveal } from "./Reveal";
 import { PixelBlocks, PIXELS_SMALL } from "./PixelBlocks";
-import { MENTORS_EMAIL } from "../event";
-
-// TODO(build101): cuando se confirmen, reemplazar las filas "por anunciar"
-// por nombre y rol (mismo patrón que la lista del equipo).
-function TbaSlots({ count, label, noun }: { count: number; label: string; noun: string }) {
-  return (
-    <div className="tba">
-      <p className="label">{label}</p>
-      <ul className="tba-rows" aria-label="por anunciar">
-        {Array.from({ length: count }, (_, i) => (
-          <li key={i} className="tba-row" style={{ "--i": i } as CSSProperties} aria-hidden>
-            <span>
-              {noun} {String(i + 1).padStart(2, "0")}
-            </span>
-            <span>por anunciar</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+import { MENTORS_DESCRIPTION, MENTORS_EMAIL } from "../event";
 
 export function Mentors() {
   return (
@@ -34,16 +13,12 @@ export function Mentors() {
             <br />
             es aprender de otros.
           </h2>
-          <p className="lede">
-            Mentores que acompañan a los equipos durante todo el fin de semana.
-            Pronto vamos a presentar a quienes se suman.
-          </p>
-          <TbaSlots count={5} label="mentores que te van a estar apoyando" noun="mentor" />
+          <p className="lede">{MENTORS_DESCRIPTION}</p>
         </Reveal>
         <Reveal className="people-aside">
           <PixelBlocks id="px-mentors" cells={PIXELS_SMALL} cols={4} rows={4} className="aside-pixels" />
-          <h3 className="h3">¿querés mentorear?</h3>
-          <p>Bruno coordina a quienes quieren acompañar a los equipos.</p>
+          <h3 className="h3">¿dudas sobre las mentorías?</h3>
+          <p>Bruno coordina el acompañamiento a los equipos durante el evento.</p>
           <a href={`mailto:${MENTORS_EMAIL}`} className="btn btn-ghost btn-block">
             escribile a Bruno{" "}
             <span className="arr" aria-hidden>

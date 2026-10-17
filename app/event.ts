@@ -25,9 +25,13 @@ export const SEO_DESCRIPTION =
 export const EVENT_DESCRIPTION =
   "build 101 es una hackathon gratuita y presencial en uruguay: equipos de 3 personas construyen un producto de inteligencia artificial y lo pitchean en vivo frente a un jurado, el 17 y 18 de octubre de 2026 en la universidad de montevideo · fium, latu, montevideo.";
 
+/** Acompañamiento a los equipos, compartido por la landing y /llms.txt. */
+export const MENTORS_DESCRIPTION =
+  "Durante el fin de semana, los equipos van a contar con mentores para intercambiar ideas, resolver dudas y avanzar con sus proyectos.";
+
 /** Última actualización de contenido del sitio (bumpeala con cada anuncio real:
  *  consigna, mentores, jurado, sponsors, cronograma). Alimenta sitemap y schema. */
-export const CONTENT_UPDATED_ISO = "2026-10-11T00:00:00-03:00";
+export const CONTENT_UPDATED_ISO = "2026-10-17T00:00:00-03:00";
 
 /** ¿Están abiertas las inscripciones?
  *  En `false` la landing no linkea al formulario: los CTAs, la terminal, el FAQ,

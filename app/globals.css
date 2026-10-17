@@ -1276,7 +1276,8 @@ ol {
   width: 428px;
   flex: none;
   margin-left: auto;
-  padding: 40px;
+  /* Reserva la esquina superior para los bloques decorativos. */
+  padding: 200px 40px 40px;
   border: 1px solid var(--line);
   background: var(--surface);
 }
@@ -1293,29 +1294,6 @@ ol {
 }
 .section-rule {
   border-top: 1px solid var(--line);
-}
-.tba {
-  margin-top: 40px;
-}
-/* por anunciar: filas atenuadas, como los speakers inactivos de Ship */
-.tba-rows {
-  margin-top: 16px;
-  border: 1px solid var(--line);
-}
-.tba-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--line);
-  font-family: var(--font-mono-stack);
-  font-size: 14px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--faint);
-}
-.tba-row:last-child {
-  border-bottom: 0;
 }
 
 /* ---------- faq ---------- */
@@ -2410,10 +2388,6 @@ ol {
   }
   .aside-pixels {
     width: 96px;
-  }
-  .tba-row {
-    padding: 16px 18px;
-    font-size: 13px;
   }
 
   .faq-item summary {

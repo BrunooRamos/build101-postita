@@ -28,7 +28,8 @@ Para probar el envío de inscripciones en local, copiá `.env.example` a `.env.l
 | Abrir / cerrar inscripciones (en `false` se anuncia el cierre y se rechazan envíos) | `APPLY_OPEN` en `app/event.ts` |
 | Preguntas frecuentes (se usan también en el schema y `/llms.txt`) | `app/faqs.tsx` |
 | Sponsors por categoría y tamaño de cada logo | `app/components/Sponsors.tsx` + logos en `public/sponsors/` |
-| Mentores y jurado (hoy TBA) | `app/components/Mentors.tsx` |
+| Acompañamiento de mentores | `app/components/Mentors.tsx` + `MENTORS_DESCRIPTION` en `app/event.ts` |
+| Jurado | `app/components/Jury.tsx` + `JURY` en `app/event.ts` |
 | Fotos de la sede | `app/components/SedeCarousel.tsx` + `public/fium-*.webp` |
 
 ## Inscripción

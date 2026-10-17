@@ -7,6 +7,7 @@ import {
   EVENT_DATES_LONG,
   EVENT_DESCRIPTION,
   JURY,
+  MENTORS_DESCRIPTION,
   APPLY_URL,
   SCHEDULE,
   SOCIALS,
@@ -52,6 +53,10 @@ ${
 - build 101 (${CANONICAL_URL})
 - Universidad de Montevideo · Facultad de Ingeniería (FIUM) (https://um.edu.uy)
 - MÜTÜÖ (https://canalmutuo.com)
+
+## mentores
+
+${MENTORS_DESCRIPTION}
 
 ## jurado
 

@@ -82,7 +82,7 @@ export function FollowSection() {
             <br />
             todas las redes.
           </h2>
-          <p className="lede">Mentores, jurado y novedades del evento, primero ahí.</p>
+          <p className="lede">Novedades y todo lo que pasa en build 101, primero ahí.</p>
         </Reveal>
         <Reveal className="follow-links">
           <ul>
