@@ -49,3 +49,7 @@ GOOGLE_SHEETS_WEBHOOK_SECRET=   # el mismo valor que SHARED_SECRET en el script
 ## Easter eggs
 
 La terminal del hero es interactiva (`help`), el código Konami (o tipear `deploy`) dispara la lluvia matrix, `crash` en la terminal muestra un error falso que se arregla solo, y "quiero participar" corre un deploy falso antes de abrir el formulario.
+
+## La ronda · juego de inversión
+
+Demo en `/invertir`, ranking en `/invertir/resultados`. Equipos y participantes en `lib/investment-game.ts`. Reglas, carga de datos reales y persistencia para Vercel: [docs/la-ronda.md](docs/la-ronda.md).
