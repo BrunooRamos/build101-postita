@@ -79,6 +79,10 @@ export const EVENT_START_DATE = "2026-10-17";
 /** Apertura del sábado y cierre del domingo (16:00, con margen). */
 export const EVENT_KICKOFF_ISO = "2026-10-17T09:00:00-03:00";
 export const EVENT_END_ISO = "2026-10-18T16:00:00-03:00";
+/** Cierre de código del domingo: corta las ventanas de /wrapped (totales,
+ *  "a último minuto"). El script de ingesta lo lee de acá y se puede pisar en
+ *  cada corrida con `CIERRE=HH:MM npm run metrics`. */
+export const CODE_FREEZE_ISO = "2026-10-18T12:00:00-03:00";
 
 /** Horario de la sede (no se pernocta: la sede cierra de noche). */
 export const SCHEDULE = [

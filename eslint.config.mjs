@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // clones de repos y caché del script de /wrapped
+    ".data/**",
   ]),
   {
     rules: {
