@@ -395,7 +395,8 @@ export function Words({ m, idx }: CardProps) {
 }
 
 export function Counters({ m, idx }: CardProps) {
-  const max = Math.max(...m.counters.map((c) => c.count));
+  const counters = m.counters.filter((c) => c.count > 0);
+  const max = Math.max(...counters.map((c) => c.count));
   return (
     <>
       <Head idx={idx} label="el contador" />
@@ -403,7 +404,7 @@ export function Counters({ m, idx }: CardProps) {
         cuántas veces lo escribieron.
       </In>
       <div className="wr-tiles" style={{ marginTop: "calc(var(--u) * 3.6)" }}>
-        {m.counters.map((c, i) => (
+        {counters.map((c, i) => (
           <In key={c.label} i={i * 0.5 + 2} className={`wr-tile ${c.count === max ? "hot" : ""}`}>
             <div className="wr-tile-v">
               <Count to={c.count} />
@@ -589,7 +590,7 @@ export function Balanced({ m, idx }: CardProps) {
           {b.team}
         </In>
         <In i={2} as="p" className="wr-caption">
-          repartieron los commits casi perfecto.
+          el reparto de commits más parejo de la hackathon.
         </In>
         <In i={3} as="p" className="wr-sub">
           {b.shares.map((s) => `${s}%`).join(" · ")} de {n(b.commits)} commits. trabajo en equipo de verdad.
