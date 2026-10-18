@@ -1,5 +1,6 @@
 // Fuente: build101 - Acreditaciones.xlsx, hoja Acreditaciones, columnas A–C.
 // Se importan las 99 personas, sin filtrar por llegada ni copiar datos de contacto.
+// Nombres de equipo: build 101 - Competencia - Bombos equipos (1).pdf, cruzados por número.
 export const INVESTMENT_GAME = {
   roundId: "build101-acreditaciones-preview-v1",
   demo: true,
@@ -16,7 +17,7 @@ export type InvestorTeam = {
   members: { id: string; name: string }[];
 };
 
-// Nómina completa: los equipos que pueden entrar y votar.
+// Nómina completa: los equipos que pueden entrar y votar, con nombres actualizados para la ronda.
 export const INVESTOR_TEAMS: InvestorTeam[] = [
   {
     id: "equipo-01", number: 1, name: "Beyond The Bot",
@@ -27,7 +28,7 @@ export const INVESTOR_TEAMS: InvestorTeam[] = [
     members: ["Joaquin Rodriguez", "Ignacio Tondo", "MARTIN BLANCO"].map((name, i) => ({ id: `equipo-02-${i + 1}`, name })),
   },
   {
-    id: "equipo-03", number: 3, name: "Equipo de Diego Marin",
+    id: "equipo-03", number: 3, name: "Sayso",
     members: ["Diego Marin", "Juan Martin Noguez", "Ignacio Iglesia"].map((name, i) => ({ id: `equipo-03-${i + 1}`, name })),
   },
   {
@@ -35,7 +36,7 @@ export const INVESTOR_TEAMS: InvestorTeam[] = [
     members: ["Franco Fontanarossa", "Juan Pedro Guerra", "Guadalupe Carrasco"].map((name, i) => ({ id: `equipo-04-${i + 1}`, name })),
   },
   {
-    id: "equipo-05", number: 5, name: "UnifyAI (por lo menos por ahora)",
+    id: "equipo-05", number: 5, name: "Kiai",
     members: ["Manuel Arocena", "Bruno Pallas", "Facundo Sansalone"].map((name, i) => ({ id: `equipo-05-${i + 1}`, name })),
   },
   {
@@ -43,7 +44,7 @@ export const INVESTOR_TEAMS: InvestorTeam[] = [
     members: ["Nicolas Tognola", "Alberto Ortolani", "Nicolas Sere"].map((name, i) => ({ id: `equipo-06-${i + 1}`, name })),
   },
   {
-    id: "equipo-07", number: 7, name: "Equipo de Manuel Anselmi",
+    id: "equipo-07", number: 7, name: "Scout",
     members: ["Manuel Anselmi", "Nicolas Barboza", "Santiago Lizarazu"].map((name, i) => ({ id: `equipo-07-${i + 1}`, name })),
   },
   {
@@ -51,7 +52,7 @@ export const INVESTOR_TEAMS: InvestorTeam[] = [
     members: ["Guido Vizoso", "Francisco Cuadra", "Joaquin Hernandez"].map((name, i) => ({ id: `equipo-08-${i + 1}`, name })),
   },
   {
-    id: "equipo-09", number: 9, name: "Equipo de Santiago Abásolo",
+    id: "equipo-09", number: 9, name: "Alargue",
     members: ["Santiago Abásolo", "Ignacio Azaretto Soler", "Gabriel Villaverde"].map((name, i) => ({ id: `equipo-09-${i + 1}`, name })),
   },
   {
@@ -83,11 +84,11 @@ export const INVESTOR_TEAMS: InvestorTeam[] = [
     members: ["Alexis Friss de Kereki", "Mauricio Friss de Kereki", "Joaquín Becerra"].map((name, i) => ({ id: `equipo-16-${i + 1}`, name })),
   },
   {
-    id: "equipo-17", number: 17, name: "Equipo de Juan Sebastian Val",
+    id: "equipo-17", number: 17, name: "Hookia",
     members: ["Juan Sebastian Val", "Juan Maria Andre", "Paul Mc Cubbin"].map((name, i) => ({ id: `equipo-17-${i + 1}`, name })),
   },
   {
-    id: "equipo-18", number: 18, name: "Equipo de Nicolás Stanko",
+    id: "equipo-18", number: 18, name: "Argos",
     members: ["Nicolás Stanko", "Pablo Maurente", "Pablo Dalchiele"].map((name, i) => ({ id: `equipo-18-${i + 1}`, name })),
   },
   {
@@ -95,7 +96,7 @@ export const INVESTOR_TEAMS: InvestorTeam[] = [
     members: ["Emilio Muniz", "Gastón Martinez", "Agustín Gomez"].map((name, i) => ({ id: `equipo-19-${i + 1}`, name })),
   },
   {
-    id: "equipo-20", number: 20, name: "Los Top Globales",
+    id: "equipo-20", number: 20, name: "Rumbo",
     members: ["Martin Trigo", "Santiago Muñoz", "Benjamin Macció"].map((name, i) => ({ id: `equipo-20-${i + 1}`, name })),
   },
   {
@@ -103,15 +104,15 @@ export const INVESTOR_TEAMS: InvestorTeam[] = [
     members: ["Nicolas Perez Quintero", "Tiago Benedetto", "Lucas Melo"].map((name, i) => ({ id: `equipo-21-${i + 1}`, name })),
   },
   {
-    id: "equipo-22", number: 22, name: "Equipo de Manuel Graña",
+    id: "equipo-22", number: 22, name: "Cruce",
     members: ["Manuel Graña", "Franco Bonavita", "Enzo Izquierdo"].map((name, i) => ({ id: `equipo-22-${i + 1}`, name })),
   },
   {
-    id: "equipo-23", number: 23, name: "Equipo de Ivan Guchin",
+    id: "equipo-23", number: 23, name: "Viveri",
     members: ["Ivan Guchin", "Francisco Carbajal", "Camilo Aguiar"].map((name, i) => ({ id: `equipo-23-${i + 1}`, name })),
   },
   {
-    id: "equipo-24", number: 24, name: "Equipo de Felipe Perdomo",
+    id: "equipo-24", number: 24, name: "Cercania",
     members: ["Felipe Perdomo", "Santiago Souto", "Erika Alvarez"].map((name, i) => ({ id: `equipo-24-${i + 1}`, name })),
   },
   {
@@ -123,15 +124,15 @@ export const INVESTOR_TEAMS: InvestorTeam[] = [
     members: ["Santiago Sosa", "Joaquin Piedra", "Renzo De Marco"].map((name, i) => ({ id: `equipo-26-${i + 1}`, name })),
   },
   {
-    id: "equipo-27", number: 27, name: "Equipo de Juan Pablo Borja",
+    id: "equipo-27", number: 27, name: "Bache Processing",
     members: ["Juan Pablo Borja", "Federico Dallo", "Zuo Heng Dai"].map((name, i) => ({ id: `equipo-27-${i + 1}`, name })),
   },
   {
-    id: "equipo-28", number: 28, name: "Equipo de Salvador Secco",
+    id: "equipo-28", number: 28, name: "Walters",
     members: ["Salvador Secco", "Juan Pablo Benítez", "Facundo Morena"].map((name, i) => ({ id: `equipo-28-${i + 1}`, name })),
   },
   {
-    id: "equipo-29", number: 29, name: "LIF",
+    id: "equipo-29", number: 29, name: "Contigo",
     members: ["INES BERTOLOTTI", "Lara Stirling", "Felipe Lyonnet"].map((name, i) => ({ id: `equipo-29-${i + 1}`, name })),
   },
   {
@@ -143,11 +144,11 @@ export const INVESTOR_TEAMS: InvestorTeam[] = [
     members: ["Máximo Zales", "Sebastián Viglione", "Rafael Fuidio"].map((name, i) => ({ id: `equipo-31-${i + 1}`, name })),
   },
   {
-    id: "equipo-32", number: 32, name: "Equipo individuales 1 (César)",
+    id: "equipo-32", number: 32, name: "La Compu de Cesar",
     members: ["Cesar Canessa", "Adrian Mircus", "Mauricio Parodi"].map((name, i) => ({ id: `equipo-32-${i + 1}`, name })),
   },
   {
-    id: "equipo-33", number: 33, name: "Equipo de Ezequiel Garcia",
+    id: "equipo-33", number: 33, name: "Brandia",
     members: ["Ezequiel Garcia", "Juan Portas", "Rodrigo Portas"].map((name, i) => ({ id: `equipo-33-${i + 1}`, name })),
   },
 ];
@@ -160,9 +161,19 @@ export type InvestmentTeam = {
   description: string;
 };
 
-// Completar con los 10 equipos finalistas, usando IDs de INVESTOR_TEAMS.
-// Ejemplo: ["equipo-01", "equipo-12", ...]. No se eligen finalistas automáticamente.
-export const FINALIST_TEAM_IDS: string[] = [];
+// Equipos habilitados para recibir inversiones, en el orden confirmado para la ronda.
+// Los IDs conservan la relación con sus integrantes y bloquean la inversión propia.
+export const FINALIST_TEAM_IDS: string[] = [
+  "equipo-06",
+  "equipo-14",
+  "equipo-32",
+  "equipo-11",
+  "equipo-03",
+  "equipo-31",
+  "equipo-12",
+  "equipo-18",
+  "equipo-01",
+];
 
 const DEMO_PROJECTS: InvestmentTeam[] = Array.from({ length: 10 }, (_, index) => ({
   id: `por-definir-${String(index + 1).padStart(2, "0")}`,

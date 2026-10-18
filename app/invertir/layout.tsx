@@ -4,7 +4,7 @@ import "./investing.css";
 
 export const metadata: Metadata = {
   title: "la ronda · build 101",
-  description: "Diez equipos. Un millón de dólares de juego. Invertí en lo que viene en build 101.",
+  description: "Un millón de dólares de juego. Invertí en los equipos que creas que tienen más futuro en build 101.",
   alternates: { canonical: "/invertir" },
   robots: { index: false, follow: false },
 };

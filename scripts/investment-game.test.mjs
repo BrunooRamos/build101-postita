@@ -8,7 +8,7 @@ const valid = { investorId: investor.id, allocations: { [outsideTeams[0].id]: 60
 
 test("all 99 accredited people belong to their original 33 teams", () => {
   assert.equal(INVESTOR_TEAMS.length, 33);
-  assert.equal(INVESTMENT_TEAMS.length, 10);
+  assert.equal(INVESTMENT_TEAMS.length, 9);
   assert.equal(INVESTORS.length, 99);
   assert.equal(new Set(INVESTORS.map((person) => person.id)).size, 99);
   assert.equal(new Set(INVESTOR_TEAMS.map((team) => team.id)).size, 33);
@@ -26,16 +26,17 @@ test("a complete portfolio is accepted with a server-generated timestamp", () =>
   assert.notEqual(result.portfolio.updatedAt, "forged");
 });
 
-test("every accredited member is blocked when their team is selected as a finalist", () => {
-  const finalist = INVESTMENT_TEAMS[0];
-  const originalTeamId = finalist.teamId;
-  try {
-    for (const person of INVESTORS) {
-      finalist.teamId = person.teamId;
+test("all members of the nine confirmed finalists are blocked from investing in their own team", () => {
+  let blocked = 0;
+  for (const finalist of INVESTMENT_TEAMS) {
+    const outsideTeam = INVESTMENT_TEAMS.find((team) => team.id !== finalist.id);
+    for (const person of INVESTORS.filter((person) => person.teamId === finalist.teamId)) {
       assert.match(validatePortfolio({ investorId: person.id, allocations: { [finalist.id]: 1_000_000 } }).error, /propio equipo/);
-      assert.match(validatePortfolio({ investorId: person.id, allocations: { [finalist.id]: 25_000, [INVESTMENT_TEAMS[1].id]: 975_000 } }).error, /propio equipo/);
+      assert.match(validatePortfolio({ investorId: person.id, allocations: { [finalist.id]: 25_000, [outsideTeam.id]: 975_000 } }).error, /propio equipo/);
+      blocked++;
     }
-  } finally { finalist.teamId = originalTeamId; }
+  }
+  assert.equal(blocked, 27);
 });
 
 test("under-budget and over-budget portfolios are both rejected", () => {
@@ -85,7 +86,7 @@ test("each of the 99 people can save an individual million-dollar portfolio", ()
 
 test("an empty round shows all teams with zero capital", () => {
   const results = summarizePortfolios([]);
-  assert.equal(results.teams.length, 10);
+  assert.equal(results.teams.length, 9);
   assert.equal(results.total, 0);
   assert.equal(results.submitted, 0);
   assert.ok(results.teams.every((team) => team.amount === 0 && team.investors === 0));
