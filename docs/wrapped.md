@@ -11,14 +11,14 @@ export GITHUB_TOKEN=$(gh auth token)                 # si no está, el script pr
 npm run metrics
 ```
 
-Cada corrida clona o actualiza los repos en `.data/wrapped-repos/` (`git clone --filter=blob:none`), calcula todo y escribe `.data/wrapped-metrics.json`. La primera vez tarda; después solo hace `fetch`. Correlo cada 10–15 min hasta el cierre.
+Cada corrida clona o actualiza los repos en `.data/wrapped-repos/` (`git clone --filter=blob:none`), calcula todo y escribe `wrapped/metrics.json` (commitealo: es el snapshot que ve el deploy si Redis está vacío). La primera vez tarda; después solo hace `fetch`. Correlo cada 10–15 min hasta el cierre.
 
 | flag / variable | qué hace |
 |---|---|
 | `CIERRE=13:30 npm run metrics` | pisa la hora de cierre de código (por defecto `CODE_FREEZE_ISO` en `app/event.ts`) |
 | `-- --no-publish` | solo escribe el archivo local |
 | `-- --offline` | no hace fetch: usa los clones que ya hay |
-| `ANTHROPIC_API_KEY` | elige el top 5 de commits graciosos con Claude (si no, una heurística). Se cachea en `.data/wrapped-cache/` |
+| `ANTHROPIC_API_KEY` | elige el top 5 de commits graciosos con Claude (sin clave, esa tarjeta no se muestra). Se cachea en `.data/wrapped-cache/` |
 
 `wrapped/repos.json` y `wrapped/hidden.json` están en `.gitignore`.
 
@@ -27,8 +27,8 @@ Cada corrida clona o actualiza los repos en `.data/wrapped-repos/` (`git clone -
 La página lee `GET /api/wrapped`, que devuelve, en orden:
 
 1. el último `metrics.json` publicado en Redis (key `build101:wrapped:metrics`), si hay credenciales;
-2. en local, `.data/wrapped-metrics.json`;
-3. si no hay nada, `wrapped/metrics.sample.json` (el pie dice "datos de ejemplo").
+2. en local, `wrapped/metrics.json` recién escrito;
+3. si no hay nada, el snapshot commiteado `wrapped/metrics.json` (también real, de la última corrida).
 
 Usa el mismo Redis REST (Upstash) que la ronda de inversión. Para que el script publique, exportá las mismas credenciales que tiene Vercel:
 

@@ -5,11 +5,12 @@ import path from "node:path";
 // - Publicado: una key en el mismo Redis REST (Upstash) que usa la ronda de
 //   inversión. El script la pisa en cada corrida, así la tele se actualiza sin
 //   redeploy.
-// - En local: `.data/wrapped-metrics.json`, que escribe el script.
-// - Si no hay nada, la página muestra `wrapped/metrics.sample.json`.
+// - Snapshot: `wrapped/metrics.json`, que escribe el script con datos reales
+//   de git y se commitea; es lo que se ve si el store no tiene nada.
+// No hay datos de ejemplo: lo que sale en la tele es siempre real.
 
 export const WRAPPED_KEY = "build101:wrapped:metrics";
-export const WRAPPED_LOCAL_FILE = path.join(process.cwd(), ".data", "wrapped-metrics.json");
+export const WRAPPED_LOCAL_FILE = path.join(process.cwd(), "wrapped", "metrics.json");
 
 export function redisConfiguration() {
   const credentials = [

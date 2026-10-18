@@ -1,14 +1,14 @@
 // build 101 wrapped — script de ingesta. Corre en la máquina de un organizador:
 //
 //   npm run metrics                  # clona/actualiza, calcula y publica
-//   npm run metrics -- --no-publish  # solo escribe .data/wrapped-metrics.json
+//   npm run metrics -- --no-publish  # solo escribe wrapped/metrics.json
 //   npm run metrics -- --offline     # no hace fetch: usa los clones que ya hay
 //   CIERRE=13:30 npm run metrics     # pisa la hora de cierre de código
 //
 // Lee wrapped/repos.json y wrapped/hidden.json, clona cada repo con
 // --filter=blob:none en .data/wrapped-repos/, saca casi todo de `git log` local
 // y usa la API de GitHub solo para lenguajes y PRs. El resultado (ya agregado y
-// filtrado) es lo único que lee la página: se escribe en .data/ y, si hay
+// filtrado) es lo único que lee la página: se escribe en wrapped/metrics.json y, si hay
 // credenciales de Redis, se publica para /api/wrapped.
 //
 // Variables: GITHUB_TOKEN (o `gh auth token`), INVESTMENTS_REDIS_REST_URL/TOKEN
