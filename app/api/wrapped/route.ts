@@ -1,4 +1,4 @@
-import sample from "@/wrapped/metrics.sample.json";
+import snapshot from "@/wrapped/metrics.json";
 import { readPublishedMetrics } from "@/lib/wrapped-store";
 
 // GET /api/wrapped — el metrics.json que lee la tele. Si el store falla responde
@@ -11,7 +11,7 @@ const headers = { "Content-Type": "application/json; charset=utf-8", "Cache-Cont
 export async function GET() {
   try {
     const published = await readPublishedMetrics();
-    return new Response(published ?? JSON.stringify(sample), { headers });
+    return new Response(published ?? JSON.stringify(snapshot), { headers });
   } catch {
     return Response.json({ error: "metrics unavailable" }, { status: 503, headers });
   }
