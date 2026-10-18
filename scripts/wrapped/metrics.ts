@@ -24,7 +24,7 @@ import { mkdir, readdir, readFile, rename, stat, writeFile } from "node:fs/promi
 import path from "node:path";
 import { promisify } from "node:util";
 import Anthropic from "@anthropic-ai/sdk";
-import { CODE_FREEZE_ISO, EVENT_KICKOFF_ISO } from "../../app/event.ts";
+import { CODE_FREEZE_ISO, EVENT_KICKOFF_ISO, TEAM_SIZE } from "../../app/event.ts";
 import { WRAPPED_KEY, WRAPPED_LOCAL_FILE, redis, redisConfiguration } from "../../lib/wrapped-store.ts";
 import type { Ranked, WrappedMetrics } from "../../lib/wrapped-types.ts";
 import { type Hidden, makeShowFilter, normalize, wordIsShowable } from "./filters.ts";
@@ -112,6 +112,11 @@ function gitEnv(token: string) {
 const git = (dir: string, args: string[], env: NodeJS.ProcessEnv) =>
   run("git", ["-C", dir, ...args], { env, maxBuffer: 512 * 1024 * 1024 }).then((r) => r.stdout);
 
+/** Baja en tandas los blobs que el clon parcial no trajo. Sin esto, `log
+ *  --numstat` los pide de a uno y un repo tarda minutos. Necesita git ≥ 2.49;
+ *  si no está, sigue igual (más lento). */
+const backfill = (dir: string, env: NodeJS.ProcessEnv) => git(dir, ["backfill"], env).catch(() => {});
+
 /** Clona o actualiza. Si el fetch falla pero ya hay un clon, sigue con ese. */
 async function syncRepo(entry: RepoEntry, env: NodeJS.ProcessEnv) {
   const slug = entry.repo_url.replace(/^.*github\.com[/:]/i, "").replace(/\.git$/, "").replace(/[^\w.-]+/g, "__");
@@ -121,6 +126,7 @@ async function syncRepo(entry: RepoEntry, env: NodeJS.ProcessEnv) {
     if (ARGS.has("--offline")) throw new Error("sin clon local (--offline)");
     await mkdir(CLONES, { recursive: true });
     await run("git", ["clone", "--filter=blob:none", "--no-tags", "--quiet", url, dir], { env, maxBuffer: 64 * 1024 * 1024 });
+    await backfill(dir, env);
     return { dir, stale: false };
   }
   if (ARGS.has("--offline")) return { dir, stale: true };
@@ -128,6 +134,7 @@ async function syncRepo(entry: RepoEntry, env: NodeJS.ProcessEnv) {
     await git(dir, ["fetch", "--all", "--prune", "--no-tags", "--quiet"], env);
     await git(dir, ["remote", "set-head", "origin", "--auto"], env).catch(() => {});
     await git(dir, ["reset", "--hard", "--quiet", "origin/HEAD"], env);
+    await backfill(dir, env);
     return { dir, stale: false };
   } catch {
     return { dir, stale: true };
@@ -269,12 +276,26 @@ function unifyAuthors(commits: Commit[]) {
     if (!parent.has(b)) parent.set(b, b);
     parent.set(find(a), find(b));
   };
+  // "Matias Moser" y "MatiasMoser" son la misma persona: el nombre se compara sin espacios
+  const key = (name: string) => `n:${normName(name).replace(/ /g, "")}`;
+  const names = new Set<string>();
   for (const c of commits) {
     if (!c.human) continue;
     const e = `e:${c.author.email}`;
-    union(e, `n:${normName(c.author.name)}`);
+    union(e, key(c.author.name));
+    names.add(normName(c.author.name).replace(/ /g, ""));
     const login = c.author.email.match(/^(?:\d+\+)?([^@]+)@users\.noreply\.github\.com$/)?.[1];
-    if (login) union(e, `n:${normName(login)}`);
+    if (login) {
+      union(e, key(login));
+      names.add(normName(login).replace(/ /g, ""));
+    }
+  }
+  // un nombre de una sola palabra ("bruno") se une al único nombre más largo del
+  // equipo que empieza igual ("brunocolo"); si hay dos candidatos, no se adivina
+  for (const short of names) {
+    if (short.length < 3) continue;
+    const longer = [...names].filter((n) => n !== short && n.startsWith(short));
+    if (longer.length === 1) union(`n:${short}`, `n:${longer[0]}`);
   }
   return (c: Commit) => find(`e:${c.author.email}`);
 }
@@ -483,18 +504,12 @@ const EMOJI = /\p{Extended_Pictographic}|:[a-z_]+:/gu;
 
 type Shown = { hash: string; team: string; text: string };
 
-const FUNNY_HINTS = /ahora s[ií]|por ?fa|please|plis|jaj|jej|lol|!!|\?\?|ups|oops|magia|no s[eé]|rez[aá]|dios|ayuda|funciona|odio|perd[oó]n|sorry|final|otra vez|de nuevo|caf[eé]|mate|sue[nñ]o|dormir|\p{Extended_Pictographic}/iu;
-
 async function pickFunny(candidates: Shown[]): Promise<Shown[]> {
   const pool = candidates.filter((c) => c.text.length >= 6 && c.text.length <= 110).slice(0, 1500);
   if (!pool.length) return [];
-  const heuristic = () =>
-    pool
-      .map((c) => ({ c, score: (c.text.match(new RegExp(FUNNY_HINTS, "giu")) ?? []).length + (c.text.length < 60 ? 0.5 : 0) }))
-      .filter((x) => x.score >= 1)
-      .sort((a, b) => b.score - a.score)
-      .map((x) => x.c);
-  if (!process.env.ANTHROPIC_API_KEY) return heuristic();
+  // sin LLM no hay "graciosos": la heurística elige mensajes que no lo son,
+  // así que la tarjeta se saltea
+  if (!process.env.ANTHROPIC_API_KEY) return [];
 
   const key = createHash("sha256").update(pool.map((c) => c.hash).join(",")).digest("hex").slice(0, 16);
   const cacheFile = path.join(CACHE, `funny-${key}.json`);
@@ -528,8 +543,8 @@ ${list}`,
       await mkdir(CACHE, { recursive: true });
       await writeFile(cacheFile, JSON.stringify(hashes));
     } catch (error) {
-      console.warn(`  ! no pude elegir los graciosos con claude (${(error as Error).message}); uso la heurística`);
-      return heuristic();
+      console.warn(`  ! no pude elegir los graciosos con claude (${(error as Error).message}); se saltea la tarjeta`);
+      return [];
     }
   }
   const byHash = new Map(pool.map((c) => [c.hash, c]));
@@ -595,17 +610,19 @@ async function main() {
   // personas: unificadas por equipo; sus nombres nunca salen en pantalla
   const names = new Set<string>();
   const people = new Map<string, Map<string, number>>(); // equipo → persona → commits
-  for (const r of results) {
-    const who = unifyAuthors(r.commits);
+  for (const team of new Set(results.map((r) => r.entry.equipo))) {
+    // un equipo puede tener más de un repo: se unifican autores entre todos
+    const teamCommits = commits.filter((c) => c.team === team);
+    const who = unifyAuthors(teamCommits);
     const counts = new Map<string, number>();
-    for (const c of r.commits) {
+    for (const c of teamCommits) {
       if (!c.human) continue;
       counts.set(who(c), (counts.get(who(c)) ?? 0) + 1);
       for (const part of [...normName(c.author.name).split(" "), ...normName(c.author.email.split("@")[0]).split(" ")]) {
         if (part.length >= 3 && !STOP.has(part)) names.add(part);
       }
     }
-    people.set(r.entry.equipo, counts);
+    people.set(team, counts);
   }
 
   const show = makeShowFilter(hidden, names);
@@ -619,7 +636,9 @@ async function main() {
     linesAdded: commits.reduce((s, c) => s + c.added, 0),
     linesDeleted: commits.reduce((s, c) => s + c.deleted, 0),
     files: files.size,
-    builders: [...people.values()].reduce((s, m) => s + m.size, 0),
+    // git no alcanza para contar personas (laptops compartidas, cuentas del
+    // equipo, apodos): como mucho TEAM_SIZE por equipo
+    builders: [...people.values()].reduce((s, m) => s + Math.min(m.size, Number(TEAM_SIZE)), 0),
     repos: results.length,
     teams: new Set(results.map((r) => r.entry.equipo)).size,
     prs: results.reduce((s, r) => s + r.extras.prs, 0),
@@ -694,7 +713,8 @@ async function main() {
 
   const wordCounts = new Map<string, number>();
   for (const c of commits) {
-    const subject = c.subject.replace(CONVENTIONAL, "");
+    // sin prefijo convencional ni IDs de tickets (CIA-62, #12)
+    const subject = c.subject.normalize("NFC").replace(CONVENTIONAL, "").replace(/\b[A-Z][A-Z0-9]+-\d+\b|#\d+/g, " ");
     if (!show(c.hash, subject)) continue;
     for (const raw of subject.toLowerCase().split(/[^\p{L}\p{N}]+/u)) {
       if (raw.length < 3 || STOP.has(raw) || /^\d+$/.test(raw)) continue;
@@ -769,10 +789,11 @@ async function main() {
   for (const [team, counts] of people) {
     const values = [...counts.values()].sort((a, b) => b - a);
     const sum = values.reduce((s, v) => s + v, 0);
-    if (values.length < 2 || sum < 10) continue;
+    // solo equipos con identidades limpias (una por integrante) y bastante actividad
+    if (values.length !== Number(TEAM_SIZE) || sum < 30) continue;
     // entropía normalizada × cobertura del equipo (3 personas reparten mejor que 2)
     const entropy = -values.reduce((s, v) => s + (v / sum) * Math.log(v / sum), 0) / Math.log(3);
-    if (values[0] / sum <= 0.6 && entropy > bestEvenness) {
+    if (values[0] / sum <= 0.45 && entropy > bestEvenness) {
       bestEvenness = entropy;
       balanced = { team, commits: sum, shares: values.map((v) => Math.round((v / sum) * 100)) };
     }
