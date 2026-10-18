@@ -1,0 +1,615 @@
+{
+  "version": 1,
+  "sample": true,
+  "generatedAt": "2026-10-18T15:02:00.000Z",
+  "window": {
+    "kickoff": "2026-10-17T12:00:00.000Z",
+    "freeze": "2026-10-18T15:00:00.000Z",
+    "venueClose": "21:00"
+  },
+  "totals": {
+    "commits": 2344,
+    "linesAdded": 412873,
+    "linesDeleted": 96214,
+    "files": 6382,
+    "builders": 97,
+    "repos": 33,
+    "teams": 33,
+    "prs": 214
+  },
+  "heatmap": {
+    "days": [
+      {
+        "label": "sáb 17",
+        "hours": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          38,
+          96,
+          141,
+          118,
+          92,
+          154,
+          187,
+          203,
+          176,
+          162,
+          148,
+          121,
+          97,
+          64,
+          41
+        ]
+      },
+      {
+        "label": "dom 18",
+        "hours": [
+          33,
+          22,
+          14,
+          9,
+          6,
+          4,
+          7,
+          12,
+          31,
+          88,
+          131,
+          149,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    ],
+    "max": 203
+  },
+  "peak": {
+    "day": "sáb 17",
+    "hour": 16,
+    "count": 203
+  },
+  "owl": {
+    "team": "404 sueño not found",
+    "time": "04:37",
+    "message": "ahora sí, me voy a dormir (mentira)",
+    "afterHours": 340
+  },
+  "earlyBird": {
+    "team": "mate driven development",
+    "time": "05:52",
+    "message": "buen día. ¿qué rompí anoche?"
+  },
+  "lastMinute": {
+    "minutes": 15,
+    "count": 87,
+    "teams": 24
+  },
+  "sleepless": {
+    "team": "segfault fc",
+    "longestRestMin": 71,
+    "nightCommits": 58
+  },
+  "fastStart": {
+    "team": "ship it",
+    "minutes": 7
+  },
+  "monster": {
+    "team": "rambla labs",
+    "lines": 9412,
+    "added": 8891,
+    "deleted": 521,
+    "files": 143,
+    "message": "feat: todo el backend de una"
+  },
+  "words": [
+    {
+      "word": "fix",
+      "count": 412
+    },
+    {
+      "word": "agrega",
+      "count": 287
+    },
+    {
+      "word": "login",
+      "count": 201
+    },
+    {
+      "word": "prompt",
+      "count": 188
+    },
+    {
+      "word": "deploy",
+      "count": 176
+    },
+    {
+      "word": "ui",
+      "count": 171
+    },
+    {
+      "word": "api",
+      "count": 166
+    },
+    {
+      "word": "chat",
+      "count": 152
+    },
+    {
+      "word": "agente",
+      "count": 149
+    },
+    {
+      "word": "demo",
+      "count": 137
+    },
+    {
+      "word": "landing",
+      "count": 121
+    },
+    {
+      "word": "final",
+      "count": 118
+    },
+    {
+      "word": "error",
+      "count": 109
+    },
+    {
+      "word": "supabase",
+      "count": 98
+    },
+    {
+      "word": "pitch",
+      "count": 96
+    },
+    {
+      "word": "embeddings",
+      "count": 88
+    },
+    {
+      "word": "botón",
+      "count": 83
+    },
+    {
+      "word": "mobile",
+      "count": 79
+    },
+    {
+      "word": "streaming",
+      "count": 74
+    },
+    {
+      "word": "onboarding",
+      "count": 71
+    },
+    {
+      "word": "readme",
+      "count": 69
+    },
+    {
+      "word": "tests",
+      "count": 52
+    },
+    {
+      "word": "dark",
+      "count": 47
+    },
+    {
+      "word": "mate",
+      "count": 21
+    }
+  ],
+  "counters": [
+    {
+      "label": "fix",
+      "count": 412
+    },
+    {
+      "label": "wip",
+      "count": 96
+    },
+    {
+      "label": "final",
+      "count": 118
+    },
+    {
+      "label": "ahora sí",
+      "count": 23
+    },
+    {
+      "label": "por favor",
+      "count": 17
+    },
+    {
+      "label": "funciona",
+      "count": 64
+    },
+    {
+      "label": "emojis",
+      "count": 341
+    }
+  ],
+  "longest": {
+    "team": "refactor mañana",
+    "message": "refactor del flujo de onboarding para que el agente pida los datos de a uno, valide cada respuesta, reintente si el modelo devuelve algo raro y no se trabe cuando el usuario cambia de idea a mitad de camino",
+    "chars": 206
+  },
+  "shortest": {
+    "team": "ctrl z",
+    "message": ".",
+    "chars": 1
+  },
+  "funny": [
+    {
+      "team": "git push y rezar",
+      "message": "funciona. no sé por qué, pero funciona"
+    },
+    {
+      "team": "tres con fernet",
+      "message": "final final ahora sí (v7)"
+    },
+    {
+      "team": "404 sueño not found",
+      "message": "le pedí al agente que arregle un bug y arregló tres que no sabía que tenía"
+    },
+    {
+      "team": "cero bugs (mentira)",
+      "message": "revert del revert del fix"
+    },
+    {
+      "team": "pizza y prompts",
+      "message": "por favor andá en la demo"
+    }
+  ],
+  "ai": {
+    "coauthored": 1974,
+    "total": 2344,
+    "byAgent": [
+      {
+        "agent": "claude",
+        "count": 1012
+      },
+      {
+        "agent": "cursor",
+        "count": 498
+      },
+      {
+        "agent": "kiro",
+        "count": 187
+      },
+      {
+        "agent": "copilot",
+        "count": 142
+      },
+      {
+        "agent": "codex",
+        "count": 91
+      },
+      {
+        "agent": "gemini",
+        "count": 44
+      }
+    ]
+  },
+  "providers": [
+    {
+      "name": "openai",
+      "teams": 21
+    },
+    {
+      "name": "anthropic",
+      "teams": 19
+    },
+    {
+      "name": "ai sdk",
+      "teams": 16
+    },
+    {
+      "name": "gemini",
+      "teams": 11
+    },
+    {
+      "name": "langchain",
+      "teams": 7
+    },
+    {
+      "name": "elevenlabs",
+      "teams": 5
+    },
+    {
+      "name": "groq",
+      "teams": 4
+    },
+    {
+      "name": "ollama",
+      "teams": 2
+    }
+  ],
+  "models": [
+    {
+      "name": "gpt-4o-mini",
+      "teams": 13
+    },
+    {
+      "name": "claude-sonnet-4-5",
+      "teams": 12
+    },
+    {
+      "name": "gemini-2.5-flash",
+      "teams": 9
+    },
+    {
+      "name": "gpt-5",
+      "teams": 8
+    },
+    {
+      "name": "claude-haiku-4-5",
+      "teams": 6
+    },
+    {
+      "name": "text-embedding-3-small",
+      "teams": 6
+    },
+    {
+      "name": "whisper-1",
+      "teams": 4
+    },
+    {
+      "name": "llama-3.3-70b",
+      "teams": 3
+    }
+  ],
+  "languages": [
+    {
+      "name": "typescript",
+      "pct": 68.4
+    },
+    {
+      "name": "python",
+      "pct": 17.2
+    },
+    {
+      "name": "javascript",
+      "pct": 6.1
+    },
+    {
+      "name": "css",
+      "pct": 4.3
+    },
+    {
+      "name": "html",
+      "pct": 1.9
+    },
+    {
+      "name": "otros",
+      "pct": 2.1
+    }
+  ],
+  "frameworks": [
+    {
+      "name": "react",
+      "teams": 27
+    },
+    {
+      "name": "tailwind",
+      "teams": 24
+    },
+    {
+      "name": "next.js",
+      "teams": 22
+    },
+    {
+      "name": "shadcn/ui",
+      "teams": 17
+    },
+    {
+      "name": "supabase",
+      "teams": 14
+    },
+    {
+      "name": "fastapi",
+      "teams": 8
+    },
+    {
+      "name": "vite",
+      "teams": 6
+    },
+    {
+      "name": "expo",
+      "teams": 3
+    }
+  ],
+  "teams": [
+    {
+      "team": "null pointers",
+      "commits": 170,
+      "finalista": true
+    },
+    {
+      "team": "prompt y circunstancia",
+      "commits": 170,
+      "finalista": false
+    },
+    {
+      "team": "tres con fernet",
+      "commits": 169,
+      "finalista": false
+    },
+    {
+      "team": "los del fondo",
+      "commits": 158,
+      "finalista": false
+    },
+    {
+      "team": "git push y rezar",
+      "commits": 158,
+      "finalista": true
+    },
+    {
+      "team": "mate driven development",
+      "commits": 158,
+      "finalista": false
+    },
+    {
+      "team": "stack overflow uy",
+      "commits": 146,
+      "finalista": false
+    },
+    {
+      "team": "404 sueño not found",
+      "commits": 146,
+      "finalista": false
+    },
+    {
+      "team": "café con tokens",
+      "commits": 146,
+      "finalista": true
+    },
+    {
+      "team": "los deployados",
+      "commits": 134,
+      "finalista": false
+    },
+    {
+      "team": "rambla labs",
+      "commits": 134,
+      "finalista": true
+    },
+    {
+      "team": "hotfix en la rambla",
+      "commits": 123,
+      "finalista": false
+    },
+    {
+      "team": "segfault fc",
+      "commits": 122,
+      "finalista": false
+    },
+    {
+      "team": "las tres comas",
+      "commits": 122,
+      "finalista": true
+    },
+    {
+      "team": "bondi 101",
+      "commits": 111,
+      "finalista": false
+    },
+    {
+      "team": "cero bugs (mentira)",
+      "commits": 111,
+      "finalista": false
+    },
+    {
+      "team": "merge conflict",
+      "commits": 110,
+      "finalista": false
+    },
+    {
+      "team": "ctrl z",
+      "commits": 99,
+      "finalista": false
+    },
+    {
+      "team": "pizza y prompts",
+      "commits": 99,
+      "finalista": true
+    },
+    {
+      "team": "late commit",
+      "commits": 98,
+      "finalista": false
+    },
+    {
+      "team": "los del latu",
+      "commits": 87,
+      "finalista": false
+    },
+    {
+      "team": "ship it",
+      "commits": 87,
+      "finalista": true
+    },
+    {
+      "team": "undefined is not a team",
+      "commits": 75,
+      "finalista": false
+    },
+    {
+      "team": "refactor mañana",
+      "commits": 75,
+      "finalista": false
+    },
+    {
+      "team": "el equipo dinamita",
+      "commits": 75,
+      "finalista": false
+    },
+    {
+      "team": "vector boys & girls",
+      "commits": 64,
+      "finalista": false
+    },
+    {
+      "team": "tortas fritas ai",
+      "commits": 63,
+      "finalista": false
+    },
+    {
+      "team": "sudo make me a sandwich",
+      "commits": 63,
+      "finalista": false
+    },
+    {
+      "team": "embeddings del sur",
+      "commits": 52,
+      "finalista": true
+    },
+    {
+      "team": "chivito stack",
+      "commits": 51,
+      "finalista": true
+    },
+    {
+      "team": "dulce de leche ops",
+      "commits": 51,
+      "finalista": false
+    },
+    {
+      "team": "recalculando",
+      "commits": 40,
+      "finalista": true
+    },
+    {
+      "team": "hola mundo",
+      "commits": -1123,
+      "finalista": false
+    }
+  ],
+  "balanced": {
+    "team": "las tres comas",
+    "shares": [
+      34,
+      33,
+      33
+    ],
+    "commits": 142
+  }
+}

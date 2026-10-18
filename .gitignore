@@ -42,3 +42,7 @@ yarn-error.log*
 next-env.d.ts
 .playwright-mcp/
 .data/
+
+# build 101 wrapped: la lista real de repos y lo que se oculta no se commitea
+/wrapped/repos.json
+/wrapped/hidden.json

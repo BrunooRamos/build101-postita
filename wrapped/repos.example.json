@@ -1,0 +1,5 @@
+[
+  { "equipo": "null pointers", "repo_url": "https://github.com/ejemplo/null-pointers", "finalista": true },
+  { "equipo": "prompt y circunstancia", "repo_url": "https://github.com/ejemplo/prompt-y-circunstancia", "finalista": false },
+  { "equipo": "tres con fernet", "repo_url": "git@github.com:ejemplo/tres-con-fernet.git", "finalista": false }
+]
