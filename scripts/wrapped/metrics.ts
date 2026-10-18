@@ -24,7 +24,7 @@ import { mkdir, readdir, readFile, rename, stat, writeFile } from "node:fs/promi
 import path from "node:path";
 import { promisify } from "node:util";
 import Anthropic from "@anthropic-ai/sdk";
-import { CODE_FREEZE_ISO, EVENT_KICKOFF_ISO, TEAM_SIZE } from "../../app/event.ts";
+import { CODE_FREEZE_ISO, EVENT_KICKOFF_ISO, TEAM_SIZE, TEAMS_TOTAL } from "../../app/event.ts";
 import { WRAPPED_KEY, WRAPPED_LOCAL_FILE, redis, redisConfiguration } from "../../lib/wrapped-store.ts";
 import type { Ranked, WrappedMetrics } from "../../lib/wrapped-types.ts";
 import { type Hidden, makeShowFilter, normalize, wordIsShowable } from "./filters.ts";
@@ -640,7 +640,8 @@ async function main() {
     // equipo, apodos): como mucho TEAM_SIZE por equipo
     builders: [...people.values()].reduce((s, m) => s + Math.min(m.size, Number(TEAM_SIZE)), 0),
     repos: results.length,
-    teams: new Set(results.map((r) => r.entry.equipo)).size,
+    // los equipos que compiten, aunque no todos hayan compartido el repo
+    teams: Math.max(TEAMS_TOTAL, new Set(results.map((r) => r.entry.equipo)).size),
     prs: results.reduce((s, r) => s + r.extras.prs, 0),
   };
 

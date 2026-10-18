@@ -117,6 +117,8 @@ export function isApplyOpen(now = Date.now()) {
 
 /** Formato. */
 export const TEAM_SIZE = "3";
+/** Equipos que compiten (algunos no compartieron repo). */
+export const TEAMS_TOTAL = 33;
 
 /** Organizadores. El orden es el de la landing (participantes · mentores ·
  *  sponsors). Los mails se muestran solo en el footer. */
