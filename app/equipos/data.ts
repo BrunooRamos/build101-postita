@@ -23,6 +23,10 @@ export type Team = {
   demo: string | null;
   repos: string[];
   captura: string | null;
+  /** Foto del equipo durante el evento. */
+  fotoEquipo: string | null;
+  /** Pitch, video o afiche que subió el equipo (links de Drive). */
+  material: { tipo: string; url: string }[];
   integrantes: Builder[];
 };
 

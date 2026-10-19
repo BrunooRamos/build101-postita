@@ -46,7 +46,16 @@ export function TeamBlock({ team, heading = "h2" }: { team: Team; heading?: "h1"
                 <span>$ git</span> {host(r).replace(/^github\.com\//, "")} ↗
               </a>
             ))}
+            {team.material.map((m) => (
+              <a key={m.url} href={m.url} target="_blank" rel="noopener noreferrer" className="eq-link">
+                <span>$ ver</span> {m.tipo} ↗
+              </a>
+            ))}
           </div>
+          {team.fotoEquipo ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img className="eq-group" src={team.fotoEquipo} alt={`el equipo ${title(team)} en build 101`} width={1200} height={900} loading="lazy" />
+          ) : null}
         </div>
         {team.captura ? (
           <a href={team.demo ?? undefined} target="_blank" rel="noopener noreferrer" className="eq-shot" tabIndex={-1} aria-hidden>
