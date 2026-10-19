@@ -1,0 +1,1289 @@
+[
+  {
+    "numero": 1,
+    "equipo": "Beyond The Bot",
+    "producto": "Paciente 0",
+    "oneliner": "un paciente simulado al que estudiantes de medicina entrevistan por voz, examinan y reciben feedback de la consulta.",
+    "stack": [
+      "next.js",
+      "convex",
+      "gemini"
+    ],
+    "demo": "https://pac0-l3xi.vercel.app",
+    "repos": [
+      "https://github.com/martina-berrutti/pac0"
+    ],
+    "captura": "/equipos/01.webp",
+    "integrantes": [
+      {
+        "nombre": "Rosario Stoppiello",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": "https://linkedin.com/in/rosario-stoppiello",
+        "foto": null
+      },
+      {
+        "nombre": "Martina Berrutti",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": null,
+        "foto": null
+      },
+      {
+        "nombre": "Romina Lubniski",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": null,
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 2,
+    "equipo": "3 tokens",
+    "producto": "Nibble",
+    "oneliner": "con una foto del plato y un audio, ayuda a familias de chicos con autismo y selectividad a ampliar lo que comen.",
+    "stack": [
+      "react",
+      "claude",
+      "neo4j",
+      "mongodb"
+    ],
+    "demo": "https://nibble-eight-vert.vercel.app",
+    "repos": [
+      "https://github.com/IgTondo/build101_equipo2"
+    ],
+    "captura": "/equipos/02.webp",
+    "integrantes": [
+      {
+        "nombre": "Joaquin Rodriguez",
+        "estudia": "UM",
+        "trabaja": "-",
+        "link": "https://www.linkedin.com/in/joaquin-rodriguez-godoy",
+        "foto": null
+      },
+      {
+        "nombre": "Ignacio Tondo",
+        "estudia": "UM",
+        "trabaja": "DaMap",
+        "link": "https://www.linkedin.com/in/itondo10/",
+        "foto": null
+      },
+      {
+        "nombre": "Martin Blanco",
+        "estudia": null,
+        "trabaja": null,
+        "link": null,
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 3,
+    "equipo": "Sayso",
+    "producto": "sayso",
+    "oneliner": "un experto al lado para reparar tus aparatos: identifica el modelo y te guía con manual, 3d animado y voz.",
+    "stack": [
+      "next.js",
+      "claude",
+      "three.js",
+      "elevenlabs"
+    ],
+    "demo": "https://sayso-smoky.vercel.app",
+    "repos": [
+      "https://github.com/diegomarin28/sayso"
+    ],
+    "captura": "/equipos/03.webp",
+    "integrantes": [
+      {
+        "nombre": "Diego Marin",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/diegomarin2805",
+        "foto": null
+      },
+      {
+        "nombre": "Juan Martin Noguez",
+        "estudia": "UdelaR",
+        "trabaja": null,
+        "link": "https://uy.linkedin.com/in/juan-martín-noguez-berdún-158837321",
+        "foto": null
+      },
+      {
+        "nombre": "Ignacio Iglesia",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/ignacio-iglesia-2271733a2/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 4,
+    "equipo": "GrecIA",
+    "producto": "Neuro",
+    "oneliner": "registra lo que pasa en casa entre consultas de una persona con parkinson y arma el informe para su neuróloga.",
+    "stack": [
+      "fastapi",
+      "claude",
+      "openai"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/FrancoFontanarossa/Grecia"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Franco Fontanarossa",
+        "estudia": "UM",
+        "trabaja": "IBM",
+        "link": "https://www.linkedin.com/in/franco-fontanarossa-6b135230a/",
+        "foto": null
+      },
+      {
+        "nombre": "Juan Pedro Guerra",
+        "estudia": "UM",
+        "trabaja": "SONDA",
+        "link": "https://www.linkedin.com/in/juanpedroguerra/",
+        "foto": null
+      },
+      {
+        "nombre": "Guadalupe Carrasco",
+        "estudia": "UM",
+        "trabaja": "IBM",
+        "link": "https://www.linkedin.com/in/guadalupe-c-a27200357",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 5,
+    "equipo": "Kiai",
+    "producto": "KaiAI",
+    "oneliner": "un guard para agentes que compran con ap2: frena la compra cuando el comercio intenta manipular al agente.",
+    "stack": [
+      "python",
+      "google adk",
+      "ap2"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/FacundoSansalone/Build-101"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Manuel Arocena",
+        "estudia": "Udelar",
+        "trabaja": "Tecla Academy, Covalent",
+        "link": "https://www.linkedin.com/in/manuel-arocena-51985126b",
+        "foto": null
+      },
+      {
+        "nombre": "Bruno Pallas",
+        "estudia": "UdelaR",
+        "trabaja": "Klevertax, CoacHub",
+        "link": "https://uy.linkedin.com/in/bruno-pallas-nin-463ba029a",
+        "foto": null
+      },
+      {
+        "nombre": "Facundo Sansalone",
+        "estudia": "UM",
+        "trabaja": "Facal, Covalent",
+        "link": "https://www.linkedin.com/in/facundo-sansalone-grasso-5a8355322/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 6,
+    "equipo": "b&niks",
+    "producto": null,
+    "oneliner": "memoria compartida para agentes de código: lo que un agente aprendió a los golpes se le avisa al próximo del equipo.",
+    "stack": [
+      "fastapi",
+      "postgres",
+      "claude code"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/hackaton2026bnicks/hackatonbuild101"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Nicolas Tognola",
+        "estudia": "Universidad de Montevideo",
+        "trabaja": "Proyectos Freelance",
+        "link": "https://www.linkedin.com/in/nicolas-tognola-335972303",
+        "foto": null
+      },
+      {
+        "nombre": "Alberto Ortolani",
+        "estudia": null,
+        "trabaja": "Asom Studio",
+        "link": "https://www.linkedin.com/in/alberto-ortolani-software-developer/",
+        "foto": null
+      },
+      {
+        "nombre": "Nicolas Sere",
+        "estudia": "Universidad de Montevideo",
+        "trabaja": "SunnyData",
+        "link": "https://www.linkedin.com/in/nicolas-sere-12970b273/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 7,
+    "equipo": "Scout",
+    "producto": null,
+    "oneliner": null,
+    "stack": [],
+    "demo": null,
+    "repos": [],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Manuel Anselmi",
+        "estudia": "UM",
+        "trabaja": "Struxto",
+        "link": "https://www.linkedin.com/in/manuel-anselmi-848420242/",
+        "foto": null
+      },
+      {
+        "nombre": "Nicolas Barboza",
+        "estudia": "UM - ORT",
+        "trabaja": "TecsPal",
+        "link": "https://www.linkedin.com/in/nicolasbarbozadarosa/",
+        "foto": null
+      },
+      {
+        "nombre": "Santiago Lizarazu",
+        "estudia": "ORT",
+        "trabaja": "Tribu",
+        "link": "https://www.linkedin.com/in/santiago-lizarazu/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 8,
+    "equipo": "las chicas súper poderosas",
+    "producto": "Hooksage",
+    "oneliner": "convierte grabaciones e ideas en videos cortos editados, con subtítulos, gráficos y sonido, para pymes y creadores.",
+    "stack": [
+      "react",
+      "gemini",
+      "remotion"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/Qadra42/build101",
+      "https://github.com/Juacin25/hooksage-landing"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Guido Vizoso",
+        "estudia": "ORT",
+        "trabaja": "GWM Advisory Services",
+        "link": "https://www.linkedin.com/in/guido-vizoso-70bb98150/?isSelfProfile=true",
+        "foto": null
+      },
+      {
+        "nombre": "Francisco Cuadra",
+        "estudia": "ORT",
+        "trabaja": "Mercado Libre",
+        "link": "https://www.linkedin.com/in/francisco-cuadra/",
+        "foto": null
+      },
+      {
+        "nombre": "Joaquin Hernandez",
+        "estudia": "ORT",
+        "trabaja": "Drivo",
+        "link": "https://www.linkedin.com/in/joaquinhernandez/overlay/contact-info/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 9,
+    "equipo": "Alargue",
+    "producto": "I+P",
+    "oneliner": "un asistente que atiende por whatsapp y teléfono a interesados en alquilar y le pasa al dueño los que encajan.",
+    "stack": [
+      "next.js",
+      "supabase",
+      "claude"
+    ],
+    "demo": "https://inquilino-propietario.vercel.app",
+    "repos": [],
+    "captura": "/equipos/09.webp",
+    "integrantes": [
+      {
+        "nombre": "Santiago Abásolo",
+        "estudia": null,
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/santiabasolo/",
+        "foto": null
+      },
+      {
+        "nombre": "Ignacio Azaretto Soler",
+        "estudia": null,
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/ignacio-azaretto-9699721a7/",
+        "foto": null
+      },
+      {
+        "nombre": "Gabriel Villaverde",
+        "estudia": null,
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/villaverdegabriel/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 10,
+    "equipo": "TJJ Tech",
+    "producto": null,
+    "oneliner": "una app de viaje que arma el itinerario y te guía en tours por voz que te hablan al llegar a cada parada.",
+    "stack": [
+      "expo",
+      "hono",
+      "claude",
+      "supabase"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/tjjtech-build101/travel-guide"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Juan Estape",
+        "estudia": null,
+        "trabaja": "Horizon AI",
+        "link": "https://www.linkedin.com/in/juan-estape-979a5a248/",
+        "foto": null
+      },
+      {
+        "nombre": "Tomas Zelaschi",
+        "estudia": null,
+        "trabaja": "Frontline",
+        "link": "https://www.linkedin.com/in/tom%C3%A1s-zelaschi-99bb12258/",
+        "foto": null
+      },
+      {
+        "nombre": "Josefina Cardozo",
+        "estudia": "Udelar",
+        "trabaja": "Promtior",
+        "link": "https://linkedin.com/in/josefina-cardozo-094a5725a",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 11,
+    "equipo": "furIA",
+    "producto": "MaronIA",
+    "oneliner": "un agente de voz que atiende el call center de apuestas hípicas de maroñas y toma la apuesta como un operador.",
+    "stack": [
+      "fastapi",
+      "next.js",
+      "elevenlabs",
+      "twilio"
+    ],
+    "demo": "https://web-production-341e3.up.railway.app",
+    "repos": [
+      "https://github.com/MaronIA/MaronIA"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Guillermo Storace",
+        "estudia": "UM",
+        "trabaja": "Dominion",
+        "link": "https://www.linkedin.com/in/guillermo-storace-alfaro/",
+        "foto": null
+      },
+      {
+        "nombre": "Phillip Bowles",
+        "estudia": "UM",
+        "trabaja": "Blend 360",
+        "link": "https://www.linkedin.com/in/phillip-bowles-/",
+        "foto": null
+      },
+      {
+        "nombre": "Manuel Perez",
+        "estudia": "UM",
+        "trabaja": "Blend 360",
+        "link": "https://www.linkedin.com/in/manuel-p%C3%A9rez-2713b2244/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 12,
+    "equipo": "Claude & Asociados",
+    "producto": "Guardián",
+    "oneliner": "escucha la llamada del abuelo en vivo, detecta el cuento del tío y avisa a la familia antes de que entregue la plata.",
+    "stack": [
+      "fastapi",
+      "kotlin",
+      "claude",
+      "deepgram"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/PedroMorgaOrt/Claude-Asociados"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Bruno Colo",
+        "estudia": "ORT",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/bruno-colo/",
+        "foto": null
+      },
+      {
+        "nombre": "Pedro Morga",
+        "estudia": "ORT",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/pedro-morga-7a6057326/",
+        "foto": null
+      },
+      {
+        "nombre": "Matias Moser",
+        "estudia": "ORT",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/matias-moser-992198433/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 13,
+    "equipo": "SOLO",
+    "producto": "Neitor AI",
+    "oneliner": "una agencia de marketing en whatsapp: le mandás una foto de lo que vendés y planifica, diseña y publica en instagram.",
+    "stack": [
+      "fastapi",
+      "next.js",
+      "gemini"
+    ],
+    "demo": "https://build101-khaki.vercel.app",
+    "repos": [
+      "https://github.com/guidodinello/build101"
+    ],
+    "captura": "/equipos/13.webp",
+    "integrantes": [
+      {
+        "nombre": "Facundo Larrosa",
+        "estudia": "FADU UDELAR",
+        "trabaja": "Katei",
+        "link": "https://kateiuy.lovable.app/",
+        "foto": null
+      },
+      {
+        "nombre": "Matías ramilo",
+        "estudia": "FING UDELAR",
+        "trabaja": "Light-IT",
+        "link": "https://www.linkedin.com/in/mathias-ramilo?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+        "foto": null
+      },
+      {
+        "nombre": "Guido dinello",
+        "estudia": "FING UDELAR",
+        "trabaja": "Light-IT",
+        "link": "https://www.linkedin.com/in/guido-dinello-48875b217?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 14,
+    "equipo": "TokenMaxxers",
+    "producto": "Lia",
+    "oneliner": "un intérprete de lengua de señas con avatar 3d que pasa voz y texto a señas, y señas a voz.",
+    "stack": [
+      "fastapi",
+      "react",
+      "claude",
+      "mediapipe"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/GermanIpes/build-101"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Bruno Romero",
+        "estudia": "UdelaR",
+        "trabaja": "BitGarden",
+        "link": "https://www.linkedin.com/in/brunoromerogarcia",
+        "foto": null
+      },
+      {
+        "nombre": "Juan Perrachon",
+        "estudia": "UM",
+        "trabaja": "Infoclub Soluciones",
+        "link": "https://www.linkedin.com/in/jdperrachon/",
+        "foto": null
+      },
+      {
+        "nombre": "German Ipes",
+        "estudia": "UdelaR",
+        "trabaja": "Perceptyx",
+        "link": "https://www.linkedin.com/in/german-ipes/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 15,
+    "equipo": "BigO",
+    "producto": "Servio",
+    "oneliner": "una cámara en alto que mira las mesas del restaurante y avisa al mozo por telegram cuando una mesa está por terminar.",
+    "stack": [
+      "python",
+      "yolo",
+      "claude",
+      "telegram"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/matiHirCab/Servio"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Tomás Rama",
+        "estudia": "UCU",
+        "trabaja": "Oracle",
+        "link": "https://www.linkedin.com/in/tomás-rama-896298274",
+        "foto": null
+      },
+      {
+        "nombre": "Jessica Sista",
+        "estudia": "UdelaR",
+        "trabaja": "Oracle",
+        "link": "https://www.linkedin.com/in/jessica-sista/",
+        "foto": null
+      },
+      {
+        "nombre": "Matias Hirschfeld",
+        "estudia": "ORT",
+        "trabaja": "Oracle",
+        "link": "https://www.linkedin.com/in/matias-hirschfeld-cababie-ab3a2421b/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 16,
+    "equipo": "JAM",
+    "producto": "FrictionSwarm",
+    "oneliner": "agentes que recorren tu e-commerce, encuentran dónde se traban los usuarios, lo arreglan y lo re-testean.",
+    "stack": [
+      "next.js",
+      "claude",
+      "playwright",
+      "posthog"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/jbecerra73/build101_grupo16"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Alexis Friss de Kereki",
+        "estudia": null,
+        "trabaja": "Neocoast",
+        "link": "http://linkedin.com/in/alexisfriss/",
+        "foto": null
+      },
+      {
+        "nombre": "Mauricio Friss de Kereki",
+        "estudia": null,
+        "trabaja": "Eagerworks",
+        "link": "https://linkedin.com/in/mauriciofrissdekereki",
+        "foto": null
+      },
+      {
+        "nombre": "Joaquín Becerra",
+        "estudia": null,
+        "trabaja": "Nareia Software",
+        "link": "https://www.linkedin.com/in/joaquin-becerra-5b3388201/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 17,
+    "equipo": "Hookia",
+    "producto": null,
+    "oneliner": null,
+    "stack": [],
+    "demo": null,
+    "repos": [],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Juan Sebastian Val",
+        "estudia": "ORT",
+        "trabaja": null,
+        "link": "https://makinia.com",
+        "foto": null
+      },
+      {
+        "nombre": "Juan Maria Andre",
+        "estudia": "ORT",
+        "trabaja": "Mercado Libre",
+        "link": "https://www.linkedin.com/in/juan-maría-andré-0b1672332/",
+        "foto": null
+      },
+      {
+        "nombre": "Paul Mc Cubbin",
+        "estudia": "FCEA Udelar",
+        "trabaja": "Grant Thornton",
+        "link": "https://www.linkedin.com/in/paul-mc-cubbin-/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 18,
+    "equipo": null,
+    "producto": "ARGOS",
+    "oneliner": "estima la condición corporal de vacas lecheras a partir de una foto trasera y lleva el historial del rodeo.",
+    "stack": [
+      "fastapi",
+      "pytorch",
+      "openai"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/nstan25/Hackaton-Build---Equipo-18"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Nicolás Stanko",
+        "estudia": "UM",
+        "trabaja": "OCTOPUS DATA SOLUTIONS",
+        "link": "https://www.linkedin.com/in/nicol%C3%A1sstanko/?isSelfProfile=true",
+        "foto": null
+      },
+      {
+        "nombre": "Pablo Maurente",
+        "estudia": "UM",
+        "trabaja": "UDELAR",
+        "link": "https://www.linkedin.com/in/pablo-maurente-635313204/",
+        "foto": null
+      },
+      {
+        "nombre": "Pablo Dalchiele",
+        "estudia": "UDELAR",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/pablo-dalchiele-gonzález-56bab935",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 19,
+    "equipo": "Delta",
+    "producto": "Guíame",
+    "oneliner": "un navegador asistido para personas mayores que las guía paso a paso, por voz, en trámites y sitios web.",
+    "stack": [
+      "electron",
+      "fastify",
+      "claude",
+      "openai"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/gastonmartinezz/hackaton-2026-e19"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Emilio Muniz",
+        "estudia": "UDE",
+        "trabaja": "AYAX - Toyota",
+        "link": "https://www.linkedin.com/in/emilio-muniz18/",
+        "foto": null
+      },
+      {
+        "nombre": "Gastón Martinez",
+        "estudia": "Universidad de la República",
+        "trabaja": "EverPass Media",
+        "link": "https://www.linkedin.com/in/gaston-martinez/",
+        "foto": null
+      },
+      {
+        "nombre": "Agustín Gomez",
+        "estudia": null,
+        "trabaja": "Crowd Intelligence",
+        "link": "https://www.linkedin.com/in/agustin-gomez-b65975211/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 20,
+    "equipo": "Rumbo",
+    "producto": "Rumbo",
+    "oneliner": "orientación vocacional para jóvenes de uruguay: arma tu perfil charlando y te muestra caminos verificados.",
+    "stack": [
+      "next.js",
+      "gemini",
+      "supabase"
+    ],
+    "demo": "https://rumbo-liart.vercel.app",
+    "repos": [
+      "https://github.com/Santi-mz/BUILD-101"
+    ],
+    "captura": "/equipos/20.webp",
+    "integrantes": [
+      {
+        "nombre": "Martin Trigo",
+        "estudia": "UdelaR",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/martín-trigo-775696358?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+        "foto": null
+      },
+      {
+        "nombre": "Santiago Muñoz",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/santiago-muñoz-5b1722441?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+        "foto": null
+      },
+      {
+        "nombre": "Benjamin Macció",
+        "estudia": "Udelar",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 21,
+    "equipo": "Waven",
+    "producto": "Polo",
+    "oneliner": "una guía de viaje por voz en tiempo real que conoce tus gustos, dónde estás y tu itinerario.",
+    "stack": [
+      "next.js",
+      "openai realtime",
+      "supabase"
+    ],
+    "demo": "https://build101-g21.vercel.app",
+    "repos": [
+      "https://github.com/tiagobenede/build101-g21"
+    ],
+    "captura": "/equipos/21.webp",
+    "integrantes": [
+      {
+        "nombre": "Nicolas Perez Quintero",
+        "estudia": "FING - UDELAR",
+        "trabaja": "Effectus Software",
+        "link": "https://www.linkedin.com/in/nicolas-perez-quintero",
+        "foto": null
+      },
+      {
+        "nombre": "Tiago Benedetto",
+        "estudia": "FING - UDELAR",
+        "trabaja": "KSI Vision",
+        "link": "https://www.linkedin.com/in/tiago-benedetto",
+        "foto": null
+      },
+      {
+        "nombre": "Lucas Melo",
+        "estudia": "FING - UDELAR",
+        "trabaja": "KSI Vision",
+        "link": "https://www.linkedin.com/in/lucas-melo-zilli",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 22,
+    "equipo": "Cruce",
+    "producto": "Cruce",
+    "oneliner": "un espacio para founders que valida ideas con ia: hipótesis, encuestas y entrevistas, y te conecta con otros founders.",
+    "stack": [
+      "react",
+      "trailbase",
+      "claude"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/04mg/build-101"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Manuel Graña",
+        "estudia": "ORT",
+        "trabaja": "Ternium",
+        "link": "https://linkedin.com/in/manuelgrana/",
+        "foto": null
+      },
+      {
+        "nombre": "Franco Bonavita",
+        "estudia": "ORT",
+        "trabaja": "Jinkanna",
+        "link": "https://www.linkedin.com/in/francobonavita312003/",
+        "foto": null
+      },
+      {
+        "nombre": "Enzo Izquierdo",
+        "estudia": "ORT",
+        "trabaja": "Above Software",
+        "link": "https://www.linkedin.com/in/enzoizquierdod%C3%ADaz/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 23,
+    "equipo": "Viveri",
+    "producto": "VIVERI",
+    "oneliner": "un nutricionista con ia que arma tu menú semanal y la lista de compras, con precios de supermercados de montevideo.",
+    "stack": [
+      "react",
+      "supabase",
+      "cloudflare"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/build101-23/viveri"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Ivan Guchin",
+        "estudia": null,
+        "trabaja": "Tenaris",
+        "link": "https://uy.linkedin.com/in/iv%C3%A1n-guchin-097833319/en",
+        "foto": null
+      },
+      {
+        "nombre": "Francisco Carbajal",
+        "estudia": null,
+        "trabaja": "Basf",
+        "link": "https://uy.linkedin.com/in/francisco-carbajal-59b389248",
+        "foto": null
+      },
+      {
+        "nombre": "Camilo Aguiar",
+        "estudia": null,
+        "trabaja": "Oracle",
+        "link": "https://uy.linkedin.com/in/camilo-aguiar-332107264",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 24,
+    "equipo": null,
+    "producto": "CercanIA",
+    "oneliner": "los cuidadores mandan el reporte del turno por audio y la ia lo ordena, lo compara con el plan y avisa lo urgente.",
+    "stack": [
+      "fastapi",
+      "next.js",
+      "groq",
+      "supabase"
+    ],
+    "demo": "https://cercania-web.onrender.com",
+    "repos": [
+      "https://github.com/SantiagoSouto/cercania"
+    ],
+    "captura": "/equipos/24.webp",
+    "integrantes": [
+      {
+        "nombre": "Felipe Perdomo",
+        "estudia": "UM",
+        "trabaja": "Pyxis",
+        "link": "https://www.linkedin.com/in/felipe-perdomo-636a96208",
+        "foto": null
+      },
+      {
+        "nombre": "Santiago Souto",
+        "estudia": "UM",
+        "trabaja": "Qualabs",
+        "link": "https://www.linkedin.com/in/ssoutodeleon",
+        "foto": null
+      },
+      {
+        "nombre": "Erika Alvarez",
+        "estudia": null,
+        "trabaja": null,
+        "link": null,
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 25,
+    "equipo": "Sin Dormir S.A.",
+    "producto": "Abasto",
+    "oneliner": "un director de compras con ia que cotiza con tus proveedores, entiende sus respuestas y ensaya la negociación.",
+    "stack": [
+      "fastapi",
+      "react",
+      "claude"
+    ],
+    "demo": "https://abasto.vercel.app",
+    "repos": [
+      "https://github.com/Emontone21/HACKATON-GRUPO-25"
+    ],
+    "captura": "/equipos/25.webp",
+    "integrantes": [
+      {
+        "nombre": "Emiliano Montone",
+        "estudia": "UDE",
+        "trabaja": "-",
+        "link": "https://www.linkedin.com/in/emiliano-montone-maidana-84b264224/?isSelfProfile=true",
+        "foto": null
+      },
+      {
+        "nombre": "Guzman de Leon",
+        "estudia": "ORT",
+        "trabaja": "-",
+        "link": null,
+        "foto": null
+      },
+      {
+        "nombre": "Claude Tissierre",
+        "estudia": "-",
+        "trabaja": "-",
+        "link": null,
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 26,
+    "equipo": "Grupo numero 502",
+    "producto": "Pulso",
+    "oneliner": "cruza tu sueño, pulso y ánimo con tu trabajo en github, slack y calendar, y un agente te propone cómo recuperarte.",
+    "stack": [
+      "next.js",
+      "gemini",
+      "sqlite"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/redemerco/hackaton-build-101"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Santiago Sosa",
+        "estudia": "ORT",
+        "trabaja": "Entraste",
+        "link": "https://www.linkedin.com/in/santiagososa-dev/",
+        "foto": null
+      },
+      {
+        "nombre": "Joaquin Piedra",
+        "estudia": "ORT",
+        "trabaja": "Endava",
+        "link": "https://www.linkedin.com/in/jplangone/",
+        "foto": null
+      },
+      {
+        "nombre": "Renzo De Marco",
+        "estudia": "ORT",
+        "trabaja": "Satelites on fire",
+        "link": "https://www.linkedin.com/in/renzodemarco--",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 27,
+    "equipo": null,
+    "producto": "Radar Urbano",
+    "oneliner": "reportás problemas del espacio público conversando y la ia los evalúa, agrupa y asigna a una cuadrilla.",
+    "stack": [
+      "next.js",
+      "postgres",
+      "openai",
+      "leaflet"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/daizuoheng/build_101_27"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Juan Pablo Borja",
+        "estudia": "Udelar",
+        "trabaja": "Mercado Libre",
+        "link": "https://www.linkedin.com/in/juan-pablo-borja",
+        "foto": null
+      },
+      {
+        "nombre": "Federico Dallo",
+        "estudia": "Udelar",
+        "trabaja": "Neocoast",
+        "link": "https://www.linkedin.com/in/federico-dallo",
+        "foto": null
+      },
+      {
+        "nombre": "Zuo Heng Dai",
+        "estudia": "Udelar",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/zuoheng-dai",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 28,
+    "equipo": null,
+    "producto": "Walt",
+    "oneliner": "clientes de una agencia piden cambios chicos de su web por telegram y walt los aplica, valida y publica.",
+    "stack": [
+      "next.js",
+      "claude",
+      "supabase",
+      "telegram"
+    ],
+    "demo": "https://walt-demo.vercel.app",
+    "repos": [
+      "https://github.com/salvasecco/walt"
+    ],
+    "captura": "/equipos/28.webp",
+    "integrantes": [
+      {
+        "nombre": "Salvador Secco",
+        "estudia": null,
+        "trabaja": "OrderEAT",
+        "link": "https://www.linkedin.com/in/salvador-secco-2955a5223/?isSelfProfile=true",
+        "foto": null
+      },
+      {
+        "nombre": "Juan Pablo Benítez",
+        "estudia": "ORT",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/juan-pablo-benitez-gastaldi-753138352/",
+        "foto": null
+      },
+      {
+        "nombre": "Facundo Morena",
+        "estudia": "ORT",
+        "trabaja": "OrderEAT",
+        "link": "https://www.linkedin.com/in/facundomorena/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 29,
+    "equipo": "Contigo",
+    "producto": "CONTIGO",
+    "oneliner": "un asistente por voz para personas mayores, con la familia conectada que lo configura y recibe avisos.",
+    "stack": [
+      "next.js",
+      "claude",
+      "upstash"
+    ],
+    "demo": "https://hackaton-felain.vercel.app",
+    "repos": [
+      "https://github.com/larastirling/HACKATON"
+    ],
+    "captura": "/equipos/29.webp",
+    "integrantes": [
+      {
+        "nombre": "Ines Bertolotti",
+        "estudia": "FIUM",
+        "trabaja": null,
+        "link": null,
+        "foto": null
+      },
+      {
+        "nombre": "Lara Stirling",
+        "estudia": "FIUM",
+        "trabaja": null,
+        "link": null,
+        "foto": null
+      },
+      {
+        "nombre": "Felipe Lyonnet",
+        "estudia": "FIUM",
+        "trabaja": null,
+        "link": null,
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 30,
+    "equipo": "LUMAC",
+    "producto": "Rancho Cero",
+    "oneliner": "ayuda a voluntarios de una fundación de vivienda a relevar familias con fotos y audio y a priorizar a quién atender.",
+    "stack": [
+      "next.js",
+      "convex"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/LucaBenitesM/Rancho-cero"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Martina Mazza",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": null,
+        "foto": null
+      },
+      {
+        "nombre": "Camila Granato",
+        "estudia": "Um",
+        "trabaja": null,
+        "link": null,
+        "foto": null
+      },
+      {
+        "nombre": "Luca Benites",
+        "estudia": "Um",
+        "trabaja": null,
+        "link": null,
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 31,
+    "equipo": "Luxis",
+    "producto": "Luxis",
+    "oneliner": "encuentra licitaciones públicas de uruguay para barracas, lee el pliego por vos y sugiere a qué precio ofertar.",
+    "stack": [
+      "next.js",
+      "claude",
+      "supabase",
+      "mcp"
+    ],
+    "demo": "https://luxis-hackaton.vercel.app",
+    "repos": [
+      "https://github.com/SebaViglione/Luxis"
+    ],
+    "captura": "/equipos/31.webp",
+    "integrantes": [
+      {
+        "nombre": "Máximo Zales",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": null,
+        "foto": null
+      },
+      {
+        "nombre": "Sebastián Viglione",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": "https://uy.linkedin.com/in/sebaviglione",
+        "foto": null
+      },
+      {
+        "nombre": "Rafael Fuidio",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": null,
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 32,
+    "equipo": null,
+    "producto": "Tiza.ai",
+    "oneliner": "adapta prácticos de matemática de bachillerato para estudiantes con tdah, dislexia o tea, con aprobación docente.",
+    "stack": [
+      "next.js",
+      "claude",
+      "mediapipe",
+      "elevenlabs"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/mauriuy007/build101"
+    ],
+    "captura": null,
+    "integrantes": [
+      {
+        "nombre": "Cesar Canessa",
+        "estudia": "UDELAR",
+        "trabaja": "Anima Tec",
+        "link": "https://www.linkedin.com/in/cesar-canessa-a6b587b5?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        "foto": null
+      },
+      {
+        "nombre": "Adrian Mircus",
+        "estudia": "ORT",
+        "trabaja": "NoctiLabs",
+        "link": null,
+        "foto": null
+      },
+      {
+        "nombre": "Mauricio Parodi",
+        "estudia": "ORT",
+        "trabaja": "Bamboo Payments",
+        "link": "https://www.linkedin.com/in/mauricio-parodi-a613272b9/",
+        "foto": null
+      }
+    ]
+  },
+  {
+    "numero": 33,
+    "equipo": "Brandia",
+    "producto": "BrandIA",
+    "oneliner": "le contás tu negocio por chat o audio y te arma la marca, el brandbook y los contenidos para redes.",
+    "stack": [
+      "next.js",
+      "ai sdk",
+      "three.js"
+    ],
+    "demo": "https://app.brandiamos.com",
+    "repos": [
+      "https://github.com/ezegarcia-crypto/build101"
+    ],
+    "captura": "/equipos/33.webp",
+    "integrantes": [
+      {
+        "nombre": "Ezequiel Garcia",
+        "estudia": null,
+        "trabaja": "Gary + Experiencia Inmobiliaria",
+        "link": null,
+        "foto": null
+      },
+      {
+        "nombre": "Juan Portas",
+        "estudia": null,
+        "trabaja": null,
+        "link": null,
+        "foto": null
+      },
+      {
+        "nombre": "Rodrigo Portas",
+        "estudia": null,
+        "trabaja": null,
+        "link": null,
+        "foto": null
+      }
+    ]
+  }
+]
