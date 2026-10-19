@@ -175,6 +175,13 @@
   color: var(--fg);
 }
 
+.eq-group {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-2);
+}
+
 /* la captura del demo, en una ventana de navegador mínima */
 .eq-shot {
   display: block;

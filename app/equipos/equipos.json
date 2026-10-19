@@ -14,6 +14,8 @@
       "https://github.com/martina-berrutti/pac0"
     ],
     "captura": "/equipos/01.webp",
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Rosario Stoppiello",
@@ -54,6 +56,8 @@
       "https://github.com/IgTondo/build101_equipo2"
     ],
     "captura": "/equipos/02.webp",
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Joaquin Rodriguez",
@@ -94,6 +98,8 @@
       "https://github.com/diegomarin28/sayso"
     ],
     "captura": "/equipos/03.webp",
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Diego Marin",
@@ -133,6 +139,8 @@
       "https://github.com/FrancoFontanarossa/Grecia"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Franco Fontanarossa",
@@ -172,6 +180,8 @@
       "https://github.com/FacundoSansalone/Build-101"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Manuel Arocena",
@@ -211,6 +221,8 @@
       "https://github.com/hackaton2026bnicks/hackatonbuild101"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Nicolas Tognola",
@@ -244,6 +256,8 @@
     "demo": null,
     "repos": [],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Manuel Anselmi",
@@ -284,6 +298,8 @@
       "https://github.com/Juacin25/hooksage-landing"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Guido Vizoso",
@@ -321,6 +337,13 @@
     "demo": "https://inquilino-propietario.vercel.app",
     "repos": [],
     "captura": "/equipos/09.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1eYCp4xXJIm4_4Vqh4C9J1NF3KsLN7Ru5/view"
+      }
+    ],
     "integrantes": [
       {
         "nombre": "Santiago Abásolo",
@@ -361,6 +384,8 @@
       "https://github.com/tjjtech-build101/travel-guide"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Juan Estape",
@@ -401,6 +426,8 @@
       "https://github.com/MaronIA/MaronIA"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Guillermo Storace",
@@ -441,6 +468,13 @@
       "https://github.com/PedroMorgaOrt/Claude-Asociados"
     ],
     "captura": null,
+    "fotoEquipo": "/equipos/12-equipo.webp",
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1yn3gyuY5S2IDjKxBt2OF_BD9OHcn2vLi/view"
+      }
+    ],
     "integrantes": [
       {
         "nombre": "Bruno Colo",
@@ -480,6 +514,8 @@
       "https://github.com/guidodinello/build101"
     ],
     "captura": "/equipos/13.webp",
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Facundo Larrosa",
@@ -515,11 +551,18 @@
       "claude",
       "mediapipe"
     ],
-    "demo": null,
+    "demo": "https://lia-ui-4ko0q3l9utgp--0kg15d.us.sb.tenki.sh",
     "repos": [
       "https://github.com/GermanIpes/build-101"
     ],
-    "captura": null,
+    "captura": "/equipos/14.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1O2zTfz1clXpIqh2P9AzAvZlL0vc6bb7v/view"
+      }
+    ],
     "integrantes": [
       {
         "nombre": "Bruno Romero",
@@ -560,6 +603,13 @@
       "https://github.com/matiHirCab/Servio"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1P4qyVJQSeBjiO0UteXINMBmzbmYZ4v0C/view"
+      }
+    ],
     "integrantes": [
       {
         "nombre": "Tomás Rama",
@@ -600,6 +650,8 @@
       "https://github.com/jbecerra73/build101_grupo16"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Alexis Friss de Kereki",
@@ -633,6 +685,8 @@
     "demo": null,
     "repos": [],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Juan Sebastian Val",
@@ -672,6 +726,13 @@
       "https://github.com/nstan25/Hackaton-Build---Equipo-18"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1KXPWTNQ3_gssj8hfFLCNXTquXiNaQjdH/view"
+      }
+    ],
     "integrantes": [
       {
         "nombre": "Nicolás Stanko",
@@ -712,6 +773,13 @@
       "https://github.com/gastonmartinezz/hackaton-2026-e19"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "video",
+        "url": "https://drive.google.com/file/d/19iqJpn56Up3zTJccq1xt4YBQ8yAuRiQR/view"
+      }
+    ],
     "integrantes": [
       {
         "nombre": "Emilio Muniz",
@@ -751,6 +819,8 @@
       "https://github.com/Santi-mz/BUILD-101"
     ],
     "captura": "/equipos/20.webp",
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Martin Trigo",
@@ -790,6 +860,13 @@
       "https://github.com/tiagobenede/build101-g21"
     ],
     "captura": "/equipos/21.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/14Tob5_zWoU4i752Hvz_hRPTsC6jT3-Yj/view"
+      }
+    ],
     "integrantes": [
       {
         "nombre": "Nicolas Perez Quintero",
@@ -829,6 +906,8 @@
       "https://github.com/04mg/build-101"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Manuel Graña",
@@ -868,6 +947,8 @@
       "https://github.com/build101-23/viveri"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Ivan Guchin",
@@ -908,6 +989,8 @@
       "https://github.com/SantiagoSouto/cercania"
     ],
     "captura": "/equipos/24.webp",
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Felipe Perdomo",
@@ -947,6 +1030,17 @@
       "https://github.com/Emontone21/HACKATON-GRUPO-25"
     ],
     "captura": "/equipos/25.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1dHbYo_YsKXM-ja8_uq02uGnz6eaJqil0/view"
+      },
+      {
+        "tipo": "video",
+        "url": "https://drive.google.com/file/d/1MUNwthyAJfvo3kLAGsfoB6nu-4jet7ib/view"
+      }
+    ],
     "integrantes": [
       {
         "nombre": "Emiliano Montone",
@@ -986,6 +1080,8 @@
       "https://github.com/redemerco/hackaton-build-101"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Santiago Sosa",
@@ -1026,6 +1122,8 @@
       "https://github.com/daizuoheng/build_101_27"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Juan Pablo Borja",
@@ -1066,6 +1164,17 @@
       "https://github.com/salvasecco/walt"
     ],
     "captura": "/equipos/28.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "afiche",
+        "url": "https://drive.google.com/file/d/10g_0V875FAeiPMGYZz5kKAToiU9iHp_X/view"
+      },
+      {
+        "tipo": "video",
+        "url": "https://drive.google.com/file/d/13gR0cemX4yg75pdLKf0glN0HiUK1oQFC/view"
+      }
+    ],
     "integrantes": [
       {
         "nombre": "Salvador Secco",
@@ -1105,6 +1214,8 @@
       "https://github.com/larastirling/HACKATON"
     ],
     "captura": "/equipos/29.webp",
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Ines Bertolotti",
@@ -1143,6 +1254,8 @@
       "https://github.com/LucaBenitesM/Rancho-cero"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Martina Mazza",
@@ -1183,6 +1296,17 @@
       "https://github.com/SebaViglione/Luxis"
     ],
     "captura": "/equipos/31.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1vgXcmndpHmu2vYvNp1q8HQzlGmzna2hI/view"
+      },
+      {
+        "tipo": "video",
+        "url": "https://drive.google.com/file/d/170XOu-cEeexktP5zL80bawT9GtOCqWTu/view"
+      }
+    ],
     "integrantes": [
       {
         "nombre": "Máximo Zales",
@@ -1223,6 +1347,8 @@
       "https://github.com/mauriuy007/build101"
     ],
     "captura": null,
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Cesar Canessa",
@@ -1262,6 +1388,8 @@
       "https://github.com/ezegarcia-crypto/build101"
     ],
     "captura": "/equipos/33.webp",
+    "fotoEquipo": null,
+    "material": [],
     "integrantes": [
       {
         "nombre": "Ezequiel Garcia",
