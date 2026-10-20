@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { TeamBlock } from "./TeamBlock";
 import { BUILDERS, ORDERED, TEAMS } from "./data";
 
@@ -10,7 +11,13 @@ export default function EquiposPage() {
   return (
     <div className="wrap">
       <header className="eq-hero">
-        <p className="eyebrow">~/build-101 · equipos</p>
+        <p className="eyebrow">
+          ~/build-101 ·{" "}
+          <Link href="/#resultados" className="eq-crumb">
+            resultados
+          </Link>{" "}
+          · equipos
+        </p>
         <h1 className="h2">
           {TEAMS.length} equipos. {BUILDERS} builders.
           <br />
