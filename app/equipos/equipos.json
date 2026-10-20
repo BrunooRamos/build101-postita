@@ -260,9 +260,14 @@
   {
     "numero": 7,
     "equipo": "Scout",
-    "producto": null,
-    "oneliner": null,
-    "stack": [],
+    "producto": "Scout",
+    "oneliner": "Una plataforma de prospección con IA para equipos de partnerships y venta B2B: encuentra cuentas, las investiga con fuentes verificables y las prioriza contra tu ICP. Redacta el primer mensaje con tu voz y mueve el pipeline cuando el prospecto responde, siempre con tu aprobación.",
+    "stack": [
+      "next.js",
+      "claude",
+      "drizzle",
+      "sqlite"
+    ],
     "demo": null,
     "repos": [],
     "captura": null,
@@ -685,12 +690,18 @@
   {
     "numero": 17,
     "equipo": "Hookia",
-    "producto": null,
-    "oneliner": null,
-    "stack": [],
+    "producto": "Hookia",
+    "oneliner": "Un coach de Instagram con IA para quienes construyen su marca personal: analiza tu perfil y encuentra lo que funciona en tu nicho. Un equipo de agentes mide tus métricas con código y te escribe ideas y guiones con tu propia voz.",
+    "stack": [
+      "next.js",
+      "claude code",
+      "mcp"
+    ],
     "demo": null,
-    "repos": [],
-    "captura": null,
+    "repos": [
+      "https://github.com/paulmc2708/Hackathon-Equipo17"
+    ],
+    "captura": "/equipos/17.webp",
     "fotoEquipo": null,
     "material": [],
     "integrantes": [
