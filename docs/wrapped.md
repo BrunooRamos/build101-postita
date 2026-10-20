@@ -1,6 +1,6 @@
 # build 101 wrapped
 
-El "Spotify Wrapped" de la hackathon para la tele del cierre: **`/wrapped`**. No está en el menú, ni en el sitemap, ni se indexa.
+El "Spotify Wrapped" de la hackathon: **`/wrapped`**, tarjetas que se pasan a mano. No está en el menú, ni en el sitemap, ni se indexa.
 
 ## Correr el script
 
@@ -11,11 +11,11 @@ export GITHUB_TOKEN=$(gh auth token)                 # si no está, el script pr
 npm run metrics
 ```
 
-Cada corrida clona o actualiza los repos en `.data/wrapped-repos/` (`git clone --filter=blob:none`), calcula todo y escribe `wrapped/metrics.json` (commitealo: es el snapshot que ve el deploy si Redis está vacío). La primera vez tarda; después solo hace `fetch`. Correlo cada 10–15 min hasta el cierre.
+Cada corrida clona o actualiza los repos en `.data/wrapped-repos/` (`git clone --filter=blob:none`), calcula todo y escribe `wrapped/metrics.json` (commitealo: es el snapshot que ve el deploy si Redis está vacío). La primera vez tarda; después solo hace `fetch`. Los datos cubren desde la apertura (sábado 17, 09:00) hasta el cierre de código (domingo 18, 11:00); lo que se commiteó después no cuenta.
 
 | flag / variable | qué hace |
 |---|---|
-| `CIERRE=13:30 npm run metrics` | pisa la hora de cierre de código (por defecto `CODE_FREEZE_ISO` en `app/event.ts`) |
+| `CIERRE=13:30 npm run metrics` | pisa el fin de la ventana (por defecto `CODE_FREEZE_ISO` en `app/event.ts`: domingo 18, 11:00) |
 | `-- --no-publish` | solo escribe el archivo local |
 | `-- --offline` | no hace fetch: usa los clones que ya hay |
 | `ANTHROPIC_API_KEY` | elige el top 5 de commits graciosos con Claude (sin clave, esa tarjeta no se muestra). Se cachea en `.data/wrapped-cache/` |
@@ -38,18 +38,19 @@ export INVESTMENTS_REDIS_REST_TOKEN=...
 npm run metrics      # → "publicado: /wrapped lo toma en la próxima vuelta del loop"
 ```
 
-(también acepta `UPSTASH_REDIS_REST_URL/TOKEN` o `KV_REST_API_URL/TOKEN`, y las lee de `.env.local`). No hace falta redeploy: la tele recarga los datos en cada vuelta del loop y, si la carga falla, sigue mostrando los últimos buenos. El pie muestra "actualizado hace X min" según la hora de la corrida del script.
+(también acepta `UPSTASH_REDIS_REST_URL/TOKEN` o `KV_REST_API_URL/TOKEN`, y las lee de `.env.local`). No hace falta redeploy: la página toma los datos nuevos al cargarse.
 
-## En la tele
+## Cómo se ve
 
-Abrí `/wrapped` en pantalla completa (`f`). Espacio pausa, ← → cambian de tarjeta. Cada tarjeta dura ~9 s y cada 6 aparece la vista general. Las tarjetas sin datos (p. ej. "a último minuto" antes del cierre) se saltean solas.
+Abrí `/wrapped` y pasá las tarjetas con ← →, con las flechas de los costados, tocando los segmentos de la barra de abajo o deslizando en el celular. Inicio / fin van a la primera y a la última; `f` pone pantalla completa. Las tarjetas sin datos se saltean solas.
 
-Para revisar una tarjeta: `/wrapped?card=5&hold`.
+La tarjeta actual queda en la URL: `/wrapped?card=5`.
 
 ## Qué se cuenta y qué no
 
-- Solo commits con **fecha de committer** entre el kickoff y el cierre, sin merges, de todas las ramas.
+- Solo commits con **fecha de committer** entre el kickoff (sábado 17, 09:00) y el cierre (domingo 18, 11:00), sin merges, de todas las ramas.
 - Líneas sin `node_modules`, builds, lockfiles, minificados, datos (`.csv`, `.ipynb`, …) ni archivos de más de 10.000 líneas en un commit.
+- Los commits de `NO_LINES` (en `scripts/wrapped/metrics.ts`) cuentan como commit pero no suman líneas: código ajeno copiado entero.
 - Autores unificados por equipo (mismo email, mismo nombre o login de GitHub). Bots afuera (dependabot, github-actions, vercel, renovate, `[bot]`). Los agentes de IA cuentan para el % de IA, no como builders.
 - "IA": trailers `Co-Authored-By`/`Generated with` o autor de Claude, Cursor, Copilot, Kiro, Codex, Gemini, Devin, Windsurf, Aider, v0, Lovable, etc.
 - SDKs, frameworks y modelos: `package.json`, `requirements*.txt`, `pyproject.toml` e imports del código en la rama principal. Lenguajes y PRs: API de GitHub.

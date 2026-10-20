@@ -159,6 +159,10 @@ type Commit = {
 const IGNORED_PATH =
   /(^|\/)(node_modules|vendor|dist|build|out|\.next|\.nuxt|\.svelte-kit|\.vercel|\.turbo|coverage|venv|\.venv|env|__pycache__|\.expo|Pods|\.gradle|target)\/|(^|\/)(package-lock\.json|pnpm-lock\.yaml|yarn\.lock|bun\.lockb?|poetry\.lock|uv\.lock|Pipfile\.lock|Cargo\.lock|composer\.lock|Gemfile\.lock|go\.sum)$|\.(min\.(js|css)|map|lock|csv|tsv|jsonl|parquet|pkl|pt|onnx|ipynb|sqlite|db|log|snap)$|\.(generated|gen)\.\w+$/i;
 const MAX_FILE_LINES = 10_000; // un archivo con más que esto en un commit es generado o datos
+// Commits que cuentan como commit pero no suman líneas: código ajeno copiado.
+const NO_LINES = new Set([
+  "52cdcb1f9ab37a6782697d6ec6b2ed5084e2487b", // Hookia: 117.605 líneas de skills de terceros en .claude/skills
+]);
 
 // Bots que no cuentan para nada.
 const BOT = /\[bot\]|dependabot|github-actions|renovate|vercel|netlify|imgbot|codecov|snyk|semantic-release|allcontributors|pre-commit-ci|greenkeeper|mergify/i;
@@ -232,7 +236,7 @@ async function readCommits(dir: string, team: string, env: NodeJS.ProcessEnv): P
     let added = 0;
     let deleted = 0;
     const files: string[] = [];
-    for (const line of stats.split("\n")) {
+    for (const line of NO_LINES.has(hash) ? [] : stats.split("\n")) {
       const [a, d, file] = line.split("\t");
       if (!file || a === "-" || IGNORED_PATH.test(file)) continue;
       const lines = Number(a) + Number(d);

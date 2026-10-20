@@ -1,20 +1,20 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-18T17:10:18.871Z",
+  "generatedAt": "2026-10-20T01:26:55.124Z",
   "window": {
     "kickoff": "2026-10-17T12:00:00.000Z",
-    "freeze": "2026-10-18T15:00:00.000Z",
+    "freeze": "2026-10-18T14:00:00.000Z",
     "venueClose": "21:00"
   },
   "totals": {
-    "commits": 3997,
-    "linesAdded": 1542418,
-    "linesDeleted": 240154,
-    "files": 10328,
-    "builders": 86,
-    "repos": 33,
+    "commits": 4160,
+    "linesAdded": 1596235,
+    "linesDeleted": 248793,
+    "files": 10692,
+    "builders": 90,
+    "repos": 35,
     "teams": 33,
-    "prs": 1080
+    "prs": 1070
   },
   "heatmap": {
     "days": [
@@ -31,37 +31,37 @@
           null,
           null,
           0,
-          17,
-          32,
-          72,
-          106,
-          133,
-          178,
-          207,
-          289,
-          361,
-          488,
-          241,
+          20,
+          38,
+          78,
+          115,
+          143,
+          186,
+          225,
+          310,
+          382,
+          496,
+          244,
           125,
-          111,
-          226
+          113,
+          236
         ]
       },
       {
         "label": "dom 18",
         "hours": [
-          243,
-          199,
-          144,
-          131,
+          262,
+          222,
+          141,
+          140,
           122,
           67,
           34,
           66,
           82,
-          158,
-          140,
-          25,
+          171,
+          142,
+          null,
           null,
           null,
           null,
@@ -77,18 +77,18 @@
         ]
       }
     ],
-    "max": 488
+    "max": 496
   },
   "peak": {
     "day": "sáb 17",
     "hour": 19,
-    "count": 488
+    "count": 496
   },
   "owl": {
     "team": "SOLO",
     "time": "04:59",
     "message": "feat(frontend): add the Neitor AI landing page (#49)",
-    "afterHours": 1550
+    "afterHours": 1610
   },
   "earlyBird": {
     "team": "UnifyAI",
@@ -97,8 +97,8 @@
   },
   "lastMinute": {
     "minutes": 15,
-    "count": 2,
-    "teams": 1
+    "count": 25,
+    "teams": 13
   },
   "sleepless": {
     "team": "sayso",
@@ -120,15 +120,15 @@
   "words": [
     {
       "word": "demo",
-      "count": 192
+      "count": 197
     },
     {
       "word": "api",
-      "count": 158
+      "count": 164
     },
     {
       "word": "solo",
-      "count": 156
+      "count": 163
     },
     {
       "word": "voz",
@@ -136,51 +136,55 @@
     },
     {
       "word": "real",
-      "count": 117
+      "count": 122
     },
     {
       "word": "revisión",
       "count": 101
     },
     {
+      "word": "pantalla",
+      "count": 98
+    },
+    {
       "word": "server",
       "count": 97
     },
     {
-      "word": "pantalla",
+      "word": "agente",
+      "count": 89
+    },
+    {
+      "word": "app",
       "count": 89
     },
     {
       "word": "plan",
-      "count": 87
-    },
-    {
-      "word": "app",
-      "count": 82
-    },
-    {
-      "word": "datos",
-      "count": 81
-    },
-    {
-      "word": "guía",
-      "count": 80
-    },
-    {
-      "word": "web",
-      "count": 79
+      "count": 89
     },
     {
       "word": "cada",
-      "count": 77
+      "count": 86
     },
     {
-      "word": "agente",
-      "count": 72
+      "word": "datos",
+      "count": 86
+    },
+    {
+      "word": "web",
+      "count": 80
+    },
+    {
+      "word": "guía",
+      "count": 79
     },
     {
       "word": "claude",
-      "count": 65
+      "count": 76
+    },
+    {
+      "word": "texto",
+      "count": 68
     },
     {
       "word": "tenki",
@@ -191,11 +195,15 @@
       "count": 62
     },
     {
+      "word": "ficha",
+      "count": 61
+    },
+    {
       "word": "panel",
       "count": 60
     },
     {
-      "word": "texto",
+      "word": "vez",
       "count": 60
     },
     {
@@ -203,22 +211,14 @@
       "count": 58
     },
     {
-      "word": "vez",
+      "word": "prueba",
       "count": 58
-    },
-    {
-      "word": "base",
-      "count": 56
-    },
-    {
-      "word": "tests",
-      "count": 56
     }
   ],
   "counters": [
     {
       "label": "fix",
-      "count": 472
+      "count": 475
     },
     {
       "label": "wip",
@@ -226,7 +226,7 @@
     },
     {
       "label": "final",
-      "count": 35
+      "count": 38
     },
     {
       "label": "ahora sí",
@@ -257,12 +257,12 @@
   },
   "funny": [],
   "ai": {
-    "coauthored": 3450,
-    "total": 3997,
+    "coauthored": 3586,
+    "total": 4160,
     "byAgent": [
       {
         "agent": "claude",
-        "count": 3449
+        "count": 3585
       },
       {
         "agent": "cursor",
@@ -273,30 +273,30 @@
   "providers": [
     {
       "name": "anthropic",
-      "teams": 17
+      "teams": 19
     },
     {
       "name": "gemini",
-      "teams": 8
+      "teams": 9
     },
     {
       "name": "mcp",
-      "teams": 4
+      "teams": 5
     },
     {
       "name": "openai",
       "teams": 4
     },
     {
-      "name": "ai sdk",
-      "teams": 2
-    },
-    {
       "name": "elevenlabs",
-      "teams": 2
+      "teams": 3
     },
     {
       "name": "hugging face",
+      "teams": 3
+    },
+    {
+      "name": "ai sdk",
       "teams": 2
     },
     {
@@ -307,15 +307,15 @@
   "models": [
     {
       "name": "claude-sonnet-5-5",
-      "teams": 16
+      "teams": 17
     },
     {
       "name": "claude-haiku-5-5",
-      "teams": 15
+      "teams": 16
     },
     {
       "name": "claude-opus-5-5",
-      "teams": 9
+      "teams": 11
     },
     {
       "name": "gpt-6-luna",
@@ -334,34 +334,34 @@
       "teams": 3
     },
     {
-      "name": "gemini-3.8-flash",
+      "name": "eleven_multilingual_v2",
       "teams": 3
     }
   ],
   "languages": [
     {
       "name": "typescript",
-      "pct": 61.6
+      "pct": 57
     },
     {
       "name": "python",
-      "pct": 22.1
+      "pct": 21.8
     },
     {
       "name": "html",
-      "pct": 7.8
+      "pct": 10
     },
     {
       "name": "javascript",
-      "pct": 5.2
+      "pct": 8.1
     },
     {
       "name": "css",
-      "pct": 2.1
+      "pct": 2
     },
     {
       "name": "shell",
-      "pct": 0.5
+      "pct": 0.4
     },
     {
       "name": "otros",
@@ -371,19 +371,19 @@
   "frameworks": [
     {
       "name": "react",
-      "teams": 26
+      "teams": 28
     },
     {
       "name": "next.js",
-      "teams": 18
+      "teams": 20
     },
     {
       "name": "tailwind",
-      "teams": 18
+      "teams": 20
     },
     {
       "name": "shadcn/ui",
-      "teams": 13
+      "teams": 14
     },
     {
       "name": "fastapi",
@@ -398,8 +398,8 @@
       "teams": 7
     },
     {
-      "name": "convex",
-      "teams": 2
+      "name": "drizzle",
+      "teams": 3
     }
   ],
   "teams": [
@@ -420,12 +420,12 @@
     },
     {
       "team": "Delta",
-      "commits": 206,
+      "commits": 200,
       "finalista": false
     },
     {
       "team": "equipo 27",
-      "commits": 200,
+      "commits": 199,
       "finalista": false
     },
     {
@@ -434,23 +434,18 @@
       "finalista": false
     },
     {
-      "team": "UnifyAI",
-      "commits": 177,
-      "finalista": false
-    },
-    {
       "team": "Beyond The Bot",
       "commits": 176,
       "finalista": false
     },
     {
-      "team": "Grupo numero 502",
-      "commits": 166,
+      "team": "UnifyAI",
+      "commits": 175,
       "finalista": false
     },
     {
-      "team": "JAM",
-      "commits": 156,
+      "team": "Grupo numero 502",
+      "commits": 165,
       "finalista": false
     },
     {
@@ -464,13 +459,18 @@
       "finalista": false
     },
     {
-      "team": "Claude & Asociados",
-      "commits": 143,
+      "team": "JAM",
+      "commits": 145,
       "finalista": false
     },
     {
       "team": "equipo 18",
       "commits": 143,
+      "finalista": false
+    },
+    {
+      "team": "Claude & Asociados",
+      "commits": 142,
       "finalista": false
     },
     {
@@ -480,7 +480,7 @@
     },
     {
       "team": "TJJ Tech",
-      "commits": 128,
+      "commits": 126,
       "finalista": false
     },
     {
@@ -494,8 +494,13 @@
       "finalista": false
     },
     {
-      "team": "b&niks",
+      "team": "Hookia",
       "commits": 103,
+      "finalista": false
+    },
+    {
+      "team": "b&niks",
+      "commits": 102,
       "finalista": false
     },
     {
@@ -506,6 +511,11 @@
     {
       "team": "viveri",
       "commits": 92,
+      "finalista": false
+    },
+    {
+      "team": "Scout",
+      "commits": 89,
       "finalista": false
     },
     {
@@ -524,13 +534,13 @@
       "finalista": false
     },
     {
-      "team": "SOLO",
-      "commits": 64,
+      "team": "LIF",
+      "commits": 61,
       "finalista": false
     },
     {
-      "team": "LIF",
-      "commits": 61,
+      "team": "SOLO",
+      "commits": 60,
       "finalista": false
     },
     {
@@ -544,18 +554,13 @@
       "finalista": false
     },
     {
+      "team": "las chicas súper poderosas",
+      "commits": 44,
+      "finalista": false
+    },
+    {
       "team": "Alargue.SI",
       "commits": 33,
-      "finalista": false
-    },
-    {
-      "team": "las chicas súper poderosas",
-      "commits": 30,
-      "finalista": false
-    },
-    {
-      "team": "hooksage",
-      "commits": 14,
       "finalista": false
     },
     {

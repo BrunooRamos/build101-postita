@@ -494,20 +494,6 @@ export function AiShare({ m, idx }: CardProps) {
   );
 }
 
-export function Agents({ m, idx }: CardProps) {
-  return (
-    <>
-      <Head idx={idx} label="el cuarto integrante" />
-      <In i={1} as="h2" className="wr-title">
-        con qué agentes programaron.
-      </In>
-      <div style={{ marginTop: "calc(var(--u) * 3.6)" }}>
-        <Bars rows={m.ai.byAgent.slice(0, 6).map((a) => ({ name: a.agent, value: a.count, label: `${n(a.count)}` }))} />
-      </div>
-    </>
-  );
-}
-
 function RankCard({ idx, label, title, rows, unit }: { idx: number; label: string; title: string; rows: { name: string; teams: number }[]; unit: string }) {
   return (
     <>
@@ -525,12 +511,6 @@ function RankCard({ idx, label, title, rows, unit }: { idx: number; label: strin
   );
 }
 
-export const Providers = ({ m, idx }: CardProps) => (
-  <RankCard idx={idx} label="sdks de IA" title="los proveedores de IA más usados." rows={m.providers} unit="equipos que lo usan en su código" />
-);
-export const Models = ({ m, idx }: CardProps) => (
-  <RankCard idx={idx} label="modelos" title="los modelos que se nombraron en el código." rows={m.models} unit="equipos que lo mencionan" />
-);
 export const Frameworks = ({ m, idx }: CardProps) => (
   <RankCard idx={idx} label="el stack" title="con qué construyeron." rows={m.frameworks} unit="equipos que lo usan" />
 );
