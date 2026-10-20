@@ -782,21 +782,13 @@ html:has(.wr) body {
   color: var(--accent-text);
 }
 .wr-arrow:focus-visible,
-.wr-progress button:focus-visible,
-.wr-retry:focus-visible {
+.wr-progress button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 .wr-arrow:disabled {
   opacity: 0;
   pointer-events: none;
-}
-.wr-retry {
-  border: 0;
-  background: none;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
 }
 .wr-foot-row {
   display: flex;
@@ -808,14 +800,6 @@ html:has(.wr) body {
 }
 .wr-foot-row .tag {
   color: var(--fg-body);
-}
-
-.wr-empty {
-  display: grid;
-  place-items: center;
-  font-family: var(--font-mono-stack);
-  font-size: calc(var(--u) * 2.4);
-  color: var(--muted);
 }
 
 @media (prefers-reduced-motion: reduce) {

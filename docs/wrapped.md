@@ -11,12 +11,11 @@ export GITHUB_TOKEN=$(gh auth token)                 # si no está, el script pr
 npm run metrics
 ```
 
-Cada corrida clona o actualiza los repos en `.data/wrapped-repos/` (`git clone --filter=blob:none`), calcula todo y escribe `wrapped/metrics.json` (commitealo: es el snapshot que ve el deploy si Redis está vacío). La primera vez tarda; después solo hace `fetch`. Los datos cubren desde la apertura (sábado 17, 09:00) hasta el cierre de código (domingo 18, 11:00); lo que se commiteó después no cuenta.
+Cada corrida clona o actualiza los repos en `.data/wrapped-repos/` (`git clone --filter=blob:none`), calcula todo y escribe `wrapped/metrics.json`. La primera vez tarda; después solo hace `fetch`. Los datos cubren desde la apertura (sábado 17, 09:00) hasta el cierre de código (domingo 18, 11:00); lo que se commiteó después no cuenta.
 
 | flag / variable | qué hace |
 |---|---|
 | `CIERRE=13:30 npm run metrics` | pisa el fin de la ventana (por defecto `CODE_FREEZE_ISO` en `app/event.ts`: domingo 18, 11:00) |
-| `-- --no-publish` | solo escribe el archivo local |
 | `-- --offline` | no hace fetch: usa los clones que ya hay |
 | `ANTHROPIC_API_KEY` | elige el top 5 de commits graciosos con Claude (sin clave, esa tarjeta no se muestra). Se cachea en `.data/wrapped-cache/` |
 
@@ -24,21 +23,7 @@ Cada corrida clona o actualiza los repos en `.data/wrapped-repos/` (`git clone -
 
 ## Publicar
 
-La página lee `GET /api/wrapped`, que devuelve, en orden:
-
-1. el último `metrics.json` publicado en Redis (key `build101:wrapped:metrics`), si hay credenciales;
-2. en local, `wrapped/metrics.json` recién escrito;
-3. si no hay nada, el snapshot commiteado `wrapped/metrics.json` (también real, de la última corrida).
-
-Usa el mismo Redis REST (Upstash) que la ronda de inversión. Para que el script publique, exportá las mismas credenciales que tiene Vercel:
-
-```bash
-export INVESTMENTS_REDIS_REST_URL=https://...upstash.io
-export INVESTMENTS_REDIS_REST_TOKEN=...
-npm run metrics      # → "publicado: /wrapped lo toma en la próxima vuelta del loop"
-```
-
-(también acepta `UPSTASH_REDIS_REST_URL/TOKEN` o `KV_REST_API_URL/TOKEN`, y las lee de `.env.local`). No hace falta redeploy: la página toma los datos nuevos al cargarse.
+`/wrapped` importa `wrapped/metrics.json` al compilar: no hay API ni base de datos, la página muestra exactamente el archivo commiteado. Para cambiar los números, corré el script, commiteá el JSON y deployá.
 
 ## Cómo se ve
 

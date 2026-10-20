@@ -42,49 +42,31 @@ function buildSlides(m: M) {
   return [INTRO, ...CARDS.filter((s) => !s.ok || s.ok(m)), DASH, OUTRO];
 }
 
-export function Wrapped() {
-  const [m, setM] = useState<M | null>(null);
-  const [failed, setFailed] = useState(false);
+export function Wrapped({ m }: { m: M }) {
   const [i, setI] = useState(0);
   const [leaving, setLeaving] = useState(false);
-
-  const load = useCallback(async () => {
-    try {
-      const res = await fetch("/api/wrapped", { cache: "no-store" });
-      if (!res.ok) throw new Error(String(res.status));
-      const data = (await res.json()) as M;
-      if (data?.version !== 1) throw new Error("bad metrics");
-      setM(data);
-      setFailed(false);
-    } catch {
-      setFailed(true);
-    }
-  }, []);
 
   useEffect(() => {
     const start = Number(new URLSearchParams(window.location.search).get("card"));
     if (start > 0) setI(start - 1);
-    load();
-  }, [load]);
+  }, []);
 
-  const slides = useMemo(() => (m ? buildSlides(m) : []), [m]);
+  const slides = useMemo(() => buildSlides(m), [m]);
   const total = slides.length;
-  const index = total ? Math.min(i, total - 1) : 0;
+  const index = Math.min(i, total - 1);
   const slide = slides[index];
 
   const current = useRef(0);
   useEffect(() => {
     current.current = index;
-    if (!total) return;
     const url = new URL(window.location.href);
     if (index) url.searchParams.set("card", String(index + 1));
     else url.searchParams.delete("card");
     window.history.replaceState(null, "", url);
-  }, [index, total]);
+  }, [index]);
 
   const goTo = useCallback(
     (target: number) => {
-      if (!total) return;
       const next = Math.max(0, Math.min(total - 1, target));
       if (next === current.current) return;
       // el destino se fija ya, así varias teclas seguidas suman bien
@@ -143,40 +125,22 @@ export function Wrapped() {
         <span className="logo">build 101</span>
         <span className="wr-path">~/build-101 · wrapped</span>
         <span className="wr-live">
-          {total ? (
-            <span className="wr-count">
-              {String(index + 1).padStart(2, "0")}/{String(total).padStart(2, "0")}
-            </span>
-          ) : null}
+          <span className="wr-count">
+            {String(index + 1).padStart(2, "0")}/{String(total).padStart(2, "0")}
+          </span>
         </span>
       </header>
 
       <main className="wr-stage">
-        {m && slide ? (
-          <section key={`${slide.id}-${index}`} className={`wr-card ${leaving ? "out" : ""}`} aria-live="polite">
-            <slide.Card m={m} idx={cardNumber} />
-          </section>
-        ) : (
-          <div className="wr-empty wr-card">
-            {failed ? (
-              <button type="button" className="wr-retry" onClick={load}>
-                $ build101 --wrapped · no cargó, reintentar
-              </button>
-            ) : (
-              "$ build101 --wrapped · cargando…"
-            )}
-          </div>
-        )}
-        {total ? (
-          <>
-            <button type="button" className="wr-arrow prev" onClick={() => go(-1)} disabled={isFirst} aria-label="tarjeta anterior">
-              ←
-            </button>
-            <button type="button" className="wr-arrow next" onClick={() => go(1)} disabled={isLast} aria-label="tarjeta siguiente">
-              →
-            </button>
-          </>
-        ) : null}
+        <section key={`${slide.id}-${index}`} className={`wr-card ${leaving ? "out" : ""}`} aria-live="polite">
+          <slide.Card m={m} idx={cardNumber} />
+        </section>
+        <button type="button" className="wr-arrow prev" onClick={() => go(-1)} disabled={isFirst} aria-label="tarjeta anterior">
+          ←
+        </button>
+        <button type="button" className="wr-arrow next" onClick={() => go(1)} disabled={isLast} aria-label="tarjeta siguiente">
+          →
+        </button>
       </main>
 
       <footer className="wr-foot">

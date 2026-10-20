@@ -1,18 +1,17 @@
 // build 101 wrapped — script de ingesta. Corre en la máquina de un organizador:
 //
-//   npm run metrics                  # clona/actualiza, calcula y publica
-//   npm run metrics -- --no-publish  # solo escribe wrapped/metrics.json
+//   npm run metrics                  # clona/actualiza, calcula y escribe wrapped/metrics.json
 //   npm run metrics -- --offline     # no hace fetch: usa los clones que ya hay
 //   CIERRE=13:30 npm run metrics     # pisa la hora de cierre de código
 //
 // Lee wrapped/repos.json y wrapped/hidden.json, clona cada repo con
 // --filter=blob:none en .data/wrapped-repos/, saca casi todo de `git log` local
 // y usa la API de GitHub solo para lenguajes y PRs. El resultado (ya agregado y
-// filtrado) es lo único que lee la página: se escribe en wrapped/metrics.json y, si hay
-// credenciales de Redis, se publica para /api/wrapped.
+// filtrado) es lo único que lee la página: se escribe en wrapped/metrics.json, que
+// se commitea y /wrapped importa al compilar.
 //
-// Variables: GITHUB_TOKEN (o `gh auth token`), INVESTMENTS_REDIS_REST_URL/TOKEN
-// (o UPSTASH_/KV_), ANTHROPIC_API_KEY (opcional: elige los commits graciosos).
+// Variables: GITHUB_TOKEN (o `gh auth token`), ANTHROPIC_API_KEY (opcional: elige
+// los commits graciosos).
 // Se cargan también de .env.local. El token nunca se imprime ni va a disco:
 // git lo pide a un credential helper que lo lee del entorno (ni en la URL, ni
 // en los argumentos, ni en .git/config).
@@ -25,7 +24,6 @@ import path from "node:path";
 import { promisify } from "node:util";
 import Anthropic from "@anthropic-ai/sdk";
 import { CODE_FREEZE_ISO, EVENT_KICKOFF_ISO, TEAM_SIZE, TEAMS_TOTAL } from "../../app/event.ts";
-import { WRAPPED_KEY, WRAPPED_LOCAL_FILE, redis, redisConfiguration } from "../../lib/wrapped-store.ts";
 import type { Ranked, WrappedMetrics } from "../../lib/wrapped-types.ts";
 import { type Hidden, makeShowFilter, normalize, wordIsShowable } from "./filters.ts";
 
@@ -34,6 +32,7 @@ const ROOT = process.cwd();
 const DATA = path.join(ROOT, ".data");
 const CLONES = path.join(DATA, "wrapped-repos");
 const CACHE = path.join(DATA, "wrapped-cache");
+const WRAPPED_LOCAL_FILE = path.join(ROOT, "wrapped", "metrics.json");
 const ARGS = new Set(process.argv.slice(2));
 
 for (const file of [".env.local", ".env"]) {
@@ -831,20 +830,11 @@ async function main() {
     balanced,
   };
 
-  const json = JSON.stringify(metrics);
   await mkdir(DATA, { recursive: true });
   const tmp = `${WRAPPED_LOCAL_FILE}.${process.pid}.tmp`;
   await writeFile(tmp, JSON.stringify(metrics, null, 2));
   await rename(tmp, WRAPPED_LOCAL_FILE);
   console.log(`\n→ ${path.relative(ROOT, WRAPPED_LOCAL_FILE)} · ${totals.commits} commits · ${totals.builders} builders · ${ai.coauthored} con IA`);
-
-  if (ARGS.has("--no-publish")) return;
-  if (!redisConfiguration()) {
-    console.log("  (sin INVESTMENTS_REDIS_REST_URL/TOKEN: no se publicó; la tele muestra el último publicado)");
-    return;
-  }
-  await redis(["SET", WRAPPED_KEY, json]);
-  console.log("→ publicado: /wrapped lo toma en la próxima vuelta del loop");
 }
 
 main().catch((error) => {

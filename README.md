@@ -48,7 +48,7 @@ GOOGLE_SHEETS_WEBHOOK_SECRET=   # el mismo valor que SHARED_SECRET en el script
 
 ## build 101 wrapped
 
-`/wrapped` es el dashboard para la tele del cierre (fuera del menú y del sitemap). Los datos salen de `npm run metrics`, que lee los repos de los equipos y publica un `metrics.json` agregado. Cómo correrlo y publicarlo: [`docs/wrapped.md`](docs/wrapped.md).
+`/wrapped` son las tarjetas con los números de la hackathon (fuera del menú y del sitemap; la landing lo anuncia con una cinta arriba). Los datos salen de `npm run metrics`, que lee los repos de los equipos y escribe `wrapped/metrics.json`; la página lo importa al compilar. Cómo correrlo: [`docs/wrapped.md`](docs/wrapped.md).
 
 ## Easter eggs
 
