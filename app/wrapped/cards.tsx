@@ -654,7 +654,7 @@ export function Outro({ m }: CardProps) {
         build. ship. repeat.
       </In>
       <In i={2} as="p" className="wr-caption">
-        gracias, builders. nos vemos en el próximo build.
+        gracias, builders. nos vemos en build 101 | batch 2.
       </In>
       <In i={3} as="p" className="wr-sub">
         {n(m.totals.commits)} commits · {n(m.totals.linesAdded)} líneas · {n(m.totals.teams)} equipos · build101.dev
