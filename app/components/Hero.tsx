@@ -1,4 +1,4 @@
-import { InscribiteBtn } from "./DeployFX";
+import Link from "next/link";
 import { Terminal } from "./Terminal";
 import { Countdown } from "./Countdown";
 import { PixelBlocks, PIXELS_HERO } from "./PixelBlocks";
@@ -69,7 +69,9 @@ export function Hero() {
               Armá tu equipo. Construí un producto de IA. Pitchealo en vivo.
             </p>
             <div className="hero-cta">
-              <InscribiteBtn className="btn btn-primary">quiero participar →</InscribiteBtn>
+              <Link href="/equipos" className="btn btn-primary">
+                ver los equipos →
+              </Link>
               <a href={`mailto:${PARTICIPANTS_EMAIL}`} className="link-quiet">
                 o hablá con Ramiro ↗
               </a>

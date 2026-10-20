@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
-import { InscribiteBtn } from "./DeployFX";
 import { ShareLinks } from "./ShareLinks";
 import { FooterSocials, NavSocials } from "./Socials";
 import { TEAM } from "../event";
@@ -18,11 +17,14 @@ export function SiteNav() {
           <Link href="/#evento">el evento</Link>
           <Link href="/#cronograma">fechas &amp; lugar</Link>
           <Link href="/#sponsors">sponsors</Link>
+          <Link href="/equipos">los equipos</Link>
           <Link href="/#contacto">contacto</Link>
         </div>
         <div className="topnav-end">
           <NavSocials />
-          <InscribiteBtn className="btn btn-primary btn-sm">quiero participar →</InscribiteBtn>
+          <Link href="/equipos" className="btn btn-primary btn-sm">
+            ver los equipos →
+          </Link>
         </div>
       </div>
     </nav>
