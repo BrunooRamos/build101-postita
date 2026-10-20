@@ -85,7 +85,7 @@
   {
     "numero": 3,
     "equipo": "Sayso",
-    "producto": "sayso",
+    "producto": "Sayso",
     "oneliner": "un experto al lado para reparar tus aparatos: identifica el modelo y te guía con manual, 3d animado y voz.",
     "stack": [
       "next.js",
@@ -99,7 +99,12 @@
     ],
     "captura": "/equipos/03.webp",
     "fotoEquipo": null,
-    "material": [],
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1PYH3o0oCgys__BVzUSm8erRoWIq2HHac/view"
+      }
+    ],
     "integrantes": [
       {
         "nombre": "Diego Marin",
@@ -140,7 +145,12 @@
     ],
     "captura": null,
     "fotoEquipo": null,
-    "material": [],
+    "material": [
+      {
+        "tipo": "video",
+        "url": "https://drive.google.com/file/d/1LtQ2_EAMZxEu6zZSVe0OrBgVpGrJIGtx/view"
+      }
+    ],
     "integrantes": [
       {
         "nombre": "Franco Fontanarossa",
@@ -1333,7 +1343,7 @@
   },
   {
     "numero": 32,
-    "equipo": null,
+    "equipo": "La compu de César",
     "producto": "Tiza.ai",
     "oneliner": "adapta prácticos de matemática de bachillerato para estudiantes con tdah, dislexia o tea, con aprobación docente.",
     "stack": [
@@ -1342,13 +1352,18 @@
       "mediapipe",
       "elevenlabs"
     ],
-    "demo": null,
+    "demo": "https://tiza-ai.vercel.app",
     "repos": [
       "https://github.com/mauriuy007/build101"
     ],
-    "captura": null,
+    "captura": "/equipos/32.webp",
     "fotoEquipo": null,
-    "material": [],
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1kswbjclxNxI72JP7m_0l29DeRwt97uIO/view"
+      }
+    ],
     "integrantes": [
       {
         "nombre": "Cesar Canessa",
