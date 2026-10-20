@@ -22,7 +22,7 @@
         "estudia": "UM",
         "trabaja": null,
         "link": "https://linkedin.com/in/rosario-stoppiello",
-        "foto": null,
+        "foto": "/equipos/fotos/01-rosario-stoppiello.webp",
         "aporte": "frontend en next.js: examen de rodilla, tensiómetro interactivo y avatar 3d en la consulta"
       },
       {
@@ -67,7 +67,7 @@
         "estudia": "UM",
         "trabaja": "-",
         "link": "https://www.linkedin.com/in/joaquin-rodriguez-godoy",
-        "foto": null,
+        "foto": "/equipos/fotos/02-joaquin-rodriguez.webp",
         "aporte": "pantallas en react, generación de recetas con llm y alta del perfil por voz"
       },
       {
@@ -75,7 +75,7 @@
         "estudia": "UM",
         "trabaja": "DaMap",
         "link": "https://www.linkedin.com/in/itondo10/",
-        "foto": null,
+        "foto": "/equipos/fotos/02-ignacio-tondo.webp",
         "aporte": "motor de ia y grafo nutricional del server: prompts de recetas, franjas y evals"
       },
       {
@@ -117,7 +117,7 @@
         "estudia": "UM",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/diegomarin2805",
-        "foto": null,
+        "foto": "/equipos/fotos/03-diego-marin.webp",
         "aporte": "visor 3d con modelos glb, generador de planos, base del proyecto y tests e2e"
       },
       {
@@ -133,7 +133,7 @@
         "estudia": "UM",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/ignacio-iglesia-2271733a2/",
-        "foto": null,
+        "foto": "/equipos/fotos/03-ignacio-iglesia.webp",
         "aporte": "pantallas de la app en next.js, supabase, voz y vista previa de los links"
       }
     ]
@@ -166,7 +166,7 @@
         "estudia": "UM",
         "trabaja": "IBM",
         "link": "https://www.linkedin.com/in/franco-fontanarossa-6b135230a/",
-        "foto": null,
+        "foto": "/equipos/fotos/04-franco-fontanarossa.webp",
         "aporte": "ingesta de la pulsera, simulador de biometría, reglas clínicas y endpoints"
       },
       {
@@ -174,7 +174,7 @@
         "estudia": "UM",
         "trabaja": "SONDA",
         "link": "https://www.linkedin.com/in/juanpedroguerra/",
-        "foto": null,
+        "foto": "/equipos/fotos/04-juan-pedro-guerra.webp",
         "aporte": "web de la familia y del médico, perfil que aprende, bitácora y marca neuro"
       },
       {
@@ -182,7 +182,7 @@
         "estudia": "UM",
         "trabaja": "IBM",
         "link": "https://www.linkedin.com/in/guadalupe-c-a27200357",
-        "foto": null,
+        "foto": "/equipos/fotos/04-guadalupe-carrasco.webp",
         "aporte": "pipeline de transcripción y extracción, informe médico con ia y diseño v3.1"
       }
     ]
@@ -210,7 +210,7 @@
         "estudia": "Udelar",
         "trabaja": "Tecla Academy, Covalent",
         "link": "https://www.linkedin.com/in/manuel-arocena-51985126b",
-        "foto": null,
+        "foto": "/equipos/fotos/05-manuel-arocena.webp",
         "aporte": "agente de intención, guard de parámetros autorizados y vista agente del dashboard"
       },
       {
@@ -218,7 +218,7 @@
         "estudia": "UdelaR",
         "trabaja": "Klevertax, CoacHub",
         "link": "https://uy.linkedin.com/in/bruno-pallas-nin-463ba029a",
-        "foto": null,
+        "foto": "/equipos/fotos/05-bruno-pallas.webp",
         "aporte": "integración del protocolo ap2, persistencia de datos y flujo de pasajes aéreos"
       },
       {
@@ -226,7 +226,7 @@
         "estudia": "UM",
         "trabaja": "Facal, Covalent",
         "link": "https://www.linkedin.com/in/facundo-sansalone-grasso-5a8355322/",
-        "foto": null,
+        "foto": "/equipos/fotos/05-facundo-sansalone.webp",
         "aporte": "proxy y filtro de seguridad en python, dashboard con modo /demo y sus tests"
       }
     ]
@@ -254,7 +254,7 @@
         "estudia": "Universidad de Montevideo",
         "trabaja": "Proyectos Freelance",
         "link": "https://www.linkedin.com/in/nicolas-tognola-335972303",
-        "foto": null,
+        "foto": "/equipos/fotos/06-nicolas-tognola.webp",
         "aporte": "bandeja hermes que archiva lecciones en la bóveda, plugin y detector de insights"
       },
       {
@@ -262,7 +262,7 @@
         "estudia": null,
         "trabaja": "Asom Studio",
         "link": "https://www.linkedin.com/in/alberto-ortolani-software-developer/",
-        "foto": null,
+        "foto": "/equipos/fotos/06-alberto-ortolani.webp",
         "aporte": "herramientas para medir cómo usa claude el equipo y bots en vivo en la ui"
       },
       {
@@ -270,7 +270,7 @@
         "estudia": "Universidad de Montevideo",
         "trabaja": "SunnyData",
         "link": "https://www.linkedin.com/in/nicolas-sere-12970b273/",
-        "foto": null,
+        "foto": "/equipos/fotos/06-nicolas-sere.webp",
         "aporte": "api en python, lectura de la bóveda por git, hooks del agente e infra de deploy"
       }
     ]
@@ -297,7 +297,7 @@
         "estudia": "UM",
         "trabaja": "Struxto",
         "link": "https://www.linkedin.com/in/manuel-anselmi-848420242/",
-        "foto": null,
+        "foto": "/equipos/fotos/07-manuel-anselmi.webp",
         "aporte": "agentes de ia: discovery con haiku, agente de aprendizaje y corrida nocturna"
       },
       {
@@ -305,7 +305,7 @@
         "estudia": "UM - ORT",
         "trabaja": "TecsPal",
         "link": "https://www.linkedin.com/in/nicolasbarbozadarosa/",
-        "foto": null,
+        "foto": "/equipos/fotos/07-nicolas-barboza.webp",
         "aporte": "discovery y outreach en scout, playbook personal y guion del pitch"
       },
       {
@@ -313,7 +313,7 @@
         "estudia": "ORT",
         "trabaja": "Tribu",
         "link": "https://www.linkedin.com/in/santiago-lizarazu/",
-        "foto": null,
+        "foto": "/equipos/fotos/07-santiago-lizarazu.webp",
         "aporte": "frontend: ficha con anillos y radar, tablero del pipeline, playbook y mail real"
       }
     ]
@@ -342,7 +342,7 @@
         "estudia": "ORT",
         "trabaja": "GWM Advisory Services",
         "link": "https://www.linkedin.com/in/guido-vizoso-70bb98150/?isSelfProfile=true",
-        "foto": null,
+        "foto": "/equipos/fotos/08-guido-vizoso.webp",
         "aporte": null
       },
       {
@@ -350,7 +350,7 @@
         "estudia": "ORT",
         "trabaja": "Mercado Libre",
         "link": "https://www.linkedin.com/in/francisco-cuadra/",
-        "foto": null,
+        "foto": "/equipos/fotos/08-francisco-cuadra.webp",
         "aporte": "api y web del editor de video: pipeline editorial, guiones y exportes pro"
       },
       {
@@ -358,7 +358,7 @@
         "estudia": "ORT",
         "trabaja": "Drivo",
         "link": "https://www.linkedin.com/in/joaquinhernandez/overlay/contact-info/",
-        "foto": null,
+        "foto": "/equipos/fotos/08-joaquin-hernandez.webp",
         "aporte": "landing en astro de hooksage: bilingüe, planes de precios, waitlist y videos"
       }
     ]
@@ -389,7 +389,7 @@
         "estudia": null,
         "trabaja": null,
         "link": "https://www.linkedin.com/in/santiabasolo/",
-        "foto": null,
+        "foto": "/equipos/fotos/09-santiago-abasolo.webp",
         "aporte": "panel del propietario en next.js, app de ios en swift y bot de whatsapp"
       },
       {
@@ -397,7 +397,7 @@
         "estudia": null,
         "trabaja": null,
         "link": "https://www.linkedin.com/in/ignacio-azaretto-9699721a7/",
-        "foto": null,
+        "foto": "/equipos/fotos/09-ignacio-azaretto-soler.webp",
         "aporte": "guía de preguntas del perfilado y adaptación al esquema de supabase"
       },
       {
@@ -405,7 +405,7 @@
         "estudia": null,
         "trabaja": null,
         "link": "https://www.linkedin.com/in/villaverdegabriel/",
-        "foto": null,
+        "foto": "/equipos/fotos/09-gabriel-villaverde.webp",
         "aporte": "perfilado con citas verificadas, casos sintéticos y onboarding del propietario"
       }
     ]
@@ -434,7 +434,7 @@
         "estudia": null,
         "trabaja": "Horizon AI",
         "link": "https://www.linkedin.com/in/juan-estape-979a5a248/",
-        "foto": null,
+        "foto": "/equipos/fotos/10-juan-estape.webp",
         "aporte": "app mobile y api: planificador de tours, scout en la app y ubicación por gps"
       },
       {
@@ -442,7 +442,7 @@
         "estudia": null,
         "trabaja": "Frontline",
         "link": "https://www.linkedin.com/in/tom%C3%A1s-zelaschi-99bb12258/",
-        "foto": null,
+        "foto": "/equipos/fotos/10-tomas-zelaschi.webp",
         "aporte": "voz por bluetooth, tour interior, traslados en transporte público y research"
       },
       {
@@ -450,7 +450,7 @@
         "estudia": "Udelar",
         "trabaja": "Promtior",
         "link": "https://linkedin.com/in/josefina-cardozo-094a5725a",
-        "foto": null,
+        "foto": "/equipos/fotos/10-josefina-cardozo.webp",
         "aporte": "generador de tours con eventos y clima, ui del mundo scout y pestaña tours"
       }
     ]
@@ -477,7 +477,7 @@
         "estudia": "UM",
         "trabaja": "Dominion",
         "link": "https://www.linkedin.com/in/guillermo-storace-alfaro/",
-        "foto": null,
+        "foto": "/equipos/fotos/11-guillermo-storace.webp",
         "aporte": "backend en python: llamadas grabadas, sms por boleto y pin en la ventanilla"
       },
       {
@@ -485,7 +485,7 @@
         "estudia": "UM",
         "trabaja": "Blend 360",
         "link": "https://www.linkedin.com/in/phillip-bowles-/",
-        "foto": null,
+        "foto": "/equipos/fotos/11-phillip-bowles.webp",
         "aporte": "agente de voz en elevenlabs, tools del backend, deploy en railway y ui del crm"
       },
       {
@@ -493,7 +493,7 @@
         "estudia": "UM",
         "trabaja": "Blend 360",
         "link": "https://www.linkedin.com/in/manuel-p%C3%A9rez-2713b2244/",
-        "foto": null,
+        "foto": "/equipos/fotos/11-manuel-perez.webp",
         "aporte": "harness de agentes y revisión de prs, hooks y mocks del /demo en la web"
       }
     ]
@@ -527,7 +527,7 @@
         "estudia": "ORT",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/bruno-colo/",
-        "foto": null,
+        "foto": "/equipos/fotos/12-bruno-colo.webp",
         "aporte": "casos de demo, panel web, tests del detector, docker y guion del pitch"
       },
       {
@@ -535,7 +535,7 @@
         "estudia": "ORT",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/pedro-morga-7a6057326/",
-        "foto": null,
+        "foto": "/equipos/fotos/12-pedro-morga.webp",
         "aporte": "telefonía con deepgram y reconexión, app android, analítica e integración"
       },
       {
@@ -543,7 +543,7 @@
         "estudia": "ORT",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/matias-moser-992198433/",
-        "foto": null,
+        "foto": "/equipos/fotos/12-matias-moser.webp",
         "aporte": "detector de estafas con haiku en streaming, reglas, alertas y casos de demo"
       }
     ]
@@ -579,7 +579,7 @@
         "estudia": "FING UDELAR",
         "trabaja": "Light-IT",
         "link": "https://www.linkedin.com/in/mathias-ramilo?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-        "foto": null,
+        "foto": "/equipos/fotos/13-matias-ramilo.webp",
         "aporte": "onboarding en next.js y whatsapp, brand brain y carruseles con gemini"
       },
       {
@@ -587,7 +587,7 @@
         "estudia": "FING UDELAR",
         "trabaja": "Light-IT",
         "link": "https://www.linkedin.com/in/guido-dinello-48875b217?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-        "foto": null,
+        "foto": "/equipos/fotos/13-guido-dinello.webp",
         "aporte": "orquestador del backend, whatsapp con kapso, aprobación de posts y railway"
       }
     ]
@@ -619,7 +619,7 @@
         "estudia": "UdelaR",
         "trabaja": "BitGarden",
         "link": "https://www.linkedin.com/in/brunoromerogarcia",
-        "foto": null,
+        "foto": "/equipos/fotos/14-bruno-romero.webp",
         "aporte": "ui de los modos voz, foto y cámara, y rediseño de la vista voz → señas"
       },
       {
@@ -627,7 +627,7 @@
         "estudia": "UM",
         "trabaja": "Infoclub Soluciones",
         "link": "https://www.linkedin.com/in/jdperrachon/",
-        "foto": null,
+        "foto": "/equipos/fotos/14-juan-perrachon.webp",
         "aporte": "extensión, clips del avatar curados y chequeos anatómicos de manos y brazos"
       },
       {
@@ -635,7 +635,7 @@
         "estudia": "UdelaR",
         "trabaja": "Perceptyx",
         "link": "https://www.linkedin.com/in/german-ipes/",
-        "foto": null,
+        "foto": "/equipos/fotos/14-german-ipes.webp",
         "aporte": "monorepo base, avatar 3d vrm con 1350 señas lsa y búsqueda por similitud"
       }
     ]
@@ -669,7 +669,7 @@
         "estudia": "UCU",
         "trabaja": "Oracle",
         "link": "https://www.linkedin.com/in/tomás-rama-896298274",
-        "foto": null,
+        "foto": "/equipos/fotos/15-tomas-rama.webp",
         "aporte": "visión híbrida yolo + claude por plato, detector yoloe e ids por posición"
       },
       {
@@ -677,7 +677,7 @@
         "estudia": "UdelaR",
         "trabaja": "Oracle",
         "link": "https://www.linkedin.com/in/jessica-sista/",
-        "foto": null,
+        "foto": "/equipos/fotos/15-jessica-sista.webp",
         "aporte": "visión de platos, avisos y métricas por telegram y base sqlite de eventos"
       },
       {
@@ -685,7 +685,7 @@
         "estudia": "ORT",
         "trabaja": "Oracle",
         "link": "https://www.linkedin.com/in/matias-hirschfeld-cababie-ab3a2421b/",
-        "foto": null,
+        "foto": "/equipos/fotos/15-matias-hirschfeld.webp",
         "aporte": "proveedor openai con decisions api, captura de cámara y docker del servidor"
       }
     ]
@@ -714,7 +714,7 @@
         "estudia": null,
         "trabaja": "Neocoast",
         "link": "http://linkedin.com/in/alexisfriss/",
-        "foto": null,
+        "foto": "/equipos/fotos/16-alexis-friss-de-kereki.webp",
         "aporte": "dashboard estilo posthog, pipeline de análisis, deploy en netlify y pitch"
       },
       {
@@ -722,7 +722,7 @@
         "estudia": null,
         "trabaja": "Eagerworks",
         "link": "https://linkedin.com/in/mauriciofrissdekereki",
-        "foto": null,
+        "foto": "/equipos/fotos/16-mauricio-friss-de-kereki.webp",
         "aporte": "orquestador en tenki, enjambre con eventos de posthog y loop de arreglos"
       },
       {
@@ -730,7 +730,7 @@
         "estudia": null,
         "trabaja": "Nareia Software",
         "link": "https://www.linkedin.com/in/joaquin-becerra-5b3388201/",
-        "foto": null,
+        "foto": "/equipos/fotos/16-joaquin-becerra.webp",
         "aporte": "tienda de demo, worker del enjambre en tenki y personas sintéticas kai y rosa"
       }
     ]
@@ -766,7 +766,7 @@
         "estudia": "ORT",
         "trabaja": "Mercado Libre",
         "link": "https://www.linkedin.com/in/juan-maría-andré-0b1672332/",
-        "foto": null,
+        "foto": "/equipos/fotos/17-juan-maria-andre.webp",
         "aporte": null
       },
       {
@@ -774,7 +774,7 @@
         "estudia": "FCEA Udelar",
         "trabaja": "Grant Thornton",
         "link": "https://www.linkedin.com/in/paul-mc-cubbin-/",
-        "foto": null,
+        "foto": "/equipos/fotos/17-paul-mc-cubbin.webp",
         "aporte": "app next.js con agente claude, skills del método de edición y métricas con windsor"
       }
     ]
@@ -807,7 +807,7 @@
         "estudia": "UM",
         "trabaja": "OCTOPUS DATA SOLUTIONS",
         "link": "https://www.linkedin.com/in/nicol%C3%A1sstanko/?isSelfProfile=true",
-        "foto": null,
+        "foto": "/equipos/fotos/18-nicolas-stanko.webp",
         "aporte": null
       },
       {
@@ -815,7 +815,7 @@
         "estudia": "UM",
         "trabaja": "UDELAR",
         "link": "https://www.linkedin.com/in/pablo-maurente-635313204/",
-        "foto": null,
+        "foto": "/equipos/fotos/18-pablo-maurente.webp",
         "aporte": "preprocesamiento del dataset bcs y entrenamiento de los modelos de visión"
       },
       {
@@ -857,7 +857,7 @@
         "estudia": "UDE",
         "trabaja": "AYAX - Toyota",
         "link": "https://www.linkedin.com/in/emilio-muniz18/",
-        "foto": null,
+        "foto": "/equipos/fotos/19-emilio-muniz.webp",
         "aporte": null
       },
       {
@@ -865,7 +865,7 @@
         "estudia": "Universidad de la República",
         "trabaja": "EverPass Media",
         "link": "https://www.linkedin.com/in/gaston-martinez/",
-        "foto": null,
+        "foto": "/equipos/fotos/19-gaston-martinez.webp",
         "aporte": "mvp del navegador asistido y deploy de la api en railway y tenki"
       },
       {
@@ -873,7 +873,7 @@
         "estudia": null,
         "trabaja": "Crowd Intelligence",
         "link": "https://www.linkedin.com/in/agustin-gomez-b65975211/",
-        "foto": null,
+        "foto": "/equipos/fotos/19-agustin-gomez.webp",
         "aporte": "app desktop y api: interpretación de pedidos, prompts y verificación de urls"
       }
     ]
@@ -901,7 +901,7 @@
         "estudia": "UdelaR",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/martín-trigo-775696358?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-        "foto": null,
+        "foto": "/equipos/fotos/20-martin-trigo.webp",
         "aporte": "entrevistador vocacional con llm, devolución riasec, tests y deploy en vercel"
       },
       {
@@ -909,7 +909,7 @@
         "estudia": "UM",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/santiago-muñoz-5b1722441?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-        "foto": null,
+        "foto": "/equipos/fotos/20-santiago-munoz.webp",
         "aporte": "motor de perfil riasec, entrevista inicial y preview aislado sin supabase"
       },
       {
@@ -917,7 +917,7 @@
         "estudia": "Udelar",
         "trabaja": null,
         "link": "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
-        "foto": null,
+        "foto": "/equipos/fotos/20-benjamin-maccio.webp",
         "aporte": "landing, dónde estudiar con programas reales, navegación y accesibilidad"
       }
     ]
@@ -950,7 +950,7 @@
         "estudia": "FING - UDELAR",
         "trabaja": "Effectus Software",
         "link": "https://www.linkedin.com/in/nicolas-perez-quintero",
-        "foto": null,
+        "foto": "/equipos/fotos/21-nicolas-perez-quintero.webp",
         "aporte": "búsqueda de lugares, tarjetas con foto, onboarding animado y perfil del viajero"
       },
       {
@@ -958,7 +958,7 @@
         "estudia": "FING - UDELAR",
         "trabaja": "KSI Vision",
         "link": "https://www.linkedin.com/in/tiago-benedetto",
-        "foto": null,
+        "foto": "/equipos/fotos/21-tiago-benedetto.webp",
         "aporte": "agente con avisos de cercanía, traductor con elevenlabs y reloj simulado"
       },
       {
@@ -966,7 +966,7 @@
         "estudia": "FING - UDELAR",
         "trabaja": "KSI Vision",
         "link": "https://www.linkedin.com/in/lucas-melo-zilli",
-        "foto": null,
+        "foto": "/equipos/fotos/21-lucas-melo.webp",
         "aporte": "traductor conversacional, cámara a pantalla completa y pwa instalable"
       }
     ]
@@ -994,7 +994,7 @@
         "estudia": "ORT",
         "trabaja": "Ternium",
         "link": "https://linkedin.com/in/manuelgrana/",
-        "foto": null,
+        "foto": "/equipos/fotos/22-manuel-grana.webp",
         "aporte": "prototipo con trailbase, agente cofundador, validación de hipótesis y frontend"
       },
       {
@@ -1002,7 +1002,7 @@
         "estudia": "ORT",
         "trabaja": "Jinkanna",
         "link": "https://www.linkedin.com/in/francobonavita312003/",
-        "foto": null,
+        "foto": "/equipos/fotos/22-franco-bonavita.webp",
         "aporte": null
       },
       {
@@ -1010,7 +1010,7 @@
         "estudia": "ORT",
         "trabaja": "Above Software",
         "link": "https://www.linkedin.com/in/enzoizquierdod%C3%ADaz/",
-        "foto": null,
+        "foto": "/equipos/fotos/22-enzo-izquierdo.webp",
         "aporte": null
       }
     ]
@@ -1038,7 +1038,7 @@
         "estudia": null,
         "trabaja": "Tenaris",
         "link": "https://uy.linkedin.com/in/iv%C3%A1n-guchin-097833319/en",
-        "foto": null,
+        "foto": "/equipos/fotos/23-ivan-guchin.webp",
         "aporte": "marca viveri, rediseño v2 con login de google y deck del pitch en /pitch"
       },
       {
@@ -1046,7 +1046,7 @@
         "estudia": null,
         "trabaja": "Basf",
         "link": "https://uy.linkedin.com/in/francisco-carbajal-59b389248",
-        "foto": null,
+        "foto": "/equipos/fotos/23-francisco-carbajal.webp",
         "aporte": "scraper de supermercados, edge functions, carrito de ta-ta y adrs"
       },
       {
@@ -1054,7 +1054,7 @@
         "estudia": null,
         "trabaja": "Oracle",
         "link": "https://uy.linkedin.com/in/camilo-aguiar-332107264",
-        "foto": null,
+        "foto": "/equipos/fotos/23-camilo-aguiar.webp",
         "aporte": "frontend en react: menú, lista de compras con precios, chat y edge functions"
       }
     ]
@@ -1083,7 +1083,7 @@
         "estudia": "UM",
         "trabaja": "Pyxis",
         "link": "https://www.linkedin.com/in/felipe-perdomo-636a96208",
-        "foto": null,
+        "foto": "/equipos/fotos/24-felipe-perdomo.webp",
         "aporte": "capa llm agnóstica con groq, triage, invitaciones y avisos al equipo"
       },
       {
@@ -1091,7 +1091,7 @@
         "estudia": "UM",
         "trabaja": "Qualabs",
         "link": "https://www.linkedin.com/in/ssoutodeleon",
-        "foto": null,
+        "foto": "/equipos/fotos/24-santiago-souto.webp",
         "aporte": "web en next.js y backend en python: auth por teléfono, pacientes y evals"
       },
       {
@@ -1134,7 +1134,7 @@
         "estudia": "UDE",
         "trabaja": "-",
         "link": "https://www.linkedin.com/in/emiliano-montone-maidana-84b264224/?isSelfProfile=true",
-        "foto": null,
+        "foto": "/equipos/fotos/25-emiliano-montone.webp",
         "aporte": "frontend completo con shadcn/ui y modo mock, y rediseño del agente de compras"
       },
       {
@@ -1178,7 +1178,7 @@
         "estudia": "ORT",
         "trabaja": "Entraste",
         "link": "https://www.linkedin.com/in/santiagososa-dev/",
-        "foto": null,
+        "foto": "/equipos/fotos/26-santiago-sosa.webp",
         "aporte": "frontend en next.js: carriles del día, mapa de estrés, ui ascii e ingestas"
       },
       {
@@ -1186,7 +1186,7 @@
         "estudia": "ORT",
         "trabaja": "Endava",
         "link": "https://www.linkedin.com/in/jplangone/",
-        "foto": null,
+        "foto": "/equipos/fotos/26-joaquin-piedra.webp",
         "aporte": null
       },
       {
@@ -1194,7 +1194,7 @@
         "estudia": "ORT",
         "trabaja": "Satelites on fire",
         "link": "https://www.linkedin.com/in/renzodemarco--",
-        "foto": null,
+        "foto": "/equipos/fotos/26-renzo-de-marco.webp",
         "aporte": "login con google, oauth de calendar, slack, github y linear, y cron del agente"
       }
     ]
@@ -1223,7 +1223,7 @@
         "estudia": "Udelar",
         "trabaja": "Mercado Libre",
         "link": "https://www.linkedin.com/in/juan-pablo-borja",
-        "foto": null,
+        "foto": "/equipos/fotos/27-juan-pablo-borja.webp",
         "aporte": null
       },
       {
@@ -1231,7 +1231,7 @@
         "estudia": "Udelar",
         "trabaja": "Neocoast",
         "link": "https://www.linkedin.com/in/federico-dallo",
-        "foto": null,
+        "foto": "/equipos/fotos/27-federico-dallo.webp",
         "aporte": "backend de operación, tests de base de datos, seeds, consola en next.js y pitch"
       },
       {
@@ -1277,7 +1277,7 @@
         "estudia": null,
         "trabaja": "OrderEAT",
         "link": "https://www.linkedin.com/in/salvador-secco-2955a5223/?isSelfProfile=true",
-        "foto": null,
+        "foto": "/equipos/fotos/28-salvador-secco.webp",
         "aporte": "panel, worker y agente: pedidos de cambios, vistas previas y performance"
       },
       {
@@ -1285,7 +1285,7 @@
         "estudia": "ORT",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/juan-pablo-benitez-gastaldi-753138352/",
-        "foto": null,
+        "foto": "/equipos/fotos/28-juan-pablo-benitez.webp",
         "aporte": "bot de telegram, cola y pipeline del worker, panel y esquema en supabase"
       },
       {
@@ -1293,7 +1293,7 @@
         "estudia": "ORT",
         "trabaja": "OrderEAT",
         "link": "https://www.linkedin.com/in/facundomorena/",
-        "foto": null,
+        "foto": "/equipos/fotos/28-facundo-morena.webp",
         "aporte": null
       }
     ]
@@ -1426,7 +1426,7 @@
         "estudia": "UM",
         "trabaja": null,
         "link": "https://uy.linkedin.com/in/sebaviglione",
-        "foto": null,
+        "foto": "/equipos/fotos/31-sebastian-viglione.webp",
         "aporte": "frontend, landing y servidor mcp para cotizar, con diagrama de precios"
       },
       {
@@ -1468,7 +1468,7 @@
         "estudia": "UDELAR",
         "trabaja": "Anima Tec",
         "link": "https://www.linkedin.com/in/cesar-canessa-a6b587b5?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-        "foto": null,
+        "foto": "/equipos/fotos/32-cesar-canessa.webp",
         "aporte": null
       },
       {
@@ -1484,7 +1484,7 @@
         "estudia": "ORT",
         "trabaja": "Bamboo Payments",
         "link": "https://www.linkedin.com/in/mauricio-parodi-a613272b9/",
-        "foto": null,
+        "foto": "/equipos/fotos/32-mauricio-parodi.webp",
         "aporte": "agente y grupos, modos motriz y disgrafía por voz, pdf y ci en github actions"
       }
     ]
