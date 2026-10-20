@@ -108,7 +108,7 @@ function shotLabel(team: Team) {
 function Person({ p }: { p: Builder }) {
   const linkedin = p.link?.includes("linkedin.com");
   return (
-    <li className="eq-person">
+    <li className={`eq-person ${p.link ? "eq-person-linked" : ""}`}>
       <div className="eq-photo">
         {p.foto ? (
           // eslint-disable-next-line @next/next/no-img-element
