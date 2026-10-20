@@ -232,9 +232,9 @@
 .eq-person {
   position: relative;
   display: flex;
-  gap: 14px;
+  gap: 18px;
   align-items: flex-start;
-  padding: 14px 24px;
+  padding: 18px 24px;
   border-right: 1px solid var(--line);
 }
 .eq-person:last-child {
@@ -244,12 +244,12 @@
   display: grid;
   place-items: center;
   flex: none;
-  width: 48px;
-  height: 48px;
+  width: 120px;
+  height: 120px;
   overflow: hidden;
   background: var(--surface-2);
   font-family: var(--font-display-stack);
-  font-size: 17px;
+  font-size: 34px;
   color: var(--muted);
 }
 .eq-photo img {
@@ -349,6 +349,10 @@
   }
   .eq-person:last-child {
     border-bottom: 0;
+  }
+  .eq-photo {
+    width: 96px;
+    height: 96px;
   }
 }
 @media (max-width: 600px) {
