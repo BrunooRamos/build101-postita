@@ -22,21 +22,24 @@
         "estudia": "UM",
         "trabaja": null,
         "link": "https://linkedin.com/in/rosario-stoppiello",
-        "foto": null
+        "foto": null,
+        "aporte": "frontend en next.js: examen de rodilla, tensiómetro interactivo y avatar 3d en la consulta"
       },
       {
         "nombre": "Martina Berrutti",
         "estudia": "UM",
         "trabaja": null,
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "motor de voz y detectores del diálogo médico, con corpus de frases y tests en typescript"
       },
       {
         "nombre": "Romina Lubniski",
         "estudia": "UM",
         "trabaja": null,
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "avatar 3d del paciente con talkinghead: lipsync, personalidades y examen de garganta"
       }
     ]
   },
@@ -64,21 +67,24 @@
         "estudia": "UM",
         "trabaja": "-",
         "link": "https://www.linkedin.com/in/joaquin-rodriguez-godoy",
-        "foto": null
+        "foto": null,
+        "aporte": "pantallas en react, generación de recetas con llm y alta del perfil por voz"
       },
       {
         "nombre": "Ignacio Tondo",
         "estudia": "UM",
         "trabaja": "DaMap",
         "link": "https://www.linkedin.com/in/itondo10/",
-        "foto": null
+        "foto": null,
+        "aporte": "motor de ia y grafo nutricional del server: prompts de recetas, franjas y evals"
       },
       {
         "nombre": "Martin Blanco",
         "estudia": null,
         "trabaja": null,
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "ui con tailwind v4 y shadcn, logo de la marca y endpoints de perfil y progreso"
       }
     ]
   },
@@ -111,21 +117,24 @@
         "estudia": "UM",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/diegomarin2805",
-        "foto": null
+        "foto": null,
+        "aporte": "visor 3d con modelos glb, generador de planos, base del proyecto y tests e2e"
       },
       {
         "nombre": "Juan Martin Noguez",
         "estudia": "UdelaR",
         "trabaja": null,
         "link": "https://uy.linkedin.com/in/juan-martín-noguez-berdún-158837321",
-        "foto": null
+        "foto": null,
+        "aporte": "base de conocimiento, guía del experto, recepción y avisos de seguridad con ia"
       },
       {
         "nombre": "Ignacio Iglesia",
         "estudia": "UM",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/ignacio-iglesia-2271733a2/",
-        "foto": null
+        "foto": null,
+        "aporte": "pantallas de la app en next.js, supabase, voz y vista previa de los links"
       }
     ]
   },
@@ -157,21 +166,24 @@
         "estudia": "UM",
         "trabaja": "IBM",
         "link": "https://www.linkedin.com/in/franco-fontanarossa-6b135230a/",
-        "foto": null
+        "foto": null,
+        "aporte": "ingesta de la pulsera, simulador de biometría, reglas clínicas y endpoints"
       },
       {
         "nombre": "Juan Pedro Guerra",
         "estudia": "UM",
         "trabaja": "SONDA",
         "link": "https://www.linkedin.com/in/juanpedroguerra/",
-        "foto": null
+        "foto": null,
+        "aporte": "web de la familia y del médico, perfil que aprende, bitácora y marca neuro"
       },
       {
         "nombre": "Guadalupe Carrasco",
         "estudia": "UM",
         "trabaja": "IBM",
         "link": "https://www.linkedin.com/in/guadalupe-c-a27200357",
-        "foto": null
+        "foto": null,
+        "aporte": "pipeline de transcripción y extracción, informe médico con ia y diseño v3.1"
       }
     ]
   },
@@ -198,21 +210,24 @@
         "estudia": "Udelar",
         "trabaja": "Tecla Academy, Covalent",
         "link": "https://www.linkedin.com/in/manuel-arocena-51985126b",
-        "foto": null
+        "foto": null,
+        "aporte": "agente de intención, guard de parámetros autorizados y vista agente del dashboard"
       },
       {
         "nombre": "Bruno Pallas",
         "estudia": "UdelaR",
         "trabaja": "Klevertax, CoacHub",
         "link": "https://uy.linkedin.com/in/bruno-pallas-nin-463ba029a",
-        "foto": null
+        "foto": null,
+        "aporte": "integración del protocolo ap2, persistencia de datos y flujo de pasajes aéreos"
       },
       {
         "nombre": "Facundo Sansalone",
         "estudia": "UM",
         "trabaja": "Facal, Covalent",
         "link": "https://www.linkedin.com/in/facundo-sansalone-grasso-5a8355322/",
-        "foto": null
+        "foto": null,
+        "aporte": "proxy y filtro de seguridad en python, dashboard con modo /demo y sus tests"
       }
     ]
   },
@@ -239,21 +254,24 @@
         "estudia": "Universidad de Montevideo",
         "trabaja": "Proyectos Freelance",
         "link": "https://www.linkedin.com/in/nicolas-tognola-335972303",
-        "foto": null
+        "foto": null,
+        "aporte": "bandeja hermes que archiva lecciones en la bóveda, plugin y detector de insights"
       },
       {
         "nombre": "Alberto Ortolani",
         "estudia": null,
         "trabaja": "Asom Studio",
         "link": "https://www.linkedin.com/in/alberto-ortolani-software-developer/",
-        "foto": null
+        "foto": null,
+        "aporte": "herramientas para medir cómo usa claude el equipo y bots en vivo en la ui"
       },
       {
         "nombre": "Nicolas Sere",
         "estudia": "Universidad de Montevideo",
         "trabaja": "SunnyData",
         "link": "https://www.linkedin.com/in/nicolas-sere-12970b273/",
-        "foto": null
+        "foto": null,
+        "aporte": "api en python, lectura de la bóveda por git, hooks del agente e infra de deploy"
       }
     ]
   },
@@ -279,21 +297,24 @@
         "estudia": "UM",
         "trabaja": "Struxto",
         "link": "https://www.linkedin.com/in/manuel-anselmi-848420242/",
-        "foto": null
+        "foto": null,
+        "aporte": "agentes de ia: discovery con haiku, agente de aprendizaje y corrida nocturna"
       },
       {
         "nombre": "Nicolas Barboza",
         "estudia": "UM - ORT",
         "trabaja": "TecsPal",
         "link": "https://www.linkedin.com/in/nicolasbarbozadarosa/",
-        "foto": null
+        "foto": null,
+        "aporte": "discovery y outreach en scout, playbook personal y guion del pitch"
       },
       {
         "nombre": "Santiago Lizarazu",
         "estudia": "ORT",
         "trabaja": "Tribu",
         "link": "https://www.linkedin.com/in/santiago-lizarazu/",
-        "foto": null
+        "foto": null,
+        "aporte": "frontend: ficha con anillos y radar, tablero del pipeline, playbook y mail real"
       }
     ]
   },
@@ -321,21 +342,24 @@
         "estudia": "ORT",
         "trabaja": "GWM Advisory Services",
         "link": "https://www.linkedin.com/in/guido-vizoso-70bb98150/?isSelfProfile=true",
-        "foto": null
+        "foto": null,
+        "aporte": null
       },
       {
         "nombre": "Francisco Cuadra",
         "estudia": "ORT",
         "trabaja": "Mercado Libre",
         "link": "https://www.linkedin.com/in/francisco-cuadra/",
-        "foto": null
+        "foto": null,
+        "aporte": "api y web del editor de video: pipeline editorial, guiones y exportes pro"
       },
       {
         "nombre": "Joaquin Hernandez",
         "estudia": "ORT",
         "trabaja": "Drivo",
         "link": "https://www.linkedin.com/in/joaquinhernandez/overlay/contact-info/",
-        "foto": null
+        "foto": null,
+        "aporte": "landing en astro de hooksage: bilingüe, planes de precios, waitlist y videos"
       }
     ]
   },
@@ -365,21 +389,24 @@
         "estudia": null,
         "trabaja": null,
         "link": "https://www.linkedin.com/in/santiabasolo/",
-        "foto": null
+        "foto": null,
+        "aporte": "panel del propietario en next.js, app de ios en swift y bot de whatsapp"
       },
       {
         "nombre": "Ignacio Azaretto Soler",
         "estudia": null,
         "trabaja": null,
         "link": "https://www.linkedin.com/in/ignacio-azaretto-9699721a7/",
-        "foto": null
+        "foto": null,
+        "aporte": "guía de preguntas del perfilado y adaptación al esquema de supabase"
       },
       {
         "nombre": "Gabriel Villaverde",
         "estudia": null,
         "trabaja": null,
         "link": "https://www.linkedin.com/in/villaverdegabriel/",
-        "foto": null
+        "foto": null,
+        "aporte": "perfilado con citas verificadas, casos sintéticos y onboarding del propietario"
       }
     ]
   },
@@ -407,21 +434,24 @@
         "estudia": null,
         "trabaja": "Horizon AI",
         "link": "https://www.linkedin.com/in/juan-estape-979a5a248/",
-        "foto": null
+        "foto": null,
+        "aporte": "app mobile y api: planificador de tours, scout en la app y ubicación por gps"
       },
       {
         "nombre": "Tomas Zelaschi",
         "estudia": null,
         "trabaja": "Frontline",
         "link": "https://www.linkedin.com/in/tom%C3%A1s-zelaschi-99bb12258/",
-        "foto": null
+        "foto": null,
+        "aporte": "voz por bluetooth, tour interior, traslados en transporte público y research"
       },
       {
         "nombre": "Josefina Cardozo",
         "estudia": "Udelar",
         "trabaja": "Promtior",
         "link": "https://linkedin.com/in/josefina-cardozo-094a5725a",
-        "foto": null
+        "foto": null,
+        "aporte": "generador de tours con eventos y clima, ui del mundo scout y pestaña tours"
       }
     ]
   },
@@ -447,21 +477,24 @@
         "estudia": "UM",
         "trabaja": "Dominion",
         "link": "https://www.linkedin.com/in/guillermo-storace-alfaro/",
-        "foto": null
+        "foto": null,
+        "aporte": "backend en python: llamadas grabadas, sms por boleto y pin en la ventanilla"
       },
       {
         "nombre": "Phillip Bowles",
         "estudia": "UM",
         "trabaja": "Blend 360",
         "link": "https://www.linkedin.com/in/phillip-bowles-/",
-        "foto": null
+        "foto": null,
+        "aporte": "agente de voz en elevenlabs, tools del backend, deploy en railway y ui del crm"
       },
       {
         "nombre": "Manuel Perez",
         "estudia": "UM",
         "trabaja": "Blend 360",
         "link": "https://www.linkedin.com/in/manuel-p%C3%A9rez-2713b2244/",
-        "foto": null
+        "foto": null,
+        "aporte": "harness de agentes y revisión de prs, hooks y mocks del /demo en la web"
       }
     ]
   },
@@ -494,21 +527,24 @@
         "estudia": "ORT",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/bruno-colo/",
-        "foto": null
+        "foto": null,
+        "aporte": "casos de demo, panel web, tests del detector, docker y guion del pitch"
       },
       {
         "nombre": "Pedro Morga",
         "estudia": "ORT",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/pedro-morga-7a6057326/",
-        "foto": null
+        "foto": null,
+        "aporte": "telefonía con deepgram y reconexión, app android, analítica e integración"
       },
       {
         "nombre": "Matias Moser",
         "estudia": "ORT",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/matias-moser-992198433/",
-        "foto": null
+        "foto": null,
+        "aporte": "detector de estafas con haiku en streaming, reglas, alertas y casos de demo"
       }
     ]
   },
@@ -535,21 +571,24 @@
         "estudia": "FADU UDELAR",
         "trabaja": "Katei",
         "link": "https://kateiuy.lovable.app/",
-        "foto": null
+        "foto": null,
+        "aporte": "analista de nicho con gemini y respuestas al dueño para generar posts"
       },
       {
         "nombre": "Matías ramilo",
         "estudia": "FING UDELAR",
         "trabaja": "Light-IT",
         "link": "https://www.linkedin.com/in/mathias-ramilo?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-        "foto": null
+        "foto": null,
+        "aporte": "onboarding en next.js y whatsapp, brand brain y carruseles con gemini"
       },
       {
         "nombre": "Guido dinello",
         "estudia": "FING UDELAR",
         "trabaja": "Light-IT",
         "link": "https://www.linkedin.com/in/guido-dinello-48875b217?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-        "foto": null
+        "foto": null,
+        "aporte": "orquestador del backend, whatsapp con kapso, aprobación de posts y railway"
       }
     ]
   },
@@ -580,21 +619,24 @@
         "estudia": "UdelaR",
         "trabaja": "BitGarden",
         "link": "https://www.linkedin.com/in/brunoromerogarcia",
-        "foto": null
+        "foto": null,
+        "aporte": "ui de los modos voz, foto y cámara, y rediseño de la vista voz → señas"
       },
       {
         "nombre": "Juan Perrachon",
         "estudia": "UM",
         "trabaja": "Infoclub Soluciones",
         "link": "https://www.linkedin.com/in/jdperrachon/",
-        "foto": null
+        "foto": null,
+        "aporte": "extensión, clips del avatar curados y chequeos anatómicos de manos y brazos"
       },
       {
         "nombre": "German Ipes",
         "estudia": "UdelaR",
         "trabaja": "Perceptyx",
         "link": "https://www.linkedin.com/in/german-ipes/",
-        "foto": null
+        "foto": null,
+        "aporte": "monorepo base, avatar 3d vrm con 1350 señas lsa y búsqueda por similitud"
       }
     ]
   },
@@ -627,21 +669,24 @@
         "estudia": "UCU",
         "trabaja": "Oracle",
         "link": "https://www.linkedin.com/in/tomás-rama-896298274",
-        "foto": null
+        "foto": null,
+        "aporte": "visión híbrida yolo + claude por plato, detector yoloe e ids por posición"
       },
       {
         "nombre": "Jessica Sista",
         "estudia": "UdelaR",
         "trabaja": "Oracle",
         "link": "https://www.linkedin.com/in/jessica-sista/",
-        "foto": null
+        "foto": null,
+        "aporte": "visión de platos, avisos y métricas por telegram y base sqlite de eventos"
       },
       {
         "nombre": "Matias Hirschfeld",
         "estudia": "ORT",
         "trabaja": "Oracle",
         "link": "https://www.linkedin.com/in/matias-hirschfeld-cababie-ab3a2421b/",
-        "foto": null
+        "foto": null,
+        "aporte": "proveedor openai con decisions api, captura de cámara y docker del servidor"
       }
     ]
   },
@@ -669,21 +714,24 @@
         "estudia": null,
         "trabaja": "Neocoast",
         "link": "http://linkedin.com/in/alexisfriss/",
-        "foto": null
+        "foto": null,
+        "aporte": "dashboard estilo posthog, pipeline de análisis, deploy en netlify y pitch"
       },
       {
         "nombre": "Mauricio Friss de Kereki",
         "estudia": null,
         "trabaja": "Eagerworks",
         "link": "https://linkedin.com/in/mauriciofrissdekereki",
-        "foto": null
+        "foto": null,
+        "aporte": "orquestador en tenki, enjambre con eventos de posthog y loop de arreglos"
       },
       {
         "nombre": "Joaquín Becerra",
         "estudia": null,
         "trabaja": "Nareia Software",
         "link": "https://www.linkedin.com/in/joaquin-becerra-5b3388201/",
-        "foto": null
+        "foto": null,
+        "aporte": "tienda de demo, worker del enjambre en tenki y personas sintéticas kai y rosa"
       }
     ]
   },
@@ -710,21 +758,24 @@
         "estudia": "ORT",
         "trabaja": null,
         "link": "https://makinia.com",
-        "foto": null
+        "foto": null,
+        "aporte": null
       },
       {
         "nombre": "Juan Maria Andre",
         "estudia": "ORT",
         "trabaja": "Mercado Libre",
         "link": "https://www.linkedin.com/in/juan-maría-andré-0b1672332/",
-        "foto": null
+        "foto": null,
+        "aporte": null
       },
       {
         "nombre": "Paul Mc Cubbin",
         "estudia": "FCEA Udelar",
         "trabaja": "Grant Thornton",
         "link": "https://www.linkedin.com/in/paul-mc-cubbin-/",
-        "foto": null
+        "foto": null,
+        "aporte": "app next.js con agente claude, skills del método de edición y métricas con windsor"
       }
     ]
   },
@@ -756,21 +807,24 @@
         "estudia": "UM",
         "trabaja": "OCTOPUS DATA SOLUTIONS",
         "link": "https://www.linkedin.com/in/nicol%C3%A1sstanko/?isSelfProfile=true",
-        "foto": null
+        "foto": null,
+        "aporte": null
       },
       {
         "nombre": "Pablo Maurente",
         "estudia": "UM",
         "trabaja": "UDELAR",
         "link": "https://www.linkedin.com/in/pablo-maurente-635313204/",
-        "foto": null
+        "foto": null,
+        "aporte": "preprocesamiento del dataset bcs y entrenamiento de los modelos de visión"
       },
       {
         "nombre": "Pablo Dalchiele",
         "estudia": "UDELAR",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/pablo-dalchiele-gonzález-56bab935",
-        "foto": null
+        "foto": null,
+        "aporte": "núcleo en python (src/bcs), web, tests con fixtures y evaluación final g4"
       }
     ]
   },
@@ -803,21 +857,24 @@
         "estudia": "UDE",
         "trabaja": "AYAX - Toyota",
         "link": "https://www.linkedin.com/in/emilio-muniz18/",
-        "foto": null
+        "foto": null,
+        "aporte": null
       },
       {
         "nombre": "Gastón Martinez",
         "estudia": "Universidad de la República",
         "trabaja": "EverPass Media",
         "link": "https://www.linkedin.com/in/gaston-martinez/",
-        "foto": null
+        "foto": null,
+        "aporte": "mvp del navegador asistido y deploy de la api en railway y tenki"
       },
       {
         "nombre": "Agustín Gomez",
         "estudia": null,
         "trabaja": "Crowd Intelligence",
         "link": "https://www.linkedin.com/in/agustin-gomez-b65975211/",
-        "foto": null
+        "foto": null,
+        "aporte": "app desktop y api: interpretación de pedidos, prompts y verificación de urls"
       }
     ]
   },
@@ -844,21 +901,24 @@
         "estudia": "UdelaR",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/martín-trigo-775696358?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-        "foto": null
+        "foto": null,
+        "aporte": "entrevistador vocacional con llm, devolución riasec, tests y deploy en vercel"
       },
       {
         "nombre": "Santiago Muñoz",
         "estudia": "UM",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/santiago-muñoz-5b1722441?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-        "foto": null
+        "foto": null,
+        "aporte": "motor de perfil riasec, entrevista inicial y preview aislado sin supabase"
       },
       {
         "nombre": "Benjamin Macció",
         "estudia": "Udelar",
         "trabaja": null,
         "link": "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
-        "foto": null
+        "foto": null,
+        "aporte": "landing, dónde estudiar con programas reales, navegación y accesibilidad"
       }
     ]
   },
@@ -890,21 +950,24 @@
         "estudia": "FING - UDELAR",
         "trabaja": "Effectus Software",
         "link": "https://www.linkedin.com/in/nicolas-perez-quintero",
-        "foto": null
+        "foto": null,
+        "aporte": "búsqueda de lugares, tarjetas con foto, onboarding animado y perfil del viajero"
       },
       {
         "nombre": "Tiago Benedetto",
         "estudia": "FING - UDELAR",
         "trabaja": "KSI Vision",
         "link": "https://www.linkedin.com/in/tiago-benedetto",
-        "foto": null
+        "foto": null,
+        "aporte": "agente con avisos de cercanía, traductor con elevenlabs y reloj simulado"
       },
       {
         "nombre": "Lucas Melo",
         "estudia": "FING - UDELAR",
         "trabaja": "KSI Vision",
         "link": "https://www.linkedin.com/in/lucas-melo-zilli",
-        "foto": null
+        "foto": null,
+        "aporte": "traductor conversacional, cámara a pantalla completa y pwa instalable"
       }
     ]
   },
@@ -931,21 +994,24 @@
         "estudia": "ORT",
         "trabaja": "Ternium",
         "link": "https://linkedin.com/in/manuelgrana/",
-        "foto": null
+        "foto": null,
+        "aporte": "prototipo con trailbase, agente cofundador, validación de hipótesis y frontend"
       },
       {
         "nombre": "Franco Bonavita",
         "estudia": "ORT",
         "trabaja": "Jinkanna",
         "link": "https://www.linkedin.com/in/francobonavita312003/",
-        "foto": null
+        "foto": null,
+        "aporte": null
       },
       {
         "nombre": "Enzo Izquierdo",
         "estudia": "ORT",
         "trabaja": "Above Software",
         "link": "https://www.linkedin.com/in/enzoizquierdod%C3%ADaz/",
-        "foto": null
+        "foto": null,
+        "aporte": null
       }
     ]
   },
@@ -972,21 +1038,24 @@
         "estudia": null,
         "trabaja": "Tenaris",
         "link": "https://uy.linkedin.com/in/iv%C3%A1n-guchin-097833319/en",
-        "foto": null
+        "foto": null,
+        "aporte": "marca viveri, rediseño v2 con login de google y deck del pitch en /pitch"
       },
       {
         "nombre": "Francisco Carbajal",
         "estudia": null,
         "trabaja": "Basf",
         "link": "https://uy.linkedin.com/in/francisco-carbajal-59b389248",
-        "foto": null
+        "foto": null,
+        "aporte": "scraper de supermercados, edge functions, carrito de ta-ta y adrs"
       },
       {
         "nombre": "Camilo Aguiar",
         "estudia": null,
         "trabaja": "Oracle",
         "link": "https://uy.linkedin.com/in/camilo-aguiar-332107264",
-        "foto": null
+        "foto": null,
+        "aporte": "frontend en react: menú, lista de compras con precios, chat y edge functions"
       }
     ]
   },
@@ -1014,21 +1083,24 @@
         "estudia": "UM",
         "trabaja": "Pyxis",
         "link": "https://www.linkedin.com/in/felipe-perdomo-636a96208",
-        "foto": null
+        "foto": null,
+        "aporte": "capa llm agnóstica con groq, triage, invitaciones y avisos al equipo"
       },
       {
         "nombre": "Santiago Souto",
         "estudia": "UM",
         "trabaja": "Qualabs",
         "link": "https://www.linkedin.com/in/ssoutodeleon",
-        "foto": null
+        "foto": null,
+        "aporte": "web en next.js y backend en python: auth por teléfono, pacientes y evals"
       },
       {
         "nombre": "Erika Alvarez",
         "estudia": null,
         "trabaja": null,
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "backend y web: alertas, notificaciones, roles, invitaciones y keep-awake"
       }
     ]
   },
@@ -1062,21 +1134,24 @@
         "estudia": "UDE",
         "trabaja": "-",
         "link": "https://www.linkedin.com/in/emiliano-montone-maidana-84b264224/?isSelfProfile=true",
-        "foto": null
+        "foto": null,
+        "aporte": "frontend completo con shadcn/ui y modo mock, y rediseño del agente de compras"
       },
       {
         "nombre": "Guzman de Leon",
         "estudia": "ORT",
         "trabaja": "-",
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "compra por stock mínimo de punta a punta y pantalla depósito del stock"
       },
       {
         "nombre": "Claude Tissierre",
         "estudia": "-",
         "trabaja": "-",
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": null
       }
     ]
   },
@@ -1103,21 +1178,24 @@
         "estudia": "ORT",
         "trabaja": "Entraste",
         "link": "https://www.linkedin.com/in/santiagososa-dev/",
-        "foto": null
+        "foto": null,
+        "aporte": "frontend en next.js: carriles del día, mapa de estrés, ui ascii e ingestas"
       },
       {
         "nombre": "Joaquin Piedra",
         "estudia": "ORT",
         "trabaja": "Endava",
         "link": "https://www.linkedin.com/in/jplangone/",
-        "foto": null
+        "foto": null,
+        "aporte": null
       },
       {
         "nombre": "Renzo De Marco",
         "estudia": "ORT",
         "trabaja": "Satelites on fire",
         "link": "https://www.linkedin.com/in/renzodemarco--",
-        "foto": null
+        "foto": null,
+        "aporte": "login con google, oauth de calendar, slack, github y linear, y cron del agente"
       }
     ]
   },
@@ -1145,21 +1223,24 @@
         "estudia": "Udelar",
         "trabaja": "Mercado Libre",
         "link": "https://www.linkedin.com/in/juan-pablo-borja",
-        "foto": null
+        "foto": null,
+        "aporte": null
       },
       {
         "nombre": "Federico Dallo",
         "estudia": "Udelar",
         "trabaja": "Neocoast",
         "link": "https://www.linkedin.com/in/federico-dallo",
-        "foto": null
+        "foto": null,
+        "aporte": "backend de operación, tests de base de datos, seeds, consola en next.js y pitch"
       },
       {
         "nombre": "Zuo Heng Dai",
         "estudia": "Udelar",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/zuoheng-dai",
-        "foto": null
+        "foto": null,
+        "aporte": "despacho transaccional, consultas de estado en lenguaje natural y polling"
       }
     ]
   },
@@ -1196,21 +1277,24 @@
         "estudia": null,
         "trabaja": "OrderEAT",
         "link": "https://www.linkedin.com/in/salvador-secco-2955a5223/?isSelfProfile=true",
-        "foto": null
+        "foto": null,
+        "aporte": "panel, worker y agente: pedidos de cambios, vistas previas y performance"
       },
       {
         "nombre": "Juan Pablo Benítez",
         "estudia": "ORT",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/juan-pablo-benitez-gastaldi-753138352/",
-        "foto": null
+        "foto": null,
+        "aporte": "bot de telegram, cola y pipeline del worker, panel y esquema en supabase"
       },
       {
         "nombre": "Facundo Morena",
         "estudia": "ORT",
         "trabaja": "OrderEAT",
         "link": "https://www.linkedin.com/in/facundomorena/",
-        "foto": null
+        "foto": null,
+        "aporte": null
       }
     ]
   },
@@ -1237,21 +1321,24 @@
         "estudia": "FIUM",
         "trabaja": null,
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "protección de mail con gmail (apps script y oauth) y evaluación del asistente"
       },
       {
         "nombre": "Lara Stirling",
         "estudia": "FIUM",
         "trabaja": null,
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "app del abuelo con voz, botón de ayuda, escudo anti-estafas y web push"
       },
       {
         "nombre": "Felipe Lyonnet",
         "estudia": "FIUM",
         "trabaja": null,
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "panel de la familia: charla con ia, reglas, lugares y conexión de gmail"
       }
     ]
   },
@@ -1277,21 +1364,24 @@
         "estudia": "UM",
         "trabaja": null,
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "nueva visita con ficha por ia, historias para donantes y alta de usuarios"
       },
       {
         "nombre": "Camila Granato",
         "estudia": "Um",
         "trabaja": null,
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "identidad visual de rancho cero, roles de voluntario y coordinador y pitch"
       },
       {
         "nombre": "Luca Benites",
         "estudia": "Um",
         "trabaja": null,
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "portal de fundaciones, ranking, informe descargable y carga de audio"
       }
     ]
   },
@@ -1328,21 +1418,24 @@
         "estudia": "UM",
         "trabaja": null,
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "mejoras de la app, aviso de contradicciones y página cómo funciona la ia"
       },
       {
         "nombre": "Sebastián Viglione",
         "estudia": "UM",
         "trabaja": null,
         "link": "https://uy.linkedin.com/in/sebaviglione",
-        "foto": null
+        "foto": null,
+        "aporte": "frontend, landing y servidor mcp para cotizar, con diagrama de precios"
       },
       {
         "nombre": "Rafael Fuidio",
         "estudia": "UM",
         "trabaja": null,
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "matching de licitaciones, sugeridor de precios, chat del pliego y onboarding"
       }
     ]
   },
@@ -1375,21 +1468,24 @@
         "estudia": "UDELAR",
         "trabaja": "Anima Tec",
         "link": "https://www.linkedin.com/in/cesar-canessa-a6b587b5?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-        "foto": null
+        "foto": null,
+        "aporte": null
       },
       {
         "nombre": "Adrian Mircus",
         "estudia": "ORT",
         "trabaja": "NoctiLabs",
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "adaptador de prácticos con claude, verificador de ecuaciones y lectura por voz"
       },
       {
         "nombre": "Mauricio Parodi",
         "estudia": "ORT",
         "trabaja": "Bamboo Payments",
         "link": "https://www.linkedin.com/in/mauricio-parodi-a613272b9/",
-        "foto": null
+        "foto": null,
+        "aporte": "agente y grupos, modos motriz y disgrafía por voz, pdf y ci en github actions"
       }
     ]
   },
@@ -1416,21 +1512,24 @@
         "estudia": null,
         "trabaja": "Gary + Experiencia Inmobiliaria",
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "web en next.js: portada, flujo de creación de marca, corrida de noche y pitch"
       },
       {
         "nombre": "Juan Portas",
         "estudia": null,
         "trabaja": null,
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "entrevista por voz con elevenlabs, branderia con carrito y casos de demo"
       },
       {
         "nombre": "Rodrigo Portas",
         "estudia": null,
         "trabaja": null,
         "link": null,
-        "foto": null
+        "foto": null,
+        "aporte": "web del cliente con ia, compra de dominio por api de vercel y auditoría de costos"
       }
     ]
   }

@@ -114,6 +114,7 @@ function Person({ p }: { p: Builder }) {
             <span>trabaja</span> {p.trabaja}
           </p>
         ) : null}
+        {p.aporte ? <p className="eq-aporte">$ {p.aporte}</p> : null}
       </div>
       {p.link ? (
         <a className="eq-contact" href={p.link} target="_blank" rel="noopener noreferrer" aria-label={`${p.nombre} en ${linkedin ? "LinkedIn" : "la web"}`}>
