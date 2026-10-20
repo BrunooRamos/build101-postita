@@ -1,32 +1,37 @@
-import Link from "next/link";
 import { LinkedInIcon } from "../components/Founders";
 import { CopyLink } from "./CopyLink";
 import { ShotBox } from "./ShotBox";
-import { host, initials, slug, subtitle, title, type Builder, type Team } from "./data";
+import { host, initials, placeLabel, result, slug, subtitle, title, type Builder, type Team } from "./data";
 
 // Un equipo: número, producto y one-liner, captura del demo y los tres
-// builders. Se usa en la lista (/equipos, con ancla #07) y en la página propia
-// (/equipos/07).
+// builders. Vive en la lista (/equipos#07, que es el link que se comparte) y
+// también en la página propia (/equipos/07).
 export function TeamBlock({ team, heading = "h2" }: { team: Team; heading?: "h1" | "h2" }) {
   const n = slug(team);
   const H = heading;
   const sub = subtitle(team);
+  const place = result(team);
   // el video se reproduce en la ventanita; pitch y afiches quedan como link
   const videos = team.material.filter((m) => m.tipo === "video");
   const docs = team.material.filter((m) => m.tipo !== "video");
   return (
     <article id={n} className="eq-team" aria-labelledby={`eq-${n}`}>
       <header className="eq-head">
-        <Link href={`/equipos/${n}`} className="eq-num" aria-label={`equipo ${n}`}>
+        <a href={`/equipos#${n}`} className="eq-num" aria-label={`equipo ${n}`}>
           {n}
-        </Link>
+        </a>
         <div className="eq-titles">
           <H id={`eq-${n}`} className="eq-title">
             {title(team)}
           </H>
-          {sub ? <p className="eq-sub">// {sub}</p> : null}
+          {sub || place ? (
+            <p className="eq-sub">
+              {place ? <span className={`eq-place ${place.puesto !== null && place.puesto <= 3 ? "eq-place-win" : ""}`}>{placeLabel(place.puesto)}</span> : null}
+              {sub ? `// ${sub}` : null}
+            </p>
+          ) : null}
         </div>
-        <CopyLink path={`/equipos/${n}`} label={title(team)} />
+        <CopyLink path={`/equipos#${n}`} label={title(team)} />
       </header>
 
       <div className={`eq-body ${team.captura ? "" : "eq-body-noshot"}`}>
