@@ -640,8 +640,9 @@ async function main() {
     linesDeleted: commits.reduce((s, c) => s + c.deleted, 0),
     files: files.size,
     // git no alcanza para contar personas (laptops compartidas, cuentas del
-    // equipo, apodos): como mucho TEAM_SIZE por equipo
-    builders: [...people.values()].reduce((s, m) => s + Math.min(m.size, Number(TEAM_SIZE)), 0),
+    // equipo, apodos, gente que no commiteó): se usa la nómina, TEAM_SIZE por
+    // cada equipo que compite (la misma cuenta que /equipos)
+    builders: TEAMS_TOTAL * Number(TEAM_SIZE),
     repos: results.length,
     // los equipos que compiten, aunque no todos hayan compartido el repo
     teams: Math.max(TEAMS_TOTAL, new Set(results.map((r) => r.entry.equipo)).size),
