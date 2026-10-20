@@ -538,11 +538,6 @@ ol {
 .nav-links a:hover {
   color: var(--fg);
 }
-/* la sección en la que estás cuando no es la landing (hoy: /equipos) */
-.nav-links a[aria-current="page"] {
-  color: var(--fg);
-  background-size: 100% 1px;
-}
 .topnav-end {
   display: flex;
   align-items: center;

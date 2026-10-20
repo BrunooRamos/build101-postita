@@ -264,10 +264,7 @@
 }
 @supports (timeline-scope: --x) {
   body {
-    timeline-scope: --s-resultados, --s-evento, --s-cronograma, --s-sponsors, --s-contacto;
-  }
-  #resultados {
-    view-timeline-name: --s-resultados;
+    timeline-scope: --s-evento, --s-cronograma, --s-sponsors, --s-contacto;
   }
   #evento {
     view-timeline-name: --s-evento;
@@ -281,16 +278,11 @@
   #contacto {
     view-timeline-name: --s-contacto;
   }
-  #resultados,
   #evento,
   #cronograma,
   #sponsors,
   #contacto {
     view-timeline-inset: 30% 69%;
-  }
-  .nav-links a[href$="#resultados"] {
-    animation: nav-on linear none;
-    animation-timeline: --s-resultados;
   }
   .nav-links a[href$="#evento"] {
     animation: nav-on linear none;
