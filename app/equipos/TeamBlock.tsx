@@ -10,6 +10,9 @@ export function TeamBlock({ team, heading = "h2" }: { team: Team; heading?: "h1"
   const n = slug(team);
   const H = heading;
   const sub = subtitle(team);
+  // los videos se ven embebidos; pitch y afiches quedan como link
+  const videos = team.material.filter((m) => m.tipo === "video");
+  const docs = team.material.filter((m) => m.tipo !== "video");
   return (
     <article id={n} className="eq-team" aria-labelledby={`eq-${n}`}>
       <header className="eq-head">
@@ -46,7 +49,7 @@ export function TeamBlock({ team, heading = "h2" }: { team: Team; heading?: "h1"
                 <span>$ git</span> {host(r).replace(/^github\.com\//, "")} ↗
               </a>
             ))}
-            {team.material.map((m) => (
+            {docs.map((m) => (
               <a key={m.url} href={m.url} target="_blank" rel="noopener noreferrer" className="eq-link">
                 <span>$ ver</span> {m.tipo} ↗
               </a>
@@ -70,6 +73,18 @@ export function TeamBlock({ team, heading = "h2" }: { team: Team; heading?: "h1"
           </a>
         ) : null}
       </div>
+
+      {videos.map((m) => (
+        <div key={m.url} className="eq-video">
+          <iframe
+            src={m.url.replace(/\/view$/, "/preview")}
+            title={`video de ${title(team)}`}
+            allow="autoplay; fullscreen"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+      ))}
 
       <ul className="eq-people">
         {team.integrantes.map((p) => (
