@@ -175,13 +175,6 @@
   color: var(--fg);
 }
 
-.eq-group {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--line-2);
-}
-
 /* la captura del demo, en una ventana de navegador mínima */
 .eq-shot {
   display: block;
@@ -211,23 +204,48 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.eq-shot img {
+.eq-shot-media {
+  position: relative;
   display: block;
-  width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
 }
-
-/* video del equipo, a lo ancho */
-.eq-video {
-  aspect-ratio: 16 / 9;
-  border-bottom: 1px solid var(--line);
-  background: var(--surface);
-}
-.eq-video iframe {
+.eq-shot img,
+.eq-shot iframe {
   display: block;
   width: 100%;
   height: 100%;
   border: 0;
+  object-fit: cover;
+  object-position: top;
+}
+/* con video: la captura es el póster y el play lo reproduce en el marco */
+.eq-play {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.eq-play-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  padding: 12px 20px;
+  background: var(--action);
+  font-family: var(--font-mono-stack);
+  font-size: 14px;
+  color: var(--action-fg);
+  box-shadow: 0 10px 0 -4px var(--pixel);
+  transition: background 0.15s var(--ease-out), translate 0.2s var(--ease-rise);
+}
+.eq-play:hover .eq-play-btn,
+.eq-play:focus-visible .eq-play-btn {
+  background: var(--action-hover);
+  translate: -50% calc(-50% - 3px);
 }
 
 /* los builders */

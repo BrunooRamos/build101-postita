@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LinkedInIcon } from "../components/Founders";
 import { CopyLink } from "./CopyLink";
+import { ShotBox } from "./ShotBox";
 import { host, initials, slug, subtitle, title, type Builder, type Team } from "./data";
 
 // Un equipo: número, producto y one-liner, captura del demo y los tres
@@ -10,7 +11,7 @@ export function TeamBlock({ team, heading = "h2" }: { team: Team; heading?: "h1"
   const n = slug(team);
   const H = heading;
   const sub = subtitle(team);
-  // los videos se ven embebidos; pitch y afiches quedan como link
+  // el video se reproduce en la ventanita; pitch y afiches quedan como link
   const videos = team.material.filter((m) => m.tipo === "video");
   const docs = team.material.filter((m) => m.tipo !== "video");
   return (
@@ -55,36 +56,17 @@ export function TeamBlock({ team, heading = "h2" }: { team: Team; heading?: "h1"
               </a>
             ))}
           </div>
-          {team.fotoEquipo ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img className="eq-group" src={team.fotoEquipo} alt={`el equipo ${title(team)} en build 101`} width={1200} height={900} loading="lazy" />
-          ) : null}
         </div>
         {team.captura ? (
-          <a href={team.demo ?? undefined} target="_blank" rel="noopener noreferrer" className="eq-shot" tabIndex={-1} aria-hidden>
-            <span className="eq-shot-bar">
-              <i />
-              <i />
-              <i />
-              <span>{team.demo ? host(team.demo) : ""}</span>
-            </span>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={team.captura} alt="" width={1200} height={750} loading="lazy" />
-          </a>
+          <ShotBox
+            image={team.captura}
+            label={shotLabel(team)}
+            href={team.demo ?? docs[0]?.url ?? team.repos[0] ?? null}
+            video={videos[0] ? videos[0].url.replace(/\/view$/, "/preview") : null}
+            name={title(team)}
+          />
         ) : null}
       </div>
-
-      {videos.map((m) => (
-        <div key={m.url} className="eq-video">
-          <iframe
-            src={m.url.replace(/\/view$/, "/preview")}
-            title={`video de ${title(team)}`}
-            allow="autoplay; fullscreen"
-            allowFullScreen
-            loading="lazy"
-          />
-        </div>
-      ))}
 
       <ul className="eq-people">
         {team.integrantes.map((p) => (
@@ -93,6 +75,14 @@ export function TeamBlock({ team, heading = "h2" }: { team: Team; heading?: "h1"
       </ul>
     </article>
   );
+}
+
+/** Lo que dice la barrita de la ventana: de dónde sale la imagen. */
+function shotLabel(team: Team) {
+  if (team.demo) return host(team.demo);
+  if (team.material.some((m) => m.tipo === "video")) return "video del equipo";
+  if (team.material.length) return `${team.material[0].tipo} del equipo`;
+  return team.repos[0] ? host(team.repos[0]) : "";
 }
 
 function Person({ p }: { p: Builder }) {
