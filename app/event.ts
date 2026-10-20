@@ -79,6 +79,11 @@ export const EVENT_START_DATE = "2026-10-17";
 /** Apertura del sábado y cierre del domingo (16:00, con margen). */
 export const EVENT_KICKOFF_ISO = "2026-10-17T09:00:00-03:00";
 export const EVENT_END_ISO = "2026-10-18T16:00:00-03:00";
+/** Cierre de código del domingo: fin de la ventana de /wrapped (totales,
+ *  "a último minuto"); lo que se commiteó después no cuenta. El script de
+ *  ingesta lo lee de acá y se puede pisar en cada corrida con
+ *  `CIERRE=HH:MM npm run metrics`. */
+export const CODE_FREEZE_ISO = "2026-10-18T11:00:00-03:00";
 
 /** Horario de la sede (no se pernocta: la sede cierra de noche). */
 export const SCHEDULE = [
@@ -113,6 +118,8 @@ export function isApplyOpen(now = Date.now()) {
 
 /** Formato. */
 export const TEAM_SIZE = "3";
+/** Equipos que compiten (algunos no compartieron repo). */
+export const TEAMS_TOTAL = 33;
 
 /** Organizadores. El orden es el de la landing (participantes · mentores ·
  *  sponsors). Los mails se muestran solo en el footer. */

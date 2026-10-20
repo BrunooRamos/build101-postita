@@ -46,6 +46,10 @@ GOOGLE_SHEETS_WEBHOOK_URL=      # URL /exec del web app de Apps Script
 GOOGLE_SHEETS_WEBHOOK_SECRET=   # el mismo valor que SHARED_SECRET en el script
 ```
 
+## build 101 wrapped
+
+`/wrapped` son las tarjetas con los números de la hackathon (fuera del menú y del sitemap; la landing lo anuncia con una cinta arriba). Los datos salen de `npm run metrics`, que lee los repos de los equipos y escribe `wrapped/metrics.json`; la página lo importa al compilar. Cómo correrlo: [`docs/wrapped.md`](docs/wrapped.md).
+
 ## Easter eggs
 
 La terminal del hero es interactiva (`help`), el código Konami (o tipear `deploy`) dispara la lluvia matrix, `crash` en la terminal muestra un error falso que se arregla solo, y "quiero participar" corre un deploy falso antes de abrir el formulario.

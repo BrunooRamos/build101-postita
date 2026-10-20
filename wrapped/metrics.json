@@ -1,0 +1,581 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-20T01:26:55.124Z",
+  "window": {
+    "kickoff": "2026-10-17T12:00:00.000Z",
+    "freeze": "2026-10-18T14:00:00.000Z",
+    "venueClose": "21:00"
+  },
+  "totals": {
+    "commits": 4160,
+    "linesAdded": 1596235,
+    "linesDeleted": 248793,
+    "files": 10692,
+    "builders": 90,
+    "repos": 35,
+    "teams": 33,
+    "prs": 1070
+  },
+  "heatmap": {
+    "days": [
+      {
+        "label": "sáb 17",
+        "hours": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          20,
+          38,
+          78,
+          115,
+          143,
+          186,
+          225,
+          310,
+          382,
+          496,
+          244,
+          125,
+          113,
+          236
+        ]
+      },
+      {
+        "label": "dom 18",
+        "hours": [
+          262,
+          222,
+          141,
+          140,
+          122,
+          67,
+          34,
+          66,
+          82,
+          171,
+          142,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    ],
+    "max": 496
+  },
+  "peak": {
+    "day": "sáb 17",
+    "hour": 19,
+    "count": 496
+  },
+  "owl": {
+    "team": "SOLO",
+    "time": "04:59",
+    "message": "feat(frontend): add the Neitor AI landing page (#49)",
+    "afterHours": 1610
+  },
+  "earlyBird": {
+    "team": "UnifyAI",
+    "time": "05:03",
+    "message": "test: el filtro no juzga el eco del pedido del comprador en el history (RED)"
+  },
+  "lastMinute": {
+    "minutes": 15,
+    "count": 25,
+    "teams": 13
+  },
+  "sleepless": {
+    "team": "sayso",
+    "longestRestMin": 74,
+    "nightCommits": 203
+  },
+  "fastStart": {
+    "team": "Alargue.SI",
+    "minutes": 79
+  },
+  "monster": {
+    "team": "las chicas súper poderosas",
+    "lines": 47392,
+    "added": 46140,
+    "deleted": 1252,
+    "files": 378,
+    "message": "feat: integrate editorial engine and private product pilot"
+  },
+  "words": [
+    {
+      "word": "demo",
+      "count": 197
+    },
+    {
+      "word": "api",
+      "count": 164
+    },
+    {
+      "word": "solo",
+      "count": 163
+    },
+    {
+      "word": "voz",
+      "count": 126
+    },
+    {
+      "word": "real",
+      "count": 122
+    },
+    {
+      "word": "revisión",
+      "count": 101
+    },
+    {
+      "word": "pantalla",
+      "count": 98
+    },
+    {
+      "word": "server",
+      "count": 97
+    },
+    {
+      "word": "agente",
+      "count": 89
+    },
+    {
+      "word": "app",
+      "count": 89
+    },
+    {
+      "word": "plan",
+      "count": 89
+    },
+    {
+      "word": "cada",
+      "count": 86
+    },
+    {
+      "word": "datos",
+      "count": 86
+    },
+    {
+      "word": "web",
+      "count": 80
+    },
+    {
+      "word": "guía",
+      "count": 79
+    },
+    {
+      "word": "claude",
+      "count": 76
+    },
+    {
+      "word": "texto",
+      "count": 68
+    },
+    {
+      "word": "tenki",
+      "count": 64
+    },
+    {
+      "word": "check",
+      "count": 62
+    },
+    {
+      "word": "ficha",
+      "count": 61
+    },
+    {
+      "word": "panel",
+      "count": 60
+    },
+    {
+      "word": "vez",
+      "count": 60
+    },
+    {
+      "word": "plato",
+      "count": 58
+    },
+    {
+      "word": "prueba",
+      "count": 58
+    }
+  ],
+  "counters": [
+    {
+      "label": "fix",
+      "count": 475
+    },
+    {
+      "label": "wip",
+      "count": 7
+    },
+    {
+      "label": "final",
+      "count": 38
+    },
+    {
+      "label": "ahora sí",
+      "count": 0
+    },
+    {
+      "label": "por favor",
+      "count": 0
+    },
+    {
+      "label": "funciona",
+      "count": 14
+    },
+    {
+      "label": "emojis",
+      "count": 1
+    }
+  ],
+  "longest": {
+    "team": "Beyond The Bot",
+    "message": "Rodilla: la zona del dolor (el diagnóstico) queda en el servidor; examinar la rodilla abre el panel; temperatura solo con un pedido y su permiso cuenta; el generador respeta los ajustes y no se contradice; el paciente sin IA responde la historia de la rodilla",
+    "chars": 259
+  },
+  "shortest": {
+    "team": "Claude & Asociados",
+    "message": "aad",
+    "chars": 3
+  },
+  "funny": [],
+  "ai": {
+    "coauthored": 3586,
+    "total": 4160,
+    "byAgent": [
+      {
+        "agent": "claude",
+        "count": 3585
+      },
+      {
+        "agent": "cursor",
+        "count": 1
+      }
+    ]
+  },
+  "providers": [
+    {
+      "name": "anthropic",
+      "teams": 19
+    },
+    {
+      "name": "gemini",
+      "teams": 9
+    },
+    {
+      "name": "mcp",
+      "teams": 5
+    },
+    {
+      "name": "openai",
+      "teams": 4
+    },
+    {
+      "name": "elevenlabs",
+      "teams": 3
+    },
+    {
+      "name": "hugging face",
+      "teams": 3
+    },
+    {
+      "name": "ai sdk",
+      "teams": 2
+    },
+    {
+      "name": "deepseek",
+      "teams": 1
+    }
+  ],
+  "models": [
+    {
+      "name": "claude-sonnet-5-5",
+      "teams": 17
+    },
+    {
+      "name": "claude-haiku-5-5",
+      "teams": 16
+    },
+    {
+      "name": "claude-opus-5-5",
+      "teams": 11
+    },
+    {
+      "name": "gpt-6-luna",
+      "teams": 5
+    },
+    {
+      "name": "eleven_flash_v2_5",
+      "teams": 4
+    },
+    {
+      "name": "gpt-4o-mini-transcribe",
+      "teams": 4
+    },
+    {
+      "name": "claude-fable-5-1",
+      "teams": 3
+    },
+    {
+      "name": "eleven_multilingual_v2",
+      "teams": 3
+    }
+  ],
+  "languages": [
+    {
+      "name": "typescript",
+      "pct": 57
+    },
+    {
+      "name": "python",
+      "pct": 21.8
+    },
+    {
+      "name": "html",
+      "pct": 10
+    },
+    {
+      "name": "javascript",
+      "pct": 8.1
+    },
+    {
+      "name": "css",
+      "pct": 2
+    },
+    {
+      "name": "shell",
+      "pct": 0.4
+    },
+    {
+      "name": "otros",
+      "pct": 0.7
+    }
+  ],
+  "frameworks": [
+    {
+      "name": "react",
+      "teams": 28
+    },
+    {
+      "name": "next.js",
+      "teams": 20
+    },
+    {
+      "name": "tailwind",
+      "teams": 20
+    },
+    {
+      "name": "shadcn/ui",
+      "teams": 14
+    },
+    {
+      "name": "fastapi",
+      "teams": 9
+    },
+    {
+      "name": "supabase",
+      "teams": 8
+    },
+    {
+      "name": "vite",
+      "teams": 7
+    },
+    {
+      "name": "drizzle",
+      "teams": 3
+    }
+  ],
+  "teams": [
+    {
+      "team": "sayso",
+      "commits": 361,
+      "finalista": false
+    },
+    {
+      "team": "GrecIA",
+      "commits": 244,
+      "finalista": false
+    },
+    {
+      "team": "3 tokens",
+      "commits": 240,
+      "finalista": false
+    },
+    {
+      "team": "Delta",
+      "commits": 200,
+      "finalista": false
+    },
+    {
+      "team": "equipo 27",
+      "commits": 199,
+      "finalista": false
+    },
+    {
+      "team": "Luxis",
+      "commits": 179,
+      "finalista": false
+    },
+    {
+      "team": "Beyond The Bot",
+      "commits": 176,
+      "finalista": false
+    },
+    {
+      "team": "UnifyAI",
+      "commits": 175,
+      "finalista": false
+    },
+    {
+      "team": "Grupo numero 502",
+      "commits": 165,
+      "finalista": false
+    },
+    {
+      "team": "cercania",
+      "commits": 155,
+      "finalista": false
+    },
+    {
+      "team": "furIA",
+      "commits": 146,
+      "finalista": false
+    },
+    {
+      "team": "JAM",
+      "commits": 145,
+      "finalista": false
+    },
+    {
+      "team": "equipo 18",
+      "commits": 143,
+      "finalista": false
+    },
+    {
+      "team": "Claude & Asociados",
+      "commits": 142,
+      "finalista": false
+    },
+    {
+      "team": "equipo 33",
+      "commits": 138,
+      "finalista": false
+    },
+    {
+      "team": "TJJ Tech",
+      "commits": 126,
+      "finalista": false
+    },
+    {
+      "team": "Waven",
+      "commits": 112,
+      "finalista": false
+    },
+    {
+      "team": "BigO",
+      "commits": 106,
+      "finalista": false
+    },
+    {
+      "team": "Hookia",
+      "commits": 103,
+      "finalista": false
+    },
+    {
+      "team": "b&niks",
+      "commits": 102,
+      "finalista": false
+    },
+    {
+      "team": "walt",
+      "commits": 99,
+      "finalista": false
+    },
+    {
+      "team": "viveri",
+      "commits": 92,
+      "finalista": false
+    },
+    {
+      "team": "Scout",
+      "commits": 89,
+      "finalista": false
+    },
+    {
+      "team": "Los Top Globales",
+      "commits": 88,
+      "finalista": false
+    },
+    {
+      "team": "TokenMaxxers",
+      "commits": 69,
+      "finalista": false
+    },
+    {
+      "team": "LUMAC",
+      "commits": 64,
+      "finalista": false
+    },
+    {
+      "team": "LIF",
+      "commits": 61,
+      "finalista": false
+    },
+    {
+      "team": "SOLO",
+      "commits": 60,
+      "finalista": false
+    },
+    {
+      "team": "Sin Dormir S.A.",
+      "commits": 50,
+      "finalista": false
+    },
+    {
+      "team": "equipo 32",
+      "commits": 46,
+      "finalista": false
+    },
+    {
+      "team": "las chicas súper poderosas",
+      "commits": 44,
+      "finalista": false
+    },
+    {
+      "team": "Alargue.SI",
+      "commits": 33,
+      "finalista": false
+    },
+    {
+      "team": "trailbase",
+      "commits": 8,
+      "finalista": false
+    }
+  ],
+  "balanced": {
+    "team": "Waven",
+    "commits": 112,
+    "shares": [
+      39,
+      32,
+      29
+    ]
+  }
+}
