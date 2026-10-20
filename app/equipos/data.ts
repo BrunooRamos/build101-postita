@@ -10,6 +10,8 @@ export type Builder = {
   estudia: string | null;
   trabaja: string | null;
   link: string | null;
+  /** Qué hizo en el proyecto, sacado de sus commits. */
+  aporte?: string | null;
   /** /equipos/fotos/<archivo>; sin foto se muestran las iniciales. */
   foto: string | null;
 };
