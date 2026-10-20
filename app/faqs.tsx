@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import {
   APPLY_CLOSED_MESSAGE,
-  APPLY_SELECTION_MESSAGE,
   APPLY_DEADLINE,
   APPLY_DEADLINE_TIME,
   APPLY_OPEN,
@@ -40,7 +39,7 @@ export const FAQS: FaqItem[] = [
   {
     q: "¿inscribirme confirma mi lugar?",
     aText:
-      "no. la inscripción nos permite conocerte. la participación queda sujeta a selección y confirmación explícita del equipo organizador, y te escribimos por mail cuando termine la selección.",
+      "no. la inscripción nos permite conocerte. la participación queda sujeta a selección y confirmación explícita del equipo organizador.",
   },
   {
     q: "¿puedo anotarme sin un equipo completo?",
@@ -52,7 +51,7 @@ export const FAQS: FaqItem[] = [
     q: "¿hasta cuándo me puedo inscribir?",
     aText: APPLY_OPEN
       ? `hasta el ${APPLY_DEADLINE} a las ${APPLY_DEADLINE_TIME} (hora de uruguay). los cupos son limitados.`
-      : `${APPLY_CLOSED_MESSAGE} ${APPLY_SELECTION_MESSAGE}`,
+      : APPLY_CLOSED_MESSAGE,
     a: APPLY_OPEN ? (
       <>
         hasta el {APPLY_DEADLINE} a las {APPLY_DEADLINE_TIME} (hora de uruguay). los cupos son limitados:{" "}

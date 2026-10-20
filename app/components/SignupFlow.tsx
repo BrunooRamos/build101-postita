@@ -508,7 +508,6 @@ export function SignupFlow({ mode }: { mode: Mode }) {
       >
         <div className="state state-error" role="status">
           <p className="label">inscripciones cerradas</p>
-          <p>Si ya te inscribiste, te escribimos por mail cuando termine la selección.</p>
           <div className="state-actions">
             <Link href="/" className="btn btn-ghost">
               volver al sitio

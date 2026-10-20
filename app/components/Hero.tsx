@@ -5,7 +5,6 @@ import { PixelBlocks, PIXELS_HERO } from "./PixelBlocks";
 import {
   APPLY_DEADLINE_FULL,
   APPLY_OPEN,
-  APPLY_SELECTION_MESSAGE,
   EVENT_DATES,
   EVENT_START_DATE,
   PARTICIPANTS_EMAIL,
@@ -76,15 +75,13 @@ export function Hero() {
                 o hablá con Ramiro ↗
               </a>
             </div>
-            <p className="fine">
-              {APPLY_OPEN ? (
-                <>
-                  Inscribirte no garantiza un lugar.
-                  <br />
-                  La participación queda sujeta a selección y confirmación del equipo.
-                </>
-              ) : APPLY_SELECTION_MESSAGE}
-            </p>
+            {APPLY_OPEN ? (
+              <p className="fine">
+                Inscribirte no garantiza un lugar.
+                <br />
+                La participación queda sujeta a selección y confirmación del equipo.
+              </p>
+            ) : null}
           </div>
 
           <div className="hero-side">
