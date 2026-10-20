@@ -21,6 +21,8 @@ export type Team = {
   equipo: string | null;
   producto: string | null;
   oneliner: string | null;
+  /** Cómo está hecho, en letra chica. */
+  detalle?: string | null;
   stack: string[];
   demo: string | null;
   repos: string[];
