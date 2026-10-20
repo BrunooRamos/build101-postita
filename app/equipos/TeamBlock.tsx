@@ -44,6 +44,21 @@ export function TeamBlock({ team, heading = "h2" }: { team: Team; heading?: "h1"
               ))}
             </ul>
           ) : null}
+          {team.detalle || team.integrantes.some((p) => p.aporte) ? (
+            <div className="eq-detail">
+              <p className="eq-detail-label">// cómo lo hicieron</p>
+              {team.detalle ? <p>{team.detalle}</p> : null}
+              <ul>
+                {team.integrantes
+                  .filter((p) => p.aporte)
+                  .map((p) => (
+                    <li key={p.nombre}>
+                      <span>{p.nombre.split(" ")[0].toLowerCase()}</span> {p.aporte}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          ) : null}
           <div className="eq-links">
             {team.demo ? (
               <a href={team.demo} target="_blank" rel="noopener noreferrer" className="eq-link eq-link-demo">
@@ -114,7 +129,6 @@ function Person({ p }: { p: Builder }) {
             <span>trabaja</span> {p.trabaja}
           </p>
         ) : null}
-        {p.aporte ? <p className="eq-aporte">$ {p.aporte}</p> : null}
       </div>
       {p.link ? (
         <a className="eq-contact" href={p.link} target="_blank" rel="noopener noreferrer" aria-label={`${p.nombre} en ${linkedin ? "LinkedIn" : "la web"}`}>
