@@ -3,7 +3,7 @@
     "numero": 1,
     "equipo": "Beyond The Bot",
     "producto": "Paciente 0",
-    "oneliner": "un paciente simulado al que estudiantes de medicina entrevistan por voz, examinan y reciben feedback de la consulta.",
+    "oneliner": "Un paciente simulado para que estudiantes de medicina practiquen la consulta antes de su primer paciente real. Le hablás por voz a paco, lo examinás con herramientas virtuales y al final recibís un puntaje con feedback.",
     "stack": [
       "next.js",
       "convex",
@@ -44,7 +44,7 @@
     "numero": 2,
     "equipo": "3 tokens",
     "producto": "Nibble",
-    "oneliner": "con una foto del plato y un audio, ayuda a familias de chicos con autismo y selectividad a ampliar lo que comen.",
+    "oneliner": "Ayuda a familias de chicos con autismo y selectividad alimentaria a que coman mejor sin pelear en la mesa. Con una foto del plato y una nota de voz aprende en un grafo cómo come cada chico y sugiere el próximo pasito.",
     "stack": [
       "react",
       "claude",
@@ -86,7 +86,7 @@
     "numero": 3,
     "equipo": "Sayso",
     "producto": "Sayso",
-    "oneliner": "un experto al lado para reparar tus aparatos: identifica el modelo y te guía con manual, 3d animado y voz.",
+    "oneliner": "Un experto al lado para reparar tus propios aparatos en casa. Identifica el modelo con una captura guiada, busca el manual y te lleva paso a paso con un modelo 3d animado del equipo y guía por voz.",
     "stack": [
       "next.js",
       "claude",
@@ -133,7 +133,7 @@
     "numero": 4,
     "equipo": "GrecIA",
     "producto": "Neuro",
-    "oneliner": "registra lo que pasa en casa entre consultas de una persona con parkinson y arma el informe para su neuróloga.",
+    "oneliner": "Registra lo que pasa en casa entre consulta y consulta de una persona con parkinson y su familia. Junta pasos del celular y relatos por audio, pregunta cuando algo no cierra y arma el informe para la neuróloga.",
     "stack": [
       "fastapi",
       "claude",
@@ -143,7 +143,7 @@
     "repos": [
       "https://github.com/FrancoFontanarossa/Grecia"
     ],
-    "captura": null,
+    "captura": "/equipos/04.webp",
     "fotoEquipo": null,
     "material": [
       {
@@ -179,7 +179,7 @@
     "numero": 5,
     "equipo": "Kiai",
     "producto": "KaiAI",
-    "oneliner": "un guard para agentes que compran con ap2: frena la compra cuando el comercio intenta manipular al agente.",
+    "oneliner": "Un guard del lado del comprador para agentes de IA que pagan con el protocolo ap2. Se ubica entre el comercio y la firma del usuario, y en su benchmark bajó el éxito de los ataques de manipulación de 100% a 0%.",
     "stack": [
       "python",
       "google adk",
@@ -189,7 +189,7 @@
     "repos": [
       "https://github.com/FacundoSansalone/Build-101"
     ],
-    "captura": null,
+    "captura": "/equipos/05.webp",
     "fotoEquipo": null,
     "material": [],
     "integrantes": [
@@ -220,17 +220,17 @@
     "numero": 6,
     "equipo": "b&niks",
     "producto": null,
-    "oneliner": "memoria compartida para agentes de código: lo que un agente aprendió a los golpes se le avisa al próximo del equipo.",
+    "oneliner": "Memoria situacional para equipos que programan con agentes de código. Lo que un agente aprendió a los golpes se le avisa al próximo justo antes de repetir el error, aunque sea de otro compañero o de otro proveedor.",
     "stack": [
       "fastapi",
       "postgres",
       "claude code"
     ],
-    "demo": null,
+    "demo": "https://54-89-124-87.sslip.io",
     "repos": [
       "https://github.com/hackaton2026bnicks/hackatonbuild101"
     ],
-    "captura": null,
+    "captura": "/equipos/06.webp",
     "fotoEquipo": null,
     "material": [],
     "integrantes": [
@@ -296,18 +296,18 @@
     "numero": 8,
     "equipo": "las chicas súper poderosas",
     "producto": "Hooksage",
-    "oneliner": "convierte grabaciones e ideas en videos cortos editados, con subtítulos, gráficos y sonido, para pymes y creadores.",
+    "oneliner": "Convierte grabaciones e ideas en videos cortos listos para redes, pensado para pymes, startups y creadores. Recorta, subtitula y suma gráficos, zooms y sonido con dirección editorial, y cada revisión guarda la versión anterior.",
     "stack": [
       "react",
       "gemini",
       "remotion"
     ],
-    "demo": null,
+    "demo": "https://hooksage.com",
     "repos": [
       "https://github.com/Qadra42/build101",
       "https://github.com/Juacin25/hooksage-landing"
     ],
-    "captura": null,
+    "captura": "/equipos/08.webp",
     "fotoEquipo": null,
     "material": [],
     "integrantes": [
@@ -338,7 +338,7 @@
     "numero": 9,
     "equipo": "Alargue",
     "producto": "I+P",
-    "oneliner": "un asistente que atiende por whatsapp y teléfono a interesados en alquilar y le pasa al dueño los que encajan.",
+    "oneliner": "Un asistente para dueños que alquilan: atiende por whatsapp y por teléfono a cada interesado. Averigua en la charla los criterios del propietario, calcula la compatibilidad en vivo y le pasa solo a los que encajan.",
     "stack": [
       "next.js",
       "supabase",
@@ -382,7 +382,7 @@
     "numero": 10,
     "equipo": "TJJ Tech",
     "producto": null,
-    "oneliner": "una app de viaje que arma el itinerario y te guía en tours por voz que te hablan al llegar a cada parada.",
+    "oneliner": "Una app compañera de viaje para turistas, solos o en grupo, que arma el itinerario conversando. En destino lanza tours guiados por un agente de voz que te habla solo al llegar a cada parada, gracias al gps.",
     "stack": [
       "expo",
       "hono",
@@ -393,7 +393,7 @@
     "repos": [
       "https://github.com/tjjtech-build101/travel-guide"
     ],
-    "captura": null,
+    "captura": "/equipos/10.webp",
     "fotoEquipo": null,
     "material": [],
     "integrantes": [
@@ -424,7 +424,7 @@
     "numero": 11,
     "equipo": "furIA",
     "producto": "MaronIA",
-    "oneliner": "un agente de voz que atiende el call center de apuestas hípicas de maroñas y toma la apuesta como un operador.",
+    "oneliner": "Un agente de voz que atiende el call center de apuestas hípicas de maroñas en los picos antes de cada largada. Identifica al cliente, entiende la jerga hípica, toma la apuesta y manda el comprobante por sms.",
     "stack": [
       "fastapi",
       "next.js",
@@ -432,10 +432,8 @@
       "twilio"
     ],
     "demo": "https://web-production-341e3.up.railway.app",
-    "repos": [
-      "https://github.com/MaronIA/MaronIA"
-    ],
-    "captura": null,
+    "repos": [],
+    "captura": "/equipos/11.webp",
     "fotoEquipo": null,
     "material": [],
     "integrantes": [
@@ -466,7 +464,7 @@
     "numero": 12,
     "equipo": "Claude & Asociados",
     "producto": "Guardián",
-    "oneliner": "escucha la llamada del abuelo en vivo, detecta el cuento del tío y avisa a la familia antes de que entregue la plata.",
+    "oneliner": "Protege a los abuelos del cuento del tío mientras la llamada está pasando. Una app android transcribe en vivo, claude puntúa el riesgo frase a frase y, si sube, avisa a la familia por whatsapp y pone la pantalla en rojo.",
     "stack": [
       "fastapi",
       "kotlin",
@@ -477,8 +475,8 @@
     "repos": [
       "https://github.com/PedroMorgaOrt/Claude-Asociados"
     ],
-    "captura": null,
-    "fotoEquipo": "/equipos/12-equipo.webp",
+    "captura": "/equipos/12.webp",
+    "fotoEquipo": null,
     "material": [
       {
         "tipo": "pitch",
@@ -513,7 +511,7 @@
     "numero": 13,
     "equipo": "SOLO",
     "producto": "Neitor AI",
-    "oneliner": "una agencia de marketing en whatsapp: le mandás una foto de lo que vendés y planifica, diseña y publica en instagram.",
+    "oneliner": "Una agencia de marketing que vive en el whatsapp del dueño de un negocio chico. Le mandás una foto de lo que vendés y un equipo de agentes escribe, diseña y publica en instagram, sin publicar nada hasta que aprobás.",
     "stack": [
       "fastapi",
       "next.js",
@@ -554,7 +552,7 @@
     "numero": 14,
     "equipo": "TokenMaxxers",
     "producto": "Lia",
-    "oneliner": "un intérprete de lengua de señas con avatar 3d que pasa voz y texto a señas, y señas a voz.",
+    "oneliner": "Un intérprete de lengua de señas argentina para que personas sordas y oyentes se entiendan. Un avatar 3d pasa voz, texto o la foto de una página a señas, y la cámara reconoce señas y las dice en voz alta.",
     "stack": [
       "fastapi",
       "react",
@@ -562,9 +560,7 @@
       "mediapipe"
     ],
     "demo": "https://lia-ui-4ko0q3l9utgp--0kg15d.us.sb.tenki.sh",
-    "repos": [
-      "https://github.com/GermanIpes/build-101"
-    ],
+    "repos": [],
     "captura": "/equipos/14.webp",
     "fotoEquipo": null,
     "material": [
@@ -601,7 +597,7 @@
     "numero": 15,
     "equipo": "BigO",
     "producto": "Servio",
-    "oneliner": "una cámara en alto que mira las mesas del restaurante y avisa al mozo por telegram cuando una mesa está por terminar.",
+    "oneliner": "Visión computacional para restaurantes con una cámara en alto sobre el salón. Yolo detecta los platos de cada mesa, claude estima cuánta comida queda y el mozo recibe un aviso por telegram cuando una mesa está por terminar.",
     "stack": [
       "python",
       "yolo",
@@ -612,7 +608,7 @@
     "repos": [
       "https://github.com/matiHirCab/Servio"
     ],
-    "captura": null,
+    "captura": "/equipos/15.webp",
     "fotoEquipo": null,
     "material": [
       {
@@ -648,7 +644,7 @@
     "numero": 16,
     "equipo": "JAM",
     "producto": "FrictionSwarm",
-    "oneliner": "agentes que recorren tu e-commerce, encuentran dónde se traban los usuarios, lo arreglan y lo re-testean.",
+    "oneliner": "Encuentra dónde se traban los usuarios de un e-commerce a partir de sus datos reales de posthog. Propone y aplica el arreglo, y después un enjambre de agentes con distintas personas re-testea la tienda para probarlo.",
     "stack": [
       "next.js",
       "claude",
@@ -659,7 +655,7 @@
     "repos": [
       "https://github.com/jbecerra73/build101_grupo16"
     ],
-    "captura": null,
+    "captura": "/equipos/16.webp",
     "fotoEquipo": null,
     "material": [],
     "integrantes": [
@@ -725,7 +721,7 @@
     "numero": 18,
     "equipo": null,
     "producto": "ARGOS",
-    "oneliner": "estima la condición corporal de vacas lecheras a partir de una foto trasera y lleva el historial del rodeo.",
+    "oneliner": "Estima la condición corporal de vacas lecheras a partir de una foto tomada desde atrás, pensado para productores y técnicos. Guarda el historial de cada vaca, avisa cuando la foto no sirve y muestra el estado del rodeo.",
     "stack": [
       "fastapi",
       "pytorch",
@@ -735,7 +731,7 @@
     "repos": [
       "https://github.com/nstan25/Hackaton-Build---Equipo-18"
     ],
-    "captura": null,
+    "captura": "/equipos/18.webp",
     "fotoEquipo": null,
     "material": [
       {
@@ -771,7 +767,7 @@
     "numero": 19,
     "equipo": "Delta",
     "producto": "Guíame",
-    "oneliner": "un navegador asistido para personas mayores que las guía paso a paso, por voz, en trámites y sitios web.",
+    "oneliner": "Un navegador asistido para personas mayores que necesitan hacer trámites en internet. Le pedís con tus palabras o por voz lo que querés hacer y te guía paso a paso en la página, con un panel que chequea si el sitio es seguro.",
     "stack": [
       "electron",
       "fastify",
@@ -782,7 +778,7 @@
     "repos": [
       "https://github.com/gastonmartinezz/hackaton-2026-e19"
     ],
-    "captura": null,
+    "captura": "/equipos/19.webp",
     "fotoEquipo": null,
     "material": [
       {
@@ -818,7 +814,7 @@
     "numero": 20,
     "equipo": "Rumbo",
     "producto": "Rumbo",
-    "oneliner": "orientación vocacional para jóvenes de uruguay: arma tu perfil charlando y te muestra caminos verificados.",
+    "oneliner": "Orientación vocacional conversacional para jóvenes de uruguay de 16 a 20 años. Una IA charla con una pregunta por vez sobre una rúbrica científica y te muestra hasta tres caminos con fuentes verificadas y dónde estudiar.",
     "stack": [
       "next.js",
       "gemini",
@@ -859,7 +855,7 @@
     "numero": 21,
     "equipo": "Waven",
     "producto": "Polo",
-    "oneliner": "una guía de viaje por voz en tiempo real que conoce tus gustos, dónde estás y tu itinerario.",
+    "oneliner": "Una guía de viaje por voz que conoce tus gustos, dónde estás, los lugares cercanos y tu itinerario. Hablás con ella en tiempo real como en una llamada, te avisa cuando pasás cerca de algo y te traduce en la calle.",
     "stack": [
       "next.js",
       "openai realtime",
@@ -905,7 +901,7 @@
     "numero": 22,
     "equipo": "Cruce",
     "producto": "Cruce",
-    "oneliner": "un espacio para founders que valida ideas con ia: hipótesis, encuestas y entrevistas, y te conecta con otros founders.",
+    "oneliner": "Un espacio de trabajo para founders que quieren validar una idea antes de construirla. La IA propone hipótesis, encuestas y entrevistas a partir de tu contexto, investiga con fuentes reales y te cruza con founders afines.",
     "stack": [
       "react",
       "trailbase",
@@ -915,7 +911,7 @@
     "repos": [
       "https://github.com/04mg/build-101"
     ],
-    "captura": null,
+    "captura": "/equipos/22.webp",
     "fotoEquipo": null,
     "material": [],
     "integrantes": [
@@ -946,7 +942,7 @@
     "numero": 23,
     "equipo": "Viveri",
     "producto": "VIVERI",
-    "oneliner": "un nutricionista con ia que arma tu menú semanal y la lista de compras, con precios de supermercados de montevideo.",
+    "oneliner": "Una app que convierte tu dieta, armada charlando con un nutricionista de IA, en un menú semanal y una lista de compras. Después cotiza la lista en supermercados de montevideo y te muestra dónde sale más barata.",
     "stack": [
       "react",
       "supabase",
@@ -956,7 +952,7 @@
     "repos": [
       "https://github.com/build101-23/viveri"
     ],
-    "captura": null,
+    "captura": "/equipos/23.webp",
     "fotoEquipo": null,
     "material": [],
     "integrantes": [
@@ -987,7 +983,7 @@
     "numero": 24,
     "equipo": null,
     "producto": "CercanIA",
-    "oneliner": "los cuidadores mandan el reporte del turno por audio y la ia lo ordena, lo compara con el plan y avisa lo urgente.",
+    "oneliner": "Un asistente para el cambio de turno de quienes cuidan a un paciente, con la familia y el equipo de salud en la misma app. El reporte por audio se transcribe, se compara con el plan de cuidado y cada dato queda con su cita.",
     "stack": [
       "fastapi",
       "next.js",
@@ -1029,16 +1025,14 @@
     "numero": 25,
     "equipo": "Sin Dormir S.A.",
     "producto": "Abasto",
-    "oneliner": "un director de compras con ia que cotiza con tus proveedores, entiende sus respuestas y ensaya la negociación.",
+    "oneliner": "Un director de compras con IA para empresas que compran a muchos proveedores. Entiende cotizaciones por whatsapp, pdf, foto o audio, reparte la compra con un solver y ensaya la negociación antes de que mandes un mensaje.",
     "stack": [
       "fastapi",
       "react",
       "claude"
     ],
     "demo": "https://abasto.vercel.app",
-    "repos": [
-      "https://github.com/Emontone21/HACKATON-GRUPO-25"
-    ],
+    "repos": [],
     "captura": "/equipos/25.webp",
     "fotoEquipo": null,
     "material": [
@@ -1079,7 +1073,7 @@
     "numero": 26,
     "equipo": "Grupo numero 502",
     "producto": "Pulso",
-    "oneliner": "cruza tu sueño, pulso y ánimo con tu trabajo en github, slack y calendar, y un agente te propone cómo recuperarte.",
+    "oneliner": "Una app que cruza tu sueño, tu pulso y tu ánimo con tu semana de trabajo en github, slack, linear y calendar. Un agente detecta cuándo venís cargado y te propone bloquear foco o mover una reunión, sin ejecutar solo.",
     "stack": [
       "next.js",
       "gemini",
@@ -1089,7 +1083,7 @@
     "repos": [
       "https://github.com/redemerco/hackaton-build-101"
     ],
-    "captura": null,
+    "captura": "/equipos/26.webp",
     "fotoEquipo": null,
     "material": [],
     "integrantes": [
@@ -1120,7 +1114,7 @@
     "numero": 27,
     "equipo": null,
     "producto": "Radar Urbano",
-    "oneliner": "reportás problemas del espacio público conversando y la ia los evalúa, agrupa y asigna a una cuadrilla.",
+    "oneliner": "Un canal para que vecinos reporten problemas del espacio público conversando, en vez de llenar formularios. Cada reporte se evalúa, se agrupa con otros del mismo problema y se asigna a la cuadrilla que corresponde en el mapa.",
     "stack": [
       "next.js",
       "postgres",
@@ -1131,7 +1125,7 @@
     "repos": [
       "https://github.com/daizuoheng/build_101_27"
     ],
-    "captura": null,
+    "captura": "/equipos/27.webp",
     "fotoEquipo": null,
     "material": [],
     "integrantes": [
@@ -1162,7 +1156,7 @@
     "numero": 28,
     "equipo": null,
     "producto": "Walt",
-    "oneliner": "clientes de una agencia piden cambios chicos de su web por telegram y walt los aplica, valida y publica.",
+    "oneliner": "Un asistente para agencias: sus clientes piden cambios chicos de la web por telegram, hasta por audio. La IA interpreta, el código decide con reglas y valida, y se publica en segundos; lo riesgoso lo aprueba la agencia.",
     "stack": [
       "next.js",
       "claude",
@@ -1213,7 +1207,7 @@
     "numero": 29,
     "equipo": "Contigo",
     "producto": "CONTIGO",
-    "oneliner": "un asistente por voz para personas mayores, con la familia conectada que lo configura y recibe avisos.",
+    "oneliner": "Un asistente de confianza para personas mayores que no se llevan bien con la tecnología, con la familia conectada. El abuelo le pide cosas por voz y la familia lo configura charlando; tiene botón de ayuda y escudo anti-estafas.",
     "stack": [
       "next.js",
       "claude",
@@ -1254,7 +1248,7 @@
     "numero": 30,
     "equipo": "LUMAC",
     "producto": "Rancho Cero",
-    "oneliner": "ayuda a voluntarios de una fundación de vivienda a relevar familias con fotos y audio y a priorizar a quién atender.",
+    "oneliner": "Una herramienta interna para voluntarios de una fundación de vivienda que relevan familias en asentamientos. Con fotos y audio arma la ficha de cada vivienda, calcula su puntaje y ayuda a priorizar a quién atender.",
     "stack": [
       "next.js",
       "convex"
@@ -1263,7 +1257,7 @@
     "repos": [
       "https://github.com/LucaBenitesM/Rancho-cero"
     ],
-    "captura": null,
+    "captura": "/equipos/30.webp",
     "fotoEquipo": null,
     "material": [],
     "integrantes": [
@@ -1294,7 +1288,7 @@
     "numero": 31,
     "equipo": "Luxis",
     "producto": "Luxis",
-    "oneliner": "encuentra licitaciones públicas de uruguay para barracas, lee el pliego por vos y sugiere a qué precio ofertar.",
+    "oneliner": "Un analizador de licitaciones públicas de uruguay para barracas de materiales de construcción. Encuentra los llamados de arce donde podés vender, lee el pliego por vos y te dice a qué precio se vienen adjudicando los ítems.",
     "stack": [
       "next.js",
       "claude",
@@ -1345,7 +1339,7 @@
     "numero": 32,
     "equipo": "La compu de César",
     "producto": "Tiza.ai",
-    "oneliner": "adapta prácticos de matemática de bachillerato para estudiantes con tdah, dislexia o tea, con aprobación docente.",
+    "oneliner": "Adapta prácticos y parciales de matemática de bachillerato para estudiantes con tdah, dislexia o tea. El profe sube su práctico, la IA arma una versión por perfil sin cambiar lo que se evalúa, y el docente aprueba cada una.",
     "stack": [
       "next.js",
       "claude",
@@ -1392,7 +1386,7 @@
     "numero": 33,
     "equipo": "Brandia",
     "producto": "BrandIA",
-    "oneliner": "le contás tu negocio por chat o audio y te arma la marca, el brandbook y los contenidos para redes.",
+    "oneliner": "Una agencia de marca para pymes y emprendedores que no tienen una: le contás tu negocio por chat o audio. La IA te entrevista y te arma nombre, paleta, logo y brandbook, y después genera los contenidos para tus redes.",
     "stack": [
       "next.js",
       "ai sdk",
