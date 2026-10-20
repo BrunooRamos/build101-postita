@@ -282,11 +282,27 @@
 .eq-person:hover .eq-photo img {
   filter: none;
 }
+/* con LinkedIn, toda la tarjeta (foto y nombre incluidos) lleva al perfil */
+.eq-person-linked {
+  cursor: pointer;
+  transition: background 0.15s var(--ease-out);
+}
+.eq-person-linked:hover,
+.eq-person-linked:focus-within {
+  background: var(--surface);
+}
+.eq-person-linked .eq-contact::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.eq-person-linked:hover .eq-contact {
+  color: var(--fg);
+}
 .eq-id {
   display: grid;
   gap: 3px;
   min-width: 0;
-  padding-right: 32px;
 }
 .eq-name {
   font-family: var(--font-mono-stack);
@@ -307,9 +323,8 @@
   color: var(--faint);
 }
 .eq-contact {
-  position: absolute;
-  top: 10px;
-  right: 12px;
+  flex: none;
+  margin: -8px -12px 0 auto;
   display: grid;
   place-items: center;
   width: 36px;
