@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function EquiposLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <SiteNav current="resultados" />
+      <SiteNav page="equipos" />
       <main className="eq-page">{children}</main>
       <SiteFooter />
     </>

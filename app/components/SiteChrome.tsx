@@ -6,9 +6,9 @@ import { TEAM } from "../event";
 
 const AREA_LABEL = { participants: "participants", mentors: "mentors", sponsors: "sponsors" } as const;
 
-/** La nav del sitio. En /equipos va con `current="resultados"`: el link queda
- *  marcado y el botón no aparece (ya estás en el catálogo). */
-export function SiteNav({ current }: { current?: "resultados" } = {}) {
+/** La nav del sitio. En /equipos va con `page="equipos"`: el botón pasa a
+ *  ser "volver al sitio". */
+export function SiteNav({ page }: { page?: "equipos" } = {}) {
   return (
     <nav className="topnav" aria-label="principal">
       <div className="wrap topnav-inner">
@@ -16,9 +16,6 @@ export function SiteNav({ current }: { current?: "resultados" } = {}) {
           <Logo />
         </Link>
         <div className="nav-links">
-          <Link href="/#resultados" aria-current={current === "resultados" ? "page" : undefined}>
-            resultados
-          </Link>
           <Link href="/#evento">el evento</Link>
           <Link href="/#cronograma">fechas &amp; lugar</Link>
           <Link href="/#sponsors">sponsors</Link>
@@ -26,7 +23,11 @@ export function SiteNav({ current }: { current?: "resultados" } = {}) {
         </div>
         <div className="topnav-end">
           <NavSocials />
-          {current === "resultados" ? null : (
+          {page === "equipos" ? (
+            <Link href="/" className="btn btn-primary btn-sm">
+              ← volver al sitio
+            </Link>
+          ) : (
             <Link href="/equipos" className="btn btn-primary btn-sm">
               ver los equipos →
             </Link>

@@ -12,9 +12,8 @@ export default function EquiposPage() {
     <div className="wrap">
       <header className="eq-hero">
         <p className="eyebrow">
-          ~/build-101 ·{" "}
-          <Link href="/#resultados" className="eq-crumb">
-            resultados
+          <Link href="/" className="eq-crumb">
+            ~/build-101
           </Link>{" "}
           · equipos
         </p>
