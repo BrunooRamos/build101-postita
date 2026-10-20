@@ -31,7 +31,7 @@
         "estudia": "UM",
         "trabaja": null,
         "link": null,
-        "foto": null,
+        "foto": "/equipos/fotos/01-martina-berrutti.webp",
         "aporte": "motor de voz y detectores del diálogo médico, con corpus de frases y tests en typescript"
       },
       {
@@ -39,7 +39,7 @@
         "estudia": "UM",
         "trabaja": null,
         "link": null,
-        "foto": null,
+        "foto": "/equipos/fotos/01-romina-lubniski.webp",
         "aporte": "avatar 3d del paciente con talkinghead: lipsync, personalidades y examen de garganta"
       }
     ]
@@ -85,7 +85,7 @@
         "estudia": null,
         "trabaja": null,
         "link": null,
-        "foto": null,
+        "foto": "/equipos/fotos/02-martin-blanco.webp",
         "aporte": "ui con tailwind v4 y shadcn, logo de la marca y endpoints de perfil y progreso"
       }
     ]
@@ -128,7 +128,7 @@
         "estudia": "UdelaR",
         "trabaja": null,
         "link": "https://uy.linkedin.com/in/juan-martín-noguez-berdún-158837321",
-        "foto": null,
+        "foto": "/equipos/fotos/03-juan-martin-noguez.webp",
         "aporte": "base de conocimiento, guía del experto, recepción y avisos de seguridad con IA"
       },
       {
@@ -775,7 +775,7 @@
         "estudia": "ORT",
         "trabaja": null,
         "link": "https://makinia.com",
-        "foto": null,
+        "foto": "/equipos/fotos/17-juan-sebastian-val.webp",
         "aporte": null
       },
       {
@@ -1350,7 +1350,7 @@
         "estudia": "FIUM",
         "trabaja": null,
         "link": null,
-        "foto": null,
+        "foto": "/equipos/fotos/29-ines-bertolotti.webp",
         "aporte": "protección de mail con gmail (apps script y oauth) y evaluación del asistente"
       },
       {
@@ -1358,7 +1358,7 @@
         "estudia": "FIUM",
         "trabaja": null,
         "link": null,
-        "foto": null,
+        "foto": "/equipos/fotos/29-lara-stirling.webp",
         "aporte": "app del abuelo con voz, botón de ayuda, escudo anti-estafas y web push"
       },
       {
@@ -1394,7 +1394,7 @@
         "estudia": "UM",
         "trabaja": null,
         "link": null,
-        "foto": null,
+        "foto": "/equipos/fotos/30-martina-mazza.webp",
         "aporte": "nueva visita con ficha por IA, historias para donantes y alta de usuarios"
       },
       {
@@ -1402,7 +1402,7 @@
         "estudia": "Um",
         "trabaja": null,
         "link": null,
-        "foto": null,
+        "foto": "/equipos/fotos/30-camila-granato.webp",
         "aporte": "identidad visual de rancho cero, roles de voluntario y coordinador y pitch"
       },
       {
@@ -1508,7 +1508,7 @@
         "estudia": "ORT",
         "trabaja": "NoctiLabs",
         "link": null,
-        "foto": null,
+        "foto": "/equipos/fotos/32-adrian-mircus.webp",
         "aporte": "adaptador de prácticos con claude, verificador de ecuaciones y lectura por voz"
       },
       {
