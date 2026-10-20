@@ -1123,7 +1123,7 @@
         "estudia": null,
         "trabaja": null,
         "link": null,
-        "foto": null,
+        "foto": "/equipos/fotos/24-erika-alvarez.webp",
         "aporte": "backend y web: alertas, notificaciones, roles, invitaciones y keep-awake"
       }
     ]
@@ -1167,7 +1167,7 @@
         "estudia": "ORT",
         "trabaja": "-",
         "link": null,
-        "foto": null,
+        "foto": "/equipos/fotos/25-guzman-de-leon.webp",
         "aporte": "compra por stock mínimo de punta a punta y pantalla depósito del stock"
       },
       {
@@ -1175,7 +1175,7 @@
         "estudia": "-",
         "trabaja": "-",
         "link": null,
-        "foto": null,
+        "foto": "/equipos/fotos/25-claude-tissierre.webp",
         "aporte": null
       }
     ]
@@ -1266,7 +1266,7 @@
         "estudia": "Udelar",
         "trabaja": null,
         "link": "https://www.linkedin.com/in/zuoheng-dai",
-        "foto": null,
+        "foto": "/equipos/fotos/27-zuo-heng-dai.webp",
         "aporte": "despacho transaccional, consultas de estado en lenguaje natural y polling"
       }
     ]
@@ -1410,7 +1410,7 @@
         "estudia": "Um",
         "trabaja": null,
         "link": null,
-        "foto": null,
+        "foto": "/equipos/fotos/30-luca-benites.webp",
         "aporte": "portal de fundaciones, ranking, informe descargable y carga de audio"
       }
     ]
