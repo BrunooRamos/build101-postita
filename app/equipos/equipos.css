@@ -1,0 +1,411 @@
+/* ---------- /equipos: catálogo de equipos y builders ---------- */
+.eq-page {
+  padding-bottom: 96px;
+}
+.eq-hero {
+  padding: 72px 0 40px;
+}
+.eq-all-label {
+  margin-bottom: 24px;
+}
+.eq-place {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 1px 8px;
+  border: 1px solid var(--line-ctl);
+  color: var(--fg-body);
+}
+.eq-place-win {
+  border-color: var(--action);
+  background: var(--action);
+  color: var(--action-fg);
+}
+
+/* un equipo */
+.eq-list {
+  display: grid;
+  gap: 56px;
+}
+.eq-team {
+  scroll-margin-top: 16px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+.eq-team:target {
+  box-shadow: 0 0 0 1px var(--line-2), 0 14px 0 -6px var(--pixel);
+}
+.eq-head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--line);
+}
+.eq-num {
+  font-family: var(--font-display-stack);
+  font-size: clamp(44px, 5vw, 60px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--accent-text);
+}
+.eq-num:hover {
+  color: var(--accent-strong);
+}
+.eq-titles {
+  flex: 1;
+  min-width: 0;
+}
+.eq-title {
+  font-family: var(--font-display-stack);
+  font-size: clamp(26px, 2.8vw, 36px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+  overflow-wrap: anywhere;
+}
+.eq-sub {
+  margin-top: 6px;
+  font-family: var(--font-mono-stack);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.eq-copy {
+  flex: none;
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid var(--line-ctl);
+  background: transparent;
+  font-family: var(--font-mono-stack);
+  font-size: 13px;
+  color: var(--fg-body);
+  cursor: pointer;
+  transition: color 0.15s var(--ease-out), border-color 0.15s var(--ease-out), background 0.15s var(--ease-out);
+}
+.eq-copy:hover,
+.eq-copy:focus-visible {
+  color: var(--fg);
+  border-color: var(--fg);
+  background: var(--surface);
+}
+
+.eq-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+.eq-body-noshot {
+  grid-template-columns: 1fr;
+}
+.eq-about {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 24px;
+}
+.eq-oneliner {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--fg);
+  text-wrap: pretty;
+}
+.eq-oneliner::first-letter {
+  text-transform: uppercase;
+}
+.eq-muted {
+  color: var(--muted);
+}
+.eq-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+}
+.eq-stack li {
+  padding: 3px 9px;
+  border: 1px solid var(--line-2);
+  font-family: var(--font-mono-stack);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+/* cómo lo hicieron: detalle técnico y quién hizo qué, en chiquito */
+.eq-detail {
+  display: grid;
+  gap: 10px;
+  font-family: var(--font-mono-stack);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.eq-detail-label {
+  color: var(--faint);
+}
+.eq-detail ul {
+  display: grid;
+  gap: 4px;
+  list-style: none;
+}
+.eq-detail li span {
+  color: var(--accent-text);
+}
+.eq-links {
+  display: grid;
+  gap: 8px;
+  margin-top: auto;
+}
+.eq-link {
+  font-family: var(--font-mono-stack);
+  font-size: 14px;
+  color: var(--fg-body);
+  overflow-wrap: anywhere;
+}
+.eq-link span {
+  color: var(--faint);
+}
+.eq-link-demo {
+  color: var(--accent-text);
+}
+.eq-link:hover {
+  color: var(--fg);
+}
+
+/* la captura del demo, en una ventana de navegador mínima */
+.eq-shot {
+  display: block;
+  margin: 20px 24px 20px 0;
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  align-self: start;
+}
+.eq-shot-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line-2);
+  font-family: var(--font-mono-stack);
+  font-size: 11.5px;
+  color: var(--faint);
+}
+.eq-shot-bar i {
+  width: 8px;
+  height: 8px;
+  background: var(--line-2);
+}
+.eq-shot-bar span {
+  margin-left: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.eq-shot-media {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.eq-shot img,
+.eq-shot iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+  object-position: top;
+}
+/* con video: la captura es el póster y el play lo reproduce en el marco */
+.eq-play {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.eq-play-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  padding: 12px 20px;
+  background: var(--action);
+  font-family: var(--font-mono-stack);
+  font-size: 14px;
+  color: var(--action-fg);
+  box-shadow: 0 10px 0 -4px var(--pixel);
+  transition: background 0.15s var(--ease-out), translate 0.2s var(--ease-rise);
+}
+.eq-play:hover .eq-play-btn,
+.eq-play:focus-visible .eq-play-btn {
+  background: var(--action-hover);
+  translate: -50% calc(-50% - 3px);
+}
+
+/* los builders */
+.eq-people {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+}
+.eq-person {
+  position: relative;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 18px 24px;
+  border-right: 1px solid var(--line);
+}
+.eq-person:last-child {
+  border-right: 0;
+}
+.eq-photo {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  background: var(--surface-2);
+  font-family: var(--font-display-stack);
+  font-size: 34px;
+  color: var(--muted);
+}
+.eq-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+  transition: filter 0.35s var(--ease-out);
+}
+.eq-person:hover .eq-photo img {
+  filter: none;
+}
+/* con LinkedIn, toda la tarjeta (foto y nombre incluidos) lleva al perfil */
+.eq-person-linked {
+  cursor: pointer;
+  transition: background 0.15s var(--ease-out);
+}
+.eq-person-linked:hover,
+.eq-person-linked:focus-within {
+  background: var(--surface);
+}
+.eq-person-linked .eq-contact::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.eq-person-linked:hover .eq-contact {
+  color: var(--fg);
+}
+.eq-id {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+.eq-name {
+  font-family: var(--font-mono-stack);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+.eq-line {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--fg-body);
+}
+.eq-line span {
+  font-family: var(--font-mono-stack);
+  font-size: 12px;
+  color: var(--faint);
+}
+.eq-contact {
+  flex: none;
+  margin: -8px -12px 0 auto;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid transparent;
+  color: var(--muted);
+  transition: color 0.15s var(--ease-out), border-color 0.15s var(--ease-out);
+}
+.eq-contact:hover,
+.eq-contact:focus-visible {
+  color: var(--fg);
+  border-color: var(--line-ctl);
+}
+
+/* página de un equipo */
+.eq-single {
+  padding-top: 56px;
+}
+.eq-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 32px;
+  font-family: var(--font-mono-stack);
+  font-size: 14px;
+  color: var(--muted);
+}
+.eq-pager a:hover {
+  color: var(--fg);
+}
+.eq-sign {
+  margin-top: 88px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .eq-body {
+    grid-template-columns: 1fr;
+  }
+  .eq-shot {
+    margin: 0 24px 20px;
+  }
+  .eq-people {
+    grid-template-columns: 1fr;
+  }
+  .eq-person {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .eq-person:last-child {
+    border-bottom: 0;
+  }
+  .eq-photo {
+    width: 96px;
+    height: 96px;
+  }
+}
+@media (max-width: 600px) {
+  .eq-hero {
+    padding-top: 48px;
+  }
+  .eq-head {
+    flex-wrap: wrap;
+    gap: 14px 18px;
+    padding: 20px;
+  }
+  .eq-copy {
+    width: 100%;
+  }
+  .eq-about,
+  .eq-person {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .eq-shot {
+    margin: 0 20px 20px;
+  }
+  .eq-oneliner {
+    font-size: 16px;
+  }
+  .eq-pager {
+    flex-direction: column;
+  }
+}

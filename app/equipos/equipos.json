@@ -1,0 +1,1569 @@
+[
+  {
+    "numero": 1,
+    "equipo": "Beyond The Bot",
+    "producto": "Paciente 0",
+    "oneliner": "Un paciente simulado para que estudiantes de medicina practiquen la consulta antes de su primer paciente real. Le hablás por voz a paco, lo examinás con herramientas virtuales y al final recibís un puntaje con feedback.",
+    "detalle": "Monorepo Better-T-Stack con Next.js 16 y Convex, desplegado en Vercel. La consulta por voz usa Gemini Live con un avatar 3D animado (TalkingHead) y el paciente por texto usa Gemini Flash. Sin clave de IA el paciente responde por reglas, y un corpus de detectores en código decide cuándo el estudiante cierra el examen, da un diagnóstico o un consejo.",
+    "stack": [
+      "next.js",
+      "convex",
+      "gemini"
+    ],
+    "demo": "https://pac0-l3xi.vercel.app",
+    "repos": [
+      "https://github.com/martina-berrutti/pac0"
+    ],
+    "captura": "/equipos/01.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Rosario Stoppiello",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": "https://linkedin.com/in/rosario-stoppiello",
+        "foto": "/equipos/fotos/01-rosario-stoppiello.webp",
+        "aporte": "frontend en next.js: examen de rodilla, tensiómetro interactivo y avatar 3d en la consulta"
+      },
+      {
+        "nombre": "Martina Berrutti",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": null,
+        "foto": "/equipos/fotos/01-martina-berrutti.webp",
+        "aporte": "motor de voz y detectores del diálogo médico, con corpus de frases y tests en typescript"
+      },
+      {
+        "nombre": "Romina Lubniski",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": null,
+        "foto": "/equipos/fotos/01-romina-lubniski.webp",
+        "aporte": "avatar 3d del paciente con talkinghead: lipsync, personalidades y examen de garganta"
+      }
+    ]
+  },
+  {
+    "numero": 2,
+    "equipo": "3 tokens",
+    "producto": "Nibble",
+    "oneliner": "Ayuda a familias de chicos con autismo y selectividad alimentaria a que coman mejor sin pelear en la mesa. Con una foto del plato y una nota de voz aprende en un grafo cómo come cada chico y sugiere el próximo pasito.",
+    "detalle": "Front React + Vite para celular y 12 Vercel Functions. Claude Haiku 5.5 hace la visión del plato y extrae el relato transcripto con Whisper en Groq; Claude Sonnet 5.5 escribe la receta solo con candidatos que le pasa el grafo. Las comidas quedan en MongoDB y lo aprendido de cada chico en Neo4j; los nutrientes salen de la tabla USDA y las alergias se validan por código, nunca por la IA.",
+    "stack": [
+      "react",
+      "claude",
+      "neo4j",
+      "mongodb"
+    ],
+    "demo": "https://nibble-eight-vert.vercel.app",
+    "repos": [
+      "https://github.com/IgTondo/build101_equipo2"
+    ],
+    "captura": "/equipos/02.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Joaquin Rodriguez",
+        "estudia": "UM",
+        "trabaja": "-",
+        "link": "https://www.linkedin.com/in/joaquin-rodriguez-godoy",
+        "foto": "/equipos/fotos/02-joaquin-rodriguez.webp",
+        "aporte": "pantallas en react, generación de recetas con llm y alta del perfil por voz"
+      },
+      {
+        "nombre": "Ignacio Tondo",
+        "estudia": "UM",
+        "trabaja": "DaMap",
+        "link": "https://www.linkedin.com/in/itondo10/",
+        "foto": "/equipos/fotos/02-ignacio-tondo.webp",
+        "aporte": "motor de IA y grafo nutricional del server: prompts de recetas, franjas y evals"
+      },
+      {
+        "nombre": "Martin Blanco",
+        "estudia": null,
+        "trabaja": null,
+        "link": null,
+        "foto": "/equipos/fotos/02-martin-blanco.webp",
+        "aporte": "ui con tailwind v4 y shadcn, logo de la marca y endpoints de perfil y progreso"
+      }
+    ]
+  },
+  {
+    "numero": 3,
+    "equipo": "Sayso",
+    "producto": "Sayso",
+    "oneliner": "Un experto al lado para reparar tus propios aparatos en casa. Identifica el modelo con una captura guiada, busca el manual y te lleva paso a paso con un modelo 3d animado del equipo y guía por voz.",
+    "detalle": "App Next.js con Supabase. Claude (Sonnet y Haiku 5.5) identifica el modelo desde fotos, busca el manual con búsqueda web y arma la guía paso a paso; ElevenLabs pone la voz. El visor 3D en React Three Fiber arma el aparato a partir de datos del pack (cámaras, patas de la TV, carcasa de auriculares) y, si no hay manual, ubica las piezas con fotos de guías de iFixit.",
+    "stack": [
+      "next.js",
+      "claude",
+      "three.js",
+      "elevenlabs"
+    ],
+    "demo": "https://sayso-smoky.vercel.app",
+    "repos": [
+      "https://github.com/diegomarin28/sayso"
+    ],
+    "captura": "/equipos/03.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1PYH3o0oCgys__BVzUSm8erRoWIq2HHac/view"
+      }
+    ],
+    "integrantes": [
+      {
+        "nombre": "Diego Marin",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/diegomarin2805",
+        "foto": "/equipos/fotos/03-diego-marin.webp",
+        "aporte": "visor 3d con modelos glb, generador de planos, base del proyecto y tests e2e"
+      },
+      {
+        "nombre": "Juan Martin Noguez",
+        "estudia": "UdelaR",
+        "trabaja": null,
+        "link": "https://uy.linkedin.com/in/juan-martín-noguez-berdún-158837321",
+        "foto": "/equipos/fotos/03-juan-martin-noguez.webp",
+        "aporte": "base de conocimiento, guía del experto, recepción y avisos de seguridad con IA"
+      },
+      {
+        "nombre": "Ignacio Iglesia",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/ignacio-iglesia-2271733a2/",
+        "foto": "/equipos/fotos/03-ignacio-iglesia.webp",
+        "aporte": "pantallas de la app en next.js, supabase, voz y vista previa de los links"
+      }
+    ]
+  },
+  {
+    "numero": 4,
+    "equipo": "GrecIA",
+    "producto": "Neuro",
+    "oneliner": "Registra lo que pasa en casa entre consulta y consulta de una persona con parkinson y su familia. Junta pasos del celular y relatos por audio, pregunta cuando algo no cierra y arma el informe para la neuróloga.",
+    "detalle": "Backend FastAPI en un solo proceso en Railway, que también sirve la app web. OpenAI transcribe los audios y Claude extrae los relatos de varias voces, intenta explicar un desvío, redacta la pregunta y el informe. Lo que no puede fallar (alertas rojas, consentimiento, verificador) es código con tests; los pasos llegan del iPhone por un Atajo y la pulsera es un simulador rotulado.",
+    "stack": [
+      "fastapi",
+      "claude",
+      "openai"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/FrancoFontanarossa/Grecia"
+    ],
+    "captura": "/equipos/04.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "video",
+        "url": "https://drive.google.com/file/d/1LtQ2_EAMZxEu6zZSVe0OrBgVpGrJIGtx/view"
+      }
+    ],
+    "integrantes": [
+      {
+        "nombre": "Franco Fontanarossa",
+        "estudia": "UM",
+        "trabaja": "IBM",
+        "link": "https://www.linkedin.com/in/franco-fontanarossa-6b135230a/",
+        "foto": "/equipos/fotos/04-franco-fontanarossa.webp",
+        "aporte": "ingesta de la pulsera, simulador de biometría, reglas clínicas y endpoints"
+      },
+      {
+        "nombre": "Juan Pedro Guerra",
+        "estudia": "UM",
+        "trabaja": "SONDA",
+        "link": "https://www.linkedin.com/in/juanpedroguerra/",
+        "foto": "/equipos/fotos/04-juan-pedro-guerra.webp",
+        "aporte": "web de la familia y del médico, perfil que aprende, bitácora y marca neuro"
+      },
+      {
+        "nombre": "Guadalupe Carrasco",
+        "estudia": "UM",
+        "trabaja": "IBM",
+        "link": "https://www.linkedin.com/in/guadalupe-c-a27200357",
+        "foto": "/equipos/fotos/04-guadalupe-carrasco.webp",
+        "aporte": "pipeline de transcripción y extracción, informe médico con IA y diseño v3.1"
+      }
+    ]
+  },
+  {
+    "numero": 5,
+    "equipo": "Kiai",
+    "producto": "KaiAI",
+    "oneliner": "Un guard del lado del comprador para agentes de IA que pagan con el protocolo ap2. Se ubica entre el comercio y la firma del usuario, y en su benchmark bajó el éxito de los ataques de manipulación de 100% a 0%.",
+    "detalle": "Python sobre el sample oficial de AP2 con Google ADK y A2A, sin tocar el protocolo. El Guard es un proxy A2A entre la respuesta del comercio y la firma del usuario: verifica la oferta con datos estructurados, un filtro con Gemini separa órdenes al agente de pasos legítimos del pago (OTP) y emite un recibo firmado. Un benchmark con un comercio atacante mide el efecto.",
+    "stack": [
+      "python",
+      "google adk",
+      "ap2"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/FacundoSansalone/Build-101"
+    ],
+    "captura": "/equipos/05.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Manuel Arocena",
+        "estudia": "Udelar",
+        "trabaja": "Tecla Academy, Covalent",
+        "link": "https://www.linkedin.com/in/manuel-arocena-51985126b",
+        "foto": "/equipos/fotos/05-manuel-arocena.webp",
+        "aporte": "agente de intención, guard de parámetros autorizados y vista agente del dashboard"
+      },
+      {
+        "nombre": "Bruno Pallas",
+        "estudia": "UdelaR",
+        "trabaja": "Klevertax, CoacHub",
+        "link": "https://uy.linkedin.com/in/bruno-pallas-nin-463ba029a",
+        "foto": "/equipos/fotos/05-bruno-pallas.webp",
+        "aporte": "integración del protocolo ap2, persistencia de datos y flujo de pasajes aéreos"
+      },
+      {
+        "nombre": "Facundo Sansalone",
+        "estudia": "UM",
+        "trabaja": "Facal, Covalent",
+        "link": "https://www.linkedin.com/in/facundo-sansalone-grasso-5a8355322/",
+        "foto": "/equipos/fotos/05-facundo-sansalone.webp",
+        "aporte": "proxy y filtro de seguridad en python, dashboard con modo /demo y sus tests"
+      }
+    ]
+  },
+  {
+    "numero": 6,
+    "equipo": "b&niks",
+    "producto": null,
+    "oneliner": "Memoria situacional para equipos que programan con agentes de código. Lo que un agente aprendió a los golpes se le avisa al próximo justo antes de repetir el error, aunque sea de otro compañero o de otro proveedor.",
+    "detalle": "API FastAPI con Postgres y pgvector, workers que destilan lecciones y un tablero estático detrás de Caddy, desplegado en AWS con Docker Compose. Se engancha a Claude Code con hooks y un plugin con MCP: registra la situación de cada sesión y responde con avisos de solapamiento, lecciones y recetas del equipo. Agentes Hermes mantienen una bóveda de Obsidian con lo aprendido.",
+    "stack": [
+      "fastapi",
+      "postgres",
+      "claude code"
+    ],
+    "demo": "https://54-89-124-87.sslip.io",
+    "repos": [
+      "https://github.com/hackaton2026bnicks/hackatonbuild101"
+    ],
+    "captura": "/equipos/06.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Nicolas Tognola",
+        "estudia": "Universidad de Montevideo",
+        "trabaja": "Proyectos Freelance",
+        "link": "https://www.linkedin.com/in/nicolas-tognola-335972303",
+        "foto": "/equipos/fotos/06-nicolas-tognola.webp",
+        "aporte": "bandeja hermes que archiva lecciones en la bóveda, plugin y detector de insights"
+      },
+      {
+        "nombre": "Alberto Ortolani",
+        "estudia": null,
+        "trabaja": "Asom Studio",
+        "link": "https://www.linkedin.com/in/alberto-ortolani-software-developer/",
+        "foto": "/equipos/fotos/06-alberto-ortolani.webp",
+        "aporte": "herramientas para medir cómo usa claude el equipo y bots en vivo en la ui"
+      },
+      {
+        "nombre": "Nicolas Sere",
+        "estudia": "Universidad de Montevideo",
+        "trabaja": "SunnyData",
+        "link": "https://www.linkedin.com/in/nicolas-sere-12970b273/",
+        "foto": "/equipos/fotos/06-nicolas-sere.webp",
+        "aporte": "api en python, lectura de la bóveda por git, hooks del agente e infra de deploy"
+      }
+    ]
+  },
+  {
+    "numero": 7,
+    "equipo": "Scout",
+    "producto": "Scout",
+    "oneliner": "Una plataforma de prospección con IA para equipos de partnerships y venta B2B: encuentra cuentas, las investiga con fuentes verificables y las prioriza contra tu ICP. Redacta el primer mensaje con tu voz y mueve el pipeline cuando el prospecto responde, siempre con tu aprobación.",
+    "detalle": "Next.js con SQLite vía Drizzle y correo real por IMAP y SMTP. Agentes con Claude (Haiku, Sonnet y Opus) y prompts en archivos investigan una empresa en vivo con búsqueda web y progreso por eventos, puntúan contra el ICP con pesos calculados en código, buscan el contacto con Hunter, redactan el primer mensaje y clasifican respuestas. Las citas se verifican contra el texto y nada se envía sin aprobación.",
+    "stack": [
+      "next.js",
+      "claude",
+      "drizzle",
+      "sqlite"
+    ],
+    "demo": null,
+    "repos": [],
+    "captura": null,
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Manuel Anselmi",
+        "estudia": "UM",
+        "trabaja": "Struxto",
+        "link": "https://www.linkedin.com/in/manuel-anselmi-848420242/",
+        "foto": "/equipos/fotos/07-manuel-anselmi.webp",
+        "aporte": "agentes de IA: discovery con haiku, agente de aprendizaje y corrida nocturna"
+      },
+      {
+        "nombre": "Nicolas Barboza",
+        "estudia": "UM - ORT",
+        "trabaja": "TecsPal",
+        "link": "https://www.linkedin.com/in/nicolasbarbozadarosa/",
+        "foto": "/equipos/fotos/07-nicolas-barboza.webp",
+        "aporte": "discovery y outreach en scout, playbook personal y guion del pitch"
+      },
+      {
+        "nombre": "Santiago Lizarazu",
+        "estudia": "ORT",
+        "trabaja": "Tribu",
+        "link": "https://www.linkedin.com/in/santiago-lizarazu/",
+        "foto": "/equipos/fotos/07-santiago-lizarazu.webp",
+        "aporte": "frontend: ficha con anillos y radar, tablero del pipeline, playbook y mail real"
+      }
+    ]
+  },
+  {
+    "numero": 8,
+    "equipo": "las chicas súper poderosas",
+    "producto": "Hooksage",
+    "oneliner": "Convierte grabaciones e ideas en videos cortos listos para redes, pensado para pymes, startups y creadores. Recorta, subtitula y suma gráficos, zooms y sonido con dirección editorial, y cada revisión guarda la versión anterior.",
+    "detalle": "Monorepo TypeScript con API y web en React: Gemini analiza el material y decide cortes, encuadre y efectos, y Remotion renderiza el video final. Whisper transcribe para los subtítulos y ElevenLabs genera acentos sonoros. Las decisiones del modelo se validan antes de renderizar, hay un MCP local para pedir trabajos a la API y la demo limita cupos y duración. La landing aparte es Astro con lista de espera en SQLite.",
+    "stack": [
+      "react",
+      "gemini",
+      "remotion"
+    ],
+    "demo": "https://hooksage.com",
+    "repos": [
+      "https://github.com/Qadra42/build101",
+      "https://github.com/Juacin25/hooksage-landing"
+    ],
+    "captura": "/equipos/08.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Guido Vizoso",
+        "estudia": "ORT",
+        "trabaja": "GWM Advisory Services",
+        "link": "https://www.linkedin.com/in/guido-vizoso-70bb98150/?isSelfProfile=true",
+        "foto": "/equipos/fotos/08-guido-vizoso.webp",
+        "aporte": null
+      },
+      {
+        "nombre": "Francisco Cuadra",
+        "estudia": "ORT",
+        "trabaja": "Mercado Libre",
+        "link": "https://www.linkedin.com/in/francisco-cuadra/",
+        "foto": "/equipos/fotos/08-francisco-cuadra.webp",
+        "aporte": "api y web del editor de video: pipeline editorial, guiones y exportes pro"
+      },
+      {
+        "nombre": "Joaquin Hernandez",
+        "estudia": "ORT",
+        "trabaja": "Drivo",
+        "link": "https://www.linkedin.com/in/joaquinhernandez/overlay/contact-info/",
+        "foto": "/equipos/fotos/08-joaquin-hernandez.webp",
+        "aporte": "landing en astro de hooksage: bilingüe, planes de precios, waitlist y videos"
+      }
+    ]
+  },
+  {
+    "numero": 9,
+    "equipo": "Alargue",
+    "producto": "I+P",
+    "oneliner": "Un asistente para dueños que alquilan: atiende por whatsapp y por teléfono a cada interesado. Averigua en la charla los criterios del propietario, calcula la compatibilidad en vivo y le pasa solo a los que encajan.",
+    "detalle": "Next.js con Supabase y login de Google, desplegado en Vercel. El bot de WhatsApp corre en n8n con WAHA y le pasa cada mensaje a la app, que devuelve la guía de qué preguntar; las llamadas usan voz en tiempo real. Claude Haiku 5.5 arma el perfil del interesado y completa la ficha desde el aviso pegado, y los no negociables del dueño pasan una validación legal.",
+    "stack": [
+      "next.js",
+      "supabase",
+      "claude"
+    ],
+    "demo": "https://inquilino-propietario.vercel.app",
+    "repos": [],
+    "captura": "/equipos/09.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1eYCp4xXJIm4_4Vqh4C9J1NF3KsLN7Ru5/view"
+      }
+    ],
+    "integrantes": [
+      {
+        "nombre": "Santiago Abásolo",
+        "estudia": null,
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/santiabasolo/",
+        "foto": "/equipos/fotos/09-santiago-abasolo.webp",
+        "aporte": "panel del propietario en next.js, app de ios en swift y bot de whatsapp"
+      },
+      {
+        "nombre": "Ignacio Azaretto Soler",
+        "estudia": null,
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/ignacio-azaretto-9699721a7/",
+        "foto": "/equipos/fotos/09-ignacio-azaretto-soler.webp",
+        "aporte": "guía de preguntas del perfilado y adaptación al esquema de supabase"
+      },
+      {
+        "nombre": "Gabriel Villaverde",
+        "estudia": null,
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/villaverdegabriel/",
+        "foto": "/equipos/fotos/09-gabriel-villaverde.webp",
+        "aporte": "perfilado con citas verificadas, casos sintéticos y onboarding del propietario"
+      }
+    ]
+  },
+  {
+    "numero": 10,
+    "equipo": "TJJ Tech",
+    "producto": null,
+    "oneliner": "Una app compañera de viaje para turistas, solos o en grupo, que arma el itinerario conversando. En destino lanza tours guiados por un agente de voz que te habla solo al llegar a cada parada, gracias al gps.",
+    "detalle": "App Expo (React Native) con Mapbox, API en Hono sobre Vercel y Supabase con PostGIS. Claude Sonnet 5.5 es el cerebro con varios agentes (planificador, tours, investigador, visión) usando Tool Runner y búsqueda web, con esfuerzo distinto por tarea; la voz 1 a 1 es OpenAI Realtime por WebRTC con token temporal. Lugares y rutas salen de Google, el clima de Open-Meteo, y hay simulador de GPS.",
+    "stack": [
+      "expo",
+      "hono",
+      "claude",
+      "supabase"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/tjjtech-build101/travel-guide"
+    ],
+    "captura": "/equipos/10.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Juan Estape",
+        "estudia": null,
+        "trabaja": "Horizon AI",
+        "link": "https://www.linkedin.com/in/juan-estape-979a5a248/",
+        "foto": "/equipos/fotos/10-juan-estape.webp",
+        "aporte": "app mobile y api: planificador de tours, scout en la app y ubicación por gps"
+      },
+      {
+        "nombre": "Tomas Zelaschi",
+        "estudia": null,
+        "trabaja": "Frontline",
+        "link": "https://www.linkedin.com/in/tom%C3%A1s-zelaschi-99bb12258/",
+        "foto": "/equipos/fotos/10-tomas-zelaschi.webp",
+        "aporte": "voz por bluetooth, tour interior, traslados en transporte público y research"
+      },
+      {
+        "nombre": "Josefina Cardozo",
+        "estudia": "Udelar",
+        "trabaja": "Promtior",
+        "link": "https://linkedin.com/in/josefina-cardozo-094a5725a",
+        "foto": "/equipos/fotos/10-josefina-cardozo.webp",
+        "aporte": "generador de tours con eventos y clima, ui del mundo scout y pestaña tours"
+      }
+    ]
+  },
+  {
+    "numero": 11,
+    "equipo": "furIA",
+    "producto": "MaronIA",
+    "oneliner": "Un agente de voz que atiende el call center de apuestas hípicas de maroñas en los picos antes de cada largada. Identifica al cliente, entiende la jerga hípica, toma la apuesta y manda el comprobante por sms.",
+    "detalle": "Backend FastAPI y panel Next.js, ambos en Railway. La llamada entra por Twilio y la atiende un agente conversacional de ElevenLabs conectado al backend por webhooks: identifica cuenta y PIN, informa el saldo y toma la apuesta. Resuelve nombres de caballos mal transcritos y montos en palabras, manda el comprobante por SMS y tiene cola FIFO con posición; un operador puede atender desde el navegador.",
+    "stack": [
+      "fastapi",
+      "next.js",
+      "elevenlabs",
+      "twilio"
+    ],
+    "demo": "https://web-production-341e3.up.railway.app",
+    "repos": [],
+    "captura": "/equipos/11.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Guillermo Storace",
+        "estudia": "UM",
+        "trabaja": "Dominion",
+        "link": "https://www.linkedin.com/in/guillermo-storace-alfaro/",
+        "foto": "/equipos/fotos/11-guillermo-storace.webp",
+        "aporte": "backend en python: llamadas grabadas, sms por boleto y pin en la ventanilla"
+      },
+      {
+        "nombre": "Phillip Bowles",
+        "estudia": "UM",
+        "trabaja": "Blend 360",
+        "link": "https://www.linkedin.com/in/phillip-bowles-/",
+        "foto": "/equipos/fotos/11-phillip-bowles.webp",
+        "aporte": "agente de voz en elevenlabs, tools del backend, deploy en railway y ui del crm"
+      },
+      {
+        "nombre": "Manuel Perez",
+        "estudia": "UM",
+        "trabaja": "Blend 360",
+        "link": "https://www.linkedin.com/in/manuel-p%C3%A9rez-2713b2244/",
+        "foto": "/equipos/fotos/11-manuel-perez.webp",
+        "aporte": "harness de agentes y revisión de prs, hooks y mocks del /demo en la web"
+      }
+    ]
+  },
+  {
+    "numero": 12,
+    "equipo": "Claude & Asociados",
+    "producto": "Guardián",
+    "oneliner": "Protege a los abuelos del cuento del tío mientras la llamada está pasando. Una app android transcribe en vivo, claude puntúa el riesgo frase a frase y, si sube, avisa a la familia por whatsapp y pone la pantalla en rojo.",
+    "detalle": "App Android en Kotlin que, con un servicio de accesibilidad, manda el audio de la llamada por WebSocket a un servidor FastAPI. Deepgram Nova-3 transcribe en streaming y Claude Haiku 5.5 devuelve, también en streaming, un riesgo de 0 a 100 con las frases que delatan la estafa; si no contesta en 9 s entran reglas por palabras clave. Alertas por Twilio, panel en Next.js y analítica en SQLite.",
+    "stack": [
+      "fastapi",
+      "kotlin",
+      "claude",
+      "deepgram"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/PedroMorgaOrt/Claude-Asociados"
+    ],
+    "captura": "/equipos/12.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1yn3gyuY5S2IDjKxBt2OF_BD9OHcn2vLi/view"
+      }
+    ],
+    "integrantes": [
+      {
+        "nombre": "Bruno Colo",
+        "estudia": "ORT",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/bruno-colo/",
+        "foto": "/equipos/fotos/12-bruno-colo.webp",
+        "aporte": "casos de demo, panel web, tests del detector, docker y guion del pitch"
+      },
+      {
+        "nombre": "Pedro Morga",
+        "estudia": "ORT",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/pedro-morga-7a6057326/",
+        "foto": "/equipos/fotos/12-pedro-morga.webp",
+        "aporte": "telefonía con deepgram y reconexión, app android, analítica e integración"
+      },
+      {
+        "nombre": "Matias Moser",
+        "estudia": "ORT",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/matias-moser-992198433/",
+        "foto": "/equipos/fotos/12-matias-moser.webp",
+        "aporte": "detector de estafas con haiku en streaming, reglas, alertas y casos de demo"
+      }
+    ]
+  },
+  {
+    "numero": 13,
+    "equipo": "SOLO",
+    "producto": "Neitor AI",
+    "oneliner": "Una agencia de marketing que vive en el whatsapp del dueño de un negocio chico. Le mandás una foto de lo que vendés y un equipo de agentes escribe, diseña y publica en instagram, sin publicar nada hasta que aprobás.",
+    "detalle": "Backend FastAPI con SQLAlchemy y Alembic en Railway, y frontend Next.js en Vercel con el wizard de onboarding. El canal es WhatsApp vía Kapso: un orquestador con prompts armados desde archivos coordina agentes que escriben con Gemini y generan imágenes y carruseles con Gemini. Publica en Instagram con Zernio usando claves de idempotencia; datos y fotos viven en Supabase y cada decisión está en un ADR.",
+    "stack": [
+      "fastapi",
+      "next.js",
+      "gemini"
+    ],
+    "demo": "https://build101-khaki.vercel.app",
+    "repos": [
+      "https://github.com/guidodinello/build101"
+    ],
+    "captura": "/equipos/13.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Facundo Larrosa",
+        "estudia": "FADU UDELAR",
+        "trabaja": "Katei",
+        "link": "https://kateiuy.lovable.app/",
+        "foto": null,
+        "aporte": "analista de nicho con gemini y respuestas al dueño para generar posts"
+      },
+      {
+        "nombre": "Matías ramilo",
+        "estudia": "FING UDELAR",
+        "trabaja": "Light-IT",
+        "link": "https://www.linkedin.com/in/mathias-ramilo?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+        "foto": "/equipos/fotos/13-matias-ramilo.webp",
+        "aporte": "onboarding en next.js y whatsapp, brand brain y carruseles con gemini"
+      },
+      {
+        "nombre": "Guido dinello",
+        "estudia": "FING UDELAR",
+        "trabaja": "Light-IT",
+        "link": "https://www.linkedin.com/in/guido-dinello-48875b217?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+        "foto": "/equipos/fotos/13-guido-dinello.webp",
+        "aporte": "orquestador del backend, whatsapp con kapso, aprobación de posts y railway"
+      }
+    ]
+  },
+  {
+    "numero": 14,
+    "equipo": "TokenMaxxers",
+    "producto": "Lia",
+    "oneliner": "Un intérprete de lengua de señas argentina para que personas sordas y oyentes se entiendan. Un avatar 3d pasa voz, texto o la foto de una página a señas, y la cámara reconoce señas y las dice en voz alta.",
+    "detalle": "Monorepo con agentes y backend en Python (FastAPI, uv), UI en React y una extensión de Chrome hecha con WXT. MediaPipe reconoce pose y manos en el navegador, un clasificador temporal chico entrenado con LSA64 da las glosas y Claude Haiku arma la frase o elige qué palabras tienen seña. El avatar 3D (VRM en three.js) reproduce movimientos reales del dataset, convertidos de landmarks a rotaciones.",
+    "stack": [
+      "fastapi",
+      "react",
+      "claude",
+      "mediapipe"
+    ],
+    "demo": "https://lia-ui-4ko0q3l9utgp--0kg15d.us.sb.tenki.sh",
+    "repos": [],
+    "captura": "/equipos/14.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1O2zTfz1clXpIqh2P9AzAvZlL0vc6bb7v/view"
+      }
+    ],
+    "integrantes": [
+      {
+        "nombre": "Bruno Romero",
+        "estudia": "UdelaR",
+        "trabaja": "BitGarden",
+        "link": "https://www.linkedin.com/in/brunoromerogarcia",
+        "foto": "/equipos/fotos/14-bruno-romero.webp",
+        "aporte": "ui de los modos voz, foto y cámara, y rediseño de la vista voz → señas"
+      },
+      {
+        "nombre": "Juan Perrachon",
+        "estudia": "UM",
+        "trabaja": "Infoclub Soluciones",
+        "link": "https://www.linkedin.com/in/jdperrachon/",
+        "foto": "/equipos/fotos/14-juan-perrachon.webp",
+        "aporte": "extensión, clips del avatar curados y chequeos anatómicos de manos y brazos"
+      },
+      {
+        "nombre": "German Ipes",
+        "estudia": "UdelaR",
+        "trabaja": "Perceptyx",
+        "link": "https://www.linkedin.com/in/german-ipes/",
+        "foto": "/equipos/fotos/14-german-ipes.webp",
+        "aporte": "monorepo base, avatar 3d vrm con 1350 señas lsa y búsqueda por similitud"
+      }
+    ]
+  },
+  {
+    "numero": 15,
+    "equipo": "BigO",
+    "producto": "Servio",
+    "oneliner": "Visión computacional para restaurantes con una cámara en alto sobre el salón. Yolo detecta los platos de cada mesa, claude estima cuánta comida queda y el mozo recibe un aviso por telegram cuando una mesa está por terminar.",
+    "detalle": "Pipeline de visión en Python con OpenCV: una cámara en alto (también sirve el celular con DroidCam) manda cuadros, YOLO detecta y sigue los platos de cada mesa y Claude Haiku estima cuánta comida queda. Un clasificador híbrido deja que Claude lea los platos que YOLO pierde, el estado se decide por mayoría de cinco lecturas y un motor de alertas avisa al mozo por Telegram.",
+    "stack": [
+      "python",
+      "yolo",
+      "claude",
+      "telegram"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/matiHirCab/Servio"
+    ],
+    "captura": "/equipos/15.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1P4qyVJQSeBjiO0UteXINMBmzbmYZ4v0C/view"
+      }
+    ],
+    "integrantes": [
+      {
+        "nombre": "Tomás Rama",
+        "estudia": "UCU",
+        "trabaja": "Oracle",
+        "link": "https://www.linkedin.com/in/tomás-rama-896298274",
+        "foto": "/equipos/fotos/15-tomas-rama.webp",
+        "aporte": "visión híbrida yolo + claude por plato, detector yoloe e ids por posición"
+      },
+      {
+        "nombre": "Jessica Sista",
+        "estudia": "UdelaR",
+        "trabaja": "Oracle",
+        "link": "https://www.linkedin.com/in/jessica-sista/",
+        "foto": "/equipos/fotos/15-jessica-sista.webp",
+        "aporte": "visión de platos, avisos y métricas por telegram y base sqlite de eventos"
+      },
+      {
+        "nombre": "Matias Hirschfeld",
+        "estudia": "ORT",
+        "trabaja": "Oracle",
+        "link": "https://www.linkedin.com/in/matias-hirschfeld-cababie-ab3a2421b/",
+        "foto": "/equipos/fotos/15-matias-hirschfeld.webp",
+        "aporte": "proveedor openai con decisions api, captura de cámara y docker del servidor"
+      }
+    ]
+  },
+  {
+    "numero": 16,
+    "equipo": "JAM",
+    "producto": "FrictionSwarm",
+    "oneliner": "Encuentra dónde se traban los usuarios de un e-commerce a partir de sus datos reales de posthog. Propone y aplica el arreglo, y después un enjambre de agentes con distintas personas re-testea la tienda para probarlo.",
+    "detalle": "Monorepo TypeScript con dashboard Next.js en Netlify y un orquestador en un sandbox de Tenki, unidos por Netlify Blobs. Un analizador con Claude Sonnet lee eventos reales de PostHog y saca hallazgos por segmento; un agente de código con Claude Agent SDK abre el PR con el arreglo y un enjambre de agentes en Playwright, con personas distintas, re-testea el preview registrando sus propios eventos.",
+    "stack": [
+      "next.js",
+      "claude",
+      "playwright",
+      "posthog"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/jbecerra73/build101_grupo16"
+    ],
+    "captura": "/equipos/16.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Alexis Friss de Kereki",
+        "estudia": null,
+        "trabaja": "Neocoast",
+        "link": "http://linkedin.com/in/alexisfriss/",
+        "foto": "/equipos/fotos/16-alexis-friss-de-kereki.webp",
+        "aporte": "dashboard estilo posthog, pipeline de análisis, deploy en netlify y pitch"
+      },
+      {
+        "nombre": "Mauricio Friss de Kereki",
+        "estudia": null,
+        "trabaja": "Eagerworks",
+        "link": "https://linkedin.com/in/mauriciofrissdekereki",
+        "foto": "/equipos/fotos/16-mauricio-friss-de-kereki.webp",
+        "aporte": "orquestador en tenki, enjambre con eventos de posthog y loop de arreglos"
+      },
+      {
+        "nombre": "Joaquín Becerra",
+        "estudia": null,
+        "trabaja": "Nareia Software",
+        "link": "https://www.linkedin.com/in/joaquin-becerra-5b3388201/",
+        "foto": "/equipos/fotos/16-joaquin-becerra.webp",
+        "aporte": "tienda de demo, worker del enjambre en tenki y personas sintéticas kai y rosa"
+      }
+    ]
+  },
+  {
+    "numero": 17,
+    "equipo": "Hookia",
+    "producto": "Hookia",
+    "oneliner": "Un coach de Instagram con IA para quienes construyen su marca personal: analiza tu perfil y encuentra lo que funciona en tu nicho. Un equipo de agentes mide tus métricas con código y te escribe ideas y guiones con tu propia voz.",
+    "detalle": "Next.js donde cada área tiene su agente (perfil, métricas, reels, guionista, editor y más) con una ficha de experto investigada cargada en el prompt. Corre con Claude Code headless (claude -p) o con la API de Anthropic, con herramientas propias por MCP y búsqueda web. Los datos vienen de Meta y Windsor, los números los calcula el código y el editor arma reels con Whisper y ffmpeg.",
+    "stack": [
+      "next.js",
+      "claude code",
+      "mcp"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/paulmc2708/Hackathon-Equipo17"
+    ],
+    "captura": "/equipos/17.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Juan Sebastian Val",
+        "estudia": "ORT",
+        "trabaja": null,
+        "link": "https://makinia.com",
+        "foto": "/equipos/fotos/17-juan-sebastian-val.webp",
+        "aporte": null
+      },
+      {
+        "nombre": "Juan Maria Andre",
+        "estudia": "ORT",
+        "trabaja": "Mercado Libre",
+        "link": "https://www.linkedin.com/in/juan-maría-andré-0b1672332/",
+        "foto": "/equipos/fotos/17-juan-maria-andre.webp",
+        "aporte": null
+      },
+      {
+        "nombre": "Paul Mc Cubbin",
+        "estudia": "FCEA Udelar",
+        "trabaja": "Grant Thornton",
+        "link": "https://www.linkedin.com/in/paul-mc-cubbin-/",
+        "foto": "/equipos/fotos/17-paul-mc-cubbin.webp",
+        "aporte": "app next.js con agente claude, skills del método de edición y métricas con windsor"
+      }
+    ]
+  },
+  {
+    "numero": 18,
+    "equipo": null,
+    "producto": "ARGOS",
+    "oneliner": "Estima la condición corporal de vacas lecheras a partir de una foto tomada desde atrás, pensado para productores y técnicos. Guarda el historial de cada vaca, avisa cuando la foto no sirve y muestra el estado del rodeo.",
+    "detalle": "Modelo de visión propio en PyTorch (timm y CLIP, con YOLO para encontrar la vaca), exportado a ONNX y servido con FastAPI en Railway junto a la web. Devuelve el BCS con una distribución calibrada, intervalo conformal al 90% y estado de baja confianza fuera del rango validado. Un modelo multimodal de OpenAI describe la foto en paralelo, sin ver el puntaje predicho.",
+    "stack": [
+      "fastapi",
+      "pytorch",
+      "openai"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/nstan25/Hackaton-Build---Equipo-18"
+    ],
+    "captura": "/equipos/18.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1KXPWTNQ3_gssj8hfFLCNXTquXiNaQjdH/view"
+      }
+    ],
+    "integrantes": [
+      {
+        "nombre": "Nicolás Stanko",
+        "estudia": "UM",
+        "trabaja": "OCTOPUS DATA SOLUTIONS",
+        "link": "https://www.linkedin.com/in/nicol%C3%A1sstanko/?isSelfProfile=true",
+        "foto": "/equipos/fotos/18-nicolas-stanko.webp",
+        "aporte": null
+      },
+      {
+        "nombre": "Pablo Maurente",
+        "estudia": "UM",
+        "trabaja": "UDELAR",
+        "link": "https://www.linkedin.com/in/pablo-maurente-635313204/",
+        "foto": "/equipos/fotos/18-pablo-maurente.webp",
+        "aporte": "preprocesamiento del dataset bcs y entrenamiento de los modelos de visión"
+      },
+      {
+        "nombre": "Pablo Dalchiele",
+        "estudia": "UDELAR",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/pablo-dalchiele-gonzález-56bab935",
+        "foto": null,
+        "aporte": "núcleo en python (src/bcs), web, tests con fixtures y evaluación final g4"
+      }
+    ]
+  },
+  {
+    "numero": 19,
+    "equipo": "Delta",
+    "producto": "Guíame",
+    "oneliner": "Un navegador asistido para personas mayores que necesitan hacer trámites en internet. Le pedís con tus palabras o por voz lo que querés hacer y te guía paso a paso en la página, con un panel que chequea si el sitio es seguro.",
+    "detalle": "App de escritorio en Electron y una API Fastify en Railway, con contratos compartidos en Zod y JSON Schema. Claude interpreta el pedido contra las opciones de la página, elige la variante exacta del trámite y, solo si no sabe cómo seguir, investiga el paso a paso con búsqueda web. La voz usa OpenAI para transcribir y hablar, y un panel de protección de sitios verifica las URLs.",
+    "stack": [
+      "electron",
+      "fastify",
+      "claude",
+      "openai"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/gastonmartinezz/hackaton-2026-e19"
+    ],
+    "captura": "/equipos/19.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "video",
+        "url": "https://drive.google.com/file/d/19iqJpn56Up3zTJccq1xt4YBQ8yAuRiQR/view"
+      }
+    ],
+    "integrantes": [
+      {
+        "nombre": "Emilio Muniz",
+        "estudia": "UDE",
+        "trabaja": "AYAX - Toyota",
+        "link": "https://www.linkedin.com/in/emilio-muniz18/",
+        "foto": "/equipos/fotos/19-emilio-muniz.webp",
+        "aporte": null
+      },
+      {
+        "nombre": "Gastón Martinez",
+        "estudia": "Universidad de la República",
+        "trabaja": "EverPass Media",
+        "link": "https://www.linkedin.com/in/gaston-martinez/",
+        "foto": "/equipos/fotos/19-gaston-martinez.webp",
+        "aporte": "mvp del navegador asistido y deploy de la api en railway y tenki"
+      },
+      {
+        "nombre": "Agustín Gomez",
+        "estudia": null,
+        "trabaja": "Crowd Intelligence",
+        "link": "https://www.linkedin.com/in/agustin-gomez-b65975211/",
+        "foto": "/equipos/fotos/19-agustin-gomez.webp",
+        "aporte": "app desktop y api: interpretación de pedidos, prompts y verificación de urls"
+      }
+    ]
+  },
+  {
+    "numero": 20,
+    "equipo": "Rumbo",
+    "producto": "Rumbo",
+    "oneliner": "Orientación vocacional conversacional para jóvenes de uruguay de 16 a 20 años. Una IA charla con una pregunta por vez sobre una rúbrica científica y te muestra hasta tres caminos con fuentes verificadas y dónde estudiar.",
+    "detalle": "Next.js con Supabase y crons de Vercel, con Gemini como modelo. Cada turno pasa por un analizador LLM que convierte la respuesta en evidencias de una rúbrica científica versionada (Holland, Prediger, Gati, SCCT), un perfil y un planificador puros en código, y un entrevistador que redacta con guardas. Después, subagentes buscan, verifican fuentes y eligen hasta tres caminos; tiene 63 pruebas.",
+    "stack": [
+      "next.js",
+      "gemini",
+      "supabase"
+    ],
+    "demo": "https://rumbo-liart.vercel.app",
+    "repos": [
+      "https://github.com/Santi-mz/BUILD-101"
+    ],
+    "captura": "/equipos/20.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Martin Trigo",
+        "estudia": "UdelaR",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/martín-trigo-775696358?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+        "foto": "/equipos/fotos/20-martin-trigo.webp",
+        "aporte": "entrevistador vocacional con llm, devolución riasec, tests y deploy en vercel"
+      },
+      {
+        "nombre": "Santiago Muñoz",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/santiago-muñoz-5b1722441?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+        "foto": "/equipos/fotos/20-santiago-munoz.webp",
+        "aporte": "motor de perfil riasec, entrevista inicial y preview aislado sin supabase"
+      },
+      {
+        "nombre": "Benjamin Macció",
+        "estudia": "Udelar",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
+        "foto": "/equipos/fotos/20-benjamin-maccio.webp",
+        "aporte": "landing, dónde estudiar con programas reales, navegación y accesibilidad"
+      }
+    ]
+  },
+  {
+    "numero": 21,
+    "equipo": "Waven",
+    "producto": "Polo",
+    "oneliner": "Una guía de viaje por voz que conoce tus gustos, dónde estás, los lugares cercanos y tu itinerario. Hablás con ella en tiempo real como en una llamada, te avisa cuando pasás cerca de algo y te traduce en la calle.",
+    "detalle": "Next.js 16 con shadcn/ui y Supabase. La voz es una llamada en tiempo real con OpenAI Realtime por WebRTC (modelo mini, VAD del servidor y corte por costo o inactividad). Los lugares salen de Google Maps, un motor de recomendaciones con tests cruza gustos y cercanía, y suma avisos de proximidad, traductor y cámara para preguntar qué estás viendo. Un reloj simulado y un joystick mueven la demo.",
+    "stack": [
+      "next.js",
+      "openai realtime",
+      "supabase"
+    ],
+    "demo": "https://build101-g21.vercel.app",
+    "repos": [
+      "https://github.com/tiagobenede/build101-g21"
+    ],
+    "captura": "/equipos/21.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/14Tob5_zWoU4i752Hvz_hRPTsC6jT3-Yj/view"
+      }
+    ],
+    "integrantes": [
+      {
+        "nombre": "Nicolas Perez Quintero",
+        "estudia": "FING - UDELAR",
+        "trabaja": "Effectus Software",
+        "link": "https://www.linkedin.com/in/nicolas-perez-quintero",
+        "foto": "/equipos/fotos/21-nicolas-perez-quintero.webp",
+        "aporte": "búsqueda de lugares, tarjetas con foto, onboarding animado y perfil del viajero"
+      },
+      {
+        "nombre": "Tiago Benedetto",
+        "estudia": "FING - UDELAR",
+        "trabaja": "KSI Vision",
+        "link": "https://www.linkedin.com/in/tiago-benedetto",
+        "foto": "/equipos/fotos/21-tiago-benedetto.webp",
+        "aporte": "agente con avisos de cercanía, traductor con elevenlabs y reloj simulado"
+      },
+      {
+        "nombre": "Lucas Melo",
+        "estudia": "FING - UDELAR",
+        "trabaja": "KSI Vision",
+        "link": "https://www.linkedin.com/in/lucas-melo-zilli",
+        "foto": "/equipos/fotos/21-lucas-melo.webp",
+        "aporte": "traductor conversacional, cámara a pantalla completa y pwa instalable"
+      }
+    ]
+  },
+  {
+    "numero": 22,
+    "equipo": "Cruce",
+    "producto": "Cruce",
+    "oneliner": "Un espacio de trabajo para founders que quieren validar una idea antes de construirla. La IA propone hipótesis, encuestas y entrevistas a partir de tu contexto, investiga con fuentes reales y te cruza con founders afines.",
+    "detalle": "Backend TrailBase con extensiones en Rust-WASM, front en React con shadcn y un servicio de agentes en TypeScript. El núcleo llama a Claude Code en modo headless con Haiku y un JSON Schema de salida; el research usa el MCP de Exa y solo guarda fuentes que Exa devolvió. Un servicio aparte con Graphiti y FalkorDB guarda la red de founders como grafo para hacer match por problemas y enfoques.",
+    "stack": [
+      "react",
+      "trailbase",
+      "claude"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/04mg/build-101"
+    ],
+    "captura": "/equipos/22.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Manuel Graña",
+        "estudia": "ORT",
+        "trabaja": "Ternium",
+        "link": "https://linkedin.com/in/manuelgrana/",
+        "foto": "/equipos/fotos/22-manuel-grana.webp",
+        "aporte": "prototipo con trailbase, agente cofundador, validación de hipótesis y frontend"
+      },
+      {
+        "nombre": "Franco Bonavita",
+        "estudia": "ORT",
+        "trabaja": "Jinkanna",
+        "link": "https://www.linkedin.com/in/francobonavita312003/",
+        "foto": "/equipos/fotos/22-franco-bonavita.webp",
+        "aporte": null
+      },
+      {
+        "nombre": "Enzo Izquierdo",
+        "estudia": "ORT",
+        "trabaja": "Above Software",
+        "link": "https://www.linkedin.com/in/enzoizquierdod%C3%ADaz/",
+        "foto": "/equipos/fotos/22-enzo-izquierdo.webp",
+        "aporte": null
+      }
+    ]
+  },
+  {
+    "numero": 23,
+    "equipo": "Viveri",
+    "producto": "VIVERI",
+    "oneliner": "Una app que convierte tu dieta, armada charlando con un nutricionista de IA, en un menú semanal y una lista de compras. Después cotiza la lista en supermercados de montevideo y te muestra dónde sale más barata.",
+    "detalle": "PWA en React servida por un Cloudflare Worker, con Supabase (Postgres con RLS, auth de Google y Edge Functions). Claude Sonnet corre solo en una Edge Function con herramientas: busca productos con full-text en español, guarda perfil y menú y arma la lista. Un scraper en Python carga precios de supermercados con historial por trigger, y las decisiones quedan en unas 30 ADRs.",
+    "stack": [
+      "react",
+      "supabase",
+      "cloudflare"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/build101-23/viveri"
+    ],
+    "captura": "/equipos/23.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Ivan Guchin",
+        "estudia": null,
+        "trabaja": "Tenaris",
+        "link": "https://uy.linkedin.com/in/iv%C3%A1n-guchin-097833319/en",
+        "foto": "/equipos/fotos/23-ivan-guchin.webp",
+        "aporte": "marca viveri, rediseño v2 con login de google y deck del pitch en /pitch"
+      },
+      {
+        "nombre": "Francisco Carbajal",
+        "estudia": null,
+        "trabaja": "Basf",
+        "link": "https://uy.linkedin.com/in/francisco-carbajal-59b389248",
+        "foto": "/equipos/fotos/23-francisco-carbajal.webp",
+        "aporte": "scraper de supermercados, edge functions, carrito de ta-ta y adrs"
+      },
+      {
+        "nombre": "Camilo Aguiar",
+        "estudia": null,
+        "trabaja": "Oracle",
+        "link": "https://uy.linkedin.com/in/camilo-aguiar-332107264",
+        "foto": "/equipos/fotos/23-camilo-aguiar.webp",
+        "aporte": "frontend en react: menú, lista de compras con precios, chat y edge functions"
+      }
+    ]
+  },
+  {
+    "numero": 24,
+    "equipo": null,
+    "producto": "CercanIA",
+    "oneliner": "Un asistente para el cambio de turno de quienes cuidan a un paciente, con la familia y el equipo de salud en la misma app. El reporte por audio se transcribe, se compara con el plan de cuidado y cada dato queda con su cita.",
+    "detalle": "Backend FastAPI y web Next.js en Render, con Supabase Storage para los audios. Whisper en Groq transcribe y gpt-oss-120b con salida estructurada hace triage de emergencias, extracción con cita textual por dato y consultas en lenguaje natural; el código verifica cada cita y compara contra el plan de cuidado. Login con código por SMS de Twilio y un script de evaluación con 20 casos.",
+    "stack": [
+      "fastapi",
+      "next.js",
+      "groq",
+      "supabase"
+    ],
+    "demo": "https://cercania-web.onrender.com",
+    "repos": [
+      "https://github.com/SantiagoSouto/cercania"
+    ],
+    "captura": "/equipos/24.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Felipe Perdomo",
+        "estudia": "UM",
+        "trabaja": "Pyxis",
+        "link": "https://www.linkedin.com/in/felipe-perdomo-636a96208",
+        "foto": "/equipos/fotos/24-felipe-perdomo.webp",
+        "aporte": "capa llm agnóstica con groq, triage, invitaciones y avisos al equipo"
+      },
+      {
+        "nombre": "Santiago Souto",
+        "estudia": "UM",
+        "trabaja": "Qualabs",
+        "link": "https://www.linkedin.com/in/ssoutodeleon",
+        "foto": "/equipos/fotos/24-santiago-souto.webp",
+        "aporte": "web en next.js y backend en python: auth por teléfono, pacientes y evals"
+      },
+      {
+        "nombre": "Erika Alvarez",
+        "estudia": null,
+        "trabaja": null,
+        "link": null,
+        "foto": "/equipos/fotos/24-erika-alvarez.webp",
+        "aporte": "backend y web: alertas, notificaciones, roles, invitaciones y keep-awake"
+      }
+    ]
+  },
+  {
+    "numero": 25,
+    "equipo": "Sin Dormir S.A.",
+    "producto": "Abasto",
+    "oneliner": "Un director de compras con IA para empresas que compran a muchos proveedores. Entiende cotizaciones por whatsapp, pdf, foto o audio, reparte la compra con un solver y ensaya la negociación antes de que mandes un mensaje.",
+    "detalle": "Backend FastAPI en Render y frontend React con Vite y shadcn en Vercel. Claude Sonnet normaliza cotizaciones en PDF, audio, foto o texto, con evidencia de dónde salió cada número, y un solver de programación lineal con PuLP reparte la compra entre proveedores. La negociación se ensaya contra un gemelo digital de cada proveedor, y el front tiene un modo mock con datos JSON.",
+    "stack": [
+      "fastapi",
+      "react",
+      "claude"
+    ],
+    "demo": "https://abasto.vercel.app",
+    "repos": [],
+    "captura": "/equipos/25.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1dHbYo_YsKXM-ja8_uq02uGnz6eaJqil0/view"
+      },
+      {
+        "tipo": "video",
+        "url": "https://drive.google.com/file/d/1MUNwthyAJfvo3kLAGsfoB6nu-4jet7ib/view"
+      }
+    ],
+    "integrantes": [
+      {
+        "nombre": "Emiliano Montone",
+        "estudia": "UDE",
+        "trabaja": "-",
+        "link": "https://www.linkedin.com/in/emiliano-montone-maidana-84b264224/?isSelfProfile=true",
+        "foto": "/equipos/fotos/25-emiliano-montone.webp",
+        "aporte": "frontend completo con shadcn/ui y modo mock, y rediseño del agente de compras"
+      },
+      {
+        "nombre": "Guzman de Leon",
+        "estudia": "ORT",
+        "trabaja": "-",
+        "link": null,
+        "foto": "/equipos/fotos/25-guzman-de-leon.webp",
+        "aporte": "compra por stock mínimo de punta a punta y pantalla depósito del stock"
+      },
+      {
+        "nombre": "Claude Tissierre",
+        "estudia": "-",
+        "trabaja": "-",
+        "link": null,
+        "foto": "/equipos/fotos/25-claude-tissierre.webp",
+        "aporte": null
+      }
+    ]
+  },
+  {
+    "numero": 26,
+    "equipo": "Grupo numero 502",
+    "producto": "Pulso",
+    "oneliner": "Una app que cruza tu sueño, tu pulso y tu ánimo con tu semana de trabajo en github, slack, linear y calendar. Un agente detecta cuándo venís cargado y te propone bloquear foco o mover una reunión, sin ejecutar solo.",
+    "detalle": "Next.js 16 con SQLite vía Drizzle, push web y OAuth con GitHub, Linear y Slack, más Google Health y Calendar. Gemini narra los resúmenes, lee fotos de comida y propone acciones del agente como JSON validado en el servidor. Los cruces con papers y el puntaje son deterministas a propósito: la IA solo narra lo que pasa el control, y de Slack se guarda la hora, nunca el contenido.",
+    "stack": [
+      "next.js",
+      "gemini",
+      "sqlite"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/redemerco/hackaton-build-101"
+    ],
+    "captura": "/equipos/26.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Santiago Sosa",
+        "estudia": "ORT",
+        "trabaja": "Entraste",
+        "link": "https://www.linkedin.com/in/santiagososa-dev/",
+        "foto": "/equipos/fotos/26-santiago-sosa.webp",
+        "aporte": "frontend en next.js: carriles del día, mapa de estrés, ui ascii e ingestas"
+      },
+      {
+        "nombre": "Joaquin Piedra",
+        "estudia": "ORT",
+        "trabaja": "Endava",
+        "link": "https://www.linkedin.com/in/jplangone/",
+        "foto": "/equipos/fotos/26-joaquin-piedra.webp",
+        "aporte": null
+      },
+      {
+        "nombre": "Renzo De Marco",
+        "estudia": "ORT",
+        "trabaja": "Satelites on fire",
+        "link": "https://www.linkedin.com/in/renzodemarco--",
+        "foto": "/equipos/fotos/26-renzo-de-marco.webp",
+        "aporte": "login con google, oauth de calendar, slack, github y linear, y cron del agente"
+      }
+    ]
+  },
+  {
+    "numero": 27,
+    "equipo": null,
+    "producto": "Radar Urbano",
+    "oneliner": "Un canal para que vecinos reporten problemas del espacio público conversando, en vez de llenar formularios. Cada reporte se evalúa, se agrupa con otros del mismo problema y se asigna a la cuadrilla que corresponde en el mapa.",
+    "detalle": "Next.js con Postgres, sesiones con iron-session y mapa con Leaflet. El reporte se arma conversando: un LLM (DeepSeek) pide aclaraciones, extrae la dirección y redacta, y un modelo de decisión de typesafe.ai evalúa el reporte, lo compara con candidatos para agruparlo y define la prioridad con umbrales. Tiene bandejas para cada unidad de respuesta y seeds de cuadrillas por zona.",
+    "stack": [
+      "next.js",
+      "postgres",
+      "openai",
+      "leaflet"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/daizuoheng/build_101_27"
+    ],
+    "captura": "/equipos/27.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Juan Pablo Borja",
+        "estudia": "Udelar",
+        "trabaja": "Mercado Libre",
+        "link": "https://www.linkedin.com/in/juan-pablo-borja",
+        "foto": "/equipos/fotos/27-juan-pablo-borja.webp",
+        "aporte": null
+      },
+      {
+        "nombre": "Federico Dallo",
+        "estudia": "Udelar",
+        "trabaja": "Neocoast",
+        "link": "https://www.linkedin.com/in/federico-dallo",
+        "foto": "/equipos/fotos/27-federico-dallo.webp",
+        "aporte": "backend de operación, tests de base de datos, seeds, consola en next.js y pitch"
+      },
+      {
+        "nombre": "Zuo Heng Dai",
+        "estudia": "Udelar",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/zuoheng-dai",
+        "foto": "/equipos/fotos/27-zuo-heng-dai.webp",
+        "aporte": "despacho transaccional, consultas de estado en lenguaje natural y polling"
+      }
+    ]
+  },
+  {
+    "numero": 28,
+    "equipo": null,
+    "producto": "Walt",
+    "oneliner": "Un asistente para agencias: sus clientes piden cambios chicos de la web por telegram, hasta por audio. La IA interpreta, el código decide con reglas y valida, y se publica en segundos; lo riesgoso lo aprueba la agencia.",
+    "detalle": "Monorepo pnpm con un worker Node que atiende Telegram, panel Next.js en Vercel y Supabase con realtime. Claude Sonnet interpreta el pedido con salida estructurada y los audios se transcriben; después reglas y un gate en código, sin IA, deciden qué se publica. Lo que toca código va a un agente con Claude Agent SDK que abre un PR con preview de Vercel. Un primer repo probó un clasificador con DeepSeek de respaldo.",
+    "stack": [
+      "next.js",
+      "claude",
+      "supabase",
+      "telegram"
+    ],
+    "demo": "https://walt-demo.vercel.app",
+    "repos": [
+      "https://github.com/salvasecco/walt"
+    ],
+    "captura": "/equipos/28.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "afiche",
+        "url": "https://drive.google.com/file/d/10g_0V875FAeiPMGYZz5kKAToiU9iHp_X/view"
+      },
+      {
+        "tipo": "video",
+        "url": "https://drive.google.com/file/d/13gR0cemX4yg75pdLKf0glN0HiUK1oQFC/view"
+      }
+    ],
+    "integrantes": [
+      {
+        "nombre": "Salvador Secco",
+        "estudia": null,
+        "trabaja": "OrderEAT",
+        "link": "https://www.linkedin.com/in/salvador-secco-2955a5223/?isSelfProfile=true",
+        "foto": "/equipos/fotos/28-salvador-secco.webp",
+        "aporte": "panel, worker y agente: pedidos de cambios, vistas previas y performance"
+      },
+      {
+        "nombre": "Juan Pablo Benítez",
+        "estudia": "ORT",
+        "trabaja": null,
+        "link": "https://www.linkedin.com/in/juan-pablo-benitez-gastaldi-753138352/",
+        "foto": "/equipos/fotos/28-juan-pablo-benitez.webp",
+        "aporte": "bot de telegram, cola y pipeline del worker, panel y esquema en supabase"
+      },
+      {
+        "nombre": "Facundo Morena",
+        "estudia": "ORT",
+        "trabaja": "OrderEAT",
+        "link": "https://www.linkedin.com/in/facundomorena/",
+        "foto": "/equipos/fotos/28-facundo-morena.webp",
+        "aporte": null
+      }
+    ]
+  },
+  {
+    "numero": 29,
+    "equipo": "Contigo",
+    "producto": "CONTIGO",
+    "oneliner": "Un asistente de confianza para personas mayores que no se llevan bien con la tecnología, con la familia conectada. El abuelo le pide cosas por voz y la familia lo configura charlando; tiene botón de ayuda y escudo anti-estafas.",
+    "detalle": "Next.js con Upstash Redis y push web, sin base de datos tradicional. Claude responde al abuelo, con lectura en voz alta, y arma la configuración charlando con la familia; todas las llamadas a la IA pasan por un solo módulo del servidor. Un Apps Script en Gmail lee esa configuración para clasificar y proteger mails, y hay un botón de ayuda que llama a la familia o al 911.",
+    "stack": [
+      "next.js",
+      "claude",
+      "upstash"
+    ],
+    "demo": "https://hackaton-felain.vercel.app",
+    "repos": [
+      "https://github.com/larastirling/HACKATON"
+    ],
+    "captura": "/equipos/29.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Ines Bertolotti",
+        "estudia": "FIUM",
+        "trabaja": null,
+        "link": null,
+        "foto": "/equipos/fotos/29-ines-bertolotti.webp",
+        "aporte": "protección de mail con gmail (apps script y oauth) y evaluación del asistente"
+      },
+      {
+        "nombre": "Lara Stirling",
+        "estudia": "FIUM",
+        "trabaja": null,
+        "link": null,
+        "foto": "/equipos/fotos/29-lara-stirling.webp",
+        "aporte": "app del abuelo con voz, botón de ayuda, escudo anti-estafas y web push"
+      },
+      {
+        "nombre": "Felipe Lyonnet",
+        "estudia": "FIUM",
+        "trabaja": null,
+        "link": null,
+        "foto": null,
+        "aporte": "panel de la familia: charla con IA, reglas, lugares y conexión de gmail"
+      }
+    ]
+  },
+  {
+    "numero": 30,
+    "equipo": "LUMAC",
+    "producto": "Rancho Cero",
+    "oneliner": "Una herramienta interna para voluntarios de una fundación de vivienda que relevan familias en asentamientos. Con fotos y audio arma la ficha de cada vivienda, calcula su puntaje y ayuda a priorizar a quién atender.",
+    "detalle": "Monorepo Better-T-Stack con Next.js, Convex y Better-Auth. Una acción de Convex procesa la visita: Claude Sonnet convierte las fotos y el audio del voluntario en una ficha estructurada con evidencia, y la urgencia se calcula con la tabla de puntajes real de la fundación (18 campos, máximo 135). Genera una ficha A4 descargable y un portal reúne a varias fundaciones.",
+    "stack": [
+      "next.js",
+      "convex"
+    ],
+    "demo": null,
+    "repos": [
+      "https://github.com/LucaBenitesM/Rancho-cero"
+    ],
+    "captura": "/equipos/30.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Martina Mazza",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": null,
+        "foto": "/equipos/fotos/30-martina-mazza.webp",
+        "aporte": "nueva visita con ficha por IA, historias para donantes y alta de usuarios"
+      },
+      {
+        "nombre": "Camila Granato",
+        "estudia": "Um",
+        "trabaja": null,
+        "link": null,
+        "foto": "/equipos/fotos/30-camila-granato.webp",
+        "aporte": "identidad visual de rancho cero, roles de voluntario y coordinador y pitch"
+      },
+      {
+        "nombre": "Luca Benites",
+        "estudia": "Um",
+        "trabaja": null,
+        "link": null,
+        "foto": "/equipos/fotos/30-luca-benites.webp",
+        "aporte": "portal de fundaciones, ranking, informe descargable y carga de audio"
+      }
+    ]
+  },
+  {
+    "numero": 31,
+    "equipo": "Luxis",
+    "producto": "Luxis",
+    "oneliner": "Un analizador de licitaciones públicas de uruguay para barracas de materiales de construcción. Encuentra los llamados de arce donde podés vender, lee el pliego por vos y te dice a qué precio se vienen adjudicando los ítems.",
+    "detalle": "Next.js con Supabase, Drizzle y el AI SDK con varios proveedores (Claude, Gemini, DeepSeek). Toma los datos abiertos de ARCE, resume pliegos con IA y vectoriza artículos con embeddings de Gemini en pgvector para buscar precios adjudicados por significado. Expone un servidor MCP de solo lectura para usar la base desde Claude, ChatGPT o un ERP, y la entrevista de onboarding también es por voz.",
+    "stack": [
+      "next.js",
+      "claude",
+      "supabase",
+      "mcp"
+    ],
+    "demo": "https://luxis-hackaton.vercel.app",
+    "repos": [
+      "https://github.com/SebaViglione/Luxis"
+    ],
+    "captura": "/equipos/31.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1vgXcmndpHmu2vYvNp1q8HQzlGmzna2hI/view"
+      },
+      {
+        "tipo": "video",
+        "url": "https://drive.google.com/file/d/170XOu-cEeexktP5zL80bawT9GtOCqWTu/view"
+      }
+    ],
+    "integrantes": [
+      {
+        "nombre": "Máximo Zales",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": null,
+        "foto": null,
+        "aporte": "mejoras de la app, aviso de contradicciones y página cómo funciona la IA"
+      },
+      {
+        "nombre": "Sebastián Viglione",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": "https://uy.linkedin.com/in/sebaviglione",
+        "foto": "/equipos/fotos/31-sebastian-viglione.webp",
+        "aporte": "frontend, landing y servidor mcp para cotizar, con diagrama de precios"
+      },
+      {
+        "nombre": "Rafael Fuidio",
+        "estudia": "UM",
+        "trabaja": null,
+        "link": null,
+        "foto": null,
+        "aporte": "matching de licitaciones, sugeridor de precios, chat del pliego y onboarding"
+      }
+    ]
+  },
+  {
+    "numero": 32,
+    "equipo": "La compu de César",
+    "producto": "Tiza.ai",
+    "oneliner": "Adapta prácticos y parciales de matemática de bachillerato para estudiantes con tdah, dislexia o tea. El profe sube su práctico, la IA arma una versión por perfil sin cambiar lo que se evalúa, y el docente aprueba cada una.",
+    "detalle": "Next.js 16 con la API de Claude y salida estructurada validada con Zod, con respaldo por OpenRouter. Un pipeline adapta el práctico por cada combinación de perfiles del grupo y un verificador con mathjs chequea que los números no cambien. Los estudiantes responden con la mirada (MediaPipe en el navegador) o dictando, ElevenLabs lee las consignas y los datos viven en localStorage.",
+    "stack": [
+      "next.js",
+      "claude",
+      "mediapipe",
+      "elevenlabs"
+    ],
+    "demo": "https://tiza-ai.vercel.app",
+    "repos": [
+      "https://github.com/mauriuy007/build101"
+    ],
+    "captura": "/equipos/32.webp",
+    "fotoEquipo": null,
+    "material": [
+      {
+        "tipo": "pitch",
+        "url": "https://drive.google.com/file/d/1kswbjclxNxI72JP7m_0l29DeRwt97uIO/view"
+      }
+    ],
+    "integrantes": [
+      {
+        "nombre": "Cesar Canessa",
+        "estudia": "UDELAR",
+        "trabaja": "Anima Tec",
+        "link": "https://www.linkedin.com/in/cesar-canessa-a6b587b5?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        "foto": "/equipos/fotos/32-cesar-canessa.webp",
+        "aporte": null
+      },
+      {
+        "nombre": "Adrian Mircus",
+        "estudia": "ORT",
+        "trabaja": "NoctiLabs",
+        "link": null,
+        "foto": "/equipos/fotos/32-adrian-mircus.webp",
+        "aporte": "adaptador de prácticos con claude, verificador de ecuaciones y lectura por voz"
+      },
+      {
+        "nombre": "Mauricio Parodi",
+        "estudia": "ORT",
+        "trabaja": "Bamboo Payments",
+        "link": "https://www.linkedin.com/in/mauricio-parodi-a613272b9/",
+        "foto": "/equipos/fotos/32-mauricio-parodi.webp",
+        "aporte": "agente y grupos, modos motriz y disgrafía por voz, pdf y ci en github actions"
+      }
+    ]
+  },
+  {
+    "numero": 33,
+    "equipo": "Brandia",
+    "producto": "BrandIA",
+    "oneliner": "Una agencia de marca para pymes y emprendedores que no tienen una: le contás tu negocio por chat o audio. La IA te entrevista y te arma nombre, paleta, logo y brandbook, y después genera los contenidos para tus redes.",
+    "detalle": "Monorepo con una app Next.js en Vercel y el AI SDK. Claude Sonnet entrevista por chat (los audios se transcriben con ElevenLabs Scribe) y arma nombre, voz, paleta y brandbook; las imágenes y piezas salen de modelos de imagen de OpenAI y Gemini. Para el pitch armaron una herramienta con Playwright que recorre la app sola con cada caso de demo y graba un video por caso.",
+    "stack": [
+      "next.js",
+      "ai sdk",
+      "three.js"
+    ],
+    "demo": "https://app.brandiamos.com",
+    "repos": [
+      "https://github.com/ezegarcia-crypto/build101"
+    ],
+    "captura": "/equipos/33.webp",
+    "fotoEquipo": null,
+    "material": [],
+    "integrantes": [
+      {
+        "nombre": "Ezequiel Garcia",
+        "estudia": null,
+        "trabaja": "Gary + Experiencia Inmobiliaria",
+        "link": null,
+        "foto": null,
+        "aporte": "web en next.js: portada, flujo de creación de marca, corrida de noche y pitch"
+      },
+      {
+        "nombre": "Juan Portas",
+        "estudia": null,
+        "trabaja": null,
+        "link": null,
+        "foto": null,
+        "aporte": "entrevista por voz con elevenlabs, branderia con carrito y casos de demo"
+      },
+      {
+        "nombre": "Rodrigo Portas",
+        "estudia": null,
+        "trabaja": null,
+        "link": null,
+        "foto": null,
+        "aporte": "web del cliente con IA, compra de dominio por api de vercel y auditoría de costos"
+      }
+    ]
+  }
+]

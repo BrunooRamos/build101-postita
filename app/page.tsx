@@ -1,6 +1,7 @@
 import { Reveal } from "./components/Reveal";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { Hero } from "./components/Hero";
+import { Results } from "./components/Results";
 import { EventSection } from "./components/EventSection";
 import { Schedule } from "./components/Schedule";
 import { Perks } from "./components/Perks";
@@ -33,6 +34,7 @@ export default function Home() {
 
       <main>
         <Hero />
+        <Results />
         <EventSection />
         <Schedule />
         <Perks />
