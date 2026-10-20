@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { WindowChrome } from "./WindowChrome";
 import { SPIN, reducedMotion, useInView } from "./useInView";
-import { APPLY_CLOSED_MESSAGE, APPLY_OPEN, APPLY_SELECTION_MESSAGE, SPONSORS_EMAIL } from "../event";
+import { APPLY_CLOSED_MESSAGE, APPLY_OPEN, SPONSORS_EMAIL } from "../event";
 
 type Line =
   | { k: "cmd"; text: string }
@@ -260,7 +260,7 @@ function runCommand(
   )
     return APPLY_OPEN
       ? { out: O(<div className="ok">abriendo inscripción…</div>), action: "inscribite" }
-      : { out: O(<div className="out">{APPLY_CLOSED_MESSAGE} {APPLY_SELECTION_MESSAGE}</div>) };
+      : { out: O(<div className="out">{APPLY_CLOSED_MESSAGE}</div>) };
   return {
     out: O(
       <div className="out">

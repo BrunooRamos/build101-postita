@@ -42,7 +42,6 @@ export const APPLY_OPEN: boolean = false;
 // Copy del cierre — un solo lugar para editar el anuncio.
 export const APPLY_CLOSED_LABEL = "inscripciones cerradas";
 export const APPLY_CLOSED_MESSAGE = "Las inscripciones están cerradas. Gracias por el interés en build 101.";
-export const APPLY_SELECTION_MESSAGE = "Si ya te inscribiste, te escribimos por mail cuando termine la selección.";
 
 /** Ruta del formulario propio (elegir camino: con equipo o buscando uno). */
 export const APPLY_PATH = "/inscripcion";

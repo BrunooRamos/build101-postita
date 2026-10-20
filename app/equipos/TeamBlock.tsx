@@ -121,12 +121,12 @@ function Person({ p }: { p: Builder }) {
         <p className="eq-name">{p.nombre}</p>
         {p.estudia ? (
           <p className="eq-line">
-            <span>estudia</span> {p.estudia}
+            <span>universidad</span> {p.estudia}
           </p>
         ) : null}
         {p.trabaja ? (
           <p className="eq-line">
-            <span>trabaja</span> {p.trabaja}
+            <span>empresa</span> {p.trabaja}
           </p>
         ) : null}
       </div>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SignupPaths } from "../components/SignupPaths";
-import { APPLY_CLOSED_MESSAGE, APPLY_DEADLINE_FULL, APPLY_OPEN, APPLY_SELECTION_MESSAGE, APPLY_URL, PARTICIPANTS_EMAIL } from "../event";
+import { APPLY_CLOSED_MESSAGE, APPLY_DEADLINE_FULL, APPLY_OPEN, APPLY_URL, PARTICIPANTS_EMAIL } from "../event";
 
 export const metadata: Metadata = {
   alternates: { canonical: APPLY_URL },
@@ -17,7 +17,6 @@ export default function InscripcionPage() {
             ? `Fecha límite: ${APPLY_DEADLINE_FULL}. Elegí cómo venís: con equipo o buscando uno.`
             : APPLY_CLOSED_MESSAGE}
         </p>
-        {!APPLY_OPEN && <p className="fine">{APPLY_SELECTION_MESSAGE}</p>}
       </div>
       <div className="flow-main">
         <SignupPaths />

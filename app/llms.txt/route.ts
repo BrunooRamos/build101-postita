@@ -1,6 +1,5 @@
 import {
   APPLY_CLOSED_MESSAGE,
-  APPLY_SELECTION_MESSAGE,
   APPLY_DEADLINE_FULL,
   APPLY_OPEN,
   CANONICAL_URL,
@@ -42,7 +41,7 @@ ${
     APPLY_OPEN
       ? `- cierre de inscripción: ${APPLY_DEADLINE_FULL} (hora de uruguay).
 - inscripción: ${APPLY_URL}`
-      : `- inscripción: ${APPLY_CLOSED_MESSAGE} ${APPLY_SELECTION_MESSAGE}`
+      : `- inscripción: ${APPLY_CLOSED_MESSAGE}`
   }
 - sitio oficial: ${CANONICAL_URL}
 - contacto: ${TEAM_EMAILS.join(" · ")}

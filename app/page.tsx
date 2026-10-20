@@ -17,7 +17,7 @@ import { KonamiMatrix } from "./components/KonamiMatrix";
 import { DeployFX } from "./components/DeployFX";
 import { FakeCrash } from "./components/FakeCrash";
 import { StructuredData } from "./components/StructuredData";
-import { APPLY_CLOSED_MESSAGE, APPLY_DEADLINE_FULL, APPLY_OPEN, APPLY_SELECTION_MESSAGE, PARTICIPANTS_EMAIL } from "./event";
+import { APPLY_CLOSED_MESSAGE, APPLY_DEADLINE_FULL, APPLY_OPEN, PARTICIPANTS_EMAIL } from "./event";
 
 export default function Home() {
   return (
@@ -61,11 +61,11 @@ export default function Home() {
                   APPLY_CLOSED_MESSAGE
                 )}
               </p>
-              <p className="fine">
-                {APPLY_OPEN
-                  ? "Inscribirte no garantiza un lugar. La participación queda sujeta a selección y confirmación del equipo."
-                  : APPLY_SELECTION_MESSAGE}
-              </p>
+              {APPLY_OPEN ? (
+                <p className="fine">
+                  Inscribirte no garantiza un lugar. La participación queda sujeta a selección y confirmación del equipo.
+                </p>
+              ) : null}
             </Reveal>
             <Reveal className="signup-paths">
               <SignupPaths />
