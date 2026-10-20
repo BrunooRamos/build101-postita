@@ -36,8 +36,12 @@ export default async function EquipoPage({ params }: Props) {
   return (
     <div className="wrap eq-single">
       <p className="eyebrow">
-        <Link href="/equipos" className="link-quiet">
-          ~/build-101 · equipos
+        <Link href="/" className="eq-crumb">
+          ~/build-101
+        </Link>{" "}
+        ·{" "}
+        <Link href={`/equipos#${slug(team)}`} className="eq-crumb">
+          equipos
         </Link>{" "}
         · {slug(team)}
       </p>

@@ -2,6 +2,16 @@
 .eq-page {
   padding-bottom: 96px;
 }
+.eq-crumb {
+  color: var(--fg-body);
+  text-decoration: underline;
+  text-decoration-color: var(--line-ctl);
+  text-underline-offset: 3px;
+}
+.eq-crumb:hover {
+  color: var(--fg);
+  text-decoration-color: var(--fg);
+}
 .eq-hero {
   padding: 72px 0 40px;
 }

@@ -6,7 +6,9 @@ import { TEAM } from "../event";
 
 const AREA_LABEL = { participants: "participants", mentors: "mentors", sponsors: "sponsors" } as const;
 
-export function SiteNav() {
+/** La nav del sitio. En /equipos va con `page="equipos"`: el botón pasa a
+ *  ser "volver al sitio". */
+export function SiteNav({ page }: { page?: "equipos" } = {}) {
   return (
     <nav className="topnav" aria-label="principal">
       <div className="wrap topnav-inner">
@@ -17,14 +19,19 @@ export function SiteNav() {
           <Link href="/#evento">el evento</Link>
           <Link href="/#cronograma">fechas &amp; lugar</Link>
           <Link href="/#sponsors">sponsors</Link>
-          <Link href="/equipos">los equipos</Link>
           <Link href="/#contacto">contacto</Link>
         </div>
         <div className="topnav-end">
           <NavSocials />
-          <Link href="/equipos" className="btn btn-primary btn-sm">
-            ver los equipos →
-          </Link>
+          {page === "equipos" ? (
+            <Link href="/" className="btn btn-primary btn-sm">
+              ← volver al sitio
+            </Link>
+          ) : (
+            <Link href="/equipos" className="btn btn-primary btn-sm">
+              ver los equipos →
+            </Link>
+          )}
         </div>
       </div>
     </nav>

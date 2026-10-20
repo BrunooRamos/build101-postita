@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FlowNav, SiteFooter } from "../components/SiteChrome";
+import { SiteFooter, SiteNav } from "../components/SiteChrome";
 import "./equipos.css";
 
 // Fuera del menú y del sitemap: se comparte por link. Tiene nombres y LinkedIn
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function EquiposLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <FlowNav />
+      <SiteNav page="equipos" />
       <main className="eq-page">{children}</main>
       <SiteFooter />
     </>
