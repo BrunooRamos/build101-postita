@@ -34,6 +34,8 @@
 /* un equipo */
 .eq-list {
   display: grid;
+  /* minmax(0, …): una URL larga no puede ensanchar la columna más allá de la pantalla */
+  grid-template-columns: minmax(0, 1fr);
   gap: 56px;
 }
 .eq-team {
@@ -147,6 +149,8 @@
   font-size: 12px;
   line-height: 1.6;
   color: var(--muted);
+  /* el detalle trae URLs y rutas sin espacios: que corten donde haga falta */
+  overflow-wrap: anywhere;
 }
 .eq-detail-label {
   color: var(--faint);
@@ -372,13 +376,13 @@
 
 @media (max-width: 900px) {
   .eq-body {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .eq-shot {
     margin: 0 24px 20px;
   }
   .eq-people {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .eq-person {
     border-right: 0;
@@ -390,6 +394,19 @@
   .eq-photo {
     width: 96px;
     height: 96px;
+  }
+  /* al dedo: links y migas con al menos 44 px de alto, sin mover el layout */
+  .eq-links {
+    gap: 0;
+  }
+  .eq-link,
+  .eq-pager a {
+    padding-block: 11px;
+  }
+  .eq-crumb {
+    display: inline-block;
+    padding-block: 13px;
+    margin-block: -13px;
   }
 }
 @media (max-width: 600px) {
@@ -417,5 +434,6 @@
   }
   .eq-pager {
     flex-direction: column;
+    gap: 0;
   }
 }
