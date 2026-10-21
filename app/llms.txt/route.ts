@@ -17,6 +17,7 @@ import {
 } from "../event";
 import { FAQS } from "../faqs";
 import { TIERS } from "../sponsors";
+import { PRESS, formatPressDate } from "../press";
 
 // /llms.txt — resumen del sitio en markdown para answer engines y crawlers de
 // LLMs (convención emergente, https://llmstxt.org). Se genera en build desde
@@ -60,6 +61,11 @@ ${MENTORS_DESCRIPTION}
 ## jurado
 
 ${JURY.map((j) => `- ${j.name}: ${j.role}${j.note ? ` · ${j.note}` : ""}`).join("\n")}
+
+## prensa
+
+${PRESS.map((p) => `- ${p.outlet} (${formatPressDate(p.date)}): "${p.title}" ${p.url}`).join("\n")}
+- todas las notas: ${CANONICAL_URL}prensa
 
 ## sponsors
 

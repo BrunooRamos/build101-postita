@@ -23,6 +23,7 @@ import {
 } from "../event";
 import { FAQS } from "../faqs";
 import { TIERS } from "../sponsors";
+import { PRESS } from "../press";
 
 // Oferta del evento. Con las inscripciones cerradas no publicamos el link de
 // postulación ni la ventana de fechas: la entrada sigue siendo gratis, pero
@@ -70,6 +71,17 @@ const structuredData = {
         "@type": "Country",
         name: "Uruguay",
       },
+      // la prensa es sobre build 101 (no solo la hackathon): cuelga de la organización
+      subjectOf: PRESS.map((p) => ({
+        "@type": "NewsArticle",
+        headline: p.title,
+        url: p.url,
+        datePublished: p.date,
+        image: `${SITE_URL}${p.image}`,
+        publisher: { "@type": "Organization", name: p.outlet },
+        ...(p.author ? { author: { "@type": "Person", name: p.author } } : {}),
+      })),
+
       contactPoint: {
         "@type": "ContactPoint",
         email: CONTACT_EMAIL,

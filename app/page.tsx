@@ -2,6 +2,7 @@ import { Reveal } from "./components/Reveal";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { Hero } from "./components/Hero";
 import { EventSection } from "./components/EventSection";
+import { PressSection } from "./components/Press";
 import { Schedule } from "./components/Schedule";
 import { Perks } from "./components/Perks";
 import { Founders } from "./components/Founders";
@@ -34,6 +35,7 @@ export default function Home() {
       <main>
         <Hero />
         <EventSection />
+        <PressSection />
         <Schedule />
         <Perks />
         <Jury />
