@@ -1296,6 +1296,174 @@ ol {
   color: var(--fg);
 }
 
+/* ---------- prensa (franja de la landing y /prensa) ---------- */
+.press-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 32px;
+}
+.press {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 48px;
+}
+.press > li {
+  display: flex;
+}
+/* toda la celda es el link: al pasar el mouse se enciende como las del jurado */
+.press-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--bg);
+  transition: background-color 0.18s var(--ease-out);
+}
+.press-card:hover {
+  background: var(--surface);
+}
+.press-card:focus-visible {
+  outline-offset: -2px;
+}
+.press-photo {
+  aspect-ratio: 16 / 9;
+  border-bottom: 1px solid var(--line);
+}
+.press-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.35s var(--ease-out);
+}
+.press-photo::after {
+  transition: opacity 0.35s var(--ease-out);
+}
+/* la foto pasa a color al seleccionar la nota (como las fotos del jurado) */
+.press-card:hover .press-photo img,
+.press-card:focus-visible .press-photo img {
+  filter: none;
+}
+.press-card:hover .press-photo::after,
+.press-card:focus-visible .press-photo::after {
+  opacity: 0.35;
+}
+.press-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px 32px 32px;
+}
+.press-title {
+  margin-top: 16px;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  text-wrap: pretty;
+}
+.press-dek {
+  margin-top: 12px;
+  color: var(--muted);
+}
+.press-coorg {
+  margin-top: 16px;
+}
+/* empuja el "leer en …" al fondo: las dos celdas cierran a la misma altura */
+.press-cta {
+  margin-top: auto;
+  padding-top: 28px;
+  color: var(--fg-body);
+}
+.press-card:hover .press-cta {
+  color: var(--accent-strong);
+}
+.press-card:hover .arr {
+  transform: translate(2px, -2px);
+}
+
+/* /prensa */
+.press-page {
+  padding-bottom: 96px;
+}
+.press-hero {
+  padding: 72px 0 56px;
+}
+.press-crumb {
+  color: var(--fg-body);
+  text-decoration: underline;
+  text-decoration-color: var(--line-ctl);
+  text-underline-offset: 3px;
+}
+.press-crumb:hover {
+  color: var(--fg);
+  text-decoration-color: var(--fg);
+}
+.press-full {
+  margin-top: 0;
+}
+.press-full .press-title {
+  font-size: 24px;
+}
+.press-contact {
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-top: 56px;
+  background: var(--surface);
+}
+.press-contact > div {
+  padding: 32px;
+}
+.press-contact .h4 {
+  margin-top: 12px;
+  max-width: 44ch;
+}
+.press-contact-cta {
+  display: flex;
+  align-items: center;
+}
+.press-sign {
+  margin-top: 88px;
+  text-align: center;
+}
+@media (max-width: 880px) {
+  .press-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .press,
+  .press-contact {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .press-body,
+  .press-contact > div {
+    padding: 24px 20px 28px;
+  }
+  .press-title,
+  .press-full .press-title {
+    font-size: 20px;
+  }
+  .press-hero {
+    padding: 48px 0 40px;
+  }
+  /* la miga, al dedo: 44 px de alto sin mover el layout */
+  .press-crumb {
+    display: inline-block;
+    padding-block: 13px;
+    margin-block: -13px;
+  }
+}
+@media (max-width: 560px) {
+  .press-head .btn,
+  .press-contact .btn {
+    width: 100%;
+  }
+  /* el mail entero no entra a 390px con el tamaño del CTA */
+  .press-contact .btn {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
 /* ---------- redes (cierre) ---------- */
 .follow {
   display: grid;
@@ -2696,5 +2864,16 @@ ol {
 @media (max-width: 359px) {
   .nav-socials {
     display: none;
+  }
+}
+/* entre el celular y el desktop los cinco links del nav no entran junto a las
+   redes: las redes quedan en el cierre y el footer, y los links se juntan */
+@media (min-width: 881px) and (max-width: 1180px) {
+  .nav-socials {
+    display: none;
+  }
+  .nav-links {
+    gap: 20px;
+    white-space: nowrap;
   }
 }

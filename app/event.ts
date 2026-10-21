@@ -30,8 +30,8 @@ export const MENTORS_DESCRIPTION =
   "Durante el fin de semana, los equipos van a contar con mentores para intercambiar ideas, resolver dudas y avanzar con sus proyectos.";
 
 /** Última actualización de contenido del sitio (bumpeala con cada anuncio real:
- *  consigna, mentores, jurado, sponsors, cronograma). Alimenta sitemap y schema. */
-export const CONTENT_UPDATED_ISO = "2026-10-17T00:00:00-03:00";
+ *  consigna, mentores, jurado, sponsors, cronograma, prensa). Alimenta sitemap y schema. */
+export const CONTENT_UPDATED_ISO = "2026-10-21T00:00:00-03:00";
 
 /** ¿Están abiertas las inscripciones?
  *  En `false` la landing no linkea al formulario: los CTAs, la terminal, el FAQ,
