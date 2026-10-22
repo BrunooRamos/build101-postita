@@ -13,7 +13,7 @@ const pad = (n: number) => String(n).padStart(2, "0");
 function target(now: number): { label: string; at: number | null } {
   if (APPLY_OPEN && now < DEADLINE) return { label: "cierran las inscripciones", at: DEADLINE };
   if (now < KICKOFF) return { label: "arranca build 101", at: KICKOFF };
-  return { label: "build 101", at: null };
+  return { label: "próxima edición", at: null };
 }
 
 function format(ms: number) {
@@ -42,7 +42,7 @@ export function Countdown() {
   const t = target(now ?? 0);
   const live = now !== null && t.at === null && now < END;
   const value =
-    now === null ? "--D.--H.--M.--S" : t.at !== null ? format(t.at - now) : live ? "en vivo" : "gracias por venir";
+    now === null ? "--D.--H.--M.--S" : t.at !== null ? format(t.at - now) : live ? "en vivo" : "pronto";
 
   // se usa dentro de un <dl>: el par dt/dd lo pone este componente.
   return (

@@ -1,24 +1,28 @@
 import { GlyphField } from "./GlyphField";
 import { Reveal } from "./Reveal";
-import { APPLY_OPEN } from "../event";
+import { APPLY_OPEN, TEAMS_TOTAL } from "../event";
 
 const STEPS = [
   {
     n: "01",
-    t: "armá tu equipo",
+    t: APPLY_OPEN ? "armá tu equipo" : "armaron su equipo",
     d: APPLY_OPEN
       ? "Equipos de 3. Si todavía te faltan compañeros, podés inscribirte igual."
-      : "Equipos de 3. Si te inscribiste solo, te ayudamos a encontrar compañeros.",
+      : `${TEAMS_TOTAL} equipos de 3.`,
   },
   {
     n: "02",
-    t: "construí un producto de IA",
-    d: "Elegí un problema y llevá una idea a un producto que haga trabajo real.",
+    t: APPLY_OPEN ? "construí un producto de IA" : "construyeron un producto de IA",
+    d: APPLY_OPEN
+      ? "Elegí un problema y llevá una idea a un producto que haga trabajo real."
+      : "De una idea a un producto que hace trabajo real.",
   },
   {
     n: "03",
-    t: "pitchealo en vivo",
-    d: "Cerrá el fin de semana pitcheando tu producto funcionando frente al jurado.",
+    t: APPLY_OPEN ? "pitchealo en vivo" : "lo pitchearon en vivo",
+    d: APPLY_OPEN
+      ? "Cerrá el fin de semana pitcheando tu producto funcionando frente al jurado."
+      : "Cerraron el domingo con el producto funcionando frente al jurado.",
   },
 ];
 
@@ -36,7 +40,7 @@ export function EventSection() {
                 construí un producto de IA.
               </h2>
               <p className="lede">
-                Un fin de semana presencial para construir en la vanguardia de la
+                Un fin de semana presencial construyendo en la vanguardia de la
                 tecnología: de una idea a un producto de IA funcionando.
               </p>
             </div>

@@ -17,8 +17,8 @@ export function Mentors() {
         </Reveal>
         <Reveal className="people-aside">
           <PixelBlocks id="px-mentors" cells={PIXELS_SMALL} cols={4} rows={4} className="aside-pixels" />
-          <h3 className="h3">¿dudas sobre las mentorías?</h3>
-          <p>Bruno coordina el acompañamiento a los equipos durante el evento.</p>
+          <h3 className="h3">querés ser mentor en la próxima?</h3>
+          <p>Bruno coordina las mentorías.</p>
           <a href={`mailto:${MENTORS_EMAIL}`} className="btn btn-ghost btn-block">
             escribile a Bruno{" "}
             <span className="arr" aria-hidden>

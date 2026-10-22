@@ -7,13 +7,13 @@ export function FAQ() {
       <div className="wrap">
         <Reveal>
           <p className="eyebrow">// preguntas frecuentes</p>
-          <h2 className="h2">antes de sumarte.</h2>
+          <h2 className="h2">lo que nos preguntan.</h2>
         </Reveal>
 
         <Reveal className="faq">
           {FAQS.map((item, i) => (
             // name="faq": acordeón exclusivo nativo, abrir una cierra la anterior
-            <details className="faq-item" name="faq" key={item.q} open={i === 1}>
+            <details className="faq-item" name="faq" key={item.q} open={i === 0}>
               <summary>
                 <span className="faq-n">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="faq-q">{item.q}</h3>

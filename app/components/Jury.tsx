@@ -22,7 +22,7 @@ export function Jury() {
           <p className="founders-aside">
             Fundadores, inversores y líderes de producto
             <br />
-            van a ver tu pitch y tu producto funcionando.
+            vieron cada pitch y cada producto funcionando.
           </p>
         </Reveal>
 

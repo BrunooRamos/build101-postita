@@ -264,13 +264,13 @@
 }
 @supports (timeline-scope: --x) {
   body {
-    timeline-scope: --s-evento, --s-cronograma, --s-sponsors, --s-contacto;
+    timeline-scope: --s-evento, --s-recap, --s-sponsors, --s-contacto;
   }
   #evento {
     view-timeline-name: --s-evento;
   }
-  #cronograma {
-    view-timeline-name: --s-cronograma;
+  #recap {
+    view-timeline-name: --s-recap;
   }
   #sponsors {
     view-timeline-name: --s-sponsors;
@@ -279,7 +279,7 @@
     view-timeline-name: --s-contacto;
   }
   #evento,
-  #cronograma,
+  #recap,
   #sponsors,
   #contacto {
     view-timeline-inset: 30% 69%;
@@ -288,9 +288,9 @@
     animation: nav-on linear none;
     animation-timeline: --s-evento;
   }
-  .nav-links a[href$="#cronograma"] {
+  .nav-links a[href$="#recap"] {
     animation: nav-on linear none;
-    animation-timeline: --s-cronograma;
+    animation-timeline: --s-recap;
   }
   .nav-links a[href$="#sponsors"] {
     animation: nav-on linear none;

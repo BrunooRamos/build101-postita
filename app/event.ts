@@ -19,15 +19,15 @@ export const LOGO_URL = `${SITE_URL}/icon`;
 export const SEO_TITLE =
   "build 101: la hackathon de IA más grande de uruguay | montevideo 2026";
 export const SEO_DESCRIPTION =
-  "build 101 es la hackathon de IA más grande de uruguay: un fin de semana en montevideo para construir un producto de IA y pitchearlo en vivo. gratis, cupos limitados.";
+  "build 101 es la hackathon de IA más grande de uruguay. la primera edición fue el 17 y 18 de octubre de 2026 en montevideo: 33 equipos construyeron un producto de IA y lo pitchearon en vivo.";
 
 /** Descripción larga para datos estructurados (Event) y answer engines. */
 export const EVENT_DESCRIPTION =
-  "build 101 es una hackathon gratuita y presencial en uruguay: equipos de 3 personas construyen un producto de inteligencia artificial y lo pitchean en vivo frente a un jurado, el 17 y 18 de octubre de 2026 en la universidad de montevideo · fium, latu, montevideo.";
+  "build 101 es una hackathon gratuita y presencial en uruguay. en su primera edición, el 17 y 18 de octubre de 2026 en la universidad de montevideo · fium, latu, montevideo, 33 equipos de 3 personas construyeron un producto de inteligencia artificial y lo pitchearon en vivo frente a un jurado.";
 
 /** Acompañamiento a los equipos, compartido por la landing y /llms.txt. */
 export const MENTORS_DESCRIPTION =
-  "Durante el fin de semana, los equipos van a contar con mentores para intercambiar ideas, resolver dudas y avanzar con sus proyectos.";
+  "Durante el fin de semana, los equipos contaron con mentores para intercambiar ideas, resolver dudas y avanzar con sus proyectos.";
 
 /** Última actualización de contenido del sitio (bumpeala con cada anuncio real:
  *  consigna, mentores, jurado, sponsors, cronograma, prensa). Alimenta sitemap y schema. */

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { WindowChrome } from "./WindowChrome";
 import { SPIN, reducedMotion, useInView } from "./useInView";
-import { APPLY_CLOSED_MESSAGE, APPLY_OPEN, SPONSORS_EMAIL } from "../event";
+import { APPLY_CLOSED_MESSAGE, APPLY_OPEN, SPONSORS_EMAIL, TEAMS_TOTAL } from "../event";
 
 type Line =
   | { k: "cmd"; text: string }
@@ -15,11 +15,19 @@ type Line =
   | { k: "quote" };
 
 const SCRIPT: Line[] = [
-  { k: "cmd", text: "build101 --join" },
+  { k: "cmd", text: APPLY_OPEN ? "build101 --join" : "build101 --status" },
   { k: "blank" },
-  { k: "step", n: "01", text: APPLY_OPEN ? "completá tu inscripción" : "inscripciones cerradas" },
-  { k: "step", n: "02", text: "revisamos tu postulación" },
-  { k: "step", n: "03", text: "te confirmamos por email" },
+  ...(APPLY_OPEN
+    ? ([
+        { k: "step", n: "01", text: "completá tu inscripción" },
+        { k: "step", n: "02", text: "revisamos tu postulación" },
+        { k: "step", n: "03", text: "te confirmamos por email" },
+      ] as const)
+    : ([
+        { k: "step", n: "01", text: "primera edición ✔" },
+        { k: "step", n: "02", text: `${TEAMS_TOTAL} equipos, productos de IA funcionando` },
+        { k: "step", n: "03", text: "próxima edición: pronto" },
+      ] as const)),
 ];
 
 function StaticLine({ line }: { line: Line }) {
@@ -180,7 +188,7 @@ function runCommand(
           <AskAnswer question={cmd.slice(3).trim()} />
         ) : (
           <div className="out">
-            uso: <span className="accent">ask ¿tiene costo?</span>
+            uso: <span className="accent">ask va a haber otra edición?</span>
           </div>
         ),
       ),
@@ -400,7 +408,7 @@ export function Terminal({ footer }: { footer?: ReactNode }) {
 
   return (
     <div ref={ref}>
-      <WindowChrome title="~/build-101 · admisiones">
+      <WindowChrome title={APPLY_OPEN ? "~/build-101 · admisiones" : "~/build-101 · edición 01"}>
         <div
           className="win-body term-body"
           ref={bodyRef}
@@ -467,7 +475,7 @@ export function Terminal({ footer }: { footer?: ReactNode }) {
                 <div className="comment" style={{ marginTop: 6 }}>
                   {askEnabled ? (
                     <>
-                      // preguntale algo: <span className="accent">ask ¿tiene costo?</span> ↵
+                      // preguntale algo: <span className="accent">ask va a haber otra edición?</span> ↵
                     </>
                   ) : (
                     <>

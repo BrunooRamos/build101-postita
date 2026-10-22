@@ -27,7 +27,7 @@ export function Sponsors() {
         <Reveal>
           <p className="eyebrow">// nos acompañan</p>
           <h2 className="h2">build 101 se construye en equipo.</h2>
-          <p className="lede">Organizaciones que hacen posible este encuentro.</p>
+          <p className="lede">Organizaciones que hicieron posible la primera edición.</p>
         </Reveal>
 
         {TIERS.map((t) => {
@@ -72,7 +72,7 @@ export function Sponsors() {
         })}
 
         <Reveal className="sponsors-cta">
-          <p>¿querés que tu organización sea parte?</p>
+          <p>querés ser parte de la próxima edición?</p>
           <a href={`mailto:${SPONSORS_EMAIL}`} className="btn btn-ghost">
             hablá con Mateo ↗
           </a>

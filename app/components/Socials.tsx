@@ -76,13 +76,12 @@ export function FollowSection() {
     <section id="redes" className="section">
       <div className="wrap follow">
         <Reveal className="follow-copy">
-          <p className="eyebrow">// seguinos</p>
+          <p className="eyebrow">// próxima edición</p>
           <h2 className="h2">
-            seguinos en
+            seguinos para
             <br />
-            todas las redes.
+            enterarte primero.
           </h2>
-          <p className="lede">Novedades y todo lo que pasa en build 101, primero ahí.</p>
         </Reveal>
         <Reveal className="follow-links">
           <ul>

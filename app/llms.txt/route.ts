@@ -12,6 +12,7 @@ import {
   SOCIALS,
   TEAM_EMAILS,
   TEAM_SIZE,
+  TEAMS_TOTAL,
   VENUE,
   VENUE_ADDRESS,
 } from "../event";
@@ -32,11 +33,12 @@ export function GET() {
 ## datos clave
 
 - qué: la hackathon de IA más grande de uruguay, presencial: se construye un producto de IA durante el fin de semana y se pitchea en vivo frente a un jurado.
+- primera edición: ${EVENT_DATES_LONG}, con ${TEAMS_TOTAL} equipos. va a haber una próxima edición; las novedades salen primero en redes.
+- equipos y proyectos: ${CANONICAL_URL}equipos
 - alcance: abierta a equipos de todo uruguay; la sede es en montevideo.
-- cuándo: ${EVENT_DATES_LONG}.
 - dónde: ${VENUE}, ${VENUE_ADDRESS}, uruguay.
 - precio: gratis, con cupos limitados y selección del equipo organizador.
-- equipos: ${TEAM_SIZE} personas; ${APPLY_OPEN ? "podés inscribir a tu equipo o inscribirte solo y te ayudamos a formar uno." : "si te inscribiste solo, te ayudamos a formar uno."}
+- equipos: ${TEAM_SIZE} personas${APPLY_OPEN ? "; podés inscribir a tu equipo o inscribirte solo y te ayudamos a formar uno." : "."}
 - horario: ${SCHEDULE.map((d) => `${d.day} de ${d.hours}`).join(" y ")}; no se duerme en la sede.
 ${
     APPLY_OPEN

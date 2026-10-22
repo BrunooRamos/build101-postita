@@ -17,7 +17,7 @@ export function SiteNav({ page }: { page?: "equipos" } = {}) {
         </Link>
         <div className="nav-links">
           <Link href="/#evento">el evento</Link>
-          <Link href="/#cronograma">fechas &amp; lugar</Link>
+          <Link href="/#recap">after movie</Link>
           <Link href="/#sponsors">sponsors</Link>
           <Link href="/prensa">prensa</Link>
           <Link href="/#contacto">contacto</Link>

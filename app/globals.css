@@ -977,6 +977,71 @@ ol {
   color: var(--muted);
 }
 
+/* ---------- recap (post evento) ---------- */
+/* marco 16:9 de player en espera: el after movie todavía no salió */
+.aftermovie {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(70% 60% at 50% 55%, rgb(31 95 255 / 0.14), transparent 70%),
+    var(--bg);
+  overflow: hidden;
+}
+.aftermovie-pixels {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: auto;
+  aspect-ratio: 1;
+}
+.aftermovie-center {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+.aftermovie-soon {
+  font-family: var(--font-display-stack);
+  font-size: clamp(64px, 12vw, 168px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--fg);
+}
+.aftermovie-soon .cursor {
+  width: 0.28em;
+  height: 0.6em;
+  margin-left: 0.08em;
+  vertical-align: 0;
+}
+.aftermovie-bar {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono-stack);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+.aftermovie-play {
+  color: var(--fg);
+}
+.aftermovie-track {
+  flex: 1;
+  height: 1px;
+  background: var(--line-2);
+}
+
 /* ---------- equipo organizador ---------- */
 .founders-head {
   display: flex;
@@ -2452,6 +2517,16 @@ ol {
     font-size: 17px;
   }
 
+  .aftermovie {
+    aspect-ratio: 4 / 3;
+  }
+  .aftermovie-pixels {
+    width: 64px;
+  }
+  .aftermovie-bar {
+    padding: 10px 14px;
+    font-size: 11.5px;
+  }
   .event-head,
   .schedule-head,
   .founders-head,
