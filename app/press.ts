@@ -25,6 +25,17 @@ export type PressItem = {
 
 export const PRESS: readonly PressItem[] = [
   {
+    key: "subrayado",
+    outlet: "Subrayado",
+    kind: "sociedad",
+    title:
+      "Estudiantes desarrollaron una aplicación para prevenir estafas y buscan financiación para que llegue a más personas",
+    dek: "Un grupo de estudiantes universitarios desarrolló una aplicación para evitar las estafas telefónicas mientras la llamada está en curso y alerta a la familia de la víctima.",
+    url: "https://www.subrayado.com.uy/estudiantes-desarrollaron-una-aplicacion-prevenir-estafas-y-buscan-financiacion-que-llegue-mas-personas-n1022492",
+    date: "2026-11-02",
+    image: "/prensa/subrayado.webp",
+  },
+  {
     key: "elobservador",
     outlet: "El Observador",
     kind: "ciencia y tecnología",
