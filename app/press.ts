@@ -36,6 +36,19 @@ export const PRESS: readonly PressItem[] = [
     image: "/prensa/subrayado.webp",
   },
   {
+    // sin bajada a propósito: la del medio nombra a la app "Guardián" y el
+    // cuerpo, "Kauto". Como las bajadas van textuales, mejor no publicarla.
+    key: "elobservador-kauto",
+    outlet: "El Observador",
+    kind: "ciencia y tecnología",
+    title:
+      "Estudiantes uruguayos crean una app que avisa a un familiar en tiempo real si la víctima está siendo estafada",
+    author: "Juan Pablo De Marco",
+    url: "https://www.elobservador.com.uy/ciencia-y-tecnologia/estudiantes-uruguayos-crean-una-app-que-avisa-un-familiar-tiempo-real-si-la-victima-esta-siendo-estafada-n6061967",
+    date: "2026-10-29",
+    image: "/prensa/elobservador-kauto.webp",
+  },
+  {
     key: "elobservador",
     outlet: "El Observador",
     kind: "ciencia y tecnología",
