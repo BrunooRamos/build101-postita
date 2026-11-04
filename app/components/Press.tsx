@@ -7,10 +7,10 @@ import { PRESS, formatPressDate, type PressItem } from "../press";
 // halftone (pasa a color y se prenden los pixeles al seleccionarla), medio,
 // fecha y titular. `full` (en /prensa) suma la bajada. Toda la celda es el
 // link a la nota.
-export function PressCards({ full = false }: { full?: boolean }) {
+export function PressCards({ full = false, limit }: { full?: boolean; limit?: number }) {
   return (
     <ul className={`press cells ${full ? "press-full" : ""}`}>
-      {PRESS.map((p) => (
+      {PRESS.slice(0, limit).map((p) => (
         <li key={p.key}>
           <PressCard item={p} full={full} />
         </li>
@@ -43,7 +43,7 @@ function PressCard({ item: p, full }: { item: PressItem; full: boolean }) {
   );
 }
 
-/** Franja de la landing: las notas y el link a /prensa. */
+/** Franja de la landing: las tres notas más nuevas (una fila) y el link a /prensa. */
 export function PressSection() {
   return (
     <section id="prensa" className="section">
@@ -58,7 +58,7 @@ export function PressSection() {
           </Link>
         </Reveal>
         <Reveal>
-          <PressCards />
+          <PressCards limit={3} />
         </Reveal>
       </div>
     </section>
