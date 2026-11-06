@@ -1,10 +1,11 @@
 import { Reveal } from "./Reveal";
-import { AFTERMOVIE, EVENT_START_DATE } from "../event";
+import { AftermovieVideo } from "./AftermovieVideo";
+import { EVENT_START_DATE } from "../event";
 
 // Post evento: reemplaza "fechas & lugar" y "qué te llevás". El after movie se
-// sirve desde public/aftermovie (~49 MB): con preload="none" no se baja nada
-// hasta que alguien le da play; mientras tanto se ve el póster (la foto grupal
-// del cierre).
+// sirve desde public/aftermovie (~49 MB) y arranca en silencio cuando entra en
+// pantalla (ver AftermovieVideo); hasta entonces se ve el póster (la foto
+// grupal del cierre).
 export function Recap() {
   return (
     <section id="recap" className="section">
@@ -16,17 +17,7 @@ export function Recap() {
         </Reveal>
 
         <Reveal className="aftermovie">
-          <video
-            className="aftermovie-video"
-            src={AFTERMOVIE.src}
-            poster={AFTERMOVIE.poster}
-            controls
-            playsInline
-            preload="none"
-            width={1920}
-            height={1080}
-            aria-label="after movie de build 101"
-          />
+          <AftermovieVideo />
         </Reveal>
       </div>
     </section>
