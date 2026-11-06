@@ -21,9 +21,23 @@ export type PressItem = {
   image: string;
   /** el medio también coorganizó build 101 (se marca para ser transparentes) */
   coorg?: boolean;
+  /** la nota es sobre un proyecto puntual de build 101, no sobre el evento */
+  project?: string;
 };
 
 export const PRESS: readonly PressItem[] = [
+  {
+    key: "enperspectiva",
+    outlet: "Radiomundo En Perspectiva",
+    kind: "entrevista",
+    title:
+      "Kauto, la aplicación creada por estudiantes de Ingeniería de la Universidad ORT que identifica en tiempo real si una llamada está asociada a una estafa o no. Con Bruno Colo y Pedro Morga",
+    dek: "La herramienta busca alertar, especialmente a los adultos mayores, ante posibles fraudes telefónicos. Sus creadores cuentan cómo surgió la idea y cómo funciona.",
+    url: "https://enperspectiva.uy/en-perspectiva-programa/kauto-la-aplicacion-creada-por-estudiantes-de-ingenieria-de-la-universidad-ort-que-identifica-en-tiempo-real-si-una-llamada-esta-asociada-a-una-estafa-o-no-con-bruno-colo-y-pedro-morga/",
+    date: "2026-11-04",
+    image: "/prensa/enperspectiva.webp",
+    project: "Kauto",
+  },
   {
     key: "subrayado",
     outlet: "Subrayado",
@@ -34,19 +48,33 @@ export const PRESS: readonly PressItem[] = [
     url: "https://www.subrayado.com.uy/estudiantes-desarrollaron-una-aplicacion-prevenir-estafas-y-buscan-financiacion-que-llegue-mas-personas-n1022492",
     date: "2026-11-02",
     image: "/prensa/subrayado.webp",
+    project: "Kauto",
   },
   {
-    // sin bajada a propósito: la del medio nombra a la app "Guardián" y el
-    // cuerpo, "Kauto". Como las bajadas van textuales, mejor no publicarla.
+    // "Guardián" no es un error del medio: así se llamó la app en la hackathon;
+    // después pasó a ser Kauto.
     key: "elobservador-kauto",
     outlet: "El Observador",
     kind: "ciencia y tecnología",
     title:
       "Estudiantes uruguayos crean una app que avisa a un familiar en tiempo real si la víctima está siendo estafada",
+    dek: "Guardián fue la propuesta ganadora entre más de 30 en Build101; fue entrenada con modalidades de estafa conocidas en Uruguay y su equipo ya se presentó a un fondo de la ANII.",
     author: "Juan Pablo De Marco",
     url: "https://www.elobservador.com.uy/ciencia-y-tecnologia/estudiantes-uruguayos-crean-una-app-que-avisa-un-familiar-tiempo-real-si-la-victima-esta-siendo-estafada-n6061967",
     date: "2026-10-29",
     image: "/prensa/elobservador-kauto.webp",
+    project: "Kauto",
+  },
+  {
+    key: "ort",
+    outlet: "Universidad ORT",
+    kind: "novedades",
+    title: "Crearon una aplicación con IA para prevenir estafas y ganaron una hackatón",
+    dek: "Bruno Colo, Pedro Morga y Matías Moser, estudiantes de Ingeniería en Sistemas, obtuvieron el primer premio de Build 101, una hackatón de inteligencia artificial que reunió a 33 equipos para desarrollar soluciones tecnológicas en un fin de semana.",
+    url: "https://fi.ort.edu.uy/novedades/crearon-una-aplicacion-con-ia-para-prevenir-estafas-y-ganaron-una-hackaton",
+    date: "2026-10-26",
+    image: "/prensa/ort.webp",
+    project: "Kauto",
   },
   {
     key: "elobservador",

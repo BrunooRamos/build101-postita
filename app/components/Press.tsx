@@ -34,7 +34,12 @@ function PressCard({ item: p, full }: { item: PressItem; full: boolean }) {
         </p>
         <h3 className="press-title">{p.title}</h3>
         {full && p.dek ? <p className="press-dek">{p.dek}</p> : null}
-        {p.coorg ? <span className="badge press-coorg">coorganizador de build 101</span> : null}
+        {p.coorg || p.project ? (
+          <span className="press-badges">
+            {p.project ? <span className="badge">proyecto de build 101 · {p.project}</span> : null}
+            {p.coorg ? <span className="badge">coorganizador de build 101</span> : null}
+          </span>
+        ) : null}
         <span className="press-cta label">
           leer en {p.outlet} <span className="arr">↗</span>
         </span>
