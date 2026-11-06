@@ -1,4 +1,5 @@
 import {
+  AFTERMOVIE,
   APPLY_DEADLINE_ISO,
   APPLY_OPEN,
   APPLY_URL,
@@ -50,6 +51,7 @@ const websiteId = `${SITE_URL}/#website`;
 const webpageId = `${SITE_URL}/#webpage`;
 const eventId = `${SITE_URL}/#event`;
 const faqId = `${SITE_URL}/#faq`;
+const videoId = `${SITE_URL}/#aftermovie`;
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -108,6 +110,19 @@ const structuredData = {
       primaryImageOfPage: OG_IMAGE_URL,
       inLanguage: "es-UY",
       dateModified: CONTENT_UPDATED_ISO,
+    },
+    {
+      "@type": "VideoObject",
+      "@id": videoId,
+      name: "after movie · build 101",
+      description: "Así fue la primera edición de build 101, la hackathon de IA en Montevideo (17 y 18 de octubre de 2026).",
+      contentUrl: `${SITE_URL}${AFTERMOVIE.src}`,
+      thumbnailUrl: `${SITE_URL}${AFTERMOVIE.poster}`,
+      uploadDate: AFTERMOVIE.uploadDate,
+      duration: AFTERMOVIE.duration,
+      inLanguage: "es-UY",
+      recordedAt: { "@id": eventId },
+      publisher: { "@id": organizationId },
     },
     {
       "@type": "Event",

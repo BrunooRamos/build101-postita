@@ -1,4 +1,5 @@
 import {
+  AFTERMOVIE,
   APPLY_CLOSED_MESSAGE,
   APPLY_DEADLINE_FULL,
   APPLY_OPEN,
@@ -63,6 +64,10 @@ ${MENTORS_DESCRIPTION}
 ## jurado
 
 ${JURY.map((j) => `- ${j.name}: ${j.role}${j.note ? ` · ${j.note}` : ""}`).join("\n")}
+
+## after movie
+
+- ${CANONICAL_URL}${AFTERMOVIE.src.slice(1)} (2:14)
 
 ## prensa
 
