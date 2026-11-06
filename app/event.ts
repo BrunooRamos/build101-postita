@@ -31,7 +31,16 @@ export const MENTORS_DESCRIPTION =
 
 /** Última actualización de contenido del sitio (bumpeala con cada anuncio real:
  *  consigna, mentores, jurado, sponsors, cronograma, prensa). Alimenta sitemap y schema. */
-export const CONTENT_UPDATED_ISO = "2026-11-04T00:00:00-03:00";
+export const CONTENT_UPDATED_ISO = "2026-11-06T00:00:00-03:00";
+
+/** After movie (public/aftermovie): H.264 + faststart, 2:14. Alimenta el
+ *  player del recap, el schema (VideoObject) y /llms.txt. */
+export const AFTERMOVIE = {
+  src: "/aftermovie/build101-aftermovie.mp4",
+  poster: "/aftermovie/poster.webp",
+  duration: "PT2M14S",
+  uploadDate: "2026-11-06",
+} as const;
 
 /** ¿Están abiertas las inscripciones?
  *  En `false` la landing no linkea al formulario: los CTAs, la terminal, el FAQ,
