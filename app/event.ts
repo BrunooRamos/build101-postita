@@ -31,7 +31,7 @@ export const MENTORS_DESCRIPTION =
 
 /** Última actualización de contenido del sitio (bumpeala con cada anuncio real:
  *  consigna, mentores, jurado, sponsors, cronograma, prensa). Alimenta sitemap y schema. */
-export const CONTENT_UPDATED_ISO = "2026-11-06T00:00:00-03:00";
+export const CONTENT_UPDATED_ISO = "2026-11-06T12:00:00-03:00";
 
 /** After movie (public/aftermovie): H.264 + faststart, 2:14. Alimenta el
  *  player del recap, el schema (VideoObject) y /llms.txt. */

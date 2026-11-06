@@ -1401,7 +1401,10 @@ ol {
   margin-top: 12px;
   color: var(--muted);
 }
-.press-coorg {
+.press-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-top: 16px;
 }
 /* empuja el "leer en …" al fondo: las dos celdas cierran a la misma altura */
