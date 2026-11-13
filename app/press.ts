@@ -79,6 +79,18 @@ const PRESS_ITEMS: readonly PressItem[] = [
     project: "Kauto",
   },
   {
+    key: "puntosur",
+    outlet: "Punto Sur",
+    kind: "tecnología",
+    title:
+      "Estudiantes de ingeniería desarrollaron una aplicación que detecta estafas telefónicas en tiempo real",
+    dek: "A partir de la entrevista en En Perspectiva, Punto Sur presenta Kauto y su propuesta de advertir sobre posibles fraudes durante una llamada, con especial atención a los adultos mayores.",
+    url: "https://puntosur.lat/noticia/estudiantes-de-ingenieria-desarrollaron-una-aplicacion-que-detecta-estafas-telefonicas-en-tiempo-real-8982-n5b6",
+    date: "2026-11-04",
+    image: "/prensa/puntosur.webp",
+    project: "Kauto",
+  },
+  {
     key: "subrayado",
     outlet: "Subrayado",
     kind: "sociedad",
@@ -115,6 +127,17 @@ const PRESS_ITEMS: readonly PressItem[] = [
     date: "2026-10-26",
     image: "/prensa/ort.webp",
     project: "Kauto",
+  },
+  {
+    key: "uol",
+    outlet: "UOL Uruguay",
+    kind: "inteligencia artificial",
+    title: "Build 101: la hackatón de IA de Uruguay dejó 33 prototipos",
+    dek: "UOL retoma la cobertura de El Observador sobre los proyectos de build 101 y analiza las oportunidades de colaboración entre equipos universitarios y empresas.",
+    author: "Diego Pereira",
+    url: "https://uol.com.uy/build-101-hackaton-ia-uruguay/",
+    date: "2026-10-25",
+    image: "/prensa/uol.webp",
   },
   {
     key: "um",
