@@ -25,9 +25,11 @@ export type PressItem = {
   coorg?: boolean;
   /** la nota es sobre un proyecto puntual de build 101, no sobre el evento */
   project?: string;
+  /** se muestra antes de las demás notas, también en la portada */
+  pinned?: boolean;
 };
 
-export const PRESS: readonly PressItem[] = [
+const PRESS_ITEMS: readonly PressItem[] = [
   {
     key: "teledoce",
     outlet: "Teledoce",
@@ -161,6 +163,7 @@ export const PRESS: readonly PressItem[] = [
     date: "2026-10-20",
     image: "/prensa/mutuo.webp",
     coorg: true,
+    pinned: true,
   },
   {
     key: "startupjournal",
@@ -174,6 +177,11 @@ export const PRESS: readonly PressItem[] = [
     image: "/prensa/startupjournal.webp",
   },
 ];
+
+/** Las notas fijadas van primero; las demás conservan su orden. */
+export const PRESS: readonly PressItem[] = [...PRESS_ITEMS].sort(
+  (a, b) => Number(Boolean(b.pinned)) - Number(Boolean(a.pinned)),
+);
 
 /** Contacto para medios. */
 export const PRESS_EMAIL = TEAM[2].email;
