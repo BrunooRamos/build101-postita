@@ -19,6 +19,8 @@ export type PressItem = {
   /** fecha de publicación (YYYY-MM-DD) */
   date: string;
   image: string;
+  /** las fichas institucionales se describen como WebPage en el schema */
+  schemaType?: "NewsArticle" | "WebPage";
   /** el medio también coorganizó build 101 (se marca para ser transparentes) */
   coorg?: boolean;
   /** la nota es sobre un proyecto puntual de build 101, no sobre el evento */
@@ -26,6 +28,42 @@ export type PressItem = {
 };
 
 export const PRESS: readonly PressItem[] = [
+  {
+    key: "teledoce",
+    outlet: "Teledoce",
+    kind: "desayunos informales",
+    title: '"Kauto": aplicación para reconocer estafas telefónicas',
+    dek: "Bruno Colo y Pedro Morga presentan Kauto en Desayunos Informales y conversan sobre la aplicación que desarrollaron junto a Matías Moser para detectar estafas telefónicas.",
+    url: "https://www.teledoce.com/programas/desayunos-informales/primera-manana/kauto-aplicacion-para-reconocer-estafas-telefonicas/",
+    date: "2026-11-09",
+    image: "/prensa/teledoce.webp",
+    project: "Kauto",
+  },
+  {
+    key: "eledeve",
+    outlet: "Eledeve",
+    kind: "nota generada por IA",
+    title:
+      "Kauto, la app uruguaya que detecta el cuento del tío mientras pasa y avisa a la familia",
+    dek: "Una publicación argentina repasa el origen de Kauto en build 101, su funcionamiento y los próximos pasos del proyecto, a partir de entrevistas y notas publicadas en Uruguay.",
+    url: "https://eledeve.com.ar/kauto-la-app-uruguaya-que-detecta-el-cuento-del-tio-mientras-pasa-y-avisa-a-la/",
+    date: "2026-11-07",
+    image: "/prensa/eledeve.webp",
+    project: "Kauto",
+  },
+  {
+    key: "cie-ort",
+    outlet: "CIE · Universidad ORT",
+    kind: "emprendimientos",
+    title: "Kauto",
+    dek: "La ficha del Centro de Innovación y Emprendimientos presenta al equipo y su detector de estafas telefónicas, nacido como proyecto ganador de build 101.",
+    url: "https://cie.ort.edu.uy/emprendimientos/kauto",
+    // Fecha de publicación del JSON-LD de la ficha institucional.
+    date: "2026-11-06",
+    image: "/prensa/cie-ort.webp",
+    schemaType: "WebPage",
+    project: "Kauto",
+  },
   {
     key: "enperspectiva",
     outlet: "Radiomundo En Perspectiva",
@@ -77,6 +115,31 @@ export const PRESS: readonly PressItem[] = [
     project: "Kauto",
   },
   {
+    key: "um",
+    outlet: "Universidad de Montevideo",
+    kind: "noticias",
+    title:
+      "Build 101: 99 participantes, 33 proyectos y un desafío de innovación en la UM",
+    dek: "La UM recorre las dos jornadas de construcción, los proyectos ganadores y el apoyo de mentores, jurado y organizaciones que hicieron posible la primera edición.",
+    url: "https://www.um.edu.uy/noticias/build-101-99-participantes-33-proyectos-y-un-desafio-de-innovacion-en-la-um",
+    date: "2026-10-23",
+    image: "/prensa/um.webp",
+    coorg: true,
+  },
+  {
+    key: "theintelligent",
+    outlet: "The Intelligent",
+    kind: "tecnología",
+    title:
+      "La hackatón Build 101 impulsa soluciones concretas de inteligencia artificial desde la iniciativa privada en Uruguay",
+    dek: "Una mirada a los 33 productos desarrollados durante la hackathon y a las soluciones que los equipos propusieron para problemas cotidianos.",
+    author: "Rocío Gutiérrez",
+    url: "https://theintelligent.uy/tecnologia/2026/la-hackaton-build-101-impulsa-soluciones-concretas-de-inteligencia-artificial-desde",
+    date: "2026-10-23",
+    // Foto del evento: el medio bloquea la descarga de su imagen.
+    image: "/prensa/theintelligent.webp",
+  },
+  {
     key: "elobservador",
     outlet: "El Observador",
     kind: "ciencia y tecnología",
@@ -98,6 +161,17 @@ export const PRESS: readonly PressItem[] = [
     date: "2026-10-20",
     image: "/prensa/mutuo.webp",
     coorg: true,
+  },
+  {
+    key: "startupjournal",
+    outlet: "The Startup Journal",
+    kind: "convocatoria",
+    title:
+      "build 101: la hackathon de IA más grande de Uruguay reunirá a más de 100 jóvenes en Montevideo",
+    dek: "La previa del evento: un fin de semana para construir un producto de IA, con equipos de tres, mentorías y un jurado de referentes del ecosistema.",
+    url: "https://www.startupjournal.io/article/build-101-hackathon-ia-montevideo-fium-100-jovenes",
+    date: "2026-10-11",
+    image: "/prensa/startupjournal.webp",
   },
 ];
 

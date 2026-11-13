@@ -75,7 +75,7 @@ const structuredData = {
       },
       // la prensa es sobre build 101 (no solo la hackathon): cuelga de la organización
       subjectOf: PRESS.map((p) => ({
-        "@type": "NewsArticle",
+        "@type": p.schemaType ?? "NewsArticle",
         headline: p.title,
         url: p.url,
         datePublished: p.date,
