@@ -48,7 +48,7 @@ function PressCard({ item: p, full }: { item: PressItem; full: boolean }) {
   );
 }
 
-/** Franja de la landing: las tres notas más nuevas (una fila) y el link a /prensa. */
+/** Franja de la landing: notas fijadas y más nuevas (una fila) y el link a /prensa. */
 export function PressSection() {
   return (
     <section id="prensa" className="section">
